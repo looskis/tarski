@@ -320,3 +320,53 @@ Same protocol as C.1 (experts chosen on the other dataset's census, union over t
 - Every carve changes 10–25% of individual reads (TV 0.10–0.22) even where accuracy holds: the
   carved model is a different reader of similar quality, which matters for any claim of exact
   reproduction.
+
+## 2026-09-28: the read policy, assembled (400 typed-test states, 2,000 slots, 4-bit laptop reads)
+
+What a stock OpenJev user gets from the three findings that hold, with no training: the
+vocabulary-mean slot, one question order chosen on held-out labelled states, and one temperature
+per question type (2-fold cross-fit here). Same model, same single pass, same inference cost.
+
+| policy | acc | Brier | ECE |
+|---|---|---|---|
+| OpenJev default: given order, random slot, one read | 0.659 | 0.586 | 0.267 |
+| + vocabulary-mean slot | 0.686 | 0.525 | 0.219 |
+| + selected order | 0.712 | 0.454 | 0.177 |
+| + temperature per type | **0.712** | **0.402** | **0.025** |
+| (temperature alone, on the default read) | 0.659 | 0.453 | 0.038 |
+| (mean slot + temperature, no order selection) | 0.686 | 0.437 | 0.028 |
+
++5 points of accuracy, Brier 0.586 → 0.402, ECE 0.267 → 0.025. Temperature does the calibration,
+the slot and the order do the ranking; neither substitutes for the other.
+
+## 2026-09-28: Phase B.9, where the read is assembled: visibility sweep and logit lens (H100, bf16, 200 states)
+
+`dlm/layers.py`. Visibility sweep: the "invisible" mask (no canvas row sees any slot but itself)
+applied only in layers below a cut (`inv_below_c`) or only from a cut upward (`inv_from_c`), stock
+masks elsewhere; random slot. Logit lens: final norm + lm_head at the slot row after every layer.
+
+| random slot, acc | given order (rot0) | reversed order |
+|---|---|---|
+| stock masks | 0.638 | 0.679 |
+| slots invisible in all layers | 0.359 | 0.605 |
+| invisible in layers 0–2 / 0–5 / 0–9 | 0.641 / 0.636 / 0.648 | 0.671 / 0.679 / 0.671 |
+| invisible in layers 0–14 / 0–19 / 0–24 | 0.586 / 0.383 / 0.350 | 0.607 / 0.567 / 0.589 |
+| invisible from layer 3 / 6 / 10 onward | 0.628 / 0.642 / 0.654 | 0.664 / 0.669 / 0.682 |
+| invisible from layer 15 / 20 / 25 onward | 0.649 / 0.633 / 0.637 | 0.682 / 0.682 / 0.676 |
+
+- **The neighbour loop must close early, and briefly.** Letting the template rows see the slots
+  only in layers 0–2 is enough (0.628 vs 0.638); hiding the slots for the first ten layers is also
+  free (0.648) provided they are visible afterwards; hiding them through layer 19 collapses the read
+  (0.383). So the rows around a slot absorb "there is an answer position here" within a few layers of
+  first seeing it, at any point before roughly layer 15, and later visibility adds nothing.
+- **The answer becomes readable at layer 22–23 of 30**, in both orders and for both slot inputs:
+  logit-lens accuracy sits at chance (0.23–0.38) through layer 21, jumps at 22 (0.46–0.50) and
+  settles at 23 (0.58–0.65), then refines slightly to 29. Median settling layer 22–23. The loop (by
+  ~15) precedes the readout (22–23) by a clear margin.
+- **The reversed order depends less on the loop.** With slots fully invisible the given order falls
+  28 points and the reversed order 7; with visibility only from layer 20 the given order collapses and
+  the reversed order keeps 0.567. Whatever the better order does, it makes the slot's read less
+  dependent on its neighbours having seen it, which is the first mechanistic difference between
+  orders we have measured. The lens does not separate the orders (both at chance until 22), so the
+  divergence has to be measured on the hidden states directly (next: per-layer cosine distance of
+  the slot's residual stream and of the encoded state between orders).
