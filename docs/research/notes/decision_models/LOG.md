@@ -261,3 +261,62 @@ agreement 100%. Hard (20 items): TV 0.09–0.10, argmax agreement 90–95%. The 
 **4-bit quantisation alone moves 5–10% of hard-item argmaxes**, which is itself a caveat for every
 4-bit number in this log (the H100 queue replicates the order experiment in bf16). Speed: prefill
 0.44 s, read 0.13 s unbatched (the M6: 0.3–4 s and 0.1 s).
+
+## 2026-09-28: Phase B.7, attention leakage per question order (H100, bf16, 200 typed-test states)
+
+`dlm/leakage.py`: for every slot under each order, the slot row's attention mass per layer on its own
+question's rows, other questions' rows, other slots, the encoder prefix and itself (heads averaged).
+
+**The order effect replicates in bf16** (random slot: rot0 0.629, rot3 0.703, rev 0.682; mean slot:
+0.664 / 0.682 / 0.687), so it is not a 4-bit artefact. **Attention mass does not explain it.** The
+shares are flat across orders (own 0.17–0.18, other questions 0.15–0.16, prefix 0.47–0.50) and
+uncorrelated with correctness (r = 0.01). Selecting the order with the least leakage to other
+questions, or the most attention to its own question, scores 0.65–0.68, below the fixed order
+(0.70). Whatever the order changes, it is not how much a slot looks at other questions; the prefix,
+which carries half the mass, is itself re-encoded under each order because the system prompt lists
+the questions, so the encoder is the next suspect (the layer sweep and logit lens by order test
+whether the divergence between orders is present from the first layers).
+
+## 2026-09-28: Phase B.8, multi-step reads (H100, bf16, 200 typed-test states, 1,000 slots)
+
+`dlm/steps.py`: the single denoising pass repeated up to four times, feeding each step's logits back
+as the self-conditioning signal (`sc`), optionally also writing each step's argmax token into the
+slots as the sampler would (`token`); from OpenJev's random slot and from the vocabulary-mean slot.
+
+| start / update | step 1 (stock) | step 2 | step 3 | step 4 |
+|---|---|---|---|---|
+| random / self-conditioning only, acc / Brier / ECE | 0.638 / 0.605 / 0.264 | 0.656 / 0.610 / 0.287 | 0.659 / 0.623 / 0.295 | 0.663 / 0.628 / 0.299 |
+| random / token write-back | 0.638 / 0.605 / 0.264 | 0.608 / 0.723 / 0.351 | 0.609 / 0.748 / 0.367 | 0.608 / 0.755 / 0.372 |
+| mean / self-conditioning only | 0.673 / 0.545 / 0.214 | 0.672 / 0.574 / 0.261 | 0.676 / 0.593 / 0.283 | 0.674 / 0.612 / 0.298 |
+| mean / token write-back | 0.673 / 0.545 / 0.214 | 0.677 / 0.597 / 0.284 | 0.677 / 0.629 / 0.311 | 0.677 / 0.638 / 0.316 |
+
+**One step is the right number of steps for a classification read.** Every extra step raises
+confidence (ECE +0.03–0.10, Brier +0.03–0.15) without improving the ranking: accuracy is flat from
+the mean slot and, with token write-back from a random start, drops three points because the model
+commits to its first-step guess. Self-conditioning from a random start recovers +2.5 points, which is
+the noise of the random token being averaged out, and the mean slot already has that. OpenJev's
+single-step read is not leaving accuracy on the table; iterating is how a sampler sharpens a
+distribution, which is the opposite of what a calibrated read needs.
+
+## 2026-09-28: Phase C.2, the carve curve (95% and 90% mass)
+
+Same protocol as C.1 (experts chosen on the other dataset's census, union over token roles).
+
+| experts kept / layer | typed-test 200: random slot acc / Brier | mean slot acc / Brier | JevBench hard 111: random | mean |
+|---|---|---|---|---|
+| 128 (full) | 0.619 / 0.626 | 0.674 / 0.535 | 0.640 / 0.514 | 0.658 / 0.508 |
+| 91 / 87 (99%) | 0.632 / 0.616 | 0.663 / 0.549 | 0.631 / 0.566 | 0.622 / 0.544 |
+| 65 / 66 (95%) | 0.638 / 0.577 | 0.643 / 0.566 | 0.577 / 0.604 | 0.595 / 0.574 |
+| 51 / 54 (90%) | 0.608 / 0.644 | 0.609 / 0.593 | 0.595 / 0.597 | 0.586 / 0.577 |
+
+- **A third of the experts is close to free** (99%: −1 point on typed-test, −1 to −4 on JevBench
+  hard with SE ≈ 4.5). **Half costs 3–6 points**, and 60% costs 6–7. The knee sits between 99% and
+  95% of the mass for the better (mean-slot) read; the stock random-slot read hides the loss on
+  typed-test behind its own noise but not on JevBench hard.
+- The experts removed at 99% are the ones the census called idle (under 0.1% of mass); the loss at
+  95% shows the long tail of rarely-used experts still does work on hard items. "Wasted parameters"
+  is therefore about a third of the routed experts, not the two-thirds a 4B-active budget would
+  suggest, unless the carved model is also retrained (not tested).
+- Every carve changes 10–25% of individual reads (TV 0.10–0.22) even where accuracy holds: the
+  carved model is a different reader of similar quality, which matters for any claim of exact
+  reproduction.
