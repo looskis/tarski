@@ -370,3 +370,20 @@ masks elsewhere; random slot. Logit lens: final norm + lm_head at the slot row a
   orders we have measured. The lens does not separate the orders (both at chance until 22), so the
   divergence has to be measured on the hidden states directly (next: per-layer cosine distance of
   the slot's residual stream and of the encoded state between orders).
+
+## 2026-09-28: Phase B.10, does the learned query stack with the selected order? (400 typed-test states)
+
+`dlm/order_query.py`, 4-bit laptop reads. Gold query (trained under the given order rot0) and the
+mean slot, under rot0 and the selected order rot3.
+
+| | given order (rot0) | selected order (rot3) |
+|---|---|---|
+| random slot | 0.659 / 0.586 / 0.267 | 0.718 / 0.473 / 0.205 |
+| mean slot | 0.686 / 0.525 / 0.219 | **0.712** / 0.454 / 0.177 |
+| gold query | **0.711** / 0.398 / 0.102 | 0.689 / 0.437 / 0.077 |
+
+No. The query lifts the order it was trained under to the level the selected order reaches with the
+untrained mean slot, and under the selected order it *loses* 2.3 points of accuracy (calibration
+stays better, as it was trained on soft targets). The query is a patch for one canvas layout: it
+learned to compensate for the given order's weakness, which is also why it did not transfer to
+JevBench. Order selection is the general lever; the query is redundant with it.
