@@ -456,3 +456,9 @@ best, and use it for everything after; no model change, no inference cost.
 - **Parity on 60 hard items**: TV 0.11, argmax agreement 88–90%, accuracy 4-bit 0.53–0.55 vs bf16
   0.48–0.52 (SE ≈ 6.5 points). The 4-bit conversion is not systematically worse on hard items; it is
   a different reader of similar quality, which is the same lesson as the carve.
+
+Addendum (state-first × order selection, 200 states, 4-bit): with state-first there is no order
+effect left to select on. Choosing the order on half the states and scoring the other half gives
+0.690 (random slot) / 0.674 (mean) against the given order's 0.695 / 0.692: selection picks noise.
+The two are alternatives, not layers: state-first is label-free and reaches 0.695; stock + selection
+needs ~20–100 labelled states and reaches 0.719. Labels still buy about two points.

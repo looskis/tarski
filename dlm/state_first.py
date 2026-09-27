@@ -60,7 +60,12 @@ def prepare(r, state_text, questions, format_):
 
 
 def run(a):
-    recs = data.typed_decisions(a.split)[: a.limit]
+    if a.dataset == "jevbench":
+        recs = data.jevbench_public(tuple(a.tiers))[: a.limit]
+        orders = {"rot0": 0}                       # one question per item: order is moot
+    else:
+        recs = data.typed_decisions(a.split)[: a.limit]
+        orders = ORDERS
     done = set()
     if os.path.exists(a.out):
         with open(a.out) as f:
@@ -73,7 +78,7 @@ def run(a):
         for n, rec in enumerate(todo, 1):
             qids = list(rec["questions"])
             out = {q: {} for q in qids}
-            for oname, k in ORDERS.items():
+            for oname, k in orders.items():
                 order = list(reversed(qids)) if k is None else qids[k:] + qids[:k]
                 qdict = {q: rec["questions"][q] for q in order}
                 for format_ in FORMATS_:
@@ -85,7 +90,7 @@ def run(a):
                     if n == 1 and oname == "rot0":
                         print(f"  {format_}: prompt {len(prep['prompt'])} tokens", flush=True)
             base = r.prepare(rec["state"], rec["questions"])
-            row = {"id": rec["id"], "family": rec["family"], "questions": []}
+            row = {"id": rec["id"], "family": rec.get("family"), "source": rec.get("source"), "questions": []}
             for q in base["qs"]:
                 g = rec["gold"].get(q["key"], {})
                 row["questions"].append({"qid": q["key"], "type": q["type"], "labels": [c[0] for c in q["choices"]],
@@ -101,10 +106,11 @@ def report(path):
     print(f"{len(rows)} states")
     for mode in ("random", "mean"):
         print(f"\n== slot {mode}")
-        print(f"{'format':12s} " + " ".join(f"{o:>16s}" for o in ORDERS) + f" {'spread':>7s} {'TV between orders':>18s}")
+        present = [o for o in ORDERS if any(f"{FORMATS_[0]}|{o}|{mode}" in q["reads"] for q in rows[0]["questions"])]
+        print(f"{'format':12s} " + " ".join(f"{o:>16s}" for o in present) + f" {'spread':>7s} {'TV between orders':>18s}")
         for format_ in FORMATS_:
             stats, tvs = {}, []
-            for oname in ORDERS:
+            for oname in present:
                 items = []
                 for row in rows:
                     for q in row["questions"]:
@@ -117,10 +123,10 @@ def report(path):
                 stats[oname] = (sum(i[0] for i in items) / n, sum(i[2] for i in items) / n, ece([(i[1], i[0]) for i in items]))
             for row in rows:
                 for q in row["questions"]:
-                    ps = [q["reads"][f"{format_}|{o}|{mode}"] for o in ORDERS]
-                    tvs.append((tv(ps[0], ps[1]) + tv(ps[0], ps[2]) + tv(ps[1], ps[2])) / 3)
-            accs = [stats[o][0] for o in ORDERS]
-            print(f"{format_:12s} " + " ".join(f"{stats[o][0]:.3f}/{stats[o][1]:.3f}/{stats[o][2]:.3f}" for o in ORDERS)
+                    ps = [q["reads"][f"{format_}|{o}|{mode}"] for o in present]
+                    tvs.append(sum(tv(ps[i], ps[j]) for i in range(len(ps)) for j in range(i + 1, len(ps))) / max(len(ps) * (len(ps) - 1) / 2, 1))
+            accs = [stats[o][0] for o in present]
+            print(f"{format_:12s} " + " ".join(f"{stats[o][0]:.3f}/{stats[o][1]:.3f}/{stats[o][2]:.3f}" for o in present)
                   + f" {max(accs) - min(accs):7.3f} {sum(tvs) / len(tvs):18.3f}")
         print("  (cells: acc / Brier / ECE)")
 
@@ -129,6 +135,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=200)
     ap.add_argument("--split", choices=["test", "train"], default="test")
+    ap.add_argument("--dataset", choices=["typed", "jevbench"], default="typed")
+    ap.add_argument("--tiers", nargs="+", default=["hard"])
     ap.add_argument("--out", default="results/dlm/state_first_typed_test.jsonl")
     ap.add_argument("--report", default=None)
     add_backend_arg(ap)
