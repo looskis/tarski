@@ -20,10 +20,4 @@ $PY dlm/interference.py --limit 200 --out results/dlm/interference_typed_test.js
 echo "== expert census"
 $PY dlm/census.py --dataset jevbench --limit 120 --tiers original easy --out results/dlm/census_jevbench_en.json 2>&1 | grep -Ev "$F"
 $PY dlm/census.py --dataset typed-test --limit 100 --out results/dlm/census_typed_test.json 2>&1 | grep -Ev "$F"
-for lang in es de; do
-  if [ -f results/dlm/translated_$lang.json ]; then
-    $PY dlm/census.py --dataset jevbench --limit 120 --tiers original easy --states results/dlm/translated_$lang.json \
-        --out results/dlm/census_jevbench_$lang.json 2>&1 | grep -Ev "$F"
-  fi
-done
 echo "== phase B done"

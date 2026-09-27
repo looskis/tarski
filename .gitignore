@@ -21,3 +21,4 @@ branches/
 
 # vendored sources for the dlm experiments (see dlm/README.md for pinned commits)
 third_party/
+results/dlm/anatomy_typed_*.jsonl
