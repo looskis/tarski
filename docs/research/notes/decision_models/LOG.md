@@ -540,3 +540,19 @@ worse than the mask under every format in LLaDA (0.42–0.52), confirming it is 
 Conclusion for the paper: the order effect is general to one-pass canvas reads; the encoder-origin
 mechanism and the state-first fix are properties of the causal-encoder architecture, and the fix
 works fully exactly where the mechanism says it should.
+
+## 2026-09-28: paper draft v0.2 (rigor pass)
+
+Claude Doc restructured to the first paper's format: 1 Introduction (six contributions) · 2 Related
+work with a positioning table (Table 1) · 3 Method with 14 numbered equations (read (1), seed average
+and TV (2), mean slot (3), learned slot objective (4), masks (5), encoder dependence (6) and
+state-first invariance (7), order selection (8), temperature (9), Brier/ECE (10), logit lens (11),
+attention shares (12), divergence (13), census and carve (14)) · 4 Experimental setup · 5 Results
+5.1–5.7 (5.7 = effect sizes: Table 9 of paired state-clustered bootstrap 95% CIs, 4,000 resamples) ·
+6 Further findings (negatives) · 7 Discussion (LLaDA) · 8 Conclusion · Limitations · References ·
+Appendix A extended related work · B additional tables · C reproducibility. Figures: Fig. 1 logit-lens
+accuracy by layer (both orders), Fig. 2 encoder/decoder cosine divergence by layer with the seed floor.
+CI script (inline, seed 0) is the "paired difference, state-clustered bootstrap" block run on
+2026-09-28; key intervals: order +0.058 [0.041, 0.075] (4-bit) / +0.051 [0.033, 0.070] (bf16);
+state-first +0.049 [0.025, 0.071] random slot, +0.019 [−0.003, 0.041] mean slot; carve 99% −0.011
+[−0.027, 0.005]; LLaDA order +0.075 [0.057, 0.094], state-first +0.036 [0.021, 0.051].
