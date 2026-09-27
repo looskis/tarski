@@ -388,3 +388,38 @@ untrained mean slot, and under the selected order it *loses* 2.3 points of accur
 stays better, as it was trained on soft targets). The query is a patch for one canvas layout: it
 learned to compensate for the given order's weakness, which is also why it did not transfer to
 JevBench. Order selection is the general lever; the query is redundant with it.
+
+## 2026-09-28: Phase D.1, state-first prompting (200 typed-test states, 1,000 slots, 4-bit laptop)
+
+`dlm/state_first.py`. The encoder is causal (`use_bidirectional_attention = "vision"`: text is
+causal), so in OpenJev's format the state is encoded *after* the question list and its encoding
+depends on the questions and their order. State-first puts the same question block after the state
+in the user turn (system turn keeps only the generic instruction and the format line); the canvas
+is unchanged. Control `user_first`: the question block before the state, but in the user turn.
+
+| random slot, acc / Brier / ECE | given order | rot3 | reversed | spread | TV between orders |
+|---|---|---|---|---|---|
+| stock (OpenJev) | 0.619 / 0.626 / 0.277 | 0.719 / 0.454 / 0.180 | 0.694 / 0.489 / 0.202 | 0.100 | 0.239 |
+| **state-first** | **0.695 / 0.502 / 0.209** | 0.704 / 0.492 / 0.213 | 0.684 / 0.551 / 0.253 | **0.020** | 0.202 |
+| user-first (control) | 0.623 / 0.597 / 0.254 | 0.724 / 0.428 / 0.156 | 0.675 / 0.510 / 0.217 | 0.101 | 0.238 |
+
+| mean slot | given order | rot3 | reversed | spread |
+|---|---|---|---|---|
+| stock | 0.674 / 0.535 / 0.207 | 0.707 / 0.438 / 0.141 | 0.701 / 0.450 / 0.162 | 0.033 |
+| state-first | 0.692 / 0.479 / 0.176 | 0.675 / 0.500 / 0.211 | 0.678 / 0.494 / 0.184 | 0.017 |
+| user-first | 0.650 / 0.517 / 0.193 | 0.701 / 0.416 / 0.125 | 0.681 / 0.456 / 0.159 | 0.051 |
+
+- **The order effect lives mostly in the encoder.** With the state encoded before it sees any
+  question, the spread across orders falls from 10 points to 2 (random slot) and the given order
+  jumps from 0.619 to 0.695, within 2.4 points of the best stock order. The control shows it is the
+  state's position relative to the questions that matters, not which chat turn holds them: questions
+  before the state in the user turn behaves exactly like stock (spread 0.101).
+- **What it buys and what it does not.** State-first is order-robust without any labels or
+  selection, and the state's prefix is identical for every question set and order, so one cached
+  encoding serves any schema. It removes the downside of a bad order; it does not add upside: the
+  best stock order still edges it (0.719 vs 0.704, random slot; 0.707 vs 0.692, mean slot), so a
+  user with labels can still select an order on top. The reads still move with order (TV 0.20):
+  the question block and canvas remain order-dependent, but the answer no longer does much.
+- This is the mechanism-derived technique: a prompt-format change that follows from the causal
+  encoder and the sweep's finding that the read is assembled from the encoded prefix. To replicate in
+  bf16 on all 400 states (H100, queued).
