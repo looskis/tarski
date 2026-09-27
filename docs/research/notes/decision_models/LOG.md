@@ -233,3 +233,31 @@ prompt or only the canvas. Random slot at seed 0 and the mean-embedding slot for
 Next: attention-leakage per order (does a slot's attention to other questions' rows predict the bad
 orders? that would explain the effect and might give the label-free selector), layer-localised
 visibility, and order selection with train/test split and a labelled-budget curve.
+
+## 2026-09-28: Phase C.1, simulated carve at 99% mass (experts chosen on the other dataset)
+
+`dlm/carve.py`: every router restricted to the experts that carry 99% of the census gate mass
+(union over token roles), chosen on JevBench's census and evaluated on typed-test, and vice versa.
+Disallowed experts get -inf gate scores in prefill and canvas alike, so the forward pass is what a
+physically carved model computes.
+
+| keep 0.99 | experts/layer | condition | acc | Brier | ECE | TV→full | flips |
+|---|---|---|---|---|---|---|---|
+| typed-test 200 (from JevBench census) | 91 (71%) | full / carved, random slot | 0.619 / 0.632 | 0.626 / 0.616 | 0.277 / 0.260 | 0.10 | 0.11 |
+| | | full / carved, mean slot | 0.674 / 0.663 | 0.535 / 0.549 | 0.207 / 0.209 | 0.10 | 0.09 |
+| JevBench hard 111 (from typed census) | 87 (68%) | full / carved, random slot | 0.640 / 0.631 | 0.514 / 0.566 | 0.218 / 0.222 | 0.11 | 0.14 |
+| | | full / carved, mean slot | 0.658 / 0.622 | 0.508 / 0.544 | 0.184 / 0.225 | 0.11 | 0.15 |
+
+Removing 29–32% of the routed experts changes one read in ten (TV 0.10, 10–15% flips) but costs
+nothing measurable on typed-test and a little on JevBench hard (−1 to −4 points, Brier +0.04–0.05;
+n=111, SE ≈ 4.5 points). The 95% and 90% levels are running; that curve decides the carve.
+
+## 2026-09-28: torch/CUDA port and parity (H100 PCIe, bf16, transformers 5.17)
+
+`dlm/reads_torch.py` mirrors `dlm/reads.py` (embedding-path slots, per-layer masks, router mask,
+routing and attention recorders) on `google/diffusiongemma-26B-A4B-it`; `dlm/parity_torch.py`
+compares it with the stored MLX 4-bit reads. Easy + original JevBench (30 items): TV 0.001, argmax
+agreement 100%. Hard (20 items): TV 0.09–0.10, argmax agreement 90–95%. The pipeline is identical;
+**4-bit quantisation alone moves 5–10% of hard-item argmaxes**, which is itself a caveat for every
+4-bit number in this log (the H100 queue replicates the order experiment in bf16). Speed: prefill
+0.44 s, read 0.13 s unbatched (the M6: 0.3–4 s and 0.1 s).

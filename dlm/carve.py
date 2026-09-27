@@ -31,7 +31,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from dlm import data  # noqa: E402
 from dlm.metrics import brier, ece, tv  # noqa: E402
-from dlm.reads import Reader  # noqa: E402
+from dlm.backend import add_backend_arg, get_reader  # noqa: E402
 
 ROLES = ("prompt", "template", "slot")
 
@@ -87,7 +87,7 @@ def run(a):
     kept = [len(s) for s in sets]
     print(f"{len(recs)} states, {len(todo)} to run; keep {a.keep}: {sum(kept) / len(kept):.1f} experts/layer "
           f"(min {min(kept)}, max {max(kept)}) of 128", flush=True)
-    r = Reader()
+    r = get_reader(a.backend)
     t0 = time.time()
     k = int(a.order[3:]) if a.order.startswith("rot") else 0
     with open(a.out, "a") as f:
@@ -98,11 +98,11 @@ def run(a):
             keys = [q["key"] for q in prep["qs"]]
             out = {key: {} for key in keys}
             for tag, carve in (("full", None), ("carved", sets)):
-                set_carve(r, carve)
+                (r.set_carve if hasattr(r, "set_carve") else lambda ss: set_carve(r, ss))(carve)
                 for mode, suffix in (("random", "_random"), ("mean", "_mean")):
                     for key, p in zip(keys, r.read(prep, mode, seed=0)):
                         out[key][tag + suffix] = p
-            set_carve(r, None)
+            (r.set_carve if hasattr(r, "set_carve") else lambda ss: set_carve(r, ss))(None)
             row = {"id": rec["id"], "family": rec.get("family"), "source": rec.get("source"), "keep": a.keep,
                    "experts_per_layer": kept, "questions": []}
             for q in prep["qs"]:
@@ -155,6 +155,7 @@ def main():
     ap.add_argument("--out", default=None)
     ap.add_argument("--report", default=None)
     ap.add_argument("--by", choices=["type", "family", "source"], default=None)
+    add_backend_arg(ap)
     a = ap.parse_args()
     if a.report:
         report(a.report, a.by)

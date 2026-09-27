@@ -29,7 +29,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from dlm import data  # noqa: E402
 from dlm.metrics import brier, ece  # noqa: E402
-from dlm.reads import Reader  # noqa: E402
+from dlm.backend import add_backend_arg, get_reader  # noqa: E402
 
 
 def orders(qids):
@@ -40,14 +40,14 @@ def orders(qids):
 
 
 def run(a):
-    recs = data.typed_decisions("test")[: a.limit]
+    recs = data.typed_decisions(a.split)[: a.limit]
     done = set()
     if os.path.exists(a.out):
         with open(a.out) as f:
             done = {json.loads(l)["id"] for l in f if l.strip()}
     todo = [r for r in recs if r["id"] not in done]
     print(f"{len(recs)} states, {len(todo)} to run", flush=True)
-    r = Reader()
+    r = get_reader(a.backend)
     t0 = time.time()
     with open(a.out, "a") as f:
         for n, rec in enumerate(todo, 1):
@@ -131,6 +131,8 @@ def main():
     ap.add_argument("--limit", type=int, default=200)
     ap.add_argument("--out", default="results/dlm/order_typed_test.jsonl")
     ap.add_argument("--report", default=None)
+    ap.add_argument("--split", choices=["test", "train"], default="test")
+    add_backend_arg(ap)
     a = ap.parse_args()
     if a.report:
         report(a.report)
