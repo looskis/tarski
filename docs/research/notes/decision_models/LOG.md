@@ -519,3 +519,24 @@ inputs_embeds), `results/dlm/h100/order_typed_test_llada.jsonl`, 0.7 s/state on 
 - The mean-embedding slot is worse than the native mask in LLaDA (−0.8 to −5 points): the trick is a
   uniform-state phenomenon (a random token is a specific wrong word; a mask is the trained "unknown"
   input and already carries no evidence).
+
+## 2026-09-28: second model, LLaDA-8B, state-first (400 states)
+
+`results/dlm/h100/state_first_typed_test_llada.jsonl`, native (mask) slot, acc / Brier / ECE:
+
+| LLaDA-8B | given order | rot3 | reversed | spread |
+|---|---|---|---|---|
+| stock | 0.497 / 0.603 / 0.141 | 0.564 / 0.559 / 0.078 | 0.569 / 0.552 / 0.089 | 0.071 |
+| state-first | 0.533 / 0.608 / 0.146 | 0.565 / 0.580 / 0.109 | 0.593 / 0.537 / 0.082 | 0.059 |
+| questions before state, user turn | 0.500 / 0.606 / 0.139 | 0.572 / 0.566 / 0.092 | 0.551 / 0.557 / 0.097 | 0.072 |
+
+**State-first helps only partially on a model without a causal encoder**: the given order gains 3.6
+points (0.497 → 0.533) but the spread across orders stays at 5.9 points (from 7.1), against
+DiffusionGemma's 5.0 → 1.4 (bf16) and 10 → 2 (4-bit). That is what the mechanism predicts: in a single
+bidirectional stack the state is encoded in the context of the question list wherever the list sits,
+so moving the list after the state cannot isolate the state's encoding. The residual gain is
+consistent with a positional/recency effect (the state adjacent to the canvas). The mean slot is
+worse than the mask under every format in LLaDA (0.42–0.52), confirming it is a uniform-state trick.
+Conclusion for the paper: the order effect is general to one-pass canvas reads; the encoder-origin
+mechanism and the state-first fix are properties of the causal-encoder architecture, and the fix
+works fully exactly where the mechanism says it should.
