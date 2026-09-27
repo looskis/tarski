@@ -556,3 +556,14 @@ CI script (inline, seed 0) is the "paired difference, state-clustered bootstrap"
 2026-09-28; key intervals: order +0.058 [0.041, 0.075] (4-bit) / +0.051 [0.033, 0.070] (bf16);
 state-first +0.049 [0.025, 0.071] random slot, +0.019 [−0.003, 0.041] mean slot; carve 99% −0.011
 [−0.027, 0.005]; LLaDA order +0.075 [0.057, 0.094], state-first +0.036 [0.021, 0.051].
+
+## 2026-09-28: where the ~0.72 ceiling comes from (typed-test, 2,000 slots)
+
+The gold is soft. Mean max gold probability per slot = 0.659 (a reader that reproduced the annotators'
+own distribution would score 0.659 in expectation); 43% of slots have gold max-prob < 0.6 and 18% < 0.5;
+hard label = soft argmax in 98.9%. By family: agent-trace 0.600, customer 0.686, invoice 0.759,
+security 0.591; by type: choice 0.635, noul 0.771, score 0.593. The best read (rot3 + mean slot) scores
+0.943 on slots whose gold max-prob >= 0.8 (n=507), 0.756 on 0.6–0.8 (n=630) and 0.543 on < 0.6 (n=863).
+So the read already exceeds the annotators' expected agreement with their own argmax; the remaining
+errors sit on questions the annotators themselves hedge on. Hard-label accuracy saturates near 0.72 for
+this reason; Brier against the soft gold is the metric with headroom.
