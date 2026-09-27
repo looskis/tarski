@@ -423,3 +423,24 @@ is unchanged. Control `user_first`: the question block before the state, but in 
 - This is the mechanism-derived technique: a prompt-format change that follows from the causal
   encoder and the sweep's finding that the read is assembled from the encoded prefix. To replicate in
   bf16 on all 400 states (H100, queued).
+
+## 2026-09-28: Phase B.11, order selection as a procedure (choose on train, score on test)
+
+`dlm/order.py --split train` on the H100 (bf16, 1,200 typed-train states, 6 orders); scored on the
+400 typed-test states read on the laptop (4-bit), so selection and evaluation share neither states
+nor precision.
+
+| random slot | given order | chosen per family on train | oracle on test |
+|---|---|---|---|
+| agent_trace_observability | 0.570 | 0.676 | 0.676 |
+| customer_service | 0.668 | 0.756 | 0.762 |
+| invoice_processing | 0.708 | 0.752 | 0.752 |
+| security_incidents | 0.692 | 0.688 | 0.716 |
+| all 2,000 slots | 0.659 | **0.718** | 0.727 |
+
+Mean slot: 0.686 → **0.726** (= oracle). A single global order chosen on train gives 0.718 / 0.720.
+**Labelled budget:** choosing per family on N random train states (20 draws), test accuracy with the
+random slot: N=5 0.699, N=10 0.710, N=20 0.714, N=50 0.719, N=100 0.721; mean slot: N=20 0.714,
+N=100 0.723, N=200 0.726. Twenty labelled states per schema recover most of the gain; a hundred
+saturate it. The procedure is: read a small labelled sample under each candidate order, keep the
+best, and use it for everything after; no model change, no inference cost.
