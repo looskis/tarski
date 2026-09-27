@@ -220,11 +220,12 @@ prompt or only the canvas. Random slot at seed 0 and the mean-embedding slot for
   lowest entropy, or the majority vote across orders all score 0.66–0.69, below the fixed order
   (0.72); the per-item oracle is 0.855, so the headroom is real but the model's confidence cannot
   find it (consistent with the DLM overconfidence results).
-- **Prompt and canvas must agree.** Reversing only the system prompt's enumeration (0.39–0.54 acc)
-  or only the canvas (0.39–0.46) collapses the read: the model matches canvas lines to the prompt's
-  question list by position, so "order" is a joint property of both and cannot be split by this
-  hybrid. Position alone explains part of the effect (choice slots: pos1 0.555 … pos4 0.688) but the
-  arrangement matters beyond position.
+- **The prompt-only / canvas-only reversals are a labelling artefact, not a finding.** OpenJev
+  assigns question ids by position (q1..q5 in the order given), so reversing only the prompt makes
+  "Question q1" describe the last question while the canvas's "q1:" slot is scored as the first;
+  the collapse (0.39–0.54) is the model answering the prompt's q1 into the canvas's q1. The hybrid
+  cannot split prompt order from canvas order in this format. Position alone explains part of the
+  effect (choice slots: pos1 0.555 … pos4 0.688) but the arrangement matters beyond position.
 - Caveats: one model, one quantisation; the given orders differ per family (types
   choice-noul-choice-score-score, choice-choice-score-noul-score, score-choice-noul-noul-score,
   noul-choice-score-noul-score), so which rotation wins is not a type pattern; the honest policy is
