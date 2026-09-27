@@ -498,3 +498,24 @@ state-first 0.649 / 0.561 / 0.240, questions-first-in-user-turn 0.613 / 0.576 / 
 mean slot: 0.631 / 0.649 / 0.613). Order is moot with one question; the format change is neutral on
 accuracy (+1.8, within noise) and slightly worse on Brier (+0.02). Safe to adopt for single-question
 reads. Paper draft started: https://claude.ai/code/artifact/d9341efe-c1af-4d39-8fc5-56b08905461e
+
+## 2026-09-28: second model, LLaDA-8B-Instruct (masked diffusion, single bidirectional stack), order (400 states)
+
+`dlm/reads_llada.py` (native slot = the model's mask token; "mean" = vocabulary-mean embedding via
+inputs_embeds), `results/dlm/h100/order_typed_test_llada.jsonl`, 0.7 s/state on the H100.
+
+| LLaDA-8B, accuracy | rot0 (given) | rot1 | rot2 | rot3 | rot4 | reversed | spread | held-out chosen |
+|---|---|---|---|---|---|---|---|---|
+| native (mask) slot | **0.497** | 0.562 | 0.573 | 0.564 | 0.565 | 0.569 | 0.075 | 0.558 |
+| mean slot | 0.489 | 0.521 | 0.534 | 0.476 | 0.508 | 0.522 | 0.058 | 0.518 |
+
+- **The order effect is general.** A weaker reader (0.50–0.57 vs 0.66–0.72), but the same shape: the
+  given order is the worst of six overall and in every family with the native slot, the spread is
+  7.5 points, and held-out selection adds 6. Score questions suffer most under the given order (0.370
+  → best 0.557). So the effect is not specific to DiffusionGemma's causal encoder; it is a property
+  of reading a canvas of questions in one pass. Whether the *state-first* fix also transfers to a
+  model without a causal encoder is the running test (a bidirectional stack encodes the state in the
+  context of the questions wherever they sit).
+- The mean-embedding slot is worse than the native mask in LLaDA (−0.8 to −5 points): the trick is a
+  uniform-state phenomenon (a random token is a specific wrong word; a mask is the trained "unknown"
+  input and already carries no evidence).
