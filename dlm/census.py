@@ -49,11 +49,18 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dataset", choices=["jevbench", "typed-test", "typed-train"], required=True)
     ap.add_argument("--limit", type=int, default=100)
+    ap.add_argument("--states", default=None, help="JSON {id: state text} from dlm/translate.py: substitute the states")
+    ap.add_argument("--tiers", nargs="+", default=["original", "easy", "hard"], help="jevbench tiers")
     ap.add_argument("--out", required=True)
     a = ap.parse_args()
     loaders = {"typed-train": lambda: data.typed_decisions("train"), "typed-test": lambda: data.typed_decisions("test"),
-               "jevbench": lambda: data.jevbench_public()}
-    recs = loaders[a.dataset]()[: a.limit]
+               "jevbench": lambda: data.jevbench_public(tuple(a.tiers))}
+    recs = loaders[a.dataset]()
+    if a.states:
+        with open(a.states) as f:
+            subst = json.load(f)
+        recs = [dict(x, state=subst[x["id"]]) for x in recs if x["id"] in subst]
+    recs = recs[: a.limit]
     r = Reader(prefill_cache_tokens=1)          # every prefill must run inside the recorder
     mx = r.mx
     n_layers, n_experts = len(r.dec.layers), r.dec.config.num_experts
