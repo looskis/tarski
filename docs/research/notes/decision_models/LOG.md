@@ -193,3 +193,43 @@ token role; experts needed for 90% / 99% of mass; the same 30 layers serve the p
   with an accuracy cost still to be measured.
 - Slot expert sets are less stable across datasets (Jaccard 0.3–0.6), but they are small, so the
   overlap statistic is noisy; the top experts by mass are shared.
+
+## 2026-09-28: Phase B.6, question order (all 400 typed-test states, 2,000 slots, four families)
+
+File `results/dlm/order_typed_test.jsonl`; `dlm/order.py --report`. Five cyclic rotations of the given
+order (rot0 = OpenJev's order), the reversed order, and two hybrids that reorder only the system
+prompt or only the canvas. Random slot at seed 0 and the mean-embedding slot for every condition.
+
+| accuracy, random slot | rot0 (given) | rot1 | rot2 | rot3 | rot4 | reversed |
+|---|---|---|---|---|---|---|
+| agent_trace_observability (500) | **0.570** | 0.558 | 0.620 | 0.676 | 0.556 | 0.632 |
+| customer_service (500) | **0.668** | 0.724 | 0.748 | 0.762 | 0.736 | 0.756 |
+| invoice_processing (500) | 0.708 | **0.706** | 0.740 | 0.744 | 0.740 | 0.752 |
+| security_incidents (500) | 0.692 | 0.694 | 0.716 | **0.688** | 0.710 | 0.716 |
+| all (2,000) | 0.659 | 0.670 | 0.706 | 0.718 | 0.685 | 0.714 |
+
+- **The given order is the worst or second-worst of six in every family.** Choosing one order on
+  half the states and scoring the other half gives 0.712 (global choice) / 0.722 (per family) against
+  0.659: +5 to +6 points on 2,000 slots at identical inference cost; +10 on the first two families,
+  +2 to +4 on the other two. With the mean-embedding slot: 0.686 → 0.720 (global held-out choice).
+- **Order beats order-averaging.** Averaging the five rotations' distributions fixes calibration
+  (Brier 0.626 → 0.480, ECE 0.277 → 0.179 on the first 200 states) but not accuracy (0.667): a
+  selection problem, not a noise problem. Best single order + mean slot: 0.707 / 0.438 / 0.141 on
+  those states, against OpenJev's 0.619 / 0.626 / 0.277.
+- **No label-free selector works.** Per question, taking the order with the highest confidence,
+  lowest entropy, or the majority vote across orders all score 0.66–0.69, below the fixed order
+  (0.72); the per-item oracle is 0.855, so the headroom is real but the model's confidence cannot
+  find it (consistent with the DLM overconfidence results).
+- **Prompt and canvas must agree.** Reversing only the system prompt's enumeration (0.39–0.54 acc)
+  or only the canvas (0.39–0.46) collapses the read: the model matches canvas lines to the prompt's
+  question list by position, so "order" is a joint property of both and cannot be split by this
+  hybrid. Position alone explains part of the effect (choice slots: pos1 0.555 … pos4 0.688) but the
+  arrangement matters beyond position.
+- Caveats: one model, one quantisation; the given orders differ per family (types
+  choice-noul-choice-score-score, choice-choice-score-noul-score, score-choice-noul-noul-score,
+  noul-choice-score-noul-score), so which rotation wins is not a type pattern; the honest policy is
+  "select on held-out labelled states", not "use rot3".
+
+Next: attention-leakage per order (does a slot's attention to other questions' rows predict the bad
+orders? that would explain the effect and might give the label-free selector), layer-localised
+visibility, and order selection with train/test split and a labelled-budget curve.

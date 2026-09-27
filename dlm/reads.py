@@ -50,10 +50,14 @@ def _stop_gradient_on_router_indices():
 
     def patched(self, x):
         # mlx-vlm's Router.__call__, with the indices cut from the graph before they index anything,
-        # and an optional recorder for the expert census (one entry per layer call, in layer order)
+        # an optional per-router allowed-expert mask (simulated carve, dlm/carve.py), and an optional
+        # recorder for the expert census (one entry per layer call, in layer order)
         x = mx.fast.rms_norm(x, None, self.eps)
         x = x * self.scale * self._root_size
         scores = self.proj(x)
+        allowed = getattr(self, "_dlm_allowed", None)      # carve: experts outside the set never win
+        if allowed is not None:
+            scores = mx.where(allowed, scores, mx.array(-float("inf"), dtype=scores.dtype))
         top_k = self.config.top_k_experts
         indices = mx.stop_gradient(mx.argpartition(scores, kth=-top_k, axis=-1)[..., -top_k:])
         weights = mx.take_along_axis(scores, indices, axis=-1)
