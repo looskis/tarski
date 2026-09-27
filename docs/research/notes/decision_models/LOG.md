@@ -462,3 +462,33 @@ effect left to select on. Choosing the order on half the states and scoring the 
 0.690 (random slot) / 0.674 (mean) against the given order's 0.695 / 0.692: selection picks noise.
 The two are alternatives, not layers: state-first is label-free and reaches 0.695; stock + selection
 needs ~20–100 labelled states and reaches 0.719. Labels still buy about two points.
+
+## 2026-09-28: Phase D.2, where the orders diverge (H100, bf16, 200 states) and state-first in bf16 (400 states)
+
+`dlm/divergence.py`: per-layer cosine similarity between two orders of (a) the encoder's output on the
+last 64 prompt tokens (the state's end: identical text under every order) and (b) each slot's decoder
+residual stream, matched by question; the seed comparison (same order, seed 0 vs 1) is the floor.
+
+- **The encoded state differs between orders, and the difference grows with depth.** Encoder cosine
+  between rot0 and the reversed order: 1.000 at layers 0–3, 0.99 at 8, 0.977 at 15, 0.92 at 18, 0.88 at
+  26–28, 0.987 after the final layer. Under the seed comparison it is 1.000 at every layer (the encoder
+  never sees the seed). Same curve for rot0 vs rot3. This is the direct evidence for the encoder origin
+  of the order effect: the causal encoder reads the state after the question list, and by the upper
+  layers a quarter of the state representation's direction depends on which order that list came in.
+- Decoder slot streams diverge between orders (cos 0.70–0.95 through layer 21) and converge from
+  layer 22 (0.92–0.98), the readout layer from the lens; the seed pair diverges as much in the early
+  layers (the slot token differs) and converges to 0.99. Per-slot divergence does not separate flipped
+  from unflipped answers (cos differences ≤ 0.04), so the effect is distributed, not a few rows.
+
+**State-first in bf16 on all 400 test states** (`results/dlm/h100/state_first_typed_test_bf16.jsonl`):
+
+| random slot, acc / Brier / ECE | given order | rot3 | reversed | spread |
+|---|---|---|---|---|
+| stock | 0.665 / 0.583 / 0.268 | 0.716 / 0.489 / 0.216 | 0.702 / 0.503 / 0.227 | 0.050 |
+| **state-first** | **0.714 / 0.485 / 0.211** | **0.728 / 0.465 / 0.204** | 0.716 / 0.504 / 0.230 | **0.014** |
+| user-first (control) | 0.658 / 0.585 / 0.266 | 0.721 / 0.465 / 0.192 | 0.714 / 0.487 / 0.214 | 0.063 |
+
+Mean slot: stock 0.686 / 0.706 / 0.711 (spread 0.025); state-first 0.705 / 0.718 / 0.712 (spread
+0.013); control 0.674 / 0.717 / 0.713. In full precision and on the full test set, state-first is not
+only order-robust (spread 1.4 points vs 5.0) but at least as good as the best stock order (0.728 vs
+0.716 random slot; 0.718 vs 0.711 mean slot). The label-free fix matches the labelled procedure.
