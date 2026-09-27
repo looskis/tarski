@@ -444,3 +444,15 @@ random slot: N=5 0.699, N=10 0.710, N=20 0.714, N=50 0.719, N=100 0.721; mean sl
 N=100 0.723, N=200 0.726. Twenty labelled states per schema recover most of the gain; a hundred
 saturate it. The procedure is: read a small labelled sample under each candidate order, keep the
 best, and use it for everything after; no model change, no inference cost.
+
+## 2026-09-28: bf16 replications on the H100 (queue complete)
+
+- **Order effect, all 400 typed-test states in bf16** (`results/dlm/h100/order_typed_test_bf16.jsonl`):
+  random slot rot0 0.665, rot1 0.669, rot2 0.698, rot3 0.716, rot4 0.682, rev 0.702; mean slot 0.686,
+  0.681, 0.693, 0.706, 0.700, 0.711. Same shape and size as at 4-bit (0.659 → 0.718 / 0.686 → 0.720):
+  the given order is worst or second-worst, the gap is 5 points on 2,000 slots.
+- **Multi-step reads on JevBench hard (111)**: four steps add 1–2 points (noise at n=111) and cost
+  0.09–0.18 Brier and 0.09–0.12 ECE, as on typed-test. One step it is.
+- **Parity on 60 hard items**: TV 0.11, argmax agreement 88–90%, accuracy 4-bit 0.53–0.55 vs bf16
+  0.48–0.52 (SE ≈ 6.5 points). The 4-bit conversion is not systematically worse on hard items; it is
+  a different reader of similar quality, which is the same lesson as the carve.
