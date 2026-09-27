@@ -492,3 +492,9 @@ Mean slot: stock 0.686 / 0.706 / 0.711 (spread 0.025); state-first 0.705 / 0.718
 0.013); control 0.674 / 0.717 / 0.713. In full precision and on the full test set, state-first is not
 only order-robust (spread 1.4 points vs 5.0) but at least as good as the best stock order (0.728 vs
 0.716 random slot; 0.718 vs 0.711 mean slot). The label-free fix matches the labelled procedure.
+
+Addendum (state-first on JevBench hard, bf16, 111 single-question items): stock 0.631 / 0.542 / 0.233,
+state-first 0.649 / 0.561 / 0.240, questions-first-in-user-turn 0.613 / 0.576 / 0.245 (random slot;
+mean slot: 0.631 / 0.649 / 0.613). Order is moot with one question; the format change is neutral on
+accuracy (+1.8, within noise) and slightly worse on Brier (+0.02). Safe to adopt for single-question
+reads. Paper draft started: https://claude.ai/code/artifact/d9341efe-c1af-4d39-8fc5-56b08905461e

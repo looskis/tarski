@@ -7,6 +7,9 @@ def get_reader(backend: str = "mlx", **kw):
     if backend == "torch":
         from dlm.reads_torch import Reader
         return Reader(**kw)
+    if backend == "llada":
+        from dlm.reads_llada import Reader
+        return Reader(**kw)
     if backend == "mlx":
         from dlm.reads import Reader
         return Reader(**kw)
@@ -14,5 +17,5 @@ def get_reader(backend: str = "mlx", **kw):
 
 
 def add_backend_arg(ap):
-    ap.add_argument("--backend", choices=["mlx", "torch"], default="mlx")
+    ap.add_argument("--backend", choices=["mlx", "torch", "llada"], default="mlx")
     return ap
