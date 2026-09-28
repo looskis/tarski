@@ -2058,21 +2058,28 @@ wheels = [
 
 [[package]]
 name = "tarski"
-version = "0.1.0"
-source = { virtual = "." }
+version = "0.2.0"
+source = { editable = "." }
 dependencies = [
-    { name = "coremltools" },
-    { name = "datasets" },
     { name = "fastapi" },
     { name = "httpx" },
-    { name = "laya" },
     { name = "numpy" },
     { name = "safetensors" },
     { name = "scikit-learn" },
-    { name = "tabicl" },
     { name = "torch" },
     { name = "transformers" },
     { name = "uvicorn" },
+]
+
+[package.optional-dependencies]
+benchmarks = [
+    { name = "datasets" },
+]
+research = [
+    { name = "coremltools" },
+    { name = "datasets" },
+    { name = "laya" },
+    { name = "tabicl" },
 ]
 
 [package.dev-dependencies]
@@ -2082,19 +2089,21 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "coremltools", specifier = ">=9.0" },
-    { name = "datasets", specifier = ">=5.0.1" },
+    { name = "coremltools", marker = "extra == 'research'", specifier = ">=9.0" },
+    { name = "datasets", marker = "extra == 'benchmarks'", specifier = ">=5.0.1" },
+    { name = "datasets", marker = "extra == 'research'", specifier = ">=5.0.1" },
     { name = "fastapi", specifier = ">=0.141.1" },
     { name = "httpx", specifier = ">=0.28.1" },
-    { name = "laya", specifier = ">=0.3.20" },
+    { name = "laya", marker = "extra == 'research'", specifier = ">=0.3.20" },
     { name = "numpy", specifier = ">=2.5.3" },
     { name = "safetensors", specifier = ">=0.8.0" },
     { name = "scikit-learn", specifier = ">=1.9.1" },
-    { name = "tabicl", specifier = ">=2.2.0" },
+    { name = "tabicl", marker = "extra == 'research'", specifier = ">=2.2.0" },
     { name = "torch", specifier = ">=2.14.0" },
     { name = "transformers", specifier = ">=5.17.0" },
     { name = "uvicorn", specifier = ">=0.54.0" },
 ]
+provides-extras = ["benchmarks", "research"]
 
 [package.metadata.requires-dev]
 dev = [{ name = "pytest", specifier = ">=9.1.1" }]

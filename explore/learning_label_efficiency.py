@@ -21,7 +21,7 @@ depth=trunk.n_layers)` -- which is this codebase's own definition of "full fine-
 `experiments/sweep.py`'s docstring: "full is the reference: a branch holding copies of all layers
 (split 0)").
 
-Novelty note (see research_notes/explore/learning.md, idea K): the *qualitative* claim that soft labels
+Novelty note (see docs/research/notes/explore/learning.md, idea K): the *qualitative* claim that soft labels
 reduce sample complexity is established (Menon et al., "A Statistical Perspective on Distillation", ICML
 2021). Turning it into a specific leverage number for a routing/typed-decision branch, and pairing it
 with a branch-vs-full-fine-tune curve at the same label counts, is the part we did not find written up

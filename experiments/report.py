@@ -1,4 +1,4 @@
-"""Markdown tables from results/tarski/*.json, for THESIS.md.
+"""Markdown tables from results/tarski/*.json, for docs/research/THESIS.md.
 
 Usage: python -m experiments.report > results/tarski/tables.md
 """

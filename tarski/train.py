@@ -142,6 +142,19 @@ def predict_logits(branch: Branch, cache: FeatureCache, idx: Sequence[int], bs: 
     return out
 
 
+@torch.no_grad()
+def pooled_states(cache: FeatureCache, depth: int, idx: Sequence[int], bs: int = 128) -> torch.Tensor:
+    """Mean-pooled trunk states at `depth` for the rows `idx`, in order (what the out-of-scope detector reads)."""
+    from tarski.branches import mean_pool
+
+    out = torch.zeros(len(idx), cache.trunk.hidden)
+    for s in range(0, len(idx), bs):
+        sel = list(range(s, min(s + bs, len(idx))))
+        h, ctx = cache.batch(depth, [idx[j] for j in sel])
+        out[sel] = mean_pool(h.float(), ctx.attention_mask).float().cpu()
+    return out
+
+
 def make_branch(kind: str, split: int, labels: List[str], trunk: Trunk, depth: int = 2, init: str = "next") -> Branch:
     if kind == "probe":
         return ProbeBranch(split, labels, trunk.hidden)
@@ -222,7 +235,7 @@ def train_branch(branch: Branch, cache: FeatureCache, train_idx: List[int], y: t
 def fit(trunk: Trunk, ds: Dataset, tasks: Optional[Sequence[str]] = None, kind: str = "blocks", split: int = 11,
         depth: int = 2, epochs: int = 8, lr_layers: float = 1e-4, lr_head: float = 1e-3, seed: int = 0,
         store: Optional[str] = None, log: Callable[[str], None] = print, cache: Optional[Dict] = None,
-        init: str = "next") -> Dict:
+        init: str = "next", oos: bool = True, oos_quantile: float = 0.95) -> Dict:
     """Train one branch per task at one split depth, sharing a single trunk pass over the data.
 
     Returns per-task test metrics. With `store`, saves each branch to `<store>/<task>/`.
@@ -269,7 +282,21 @@ def fit(trunk: Trunk, ds: Dataset, tasks: Optional[Sequence[str]] = None, kind: 
         results[task] = m
         log(f"  [{task}] test acc {m['acc']:.4f} macro-F1 {m['macro_f1']:.4f} ECE {m['ece']:.3f} "
             f"(T={t:.2f}, {train_s:.0f}s, {m['params'] / 1e6:.2f}M params)")
+        stats = None
+        if oos:
+            # out-of-scope detector on the same tap the branch reads; thresholded so that about
+            # (1 - quantile) of in-scope validation messages are flagged
+            from tarski.oos import OOSStats
+
+            feats_val = pooled_states(fc, split, sel["val"]) if sel["val"] else None
+            stats = OOSStats.fit(pooled_states(fc, split, sel["train"]), y["train"], len(labels), oos_quantile,
+                                 feats_val)
+            branch.oos = stats
+            if sel["test"]:
+                m["oos_flag_rate"] = float(stats.flags(pooled_states(fc, split, sel["test"])).float().mean())
         if store:
             branch.save(os.path.join(store, task), trunk.fingerprint(), trunk.base,
                         {"task": task, "dataset": ds.name, "metrics": m, "max_len": ds.max_len})
+            if stats is not None:
+                stats.save(os.path.join(store, task))
     return results

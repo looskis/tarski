@@ -1,0 +1,81 @@
+text,team,urgent
+"I was charged twice this month for the same subscription",billing,no
+"Refund the duplicate payment please, it went through two times",billing,no
+"My invoice shows the wrong amount, it should be the annual rate",billing,no
+"Why did my card get billed again after I cancelled?",billing,no
+"Can I get a receipt for last month's payment for my expense report",billing,no
+"The VAT on my invoice looks wrong for a company in Germany",billing,no
+"We were charged for 12 seats but only have 8 users",billing,no
+"Please switch our plan to annual billing and send the updated invoice",billing,no
+"The payment failed but the money left my account",billing,yes
+"Our card was declined and the workspace says it will be suspended tomorrow",billing,yes
+"I need the invoice PDF for Q3 before our audit on Friday",billing,yes
+"How do I update the billing email on our account?",billing,no
+"Is there a discount for nonprofits? We are a registered charity",billing,no
+"The proration on the upgrade does not add up, please check",billing,no
+"Charged in USD but we asked for EUR invoices",billing,no
+"Cancel my subscription and confirm I will not be billed again",billing,no
+"Two invoices this month, one of them must be a mistake",billing,no
+"Our purchase order number is missing from the invoice",billing,no
+"Can we pay by bank transfer instead of card?",billing,no
+"The trial ended and we were billed without warning, please reverse it",billing,yes
+"Everything is down and our demo is at noon",outage,yes
+"The site is not loading for any customer right now",outage,yes
+"Production is broken, nobody can log in",outage,yes
+"All API requests are returning 502 since about ten minutes ago",outage,yes
+"Dashboard shows a blank page for the whole team",outage,yes
+"Webhooks stopped firing an hour ago and orders are piling up",outage,yes
+"Search is timing out for every query",outage,yes
+"We are seeing 500 errors on checkout, customers cannot pay",outage,yes
+"The status page says operational but nothing works for us",outage,yes
+"Uploads fail with a network error for everyone in the office",outage,yes
+"Login loops back to the sign-in page, tried three browsers",outage,yes
+"Emails from the platform have not been delivered since this morning",outage,yes
+"The mobile app crashes on launch after today's update",outage,yes
+"Reports page has been spinning for twenty minutes",outage,no
+"Exports are slow today but eventually finish",outage,no
+"One of our regions cannot reach the API, the others are fine",outage,yes
+"Scheduled jobs did not run overnight",outage,yes
+"The integration with Slack stopped posting messages",outage,no
+"Sync between our two workspaces has been stuck since yesterday",outage,no
+"Intermittent timeouts on the admin panel this afternoon",outage,no
+"Could you add dark mode someday?",feature,no
+"It would be nice to export reports to CSV",feature,no
+"Feature idea: keyboard shortcuts for the editor",feature,no
+"Please consider a bulk edit option for tags",feature,no
+"Would love a weekly digest email instead of daily",feature,no
+"Can you add two-factor authentication with hardware keys?",feature,no
+"A way to duplicate a project with its settings would save us hours",feature,no
+"Request: filter the activity feed by user",feature,no
+"Is there a plan to support Markdown in comments?",feature,no
+"We would pay extra for an audit log",feature,no
+"Suggestion: let admins set a default time zone per workspace",feature,no
+"Please add a Zapier integration",feature,no
+"Custom fields on tickets would help our support team a lot",feature,no
+"Any chance of an offline mode for the mobile app?",feature,no
+"It would help to pin important messages at the top of a channel",feature,no
+"Can the API return pagination cursors instead of page numbers?",feature,no
+"Wish there was a way to schedule a message for later",feature,no
+"Idea: templates for recurring tickets",feature,no
+"Could notifications be grouped instead of one per event?",feature,no
+"Please support SSO with Okta",feature,no
+"I forgot my password and the reset email never arrives",account,yes
+"How do I change the email address on my account?",account,no
+"Please delete my account and all of my data",account,no
+"My colleague left the company, how do I transfer ownership of her projects?",account,no
+"I am locked out after too many login attempts",account,yes
+"Can you merge my two accounts into one?",account,no
+"The invitation link for a new team member has expired",account,no
+"Need to add three new users to our workspace",account,no
+"How do I enable two-factor authentication on my profile?",account,no
+"I no longer have access to the phone number for my 2FA",account,yes
+"Remove the former contractor from our workspace today, they still have access",account,yes
+"Change my username, the current one has a typo",account,no
+"Which permissions does the viewer role have?",account,no
+"Someone else seems to be logged in to my account, please help",account,yes
+"How do I export my personal data?",account,no
+"Our admin is on leave, can someone else be made admin temporarily?",account,no
+"The profile photo upload keeps failing",account,no
+"Set up a shared inbox account for support@ our domain",account,no
+"I want to downgrade my role from admin to member",account,no
+"My account shows a different company name than ours",account,no

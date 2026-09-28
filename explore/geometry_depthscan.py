@@ -4,7 +4,7 @@ One pass over every message taps all 22 depths and keeps, per message and depth,
 the [CLS] state and a *token-identity-centred* mean pool (below). Everything after that is closed form
 (ridge classifiers, Gaussian class statistics), so the scan costs about one trunk pass per dataset.
 
-It tests four hypotheses from research_notes/explore/geometry.md:
+It tests four hypotheses from docs/research/notes/explore/geometry.md:
 
   centring    Mean pooling a long JSON state is dominated by what every state shares (keys, braces,
               punctuation, the same field names in the same order). Subtracting from each token state the

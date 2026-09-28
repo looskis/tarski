@@ -1,7 +1,7 @@
 """Skeptic lens, idea 3 (also quantifies bug 2): decouple correctness-calibration from soft-label
 distribution calibration, and report both ECE variants on typed-decisions.
 
-Background (see research_notes/explore/skeptic.md, item 2). `fit_temperature(logits, y, soft=None)`
+Background (see docs/research/notes/explore/skeptic.md, item 2). `fit_temperature(logits, y, soft=None)`
 (`tarski/train.py:103-115`) minimizes cross-entropy against `soft` whenever it is available, and
 against hard one-hot otherwise. `tarski/train.py:258` (in `fit()`) passes `soft["val"]` whenever the
 task has soft labels. Banking77/CLINC150 examples carry no `soft` field, so their one temperature is

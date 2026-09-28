@@ -16,7 +16,7 @@ mostly on CONVERGENCE SPEED (the validation-accuracy-per-epoch curve) rather tha
 final accuracy -- if the underlying issue really was step count, a curriculum should not change the
 ceiling, only (maybe) how many of those steps are needed to reach it.
 
-Novelty note (see research_notes/explore/learning.md, idea I): curriculum learning by difficulty is
+Novelty note (see docs/research/notes/explore/learning.md, idea I): curriculum learning by difficulty is
 decades old; using a shallow-depth probe on the SAME frozen trunk the eventual (deeper) branch will also
 read, purely to order examples for that branch's training, is the specific combination we did not find in
 prior curriculum-learning-for-transformers work (which mostly uses external difficulty proxies or the

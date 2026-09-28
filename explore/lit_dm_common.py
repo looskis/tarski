@@ -1,4 +1,4 @@
-"""Shared helpers for the lit_dm_* experiments (research_notes/explore/lit_decision_models.md).
+"""Shared helpers for the lit_dm_* experiments (docs/research/notes/explore/lit_decision_models.md).
 
 Scripts that download new models or datasets must set HF_HUB_OFFLINE / HF_DATASETS_OFFLINE to "0" *before*
 importing this module (it imports tarski, which imports transformers), because the GPU job runner exports

@@ -83,8 +83,9 @@ def jev_answer(q: Dict, labels: List[str], p: np.ndarray) -> Dict:
 
 def create_app(engine: Engine, fallback_url: Optional[str] = None, fallback_model: str = "jev-latest",
                fallback_key: Optional[str] = None, escalate_below: Optional[float] = None,
-               api_key: Optional[str] = None) -> FastAPI:
-    app = FastAPI(title="tarski", version="0.1")
+               api_key: Optional[str] = None, escalate_oos: bool = False) -> FastAPI:
+    """`escalate_oos`: send questions whose message the branch flags as out of scope to the fallback."""
+    app = FastAPI(title="tarski", version="0.2")
 
     @app.middleware("http")
     async def auth(request: Request, call_next):
@@ -107,7 +108,7 @@ def create_app(engine: Engine, fallback_url: Optional[str] = None, fallback_mode
         out = {}
         for name, m in engine.tasks().items():
             out[name] = {k: m.get(k) for k in ("kind", "split", "depth", "labels", "params", "bytes", "loaded",
-                                                "dataset", "metrics")}
+                                                "dataset", "metrics", "oos")}
         return {"tasks": out, "stats": {k: v for k, v in engine.stats.items() if k != "load_ms"}}
 
     @app.post("/v1/tasks/{task}/load")
@@ -135,12 +136,14 @@ def create_app(engine: Engine, fallback_url: Optional[str] = None, fallback_mode
             raise HTTPException(404, f"no trained task(s) {missing}; trained: {sorted(known)}")
         r = engine.decide(texts, req.tasks)
         out = []
-        for probs in r["results"]:
+        for probs, oos in zip(r["results"], r["oos"]):
             row = {}
             for t, p in probs.items():
                 labels = engine.labels(t)
                 row[t] = {"label": labels[int(p.argmax())], "confidence": confidence(p),
                           "probabilities": {l: float(v) for l, v in zip(labels, p)}}
+                if t in oos:
+                    row[t]["out_of_scope"], row[t]["oos_score"] = oos[t]["flag"], oos[t]["score"]
             out.append(row)
         return {"results": out, "timing_ms": r["timing_ms"], "input_tokens": r["input_tokens"]}
 
@@ -164,7 +167,7 @@ def create_app(engine: Engine, fallback_url: Optional[str] = None, fallback_mode
         if remote and not fallback_url:
             raise HTTPException(400, f"no trained branch for question(s) {sorted(remote)} and no fallback "
                                      f"configured; trained tasks: {sorted(known)}")
-        answers, sources, usage = {}, {}, 0
+        answers, sources, usage, flagged = {}, {}, 0, []
         if local:
             tasks = [q.get("task", qid) for qid, q in local.items()]
             r = engine.decide([state_text(req.state)], tasks)
@@ -175,7 +178,10 @@ def create_app(engine: Engine, fallback_url: Optional[str] = None, fallback_mode
                 except ValueError as e:
                     raise HTTPException(400, f"question {qid!r}: {e}")
                 conf = a.get("confidence", max(a.get("noul", 0.5), 1 - a.get("noul", 0.5)) * 2 - 1)
-                if escalate_below is not None and fallback_url and conf < escalate_below:
+                oos = r["oos"][0].get(task, {}).get("flag", False)
+                if oos:
+                    flagged.append(qid)
+                if fallback_url and ((escalate_below is not None and conf < escalate_below) or (escalate_oos and oos)):
                     remote[qid] = q
                 else:
                     answers[qid], sources[qid] = a, "local"
@@ -187,6 +193,7 @@ def create_app(engine: Engine, fallback_url: Optional[str] = None, fallback_mode
         ordered = {qid: answers[qid] for qid in req.questions}
         return JSONResponse({"model": MODEL_NAME, "answers": ordered,
                              "usage": {"input_tokens": usage, "output_tokens": 0}},
-                            headers={"X-Tarski-Sources": ",".join(f"{q}={s}" for q, s in sources.items())})
+                            headers={"X-Tarski-Sources": ",".join(f"{q}={s}" for q, s in sources.items()),
+                                     "X-Tarski-Out-Of-Scope": ",".join(flagged)})
 
     return app

@@ -19,7 +19,7 @@ Serving view: a message's trunk cut is the max over the decisions asked about it
 of its workflow; CLINC: intent + domain + oos). Reported per method: mean test accuracy over tasks and mean
 cut over messages (22 = full trunk).
 
-Prediction (research_notes/explore/geometry.md, idea 8): on Banking77/CLINC a prefix mixer cut at <= 12
+Prediction (docs/research/notes/explore/geometry.md, idea 8): on Banking77/CLINC a prefix mixer cut at <= 12
 keeps >= 80% of the full multi-tap gain over the best single tap, and the group lasso finds cuts <= 14
 within 1 point of the full multi-tap.
 

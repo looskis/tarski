@@ -19,7 +19,7 @@ benchmark with real gold labels, we also report (diagnostic only, never used for
 admitted pseudo-labels actually agree with the hidden gold label -- i.e. whether the procedure is
 confidently right or confidently fooling itself.
 
-Novelty note (see research_notes/explore/learning.md, idea F): self-training (Noisy Student, Xie et al.
+Novelty note (see docs/research/notes/explore/learning.md, idea F): self-training (Noisy Student, Xie et al.
 2020) and MC-dropout consistency are both established. Using a strictly proper scoring rule as the
 admission/agreement criterion between two stochastic views of the SAME tiny frozen-trunk branch, instead
 of the usual symmetric KL or a raw softmax-confidence threshold, is a small variant we did not find

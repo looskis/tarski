@@ -9,7 +9,7 @@ the branch is trained it runs alone (laya is never in the serving path), so this
 compute, never inference latency.
 
 This script builds label-efficiency curves for one of the typed-decisions tasks that
-`research_notes/explore/BRIEF.md` reports as collapsing (probes stuck near the majority class), under
+`docs/research/notes/explore/BRIEF.md` reports as collapsing (probes stuck near the majority class), under
 three label-acquisition strategies at matched label budgets:
 
   random_soft   label random unlabelled pool messages with laya's live soft distribution.
@@ -24,7 +24,7 @@ three label-acquisition strategies at matched label budgets:
 Distillation", ICML 2021, gives soft labels a variance-reduction / sample-complexity argument). Active
 vs random isolates the value of choosing WHICH examples to spend teacher queries on.
 
-Novelty note (see research_notes/explore/learning.md): distilling a per-question cross-encoder into a
+Novelty note (see docs/research/notes/explore/learning.md): distilling a per-question cross-encoder into a
 shared-trunk branch is implicit in how the typed-decisions dataset itself was built (its "soft" column
 already came from a teacher). What we could not find prior work on is using the teacher live, in an
 active-learning loop, to decide which unlabelled messages are worth a soft label at all -- i.e. active

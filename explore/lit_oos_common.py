@@ -1,6 +1,6 @@
 """Shared helpers for the lit_oos_* scripts (not a runnable experiment).
 
-The lit_oos scripts implement the ranked ideas in research_notes/explore/lit_incremental_oos.md. They all
+The lit_oos scripts implement the ranked ideas in docs/research/notes/explore/lit_incremental_oos.md. They all
 work on mean-pooled frozen-trunk states, so this module provides:
   - datasets with a small, stratified CPU smoke subsample (CLINC150 keeps its out-of-scope rates);
   - mean-pooled trunk states at several depths from one pass, cached on disk per (texts, depth) under

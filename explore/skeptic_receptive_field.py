@@ -35,10 +35,10 @@ by depth/position are standard in the long-context literature (e.g. Liu et al., 
 TACL 2023/2024). Applying this specifically to whether a PER-TASK STATIC split-depth selector (as in
 tarski/autosplit.py) should account for global-layer count rather than raw depth for long inputs, in a
 hybrid local/global attention encoder used for multi-task branch serving, was not found in the sources
-reviewed in research_notes/novelty_check.md -- the closest relative there (Wei et al., ACL 2022) uses
+reviewed in docs/research/notes/novelty_check.md -- the closest relative there (Wei et al., ACL 2022) uses
 plain BERT, which has no local/global distinction at all.
 
-IMPORTANT -- what a CPU pilot run of this exact script already showed (see research_notes/explore/
+IMPORTANT -- what a CPU pilot run of this exact script already showed (see docs/research/notes/explore/
 skeptic.md item on this hypothesis): with 0 decoys, accuracy jumps from ~chance at depth 0 to ~0.9-1.0
 at depth 1 for EVERY gap tested, including gap=400 (several window-radii). This refutes the hypothesis
 in its strong form: ModernBERT-base's layer 0 is itself `full_attention` (global), so every depth >= 1

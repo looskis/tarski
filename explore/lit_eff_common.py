@@ -1,5 +1,5 @@
 """Shared helpers for the explore/lit_eff_*.py scripts (literature-scan efficiency ideas; see
-research_notes/explore/lit_efficiency.md). Not a runnable experiment.
+docs/research/notes/explore/lit_efficiency.md). Not a runnable experiment.
 
 Contents: logging and JSON output, dataset loading with a CPU smoke subsample, split indices, mean-pooled
 features from a FeatureCache, a train/calibrate/evaluate wrapper around tarski.train.train_branch (which

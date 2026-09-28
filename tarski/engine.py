@@ -19,7 +19,7 @@ from typing import Dict, List, Optional, Sequence
 import numpy as np
 import torch
 
-from tarski.branches import Branch
+from tarski.branches import Branch, mean_pool
 from tarski.fused import FusedBlocks, group_branches
 from tarski.train import autocast
 from tarski.trunk import DEFAULT_BASE, Trunk
@@ -44,6 +44,7 @@ def scan_store(store: str) -> Dict[str, Dict]:
             with open(meta_path) as f:
                 meta = json.load(f)
             meta["bytes"] = os.path.getsize(os.path.join(store, name, "branch.safetensors"))
+            meta["oos"] = os.path.exists(os.path.join(store, name, "oos.json"))
             out[meta.get("task", name)] = {**meta, "dir": os.path.join(store, name)}
     return out
 
@@ -103,7 +104,8 @@ class Engine:
 
     @torch.no_grad()
     def decide(self, texts: Sequence[str], tasks: Sequence[str]) -> Dict:
-        """Probabilities per text per task, plus where the time went."""
+        """Probabilities per text per task (`results`), out-of-scope score and flag per text for every task
+        trained with a detector (`oos`), and where the time went."""
         if not tasks:
             raise ValueError("no tasks requested")
         with self._lock:
@@ -141,8 +143,15 @@ class Engine:
                     s = time.perf_counter()
                     probs[t] = b.probs(taps[b.split], ctx).float().cpu().numpy()
                     branch_ms[t] = (time.perf_counter() - s) * 1000
+                # out-of-scope scores read the pooled tap the branch already received: no extra trunk work
+                oos = {}
+                for t, b in branches.items():
+                    if b.oos is not None:
+                        sc = b.oos.score(mean_pool(taps[b.split].float(), ctx.attention_mask))
+                        oos[t] = [{"score": float(v), "flag": bool(v > b.oos.tau)} for v in sc]
             results = [{t: probs[t][i] for t in tasks} for i in range(len(texts))]
-            return {"results": results, "input_tokens": n_tokens,
+            return {"results": results, "oos": [{t: oos[t][i] for t in oos} for i in range(len(texts))],
+                    "input_tokens": n_tokens,
                     "timing_ms": {"load": (t_load - t0) * 1000, "trunk": (t_trunk - t_load) * 1000,
                                   "branches": branch_ms, "total": (time.perf_counter() - t0) * 1000},
                     "depth": max(b.split for b in branches.values())}

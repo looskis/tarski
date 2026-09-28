@@ -5,7 +5,7 @@ self. Real-valued negative selection (V-detector, Ji & Dasgupta 2004): sample ca
 delete any within the self radius of an in-scope training point, give the survivors a radius reaching to
 the nearest self point, and flag a test point covered by any detector as out of scope.
 
-Testable prediction (stated in research_notes/explore/farfield.md): in a 64-d PCA of the trunk's pooled
+Testable prediction (stated in docs/research/notes/explore/farfield.md): in a 64-d PCA of the trunk's pooled
 state the surviving detectors tile the complement of the self set, so "covered by a detector" reduces to
 "far from the nearest in-scope training point": NSA AUROC <= 1-NN distance AUROC on the same features and
 the two scores are rank-correlated above 0.9. A quick replication of Sun et al. (2022) kNN is the baseline.

@@ -16,7 +16,7 @@ Metrics reported for every configuration: accuracy on the 10 OLD domains (retent
 edit forget less than the naive one?) and on the NEW domain (how good is imprinting's few-shot answer
 before any fine-tuning at all, and after the short one?).
 
-Novelty note (see research_notes/explore/learning.md, idea H): weight imprinting is established for
+Novelty note (see docs/research/notes/explore/learning.md, idea H): weight imprinting is established for
 few-shot class-incremental vision classifiers. Applying it to a frozen-trunk text ROUTING branch, framed
 explicitly as "add a route without forgetting" for a local decision-routing system, and measuring
 retention against a naive full-head fine-tune at the same replay budget, is a reasonable but incremental

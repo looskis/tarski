@@ -1,7 +1,7 @@
 """Skeptic lens, idea 6: per-instance depth gating on top of tarski's per-task static split depth.
 
 tarski picks one split depth per TASK (`tarski/autosplit.py`) and runs every instance of that task to
-that same depth. `research_notes/novelty_check.md` (Claim 2) states plainly: "I found no NLP paper that
+that same depth. `docs/research/notes/novelty_check.md` (Claim 2) states plainly: "I found no NLP paper that
 fixes a static exit layer per *task* and serves many such tasks from one trunk, other than Wei et al." --
 and per-*instance* early exit (DeeBERT, PABEE, F-PABEE) is single-task/single-model, never combined with
 per-task heterogeneous branches sharing one trunk. Combining both axes -- keep tarski's per-task branch
@@ -29,7 +29,7 @@ Static per-task exit depth on a shared frozen trunk is Wei et al. (ACL 2022) and
 both of which apply ONE fixed depth per task to EVERY instance -- no per-instance adaptivity on top.
 Combining the two axes for a single task's own branch (not early-exiting a whole multi-task model, just
 letting one task's easy instances skip that task's own deep layers) does not appear in the reviewed
-prior art (research_notes/novelty_check.md, Claim 2's "gap" paragraph names exactly this combination as
+prior art (docs/research/notes/novelty_check.md, Claim 2's "gap" paragraph names exactly this combination as
 untested). This script does not implement per-request trunk truncation (that lives in tarski/engine.py,
 out of scope here); it validates the ACCURACY/depth trade-off the mechanism would need to be worth
 building, using the FeatureCache states tarski already computes.

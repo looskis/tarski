@@ -40,6 +40,7 @@ class Branch(nn.Module):
         self.hidden = hidden
         self.register_buffer("temperature", torch.ones(()))
         self.meta: Dict = {}
+        self.oos = None      # tarski.oos.OOSStats when the branch was trained with out-of-scope detection
 
     @property
     def n_labels(self) -> int:
@@ -82,6 +83,9 @@ class Branch(nn.Module):
         sd = load_file(os.path.join(path, "branch.safetensors"))
         branch.load_state_dict({k: v.float() for k, v in sd.items()})
         branch.meta = meta
+        from tarski.oos import OOSStats
+
+        branch.oos = OOSStats.load(path)
         return branch.to(trunk.device).eval()
 
 

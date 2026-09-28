@@ -1,6 +1,6 @@
 """Exploration: does the OBJECTIVE, not the architecture, explain why typed-decisions probes collapse?
 
-`research_notes/explore/BRIEF.md` reports that on `typed-decisions`, probes predict the majority class
+`docs/research/notes/explore/BRIEF.md` reports that on `typed-decisions`, probes predict the majority class
 at every depth (mean acc 51-55% vs laya's full fine-tune at 76.6%), with soft teacher labels that are
 "near-uniform". The default tarski objective is soft cross-entropy: `-(soft * log_softmax(z)).sum(-1)`.
 Under near-uniform soft targets and imbalanced hard labels, that objective's gradient is dominated by the
@@ -35,7 +35,7 @@ Two branch sizes:
          standard linear probe's Hidden*K parameters may be spent overfitting spurious pooled-mean
          correlations rather than carrying task signal.
 
-Prior art / novelty notes (see research_notes/explore/learning.md for citations):
+Prior art / novelty notes (see docs/research/notes/explore/learning.md for citations):
   - Class-balanced loss, logit adjustment and proper scoring rules for classifiers are each established.
   - "Proper Scoring Rules for Agentic Uncertainty Quantification" (2026) argues explicitly that using a
     scoring rule as a *direct calibration loss* and using it as an *RL/policy-optimization reward* are NOT

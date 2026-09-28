@@ -18,7 +18,7 @@ well-established label/prior-shift correction on top of its already-trained, alr
 outputs -- no retraining, and no test labels are used by the correction itself (only for evaluation) --
 and reports accuracy / macro-F1 / oos recall & precision before and after.
 
-Fix and its prior art (see research_notes/explore/skeptic.md for the full citations):
+Fix and its prior art (see docs/research/notes/explore/skeptic.md for the full citations):
   - Saerens, Latinne & Decaestecker, "Adjusting the output of a classifier to new a priori
     probabilities: a simple procedure", Neural Computation 14(1), 2002. The EM re-estimation used here.
   - Lipton, Wang & Smola, "Detecting and Correcting for Label Shift with Black Box Predictors",

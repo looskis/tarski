@@ -13,7 +13,7 @@ This trains a `ProbeBranch` on CLINC's `oos` task with two loss terms per step: 
 CLINC batch, plus `lambda * CE(branch(banking77_batch), uniform)` on a Banking77 batch (same split depth,
 same frozen trunk, different `FeatureCache`). Baseline is `lambda=0` (today's objective).
 
-Novelty note (see research_notes/explore/learning.md, idea J): outlier exposure itself is established,
+Novelty note (see docs/research/notes/explore/learning.md, idea J): outlier exposure itself is established,
 but it assumes a deliberately curated auxiliary set. Using another task ALREADY being served by the same
 local multi-task trunk as that auxiliary set -- free, no extra collection, "whatever else this deployment
 happens to route" -- is the part we did not find prior work on. This script only tests the CLINC oos use
