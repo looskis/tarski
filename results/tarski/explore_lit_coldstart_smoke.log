@@ -1,0 +1,112 @@
+== banking77: pool 200 messages, split 4, cached in 0s
+   B=  20 random   : logreg 0.0625 | lda 0.0625 | probe 0.0250 | blocks:2 0.0125 | class coverage 0.22
+   B=  20 typiclust: logreg 0.0625 | lda 0.0625 | probe 0.0375 | blocks:2 0.0375 | class coverage 0.22
+   B=  20 kmedoid  : logreg 0.0750 | lda 0.0625 | probe 0.0125 | class coverage 0.23
+   B=  20 probcover: logreg 0.0375 | lda 0.0750 | probe 0.0000 | blocks:2 0.0125 | class coverage 0.21
+   B=  40 random   : logreg 0.0625 | lda 0.0750 | probe 0.0500 | class coverage 0.43
+   B=  40 typiclust: logreg 0.1250 | lda 0.1000 | probe 0.0375 | class coverage 0.40
+   B=  40 kmedoid  : logreg 0.1250 | lda 0.1250 | probe 0.0125 | class coverage 0.47
+   B=  40 probcover: logreg 0.0875 | lda 0.0625 | probe 0.0250 | class coverage 0.39
+== clinc150: pool 320 messages, split 4, cached in 0s
+   B=  20 random   : logreg 0.2792 | lda 0.3500 | probe 0.3625 | blocks:2 0.3292 | class coverage 0.71
+   B=  20 typiclust: logreg 0.2625 | lda 0.3333 | probe 0.3458 | blocks:2 0.3333 | class coverage 0.68
+   B=  20 kmedoid  : logreg 0.2875 | lda 0.3583 | probe 0.3375 | class coverage 0.71
+   B=  20 probcover: logreg 0.2750 | lda 0.2917 | probe 0.2833 | blocks:2 0.2833 | class coverage 0.65
+   B=  40 random   : logreg 0.3833 | lda 0.4333 | probe 0.3250 | class coverage 0.51
+   B=  40 typiclust: logreg 0.3667 | lda 0.4042 | probe 0.3375 | class coverage 0.75
+   B=  40 kmedoid  : logreg 0.3708 | lda 0.4000 | probe 0.3542 | class coverage 0.75
+   B=  40 probcover: logreg 0.3375 | lda 0.3667 | probe 0.2833 | class coverage 0.74
+== typed-decisions: pool 200 messages, split 4, cached in 2s
+  workflow agent_trace_observability: pool 52
+   B=  10 random   : logreg 0.2375 | lda 0.1875 | probe 0.3750 | class coverage 0.90
+   B=  10 typiclust: logreg 0.4000 | lda 0.4250 | probe 0.4625 | class coverage 0.90
+   B=  10 kmedoid  : logreg 0.3875 | lda 0.3000 | probe 0.2625 | class coverage 0.75
+   B=  10 probcover: logreg 0.3875 | lda 0.3375 | probe 0.3125 | class coverage 0.95
+   B=  20 random   : logreg 0.5000 | lda 0.5125 | probe 0.3750 | class coverage 0.95
+   B=  20 typiclust: logreg 0.4625 | lda 0.4500 | probe 0.3750 | class coverage 0.90
+   B=  20 kmedoid  : logreg 0.4625 | lda 0.4500 | probe 0.3750 | class coverage 0.95
+   B=  20 probcover: logreg 0.5750 | lda 0.4875 | probe 0.3000 | class coverage 0.95
+  workflow customer_service: pool 51
+   B=  10 random   : logreg 0.3130 | lda 0.2783 | probe 0.4174 | blocks:2 0.3913 | class coverage 0.87
+   B=  10 typiclust: logreg 0.3478 | lda 0.3826 | probe 0.4087 | blocks:2 0.4174 | class coverage 0.79
+   B=  10 kmedoid  : logreg 0.3043 | lda 0.2870 | probe 0.4000 | class coverage 0.83
+   B=  10 probcover: logreg 0.2348 | lda 0.2609 | probe 0.3478 | blocks:2 0.3565 | class coverage 0.83
+   B=  20 random   : logreg 0.2522 | lda 0.2348 | probe 0.4087 | class coverage 0.83
+   B=  20 typiclust: logreg 0.2522 | lda 0.4435 | probe 0.4261 | class coverage 0.87
+   B=  20 kmedoid  : logreg 0.3130 | lda 0.3565 | probe 0.4261 | class coverage 0.87
+   B=  20 probcover: logreg 0.2435 | lda 0.2609 | probe 0.3652 | class coverage 0.83
+  workflow invoice_processing: pool 55
+   B=  10 random   : logreg 0.3800 | lda 0.4200 | probe 0.5000 | class coverage 0.75
+   B=  10 typiclust: logreg 0.4300 | lda 0.5000 | probe 0.5600 | class coverage 0.85
+   B=  10 kmedoid  : logreg 0.4300 | lda 0.5100 | probe 0.5800 | class coverage 0.75
+   B=  10 probcover: logreg 0.5100 | lda 0.5800 | probe 0.5900 | class coverage 0.90
+   B=  20 random   : logreg 0.4300 | lda 0.4700 | probe 0.5300 | class coverage 0.75
+   B=  20 typiclust: logreg 0.4500 | lda 0.5400 | probe 0.5800 | class coverage 0.90
+   B=  20 kmedoid  : logreg 0.4200 | lda 0.5300 | probe 0.5800 | class coverage 0.90
+   B=  20 probcover: logreg 0.4700 | lda 0.5800 | probe 0.5600 | class coverage 0.90
+  workflow security_incidents: pool 42
+   B=  10 random   : logreg 0.4190 | lda 0.4286 | probe 0.6095 | class coverage 0.96
+   B=  10 typiclust: logreg 0.4476 | lda 0.5333 | probe 0.6095 | class coverage 0.86
+   B=  10 kmedoid  : logreg 0.5333 | lda 0.5905 | probe 0.6190 | class coverage 0.86
+   B=  10 probcover: logreg 0.3619 | lda 0.5905 | probe 0.6095 | class coverage 0.91
+   B=  20 random   : logreg 0.5333 | lda 0.5048 | probe 0.6000 | class coverage 0.96
+   B=  20 typiclust: logreg 0.5333 | lda 0.5810 | probe 0.5810 | class coverage 0.91
+   B=  20 kmedoid  : logreg 0.4095 | lda 0.5524 | probe 0.6095 | class coverage 0.86
+   B=  20 probcover: logreg 0.4857 | lda 0.5143 | probe 0.6095 | class coverage 0.96
+done -> results/tarski/explore_lit_coldstart_smoke.json
+== banking77: pool 200 messages, split 4, cached in 0s
+   B=  20 random   : logreg 0.0625 | lda 0.0625 | probe 0.0500 | blocks:2 0.0125 | class coverage 0.22
+   B=  20 typiclust: logreg 0.0625 | lda 0.0625 | probe 0.0375 | blocks:2 0.0375 | class coverage 0.22
+   B=  20 kmedoid  : logreg 0.0750 | lda 0.0625 | probe 0.0125 | class coverage 0.23
+   B=  20 probcover: logreg 0.1125 | lda 0.0625 | probe 0.0125 | blocks:2 0.0125 | class coverage 0.22
+   B=  40 random   : logreg 0.0625 | lda 0.0750 | probe 0.0500 | class coverage 0.43
+   B=  40 typiclust: logreg 0.1250 | lda 0.1000 | probe 0.0375 | class coverage 0.40
+   B=  40 kmedoid  : logreg 0.1250 | lda 0.1250 | probe 0.0125 | class coverage 0.47
+   B=  40 probcover: logreg 0.1125 | lda 0.0750 | probe 0.0125 | class coverage 0.39
+== clinc150: pool 320 messages, split 4, cached in 0s
+   B=  20 random   : logreg 0.2792 | lda 0.3500 | probe 0.3625 | blocks:2 0.3292 | class coverage 0.71
+   B=  20 typiclust: logreg 0.2625 | lda 0.3333 | probe 0.3458 | blocks:2 0.3333 | class coverage 0.68
+   B=  20 kmedoid  : logreg 0.2875 | lda 0.3583 | probe 0.3375 | class coverage 0.71
+   B=  20 probcover: logreg 0.3042 | lda 0.3208 | probe 0.3250 | blocks:2 0.3125 | class coverage 0.68
+   B=  40 random   : logreg 0.3833 | lda 0.4333 | probe 0.3250 | class coverage 0.51
+   B=  40 typiclust: logreg 0.3667 | lda 0.4042 | probe 0.3375 | class coverage 0.75
+   B=  40 kmedoid  : logreg 0.3708 | lda 0.4000 | probe 0.3542 | class coverage 0.75
+   B=  40 probcover: logreg 0.3125 | lda 0.3833 | probe 0.3208 | class coverage 0.74
+== typed-decisions: pool 200 messages, split 4, cached in 1s
+  workflow agent_trace_observability: pool 52
+   B=  10 random   : logreg 0.2375 | lda 0.1875 | probe 0.3750 | class coverage 0.90
+   B=  10 typiclust: logreg 0.4000 | lda 0.4250 | probe 0.4625 | class coverage 0.90
+   B=  10 kmedoid  : logreg 0.3875 | lda 0.3000 | probe 0.2625 | class coverage 0.75
+   B=  10 probcover: logreg 0.3750 | lda 0.4125 | probe 0.3750 | class coverage 0.90
+   B=  20 random   : logreg 0.5000 | lda 0.5125 | probe 0.3750 | class coverage 0.95
+   B=  20 typiclust: logreg 0.4625 | lda 0.4500 | probe 0.3750 | class coverage 0.90
+   B=  20 kmedoid  : logreg 0.4625 | lda 0.4500 | probe 0.3750 | class coverage 0.95
+   B=  20 probcover: logreg 0.3875 | lda 0.5250 | probe 0.3875 | class coverage 0.90
+  workflow customer_service: pool 51
+   B=  10 random   : logreg 0.3130 | lda 0.2783 | probe 0.4174 | blocks:2 0.3913 | class coverage 0.87
+   B=  10 typiclust: logreg 0.3478 | lda 0.3826 | probe 0.4087 | blocks:2 0.4174 | class coverage 0.79
+   B=  10 kmedoid  : logreg 0.3043 | lda 0.2870 | probe 0.4000 | class coverage 0.83
+   B=  10 probcover: logreg 0.2522 | lda 0.2783 | probe 0.3739 | blocks:2 0.4087 | class coverage 0.74
+   B=  20 random   : logreg 0.2522 | lda 0.2348 | probe 0.4087 | class coverage 0.83
+   B=  20 typiclust: logreg 0.2522 | lda 0.4435 | probe 0.4261 | class coverage 0.87
+   B=  20 kmedoid  : logreg 0.3130 | lda 0.3565 | probe 0.4261 | class coverage 0.87
+   B=  20 probcover: logreg 0.2522 | lda 0.3391 | probe 0.3739 | class coverage 0.78
+  workflow invoice_processing: pool 55
+   B=  10 random   : logreg 0.3800 | lda 0.4200 | probe 0.5000 | class coverage 0.75
+   B=  10 typiclust: logreg 0.4300 | lda 0.5000 | probe 0.5600 | class coverage 0.85
+   B=  10 kmedoid  : logreg 0.4300 | lda 0.5100 | probe 0.5800 | class coverage 0.75
+   B=  10 probcover: logreg 0.4300 | lda 0.4500 | probe 0.4800 | class coverage 0.90
+   B=  20 random   : logreg 0.4300 | lda 0.4700 | probe 0.5300 | class coverage 0.75
+   B=  20 typiclust: logreg 0.4500 | lda 0.5400 | probe 0.5800 | class coverage 0.90
+   B=  20 kmedoid  : logreg 0.4200 | lda 0.5300 | probe 0.5800 | class coverage 0.90
+   B=  20 probcover: logreg 0.4600 | lda 0.6200 | probe 0.5100 | class coverage 0.90
+  workflow security_incidents: pool 42
+   B=  10 random   : logreg 0.4190 | lda 0.4286 | probe 0.6095 | class coverage 0.96
+   B=  10 typiclust: logreg 0.4476 | lda 0.5333 | probe 0.6095 | class coverage 0.86
+   B=  10 kmedoid  : logreg 0.5333 | lda 0.5905 | probe 0.6190 | class coverage 0.86
+   B=  10 probcover: logreg 0.4286 | lda 0.3619 | probe 0.5905 | class coverage 0.91
+   B=  20 random   : logreg 0.5333 | lda 0.5048 | probe 0.6000 | class coverage 0.96
+   B=  20 typiclust: logreg 0.5333 | lda 0.5810 | probe 0.5810 | class coverage 0.91
+   B=  20 kmedoid  : logreg 0.4095 | lda 0.5524 | probe 0.6095 | class coverage 0.86
+   B=  20 probcover: logreg 0.5238 | lda 0.5619 | probe 0.6095 | class coverage 0.96
+done -> results/tarski/explore_lit_coldstart_smoke.json

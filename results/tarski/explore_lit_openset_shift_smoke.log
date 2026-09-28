@@ -1,0 +1,15 @@
+  trunk pass: 200 messages at depths [4, 22] in 1.2s
+== open-set label shift on CLINC150 | cls depth 22, ood depth 4 | 200 Banking77 reference messages | fits cpu
+   OOD AUROC on the full test set: maha_cl2 0.833 | knn10 0.654 | msp 0.800
+   h[banking77]: rho 0.400, mean h on held-out in-scope 0.211, on held-out reference 0.710, on real val OOS 0.575
+   h[noise]: rho 0.516, mean h on held-out in-scope 0.064, on held-out reference 0.946, on real val OOS 0.196
+-- pool real: true OOS share 0.182
+   estimate (abs err): cc 0.040 (0.142) | em_k1_banking77 0.076 (0.106) | acc_ref_banking77 0.082 (0.100) | acc_realoos_banking77 0.113 (0.069) | em_k1_noise 0.000 (0.182) | acc_ref_noise 0.000 (0.182) | acc_realoos_noise 0.000 (0.182) | bbe 0.027 (0.155) | sup_em 0.096 (0.086)
+   OOS F1 thresholding Mahalanobis++ at the estimate: cc 0.262 | em_k1_banking77 0.380 | acc_ref_banking77 0.386 | acc_realoos_banking77 0.481 | em_k1_noise 0.000 | acc_ref_noise 0.000 | acc_realoos_noise 0.000 | bbe 0.209 | sup_em 0.431 | oracle 0.550 | sup_em_argmax 0.509
+-- pool rate_0.1: true OOS share 0.100
+   estimate (abs err): cc 0.028 (0.072) | em_k1_banking77 0.031 (0.069) | acc_ref_banking77 0.017 (0.083) | acc_realoos_banking77 0.024 (0.076) | em_k1_noise 0.000 (0.100) | acc_ref_noise 0.000 (0.100) | acc_realoos_noise 0.000 (0.100) | bbe 0.025 (0.075) | sup_em 0.060 (0.040)
+   OOS F1 thresholding Mahalanobis++ at the estimate: cc 0.248 | em_k1_banking77 0.238 | acc_ref_banking77 0.201 | acc_realoos_banking77 0.224 | em_k1_noise 0.000 | acc_ref_noise 0.000 | acc_realoos_noise 0.000 | bbe 0.224 | sup_em 0.324 | oracle 0.420 | sup_em_argmax 0.466
+-- pool rate_0.3: true OOS share 0.300
+   estimate (abs err): cc 0.051 (0.249) | em_k1_banking77 0.135 (0.166) | acc_ref_banking77 0.178 (0.122) | acc_realoos_banking77 0.244 (0.056) | em_k1_noise 0.000 (0.300) | acc_ref_noise 0.016 (0.284) | acc_realoos_noise 0.106 (0.194) | bbe 0.095 (0.205) | sup_em 0.152 (0.148)
+   OOS F1 thresholding Mahalanobis++ at the estimate: cc 0.274 | em_k1_banking77 0.510 | acc_ref_banking77 0.583 | acc_realoos_banking77 0.628 | em_k1_noise 0.000 | acc_ref_noise 0.104 | acc_realoos_noise 0.415 | bbe 0.378 | sup_em 0.531 | oracle 0.640 | sup_em_argmax 0.567
+done in 3.8s -> results/tarski/explore_lit_openset_shift_smoke.json

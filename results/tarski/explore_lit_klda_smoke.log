@@ -1,0 +1,14 @@
+  trunk pass: 1155 messages at depths [4, 22] in 5.2s
+== KLDA on banking77: 77 classes, 616/231/308 in-scope train/val/test | depths [4, 22] | fits cpu
+-- banking77 @ 4 (1s): ncm 0.5097 | lda_z 0.7078 | lda_zl2 0.7110 | klda_2k 0.6299 | klda_5k 0.6851 (zl2, c=0.05, shrink=0.3) | ranpac 0.5584 | probe 0.6396
+-- banking77 @ 22 (1s): ncm 0.5195 | lda_z 0.7208 | lda_zl2 0.7143 | klda_2k 0.6558 | klda_5k 0.6494 (zl2, c=0.05, shrink=0.3) | ranpac 0.5812 | probe 0.6494
+== banking77: val-best depth 4: klda_e2 0.6916 (klda_5k 0.6851, lda_z 0.7078, probe 0.6396)
+   incremental (avg over sessions / final): lda 0.7600/0.7078 | klda 0.7155/0.6851 | probe_joint 0.6860/0.6396 | probe_newrows 0.6519/0.5422
+   new route from k shots (new-class recall, overall): k=1: lda 0.00/0.703, klda 0.00/0.677 | k=5: lda 0.42/0.709, klda 0.33/0.683
+== KLDA on clinc150: 150 classes, 900/300/450 in-scope train/val/test | depths [4, 22] | fits cpu
+-- clinc150 @ 4 (1s): ncm 0.6311 | lda_z 0.7689 | lda_zl2 0.7756 | klda_2k 0.7133 | klda_5k 0.7444 (zl2, c=0.05, shrink=0.1) | ranpac 0.6467 | probe 0.7422 | OOS AUROC {'maha_lda_z': 0.8013333333333333, 'maha_lda_zl2': 0.8435111111111111, 'maha_klda_5k': 0.8128888888888889}
+-- clinc150 @ 22 (1s): ncm 0.5956 | lda_z 0.7489 | lda_zl2 0.7778 | klda_2k 0.6933 | klda_5k 0.7289 (z, c=0.05, shrink=0.1) | ranpac 0.6378 | probe 0.7178 | OOS AUROC {'maha_lda_z': 0.7440444444444445, 'maha_lda_zl2': 0.8503333333333334, 'maha_klda_5k': 0.709}
+== clinc150: val-best depth 4: klda_e2 0.7511 (klda_5k 0.7444, lda_z 0.7689, probe 0.7422)
+   incremental (avg over sessions / final): lda 0.8319/0.7689 | klda 0.8004/0.7444 | probe_joint 0.8052/0.7422 | probe_newrows 0.7481/0.6311
+   new route from k shots (new-class recall, overall): k=1: lda 0.33/0.764, klda 0.22/0.741 | k=5: lda 0.78/0.766, klda 0.67/0.741
+done -> results/tarski/explore_lit_klda_smoke.json

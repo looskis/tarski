@@ -1,0 +1,76 @@
+  CPU (qnnpack, 8 threads)  16 tokens, depth  4: fp32 3.11 ms, dynamic int8 2.72 ms (1.14x)
+  CPU (qnnpack, 8 threads)  64 tokens, depth  4: fp32 5.43 ms, dynamic int8 7.57 ms (0.72x)
+== banking77: 300 messages, 1 tasks, splits [8], cached in 0s
+  split 8: max |h| 1192, p99.9 54.2, top [251, 689, 142, 721], split-off channels [251, 689, 142, 721, 31, 67, 254]
+   rel. error on normal channels: fp16 0.000 | int8_plain 0.266 | int8_split 0.013 | int8_split_rot 0.008 | int4_plain 0.957 | int4_split 0.238 | int4_split_rot 0.137 | int3_split_rot 0.320
+   [probe intent] fp16 0.0625 | serve on: int8_plain 0.0625 int8_split 0.0625 int8_split_rot 0.0625 int4_plain 0.0250 int4_split 0.0625 int4_split_rot 0.0625 int3_split_rot 0.0625 | retrained: int4_split_rot 0.0250
+   [blocks:2 intent] fp16 0.0375 | serve on: int8_plain 0.0250 int8_split 0.0375 int8_split_rot 0.0375 int4_plain 0.0375 int4_split 0.0375 int4_split_rot 0.0375 int3_split_rot 0.0375 | retrained: int4_split_rot 0.0125
+   trunk w8a8      : rel err 0.136 | probe acc 0.0500 (fp16 0.0625, agree 0.9500) | blocks:2 acc 0.0375 (fp16 0.0375, agree 0.8625)
+  CPU (qnnpack, 8 threads)  16 tokens, depth  4: fp32 2.40 ms, dynamic int8 2.45 ms (0.98x)
+  CPU (qnnpack, 8 threads)  64 tokens, depth  4: fp32 4.38 ms, dynamic int8 6.79 ms (0.65x)
+== banking77: 300 messages, 1 tasks, splits [8], cached in 0s
+  split 8: max |h| 1192, p99.9 54.2, top [251, 689, 142, 721], split-off channels [251, 689, 142, 721, 31, 67, 254]
+   rel. error on normal channels: fp16 0.000 | int8_plain 0.266 | int8_split 0.013 | int8_split_rot 0.008 | int4_plain 0.957 | int4_split 0.238 | int4_split_rot 0.137 | int3_split_rot 0.320
+   [probe intent] fp16 0.0250 | serve on: int8_plain 0.0250 int8_split 0.0250 int8_split_rot 0.0250 int4_plain 0.0250 int4_split 0.0250 int4_split_rot 0.0250 int3_split_rot 0.0500 | retrained: int4_split_rot 0.0250
+   [blocks:2 intent] fp16 0.0375 | serve on: int8_plain 0.0250 int8_split 0.0375 int8_split_rot 0.0375 int4_plain 0.0375 int4_split 0.0375 int4_split_rot 0.0375 int3_split_rot 0.0375 | retrained: int4_split_rot 0.0125
+   trunk w8a8      : rel err 0.136 | probe acc 0.0375 (fp16 0.0250, agree 0.9125) | blocks:2 acc 0.0375 (fp16 0.0375, agree 0.8625)
+   trunk w8a8_split: rel err 0.075 | probe acc 0.0375 (fp16 0.0250, agree 0.9375) | blocks:2 acc 0.0250 (fp16 0.0375, agree 0.9250)
+   trunk kv4_kivi  : rel err 0.162 | probe acc 0.0250 (fp16 0.0250, agree 0.8500) | blocks:2 acc 0.0375 (fp16 0.0375, agree 0.8375)
+   trunk kv3_rot   : rel err 0.328 | probe acc 0.0125 (fp16 0.0250, agree 0.8000) | blocks:2 acc 0.0125 (fp16 0.0375, agree 0.6500)
+== clinc150: 480 messages, 2 tasks, splits [11], cached in 0s
+  split 11: max |h| 211, p99.9 66.4, top [251, 254, 67, 689], split-off channels [251, 254, 67]
+   rel. error on normal channels: fp16 0.000 | int8_plain 0.041 | int8_split 0.010 | int8_split_rot 0.007 | int4_plain 0.569 | int4_split 0.182 | int4_split_rot 0.136 | int3_split_rot 0.316
+   [probe intent] fp16 0.2500 | serve on: int8_plain 0.2500 int8_split 0.2500 int8_split_rot 0.2500 int4_plain 0.2500 int4_split 0.2500 int4_split_rot 0.2500 int3_split_rot 0.2500 | retrained: int4_split_rot 0.2500
+   [probe domain] fp16 0.2125 | serve on: int8_plain 0.2125 int8_split 0.2125 int8_split_rot 0.2125 int4_plain 0.1500 int4_split 0.2125 int4_split_rot 0.2125 int3_split_rot 0.2375 | retrained: int4_split_rot 0.2000
+   [blocks:2 intent] fp16 0.2625 | serve on: int8_plain 0.2625 int8_split 0.2625 int8_split_rot 0.2625 int4_plain 0.1375 int4_split 0.2625 int4_split_rot 0.2500 int3_split_rot 0.2625 | retrained: int4_split_rot 0.2500
+   [blocks:2 domain] fp16 0.5000 | serve on: int8_plain 0.5000 int8_split 0.5000 int8_split_rot 0.5000 int4_plain 0.2375 int4_split 0.4625 int4_split_rot 0.4750 int3_split_rot 0.4625 | retrained: int4_split_rot 0.4875
+   trunk w8a8      : rel err 0.122 | probe acc 0.2250 (fp16 0.2313, agree 0.9625) | blocks:2 acc 0.3688 (fp16 0.3812, agree 0.9625)
+   trunk w8a8_split: rel err 0.060 | probe acc 0.2250 (fp16 0.2313, agree 0.9688) | blocks:2 acc 0.3750 (fp16 0.3812, agree 0.9688)
+   trunk kv4_kivi  : rel err 0.126 | probe acc 0.2375 (fp16 0.2313, agree 0.9375) | blocks:2 acc 0.3188 (fp16 0.3812, agree 0.8938)
+   trunk kv3_rot   : rel err 0.344 | probe acc 0.2250 (fp16 0.2313, agree 0.8688) | blocks:2 acc 0.3062 (fp16 0.3812, agree 0.7250)
+== typed-decisions: 271 messages, 2 tasks, splits [14], cached in 3s
+  split 14: max |h| 13720, p99.9 94.8, top [251, 254, 67, 142], split-off channels [251, 254, 67, 142, 31, 721]
+   rel. error on normal channels: fp16 0.000 | int8_plain 0.451 | int8_split 0.011 | int8_split_rot 0.007 | int4_plain 0.968 | int4_split 0.194 | int4_split_rot 0.134 | int3_split_rot 0.308
+   [probe customer_service.action] fp16 0.5125 | serve on: int8_plain 0.5125 int8_split 0.5125 int8_split_rot 0.5125 int4_plain 0.5125 int4_split 0.5125 int4_split_rot 0.5125 int3_split_rot 0.5125 | retrained: int4_split_rot 0.5125
+   [probe customer_service.category] fp16 0.4500 | serve on: int8_plain 0.4500 int8_split 0.4500 int8_split_rot 0.4500 int4_plain 0.4500 int4_split 0.4500 int4_split_rot 0.4500 int3_split_rot 0.4500 | retrained: int4_split_rot 0.4500
+   [blocks:2 customer_service.action] fp16 0.5000 | serve on: int8_plain 0.5000 int8_split 0.5000 int8_split_rot 0.5000 int4_plain 0.2000 int4_split 0.5125 int4_split_rot 0.5000 int3_split_rot 0.5125 | retrained: int4_split_rot 0.5125
+   [blocks:2 customer_service.category] fp16 0.2625 | serve on: int8_plain 0.2625 int8_split 0.2625 int8_split_rot 0.2625 int4_plain 0.1250 int4_split 0.2625 int4_split_rot 0.2500 int3_split_rot 0.2625 | retrained: int4_split_rot 0.2500
+   trunk w8a8      : rel err 0.161 | probe acc 0.4812 (fp16 0.4812, agree 1.0000) | blocks:2 acc 0.3625 (fp16 0.3812, agree 0.9688)
+   trunk w8a8_split: rel err 0.119 | probe acc 0.4812 (fp16 0.4812, agree 1.0000) | blocks:2 acc 0.3750 (fp16 0.3812, agree 0.9938)
+   trunk kv4_kivi  : rel err 0.156 | probe acc 0.4812 (fp16 0.4812, agree 1.0000) | blocks:2 acc 0.3625 (fp16 0.3812, agree 0.9437)
+   trunk kv3_rot   : rel err 0.296 | probe acc 0.4812 (fp16 0.4812, agree 1.0000) | blocks:2 acc 0.3687 (fp16 0.3812, agree 0.9000)
+done -> results/tarski/explore_lit_quant_smoke.json
+  CPU (qnnpack, 8 threads)  16 tokens, depth  4: fp32 2.72 ms, dynamic int8 5.45 ms (0.50x)
+  CPU (qnnpack, 8 threads)  64 tokens, depth  4: fp32 9.50 ms, dynamic int8 11.11 ms (0.85x)
+== banking77: 300 messages, 1 tasks, splits [8], cached in 0s
+  split 8: max |h| 1192, p99.9 54.2, top [251, 689, 142, 721], split-off channels [251, 689, 142, 721, 31, 67, 254]
+   rel. error on normal channels: fp16 0.000 | int8_plain 0.266 | int8_split 0.013 | int8_split_rot 0.008 | int4_plain 0.957 | int4_split 0.238 | int4_split_rot 0.137 | int3_split_rot 0.320
+   [probe intent] fp16 0.0375 | serve on: int8_plain 0.0375 int8_split 0.0375 int8_split_rot 0.0375 int4_plain 0.0250 int4_split 0.0375 int4_split_rot 0.0375 int3_split_rot 0.0375 | retrained: int4_split_rot 0.0250
+   [blocks:2 intent] fp16 0.0375 | serve on: int8_plain 0.0250 int8_split 0.0375 int8_split_rot 0.0375 int4_plain 0.0375 int4_split 0.0375 int4_split_rot 0.0375 int3_split_rot 0.0375 | retrained: int4_split_rot 0.0125
+   trunk w8a8      : rel err 0.136 | probe acc 0.0375 (fp16 0.0375, agree 0.8500) | blocks:2 acc 0.0375 (fp16 0.0375, agree 0.8625)
+   trunk w8a8_split: rel err 0.075 | probe acc 0.0375 (fp16 0.0375, agree 0.9000) | blocks:2 acc 0.0250 (fp16 0.0375, agree 0.9250)
+   trunk kv4_kivi  : rel err 0.162 | probe acc 0.0250 (fp16 0.0375, agree 0.8625) | blocks:2 acc 0.0375 (fp16 0.0375, agree 0.8375)
+   trunk kv3_rot   : rel err 0.328 | probe acc 0.0250 (fp16 0.0375, agree 0.7750) | blocks:2 acc 0.0125 (fp16 0.0375, agree 0.6500)
+== clinc150: 480 messages, 2 tasks, splits [11], cached in 1s
+  split 11: max |h| 211, p99.9 66.4, top [251, 254, 67, 689], split-off channels [251, 254, 67]
+   rel. error on normal channels: fp16 0.000 | int8_plain 0.041 | int8_split 0.010 | int8_split_rot 0.007 | int4_plain 0.569 | int4_split 0.182 | int4_split_rot 0.136 | int3_split_rot 0.316
+   [probe intent] fp16 0.2500 | serve on: int8_plain 0.2500 int8_split 0.2500 int8_split_rot 0.2500 int4_plain 0.2500 int4_split 0.2500 int4_split_rot 0.2500 int3_split_rot 0.2500 | retrained: int4_split_rot 0.2500
+   [probe domain] fp16 0.2125 | serve on: int8_plain 0.2125 int8_split 0.2125 int8_split_rot 0.2125 int4_plain 0.1500 int4_split 0.2125 int4_split_rot 0.2125 int3_split_rot 0.2375 | retrained: int4_split_rot 0.2000
+   [blocks:2 intent] fp16 0.2625 | serve on: int8_plain 0.2625 int8_split 0.2625 int8_split_rot 0.2625 int4_plain 0.1375 int4_split 0.2625 int4_split_rot 0.2500 int3_split_rot 0.2625 | retrained: int4_split_rot 0.2500
+   [blocks:2 domain] fp16 0.5000 | serve on: int8_plain 0.5000 int8_split 0.5000 int8_split_rot 0.5000 int4_plain 0.2375 int4_split 0.4625 int4_split_rot 0.4750 int3_split_rot 0.4625 | retrained: int4_split_rot 0.4875
+   trunk w8a8      : rel err 0.122 | probe acc 0.2250 (fp16 0.2313, agree 0.9625) | blocks:2 acc 0.3688 (fp16 0.3812, agree 0.9625)
+   trunk w8a8_split: rel err 0.060 | probe acc 0.2250 (fp16 0.2313, agree 0.9688) | blocks:2 acc 0.3750 (fp16 0.3812, agree 0.9688)
+   trunk kv4_kivi  : rel err 0.126 | probe acc 0.2375 (fp16 0.2313, agree 0.9375) | blocks:2 acc 0.3188 (fp16 0.3812, agree 0.8938)
+   trunk kv3_rot   : rel err 0.344 | probe acc 0.2250 (fp16 0.2313, agree 0.8688) | blocks:2 acc 0.3062 (fp16 0.3812, agree 0.7250)
+== typed-decisions: 271 messages, 2 tasks, splits [14], cached in 3s
+  split 14: max |h| 13720, p99.9 94.8, top [251, 254, 67, 142], split-off channels [251, 254, 67, 142, 31, 721]
+   rel. error on normal channels: fp16 0.000 | int8_plain 0.451 | int8_split 0.011 | int8_split_rot 0.007 | int4_plain 0.968 | int4_split 0.194 | int4_split_rot 0.134 | int3_split_rot 0.308
+   [probe customer_service.action] fp16 0.5125 | serve on: int8_plain 0.5125 int8_split 0.5125 int8_split_rot 0.5125 int4_plain 0.5125 int4_split 0.5125 int4_split_rot 0.5125 int3_split_rot 0.5125 | retrained: int4_split_rot 0.5125
+   [probe customer_service.category] fp16 0.4500 | serve on: int8_plain 0.4500 int8_split 0.4500 int8_split_rot 0.4500 int4_plain 0.4500 int4_split 0.4500 int4_split_rot 0.4500 int3_split_rot 0.4500 | retrained: int4_split_rot 0.4500
+   [blocks:2 customer_service.action] fp16 0.5000 | serve on: int8_plain 0.5000 int8_split 0.5000 int8_split_rot 0.5000 int4_plain 0.2000 int4_split 0.5125 int4_split_rot 0.5000 int3_split_rot 0.5125 | retrained: int4_split_rot 0.5125
+   [blocks:2 customer_service.category] fp16 0.2625 | serve on: int8_plain 0.2625 int8_split 0.2625 int8_split_rot 0.2625 int4_plain 0.1250 int4_split 0.2625 int4_split_rot 0.2500 int3_split_rot 0.2625 | retrained: int4_split_rot 0.2500
+   trunk w8a8      : rel err 0.161 | probe acc 0.4812 (fp16 0.4812, agree 1.0000) | blocks:2 acc 0.3625 (fp16 0.3812, agree 0.9688)
+   trunk w8a8_split: rel err 0.119 | probe acc 0.4812 (fp16 0.4812, agree 1.0000) | blocks:2 acc 0.3750 (fp16 0.3812, agree 0.9938)
+   trunk kv4_kivi  : rel err 0.156 | probe acc 0.4812 (fp16 0.4812, agree 1.0000) | blocks:2 acc 0.3625 (fp16 0.3812, agree 0.9437)
+   trunk kv3_rot   : rel err 0.296 | probe acc 0.4812 (fp16 0.4812, agree 1.0000) | blocks:2 acc 0.3687 (fp16 0.3812, agree 0.9000)
+done -> results/tarski/explore_lit_quant_smoke.json

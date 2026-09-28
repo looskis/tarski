@@ -1,0 +1,1375 @@
+{
+ "dataset": "typed-decisions",
+ "split": 11,
+ "device": "cuda",
+ "configs": {
+  "probe": {
+   "kind": "probe",
+   "depth": 0,
+   "mean": {
+    "acc": 0.62625,
+    "macro_f1": 0.43874577521162345,
+    "ece": 0.134901842944324,
+    "nll": 0.8757925540208816,
+    "acc_seed_std": 0.000250000000000028
+   },
+   "tasks": {
+    "agent_trace_observability.action": {
+     "acc": 0.54,
+     "macro_f1": 0.33962438485331886,
+     "ece": 0.11254717484116555,
+     "nll": 1.068389654159546,
+     "brier_soft": 0.09188821539282799
+    },
+    "agent_trace_observability.needs_review": {
+     "acc": 0.815,
+     "macro_f1": 0.8139373267173401,
+     "ece": 0.2156208798289299,
+     "nll": 0.5313670039176941,
+     "brier_soft": 0.07564046233892441
+    },
+    "agent_trace_observability.outcome": {
+     "acc": 0.4,
+     "macro_f1": 0.2760244884474158,
+     "ece": 0.03898592084646225,
+     "nll": 1.170470118522644,
+     "brier_soft": 0.1570059433579445
+    },
+    "agent_trace_observability.risk": {
+     "acc": 0.45,
+     "macro_f1": 0.409544896509503,
+     "ece": 0.09175201460719107,
+     "nll": 1.179966926574707,
+     "brier_soft": 0.15646644681692123
+    },
+    "agent_trace_observability.urgency": {
+     "acc": 0.405,
+     "macro_f1": 0.2547508617404479,
+     "ece": 0.11108775705099107,
+     "nll": 1.171446144580841,
+     "brier_soft": 0.09623316302895546
+    },
+    "customer_service.action": {
+     "acc": 0.61,
+     "macro_f1": 0.29161811289544715,
+     "ece": 0.103398554623127,
+     "nll": 1.039709448814392,
+     "brier_soft": 0.13652880489826202
+    },
+    "customer_service.category": {
+     "acc": 0.69,
+     "macro_f1": 0.5400386659319121,
+     "ece": 0.12791237100958824,
+     "nll": 0.7817371487617493,
+     "brier_soft": 0.27592600882053375
+    },
+    "customer_service.churn_risk": {
+     "acc": 0.665,
+     "macro_f1": 0.482185474980506,
+     "ece": 0.22729384809732434,
+     "nll": 0.9714110791683197,
+     "brier_soft": 0.12991901487112045
+    },
+    "customer_service.needs_human": {
+     "acc": 0.725,
+     "macro_f1": 0.614846919902152,
+     "ece": 0.12360229998826981,
+     "nll": 0.4930328279733658,
+     "brier_soft": 0.0723375529050827
+    },
+    "customer_service.urgency": {
+     "acc": 0.62,
+     "macro_f1": 0.43798087277184056,
+     "ece": 0.15171239167451858,
+     "nll": 0.9037198126316071,
+     "brier_soft": 0.11536045372486115
+    },
+    "invoice_processing.discrepancy_severity": {
+     "acc": 0.535,
+     "macro_f1": 0.2910286173901607,
+     "ece": 0.10638391464948654,
+     "nll": 1.0428798198699951,
+     "brier_soft": 0.28042082488536835
+    },
+    "invoice_processing.disposition": {
+     "acc": 0.56,
+     "macro_f1": 0.2918010752688172,
+     "ece": 0.16617417499423026,
+     "nll": 1.127131700515747,
+     "brier_soft": 0.21257341653108597
+    },
+    "invoice_processing.duplicate": {
+     "acc": 0.89,
+     "macro_f1": 0.4708994708994709,
+     "ece": 0.02375466912984845,
+     "nll": 0.3411038964986801,
+     "brier_soft": 0.07433820143342018
+    },
+    "invoice_processing.matches_order": {
+     "acc": 0.77,
+     "macro_f1": 0.7643746678084213,
+     "ece": 0.1425296905636787,
+     "nll": 0.5596745014190674,
+     "brier_soft": 0.24537422508001328
+    },
+    "invoice_processing.urgency": {
+     "acc": 0.565,
+     "macro_f1": 0.3087976994488697,
+     "ece": 0.10395503640174866,
+     "nll": 0.9465966522693634,
+     "brier_soft": 0.09281759709119797
+    },
+    "security_incidents.credential_compromise": {
+     "acc": 0.655,
+     "macro_f1": 0.654288967611336,
+     "ece": 0.12252235025167466,
+     "nll": 0.6305571496486664,
+     "brier_soft": 0.05090740881860256
+    },
+    "security_incidents.disposition": {
+     "acc": 0.77,
+     "macro_f1": 0.29970760233918126,
+     "ece": 0.2733871142566204,
+     "nll": 0.8657799065113068,
+     "brier_soft": 0.07262619957327843
+    },
+    "security_incidents.severity": {
+     "acc": 0.54,
+     "macro_f1": 0.25371737696265995,
+     "ece": 0.18045266047120095,
+     "nll": 1.1457750797271729,
+     "brier_soft": 0.08304541185498238
+    },
+    "security_incidents.true_positive": {
+     "acc": 0.765,
+     "macro_f1": 0.6925732787359318,
+     "ece": 0.13958021759986877,
+     "nll": 0.5371567904949188,
+     "brier_soft": 0.04144389554858208
+    },
+    "security_incidents.urgency": {
+     "acc": 0.555,
+     "macro_f1": 0.2871747430177359,
+     "ece": 0.13538381800055505,
+     "nll": 1.0079454183578491,
+     "brier_soft": 0.07600929960608482
+    }
+   },
+   "per_seed_mean_acc": [
+    0.626,
+    0.6265000000000001
+   ],
+   "trainable_params": 4265,
+   "gflops_per_extra_decision_at_median_len": 0.00039168,
+   "trunk_depth_needed": 11,
+   "wall_s": 198.6
+  },
+  "blocks:2": {
+   "kind": "blocks",
+   "depth": 2,
+   "mean": {
+    "acc": 0.7532500000000001,
+    "macro_f1": 0.6083439017222534,
+    "ece": 0.16654769143462184,
+    "nll": 0.6604417201131583,
+    "acc_seed_std": 0.0007500000000000839
+   },
+   "tasks": {
+    "agent_trace_observability.action": {
+     "acc": 0.705,
+     "macro_f1": 0.525810258418954,
+     "ece": 0.20531624317169195,
+     "nll": 0.8504030704498291,
+     "brier_soft": 0.05097539909183979
+    },
+    "agent_trace_observability.needs_review": {
+     "acc": 0.85,
+     "macro_f1": 0.8469843683051759,
+     "ece": 0.16921024888753888,
+     "nll": 0.3920353651046753,
+     "brier_soft": 0.03122276160866022
+    },
+    "agent_trace_observability.outcome": {
+     "acc": 0.67,
+     "macro_f1": 0.5517378917378918,
+     "ece": 0.1997789189219475,
+     "nll": 0.7703730762004852,
+     "brier_soft": 0.06968215852975845
+    },
+    "agent_trace_observability.risk": {
+     "acc": 0.79,
+     "macro_f1": 0.8079449983451625,
+     "ece": 0.21326888635754584,
+     "nll": 0.6510058641433716,
+     "brier_soft": 0.047712260857224464
+    },
+    "agent_trace_observability.urgency": {
+     "acc": 0.64,
+     "macro_f1": 0.6066148248577254,
+     "ece": 0.14283849358558656,
+     "nll": 0.8250430524349213,
+     "brier_soft": 0.045185038819909096
+    },
+    "customer_service.action": {
+     "acc": 0.6,
+     "macro_f1": 0.32778042218170966,
+     "ece": 0.12868184104561808,
+     "nll": 0.9615437388420105,
+     "brier_soft": 0.1295301578938961
+    },
+    "customer_service.category": {
+     "acc": 0.91,
+     "macro_f1": 0.9136336097477638,
+     "ece": 0.13638058632612227,
+     "nll": 0.31714974343776703,
+     "brier_soft": 0.08026419207453728
+    },
+    "customer_service.churn_risk": {
+     "acc": 0.77,
+     "macro_f1": 0.5764216363580194,
+     "ece": 0.237659170627594,
+     "nll": 0.8021717965602875,
+     "brier_soft": 0.09401236474514008
+    },
+    "customer_service.needs_human": {
+     "acc": 0.79,
+     "macro_f1": 0.739600851491848,
+     "ece": 0.0984822514653206,
+     "nll": 0.5008174777030945,
+     "brier_soft": 0.07590433582663536
+    },
+    "customer_service.urgency": {
+     "acc": 0.685,
+     "macro_f1": 0.4903034294906111,
+     "ece": 0.12604291632771492,
+     "nll": 0.7032077610492706,
+     "brier_soft": 0.0659385398030281
+    },
+    "invoice_processing.discrepancy_severity": {
+     "acc": 0.705,
+     "macro_f1": 0.47635863272355494,
+     "ece": 0.16371606066823005,
+     "nll": 0.8148670196533203,
+     "brier_soft": 0.16538872569799423
+    },
+    "invoice_processing.disposition": {
+     "acc": 0.705,
+     "macro_f1": 0.4757107593254679,
+     "ece": 0.14990662321448325,
+     "nll": 0.8730730414390564,
+     "brier_soft": 0.14026525616645813
+    },
+    "invoice_processing.duplicate": {
+     "acc": 0.905,
+     "macro_f1": 0.6228787025750973,
+     "ece": 0.10114938318729401,
+     "nll": 0.21694647520780563,
+     "brier_soft": 0.035744624212384224
+    },
+    "invoice_processing.matches_order": {
+     "acc": 0.88,
+     "macro_f1": 0.8787547287701911,
+     "ece": 0.12827047377824785,
+     "nll": 0.34839335083961487,
+     "brier_soft": 0.12142505124211311
+    },
+    "invoice_processing.urgency": {
+     "acc": 0.735,
+     "macro_f1": 0.4598698384650076,
+     "ece": 0.21388622701168059,
+     "nll": 0.6772761344909668,
+     "brier_soft": 0.03482651524245739
+    },
+    "security_incidents.credential_compromise": {
+     "acc": 0.755,
+     "macro_f1": 0.7535394358168411,
+     "ece": 0.1126706025004387,
+     "nll": 0.5640245378017426,
+     "brier_soft": 0.04315498098731041
+    },
+    "security_incidents.disposition": {
+     "acc": 0.745,
+     "macro_f1": 0.33632955460401115,
+     "ece": 0.20798401564359664,
+     "nll": 0.7599966526031494,
+     "brier_soft": 0.06172441877424717
+    },
+    "security_incidents.severity": {
+     "acc": 0.765,
+     "macro_f1": 0.572027509169537,
+     "ece": 0.2901187258958817,
+     "nll": 0.8421187102794647,
+     "brier_soft": 0.040389999747276306
+    },
+    "security_incidents.true_positive": {
+     "acc": 0.795,
+     "macro_f1": 0.7469203938363724,
+     "ece": 0.12207719951868057,
+     "nll": 0.4659363478422165,
+     "brier_soft": 0.03650921955704689
+    },
+    "security_incidents.urgency": {
+     "acc": 0.665,
+     "macro_f1": 0.45765618822412457,
+     "ece": 0.18351496055722238,
+     "nll": 0.8724511861801147,
+     "brier_soft": 0.05358796939253807
+    }
+   },
+   "per_seed_mean_acc": [
+    0.7540000000000001,
+    0.7525
+   ],
+   "trainable_params": 10033577,
+   "gflops_per_extra_decision_at_median_len": 5.143861248,
+   "trunk_depth_needed": 11,
+   "wall_s": 1089.5
+  },
+  "kvq:2:1": {
+   "kind": "kvq",
+   "depth": 2,
+   "r": 1,
+   "frozen": false,
+   "window": true,
+   "mean": {
+    "acc": 0.49775,
+    "macro_f1": 0.2487299033322296,
+    "ece": 0.08733087788522244,
+    "nll": 1.0337426759302617,
+    "acc_seed_std": 0.0037500000000000033
+   },
+   "tasks": {
+    "agent_trace_observability.action": {
+     "acc": 0.375,
+     "macro_f1": 0.17241578682755154,
+     "ece": 0.02568835228681566,
+     "nll": 1.2010007500648499,
+     "brier_soft": 0.13541687279939651
+    },
+    "agent_trace_observability.needs_review": {
+     "acc": 0.5449999999999999,
+     "macro_f1": 0.48367748144864076,
+     "ece": 0.061505888700485234,
+     "nll": 0.6854133903980255,
+     "brier_soft": 0.15446845442056656
+    },
+    "agent_trace_observability.outcome": {
+     "acc": 0.26,
+     "macro_f1": 0.10317460317460317,
+     "ece": 0.12285590291023255,
+     "nll": 1.3482515215873718,
+     "brier_soft": 0.20276089757680893
+    },
+    "agent_trace_observability.risk": {
+     "acc": 0.32999999999999996,
+     "macro_f1": 0.19532458282458282,
+     "ece": 0.02814084470272063,
+     "nll": 1.36380273103714,
+     "brier_soft": 0.21028026193380356
+    },
+    "agent_trace_observability.urgency": {
+     "acc": 0.365,
+     "macro_f1": 0.14924938725490194,
+     "ece": 0.017122692018747332,
+     "nll": 1.3296507596969604,
+     "brier_soft": 0.1359695866703987
+    },
+    "customer_service.action": {
+     "acc": 0.52,
+     "macro_f1": 0.1368421052631579,
+     "ece": 0.08483762860298157,
+     "nll": 1.2230449318885803,
+     "brier_soft": 0.17229339480400085
+    },
+    "customer_service.category": {
+     "acc": 0.24,
+     "macro_f1": 0.1755502686968204,
+     "ece": 0.041462742686271675,
+     "nll": 1.5125537514686584,
+     "brier_soft": 0.5675050020217896
+    },
+    "customer_service.churn_risk": {
+     "acc": 0.47,
+     "macro_f1": 0.1598639455782313,
+     "ece": 0.12995600610971447,
+     "nll": 1.2101148962974548,
+     "brier_soft": 0.19261928647756577
+    },
+    "customer_service.needs_human": {
+     "acc": 0.67,
+     "macro_f1": 0.40119760479041916,
+     "ece": 0.09371466755867004,
+     "nll": 0.6426020264625549,
+     "brier_soft": 0.10538633912801743
+    },
+    "customer_service.urgency": {
+     "acc": 0.415,
+     "macro_f1": 0.17590181990013817,
+     "ece": 0.019721722602844233,
+     "nll": 1.0775553584098816,
+     "brier_soft": 0.15856865793466568
+    },
+    "invoice_processing.discrepancy_severity": {
+     "acc": 0.415,
+     "macro_f1": 0.14610844337735096,
+     "ece": 0.07579722821712491,
+     "nll": 1.1337473392486572,
+     "brier_soft": 0.33518481254577637
+    },
+    "invoice_processing.disposition": {
+     "acc": 0.38,
+     "macro_f1": 0.13768115942028986,
+     "ece": 0.01911349669098853,
+     "nll": 1.210019052028656,
+     "brier_soft": 0.24623020738363266
+    },
+    "invoice_processing.duplicate": {
+     "acc": 0.89,
+     "macro_f1": 0.4708994708994709,
+     "ece": 0.0026369535923004284,
+     "nll": 0.3456241935491562,
+     "brier_soft": 0.07589064165949821
+    },
+    "invoice_processing.matches_order": {
+     "acc": 0.46,
+     "macro_f1": 0.3150684931506849,
+     "ece": 0.2072587329149246,
+     "nll": 0.7311366498470306,
+     "brier_soft": 0.3818701505661011
+    },
+    "invoice_processing.urgency": {
+     "acc": 0.505,
+     "macro_f1": 0.18059093224656136,
+     "ece": 0.1166423223912716,
+     "nll": 1.0802900791168213,
+     "brier_soft": 0.12911782413721085
+    },
+    "security_incidents.credential_compromise": {
+     "acc": 0.655,
+     "macro_f1": 0.6382326948834522,
+     "ece": 0.11928004384040833,
+     "nll": 0.6626725196838379,
+     "brier_soft": 0.06585430353879929
+    },
+    "security_incidents.disposition": {
+     "acc": 0.74,
+     "macro_f1": 0.21264367816091953,
+     "ece": 0.245048286318779,
+     "nll": 0.9541843831539154,
+     "brier_soft": 0.09170776233077049
+    },
+    "security_incidents.severity": {
+     "acc": 0.49,
+     "macro_f1": 0.13154362416107385,
+     "ece": 0.12333722755312919,
+     "nll": 1.2802448868751526,
+     "brier_soft": 0.12898462638258934
+    },
+    "security_incidents.true_positive": {
+     "acc": 0.73,
+     "macro_f1": 0.42196531791907516,
+     "ece": 0.11846977144479755,
+     "nll": 0.6008207201957703,
+     "brier_soft": 0.07131251320242882
+    },
+    "security_incidents.urgency": {
+     "acc": 0.5,
+     "macro_f1": 0.16666666666666666,
+     "ece": 0.09402704656124115,
+     "nll": 1.082123577594757,
+     "brier_soft": 0.10998338833451271
+    }
+   },
+   "per_seed_mean_acc": [
+    0.49400000000000005,
+    0.5015000000000001
+   ],
+   "trainable_params": 10033577,
+   "gflops_per_extra_decision_at_median_len": 0.021522432,
+   "trunk_depth_needed": 12,
+   "wall_s": 57.5
+  },
+  "kvq:4:4": {
+   "kind": "kvq",
+   "depth": 4,
+   "r": 4,
+   "frozen": false,
+   "window": true,
+   "mean": {
+    "acc": 0.5425,
+    "macro_f1": 0.30841114411998,
+    "ece": 0.11155286255478858,
+    "nll": 1.0107414983212948,
+    "acc_seed_std": 0.0025000000000000577
+   },
+   "tasks": {
+    "agent_trace_observability.action": {
+     "acc": 0.45,
+     "macro_f1": 0.2601910602297599,
+     "ece": 0.07072471246123313,
+     "nll": 1.2250335812568665,
+     "brier_soft": 0.1338762566447258
+    },
+    "agent_trace_observability.needs_review": {
+     "acc": 0.7649999999999999,
+     "macro_f1": 0.7609034267912773,
+     "ece": 0.14417943954467774,
+     "nll": 0.5503623634576797,
+     "brier_soft": 0.08910690248012543
+    },
+    "agent_trace_observability.outcome": {
+     "acc": 0.29500000000000004,
+     "macro_f1": 0.14558259201116344,
+     "ece": 0.06645812273025511,
+     "nll": 1.2836034297943115,
+     "brier_soft": 0.18743028491735458
+    },
+    "agent_trace_observability.risk": {
+     "acc": 0.49,
+     "macro_f1": 0.414459315107649,
+     "ece": 0.0736389723420143,
+     "nll": 1.0959294438362122,
+     "brier_soft": 0.1573316641151905
+    },
+    "agent_trace_observability.urgency": {
+     "acc": 0.5,
+     "macro_f1": 0.3291894836012483,
+     "ece": 0.08789950773119926,
+     "nll": 1.136121779680252,
+     "brier_soft": 0.09785942919552326
+    },
+    "customer_service.action": {
+     "acc": 0.52,
+     "macro_f1": 0.1368421052631579,
+     "ece": 0.10028335243463518,
+     "nll": 1.2046499848365784,
+     "brier_soft": 0.16770059615373611
+    },
+    "customer_service.category": {
+     "acc": 0.22499999999999998,
+     "macro_f1": 0.11685439393367472,
+     "ece": 0.11715565040707589,
+     "nll": 1.4867413640022278,
+     "brier_soft": 0.5573494732379913
+    },
+    "customer_service.churn_risk": {
+     "acc": 0.475,
+     "macro_f1": 0.18603353251970764,
+     "ece": 0.1048539674282074,
+     "nll": 1.1704012751579285,
+     "brier_soft": 0.18768537044525146
+    },
+    "customer_service.needs_human": {
+     "acc": 0.685,
+     "macro_f1": 0.4465337617448031,
+     "ece": 0.12049221783876422,
+     "nll": 0.6336973309516907,
+     "brier_soft": 0.10160627588629723
+    },
+    "customer_service.urgency": {
+     "acc": 0.42,
+     "macro_f1": 0.14788732394366197,
+     "ece": 0.02287403389811514,
+     "nll": 1.0906201004981995,
+     "brier_soft": 0.16348818689584732
+    },
+    "invoice_processing.discrepancy_severity": {
+     "acc": 0.5700000000000001,
+     "macro_f1": 0.26125894694994634,
+     "ece": 0.18489696130156513,
+     "nll": 1.0913963317871094,
+     "brier_soft": 0.3148390054702759
+    },
+    "invoice_processing.disposition": {
+     "acc": 0.385,
+     "macro_f1": 0.14777576489533012,
+     "ece": 0.019104619622230534,
+     "nll": 1.1986669898033142,
+     "brier_soft": 0.23980789631605148
+    },
+    "invoice_processing.duplicate": {
+     "acc": 0.89,
+     "macro_f1": 0.4708994708994709,
+     "ece": 0.003526791334152235,
+     "nll": 0.3435385525226593,
+     "brier_soft": 0.07533329725265503
+    },
+    "invoice_processing.matches_order": {
+     "acc": 0.55,
+     "macro_f1": 0.4665325487824732,
+     "ece": 0.26900824785232547,
+     "nll": 1.040955513715744,
+     "brier_soft": 0.41596759855747223
+    },
+    "invoice_processing.urgency": {
+     "acc": 0.51,
+     "macro_f1": 0.16887417218543047,
+     "ece": 0.09429403424263003,
+     "nll": 1.075459063053131,
+     "brier_soft": 0.12568651139736176
+    },
+    "security_incidents.credential_compromise": {
+     "acc": 0.63,
+     "macro_f1": 0.5644323052342894,
+     "ece": 0.10934581696987151,
+     "nll": 0.6590031385421753,
+     "brier_soft": 0.06925086304545403
+    },
+    "security_incidents.disposition": {
+     "acc": 0.74,
+     "macro_f1": 0.21264367816091953,
+     "ece": 0.28989582374691963,
+     "nll": 0.995676726102829,
+     "brier_soft": 0.09632768109440804
+    },
+    "security_incidents.severity": {
+     "acc": 0.49,
+     "macro_f1": 0.1324384787472036,
+     "ece": 0.138552086353302,
+     "nll": 1.2945976257324219,
+     "brier_soft": 0.11819088086485863
+    },
+    "security_incidents.true_positive": {
+     "acc": 0.76,
+     "macro_f1": 0.6322238547317661,
+     "ece": 0.15133006781339645,
+     "nll": 0.5432325899600983,
+     "brier_soft": 0.050124211236834526
+    },
+    "security_incidents.urgency": {
+     "acc": 0.5,
+     "macro_f1": 0.16666666666666666,
+     "ece": 0.06254282504320142,
+     "nll": 1.0951427817344666,
+     "brier_soft": 0.12063082680106163
+    }
+   },
+   "per_seed_mean_acc": [
+    0.5399999999999999,
+    0.545
+   ],
+   "trainable_params": 20065961,
+   "gflops_per_extra_decision_at_median_len": 0.172179456,
+   "trunk_depth_needed": 14,
+   "wall_s": 114.4
+  },
+  "kvq:4:4:frozen": {
+   "kind": "kvq",
+   "depth": 4,
+   "r": 4,
+   "frozen": true,
+   "window": true,
+   "mean": {
+    "acc": 0.5122500000000001,
+    "macro_f1": 0.26110225064461356,
+    "ece": 0.09782956910133361,
+    "nll": 1.0381307914853095,
+    "acc_seed_std": 0.00824999999999998
+   },
+   "tasks": {
+    "agent_trace_observability.action": {
+     "acc": 0.36,
+     "macro_f1": 0.1338456435205661,
+     "ece": 0.0382517158985138,
+     "nll": 1.208943486213684,
+     "brier_soft": 0.1363440901041031
+    },
+    "agent_trace_observability.needs_review": {
+     "acc": 0.615,
+     "macro_f1": 0.588267888613113,
+     "ece": 0.10374921500682828,
+     "nll": 0.6862749457359314,
+     "brier_soft": 0.1547141596674919
+    },
+    "agent_trace_observability.outcome": {
+     "acc": 0.28500000000000003,
+     "macro_f1": 0.13244973922094377,
+     "ece": 0.1118236893415451,
+     "nll": 1.3265700340270996,
+     "brier_soft": 0.19653008878231049
+    },
+    "agent_trace_observability.risk": {
+     "acc": 0.29500000000000004,
+     "macro_f1": 0.14596619897959184,
+     "ece": 0.03758330062031746,
+     "nll": 1.379025936126709,
+     "brier_soft": 0.21164503693580627
+    },
+    "agent_trace_observability.urgency": {
+     "acc": 0.37,
+     "macro_f1": 0.15484473488128564,
+     "ece": 0.05356620371341705,
+     "nll": 1.3525323867797852,
+     "brier_soft": 0.13956844806671143
+    },
+    "customer_service.action": {
+     "acc": 0.52,
+     "macro_f1": 0.1368421052631579,
+     "ece": 0.08802619501948356,
+     "nll": 1.2508079409599304,
+     "brier_soft": 0.18054848909378052
+    },
+    "customer_service.category": {
+     "acc": 0.28,
+     "macro_f1": 0.17335871576290468,
+     "ece": 0.07501997500658036,
+     "nll": 1.4974581003189087,
+     "brier_soft": 0.5595473647117615
+    },
+    "customer_service.churn_risk": {
+     "acc": 0.47,
+     "macro_f1": 0.1598639455782313,
+     "ece": 0.0700227226316929,
+     "nll": 1.2097025513648987,
+     "brier_soft": 0.1996002420783043
+    },
+    "customer_service.needs_human": {
+     "acc": 0.67,
+     "macro_f1": 0.40119760479041916,
+     "ece": 0.10994516670703891,
+     "nll": 0.6471056938171387,
+     "brier_soft": 0.10814793035387993
+    },
+    "customer_service.urgency": {
+     "acc": 0.47,
+     "macro_f1": 0.2265109236426563,
+     "ece": 0.10325715884566307,
+     "nll": 1.09014493227005,
+     "brier_soft": 0.16155609488487244
+    },
+    "invoice_processing.discrepancy_severity": {
+     "acc": 0.54,
+     "macro_f1": 0.2593459758332557,
+     "ece": 0.19541487991809844,
+     "nll": 1.203843891620636,
+     "brier_soft": 0.3503724932670593
+    },
+    "invoice_processing.disposition": {
+     "acc": 0.47000000000000003,
+     "macro_f1": 0.221274208028729,
+     "ece": 0.11779731795191764,
+     "nll": 1.2000337839126587,
+     "brier_soft": 0.23823730647563934
+    },
+    "invoice_processing.duplicate": {
+     "acc": 0.89,
+     "macro_f1": 0.4708994708994709,
+     "ece": 0.002501204013824476,
+     "nll": 0.3471726179122925,
+     "brier_soft": 0.07635477185249329
+    },
+    "invoice_processing.matches_order": {
+     "acc": 0.46,
+     "macro_f1": 0.3150684931506849,
+     "ece": 0.20949582368135455,
+     "nll": 0.7370414733886719,
+     "brier_soft": 0.3863452523946762
+    },
+    "invoice_processing.urgency": {
+     "acc": 0.51,
+     "macro_f1": 0.16887417218543047,
+     "ece": 0.09198413625359536,
+     "nll": 1.0691665410995483,
+     "brier_soft": 0.12471188977360725
+    },
+    "security_incidents.credential_compromise": {
+     "acc": 0.585,
+     "macro_f1": 0.46574377551607155,
+     "ece": 0.08595604330301282,
+     "nll": 0.6842745244503021,
+     "brier_soft": 0.0822431854903698
+    },
+    "security_incidents.disposition": {
+     "acc": 0.74,
+     "macro_f1": 0.21264367816091953,
+     "ece": 0.153594673871994,
+     "nll": 0.8967450261116028,
+     "brier_soft": 0.11203205212950706
+    },
+    "security_incidents.severity": {
+     "acc": 0.47,
+     "macro_f1": 0.13739841323863483,
+     "ece": 0.10089912295341494,
+     "nll": 1.2741608023643494,
+     "brier_soft": 0.11236727237701416
+    },
+    "security_incidents.true_positive": {
+     "acc": 0.745,
+     "macro_f1": 0.5509826589595376,
+     "ece": 0.16581748366355892,
+     "nll": 0.6222273111343384,
+     "brier_soft": 0.07963570579886436
+    },
+    "security_incidents.urgency": {
+     "acc": 0.5,
+     "macro_f1": 0.16666666666666666,
+     "ece": 0.041885353624820716,
+     "nll": 1.0793838500976562,
+     "brier_soft": 0.10571800917387009
+    }
+   },
+   "per_seed_mean_acc": [
+    0.5205,
+    0.504
+   ],
+   "trainable_params": 5801,
+   "gflops_per_extra_decision_at_median_len": 0.172179456,
+   "trunk_depth_needed": 14,
+   "wall_s": 98.8
+  },
+  "kvq:2:4": {
+   "kind": "kvq",
+   "depth": 2,
+   "r": 4,
+   "frozen": false,
+   "window": true,
+   "mean": {
+    "acc": 0.5175,
+    "macro_f1": 0.2689625773155708,
+    "ece": 0.09436763751506805,
+    "nll": 1.0165985472500325,
+    "acc_seed_std": 0.0010000000000000564
+   },
+   "tasks": {
+    "agent_trace_observability.action": {
+     "acc": 0.45999999999999996,
+     "macro_f1": 0.25795873490461535,
+     "ece": 0.09357614859938623,
+     "nll": 1.2102010250091553,
+     "brier_soft": 0.13045089691877365
+    },
+    "agent_trace_observability.needs_review": {
+     "acc": 0.535,
+     "macro_f1": 0.449009219348659,
+     "ece": 0.1327340668439865,
+     "nll": 0.7123439013957977,
+     "brier_soft": 0.17773768305778503
+    },
+    "agent_trace_observability.outcome": {
+     "acc": 0.26,
+     "macro_f1": 0.10317460317460317,
+     "ece": 0.08805908799171447,
+     "nll": 1.3177040219306946,
+     "brier_soft": 0.1934800073504448
+    },
+    "agent_trace_observability.risk": {
+     "acc": 0.51,
+     "macro_f1": 0.37106989780026456,
+     "ece": 0.14471072167158125,
+     "nll": 1.1812642216682434,
+     "brier_soft": 0.1497076265513897
+    },
+    "agent_trace_observability.urgency": {
+     "acc": 0.445,
+     "macro_f1": 0.27888172510383463,
+     "ece": 0.09075711816549302,
+     "nll": 1.1572229266166687,
+     "brier_soft": 0.10246835462749004
+    },
+    "customer_service.action": {
+     "acc": 0.52,
+     "macro_f1": 0.1368421052631579,
+     "ece": 0.09523926019668578,
+     "nll": 1.2077907919883728,
+     "brier_soft": 0.16917270421981812
+    },
+    "customer_service.category": {
+     "acc": 0.21,
+     "macro_f1": 0.11062283026615402,
+     "ece": 0.05536555260419847,
+     "nll": 1.5223388671875,
+     "brier_soft": 0.5676110982894897
+    },
+    "customer_service.churn_risk": {
+     "acc": 0.47,
+     "macro_f1": 0.1598639455782313,
+     "ece": 0.08600998550653456,
+     "nll": 1.1973783373832703,
+     "brier_soft": 0.1931830570101738
+    },
+    "customer_service.needs_human": {
+     "acc": 0.67,
+     "macro_f1": 0.40119760479041916,
+     "ece": 0.11160003393888476,
+     "nll": 0.6466602981090546,
+     "brier_soft": 0.10742968320846558
+    },
+    "customer_service.urgency": {
+     "acc": 0.42,
+     "macro_f1": 0.14788732394366197,
+     "ece": 0.0169348818063736,
+     "nll": 1.0857498049736023,
+     "brier_soft": 0.15998893231153488
+    },
+    "invoice_processing.discrepancy_severity": {
+     "acc": 0.51,
+     "macro_f1": 0.27022464324293594,
+     "ece": 0.16641086921095846,
+     "nll": 1.145686686038971,
+     "brier_soft": 0.3388320505619049
+    },
+    "invoice_processing.disposition": {
+     "acc": 0.39,
+     "macro_f1": 0.14933181875895596,
+     "ece": 0.031370400786399855,
+     "nll": 1.1993231773376465,
+     "brier_soft": 0.2388695701956749
+    },
+    "invoice_processing.duplicate": {
+     "acc": 0.89,
+     "macro_f1": 0.4708994708994709,
+     "ece": 0.003014370203018202,
+     "nll": 0.34571780264377594,
+     "brier_soft": 0.07597905397415161
+    },
+    "invoice_processing.matches_order": {
+     "acc": 0.625,
+     "macro_f1": 0.590042780748663,
+     "ece": 0.13523330837488173,
+     "nll": 0.6563996374607086,
+     "brier_soft": 0.3170415014028549
+    },
+    "invoice_processing.urgency": {
+     "acc": 0.42500000000000004,
+     "macro_f1": 0.19458684590263536,
+     "ece": 0.09019613146781921,
+     "nll": 1.1153964400291443,
+     "brier_soft": 0.13493262231349945
+    },
+    "security_incidents.credential_compromise": {
+     "acc": 0.55,
+     "macro_f1": 0.3548387096774194,
+     "ece": 0.11597666859626765,
+     "nll": 0.7169338762760162,
+     "brier_soft": 0.12700403481721878
+    },
+    "security_incidents.disposition": {
+     "acc": 0.74,
+     "macro_f1": 0.21264367816091953,
+     "ece": 0.2587251549959183,
+     "nll": 0.9798011183738708,
+     "brier_soft": 0.10266850888729095
+    },
+    "security_incidents.severity": {
+     "acc": 0.49,
+     "macro_f1": 0.13154362416107385,
+     "ece": 0.11417655438184737,
+     "nll": 1.2684108018875122,
+     "brier_soft": 0.1125059723854065
+    },
+    "security_incidents.true_positive": {
+     "acc": 0.73,
+     "macro_f1": 0.42196531791907516,
+     "ece": 0.029101973176002504,
+     "nll": 0.5773520469665527,
+     "brier_soft": 0.10031266883015633
+    },
+    "security_incidents.urgency": {
+     "acc": 0.5,
+     "macro_f1": 0.16666666666666666,
+     "ece": 0.028160461783409113,
+     "nll": 1.0882951617240906,
+     "brier_soft": 0.11482271179556847
+    }
+   },
+   "per_seed_mean_acc": [
+    0.5165,
+    0.5185000000000001
+   ],
+   "trainable_params": 10035881,
+   "gflops_per_extra_decision_at_median_len": 0.086089728,
+   "trunk_depth_needed": 12,
+   "wall_s": 62.5
+  },
+  "kvq:4:4:global": {
+   "kind": "kvq",
+   "depth": 4,
+   "r": 4,
+   "frozen": false,
+   "window": false,
+   "mean": {
+    "acc": 0.527,
+    "macro_f1": 0.2922862840391072,
+    "ece": 0.12142730091512204,
+    "nll": NaN,
+    "acc_seed_std": 0.015000000000000013
+   },
+   "tasks": {
+    "agent_trace_observability.action": {
+     "acc": 0.375,
+     "macro_f1": 0.1729260935143288,
+     "ece": 0.10204651311039922,
+     "nll": 1.2044228315353394,
+     "brier_soft": 0.13133885711431503
+    },
+    "agent_trace_observability.needs_review": {
+     "acc": 0.665,
+     "macro_f1": 0.6058526832232995,
+     "ece": 0.13949841976165772,
+     "nll": 0.5678145587444305,
+     "brier_soft": 0.10918049141764641
+    },
+    "agent_trace_observability.outcome": {
+     "acc": 0.26,
+     "macro_f1": 0.10317460317460317,
+     "ece": 0.14446907863020897,
+     "nll": 1.3273786902427673,
+     "brier_soft": 0.19527378678321838
+    },
+    "agent_trace_observability.risk": {
+     "acc": 0.47,
+     "macro_f1": 0.39059920877775833,
+     "ece": 0.07572166189551352,
+     "nll": 1.118737131357193,
+     "brier_soft": 0.16177194938063622
+    },
+    "agent_trace_observability.urgency": {
+     "acc": 0.505,
+     "macro_f1": 0.35750376348086393,
+     "ece": 0.10435798704624177,
+     "nll": 1.1391011476516724,
+     "brier_soft": 0.09720352850854397
+    },
+    "customer_service.action": {
+     "acc": 0.54,
+     "macro_f1": 0.1751444424557007,
+     "ece": 0.13013034865260126,
+     "nll": 1.1901037693023682,
+     "brier_soft": 0.16401265561580658
+    },
+    "customer_service.category": {
+     "acc": 0.265,
+     "macro_f1": 0.16386221368615733,
+     "ece": 0.13906552165746688,
+     "nll": 1.5003176927566528,
+     "brier_soft": 0.5626614093780518
+    },
+    "customer_service.churn_risk": {
+     "acc": 0.49,
+     "macro_f1": 0.24111311191143123,
+     "ece": 0.11592537760734557,
+     "nll": 1.159903645515442,
+     "brier_soft": 0.1830417588353157
+    },
+    "customer_service.needs_human": {
+     "acc": 0.67,
+     "macro_f1": 0.40119760479041916,
+     "ece": 0.11939327239990236,
+     "nll": 0.6337453126907349,
+     "brier_soft": 0.10316849127411842
+    },
+    "customer_service.urgency": {
+     "acc": 0.44499999999999995,
+     "macro_f1": 0.19360178162995065,
+     "ece": 0.06610465362668037,
+     "nll": 1.0558298826217651,
+     "brier_soft": 0.15332960337400436
+    },
+    "invoice_processing.discrepancy_severity": {
+     "acc": 0.5,
+     "macro_f1": 0.28194553457990124,
+     "ece": 0.2095887278020382,
+     "nll": 1.0389089584350586,
+     "brier_soft": 0.29749614000320435
+    },
+    "invoice_processing.disposition": {
+     "acc": 0.49,
+     "macro_f1": 0.2618934016658017,
+     "ece": 0.11714085131883623,
+     "nll": 1.1505637168884277,
+     "brier_soft": 0.22506112605333328
+    },
+    "invoice_processing.duplicate": {
+     "acc": 0.89,
+     "macro_f1": 0.4708994708994709,
+     "ece": 0.0024547421932220592,
+     "nll": 0.346249595284462,
+     "brier_soft": 0.07587938383221626
+    },
+    "invoice_processing.matches_order": {
+     "acc": 0.46,
+     "macro_f1": 0.3150684931506849,
+     "ece": 0.15883606493473051,
+     "nll": NaN,
+     "brier_soft": NaN
+    },
+    "invoice_processing.urgency": {
+     "acc": 0.46499999999999997,
+     "macro_f1": 0.19069523472374522,
+     "ece": 0.09468186616897585,
+     "nll": 1.0815348625183105,
+     "brier_soft": 0.12902916967868805
+    },
+    "security_incidents.credential_compromise": {
+     "acc": 0.595,
+     "macro_f1": 0.4706178842504744,
+     "ece": 0.12389946669340132,
+     "nll": 0.7003788650035858,
+     "brier_soft": 0.10597178339958191
+    },
+    "security_incidents.disposition": {
+     "acc": 0.74,
+     "macro_f1": 0.21264367816091953,
+     "ece": 0.2869042550027371,
+     "nll": 0.9945923984050751,
+     "brier_soft": 0.09297556430101395
+    },
+    "security_incidents.severity": {
+     "acc": 0.48,
+     "macro_f1": 0.15523829634866276,
+     "ece": 0.09562657356262205,
+     "nll": 1.2444589138031006,
+     "brier_soft": 0.10680095106363297
+    },
+    "security_incidents.true_positive": {
+     "acc": 0.735,
+     "macro_f1": 0.5150815136913037,
+     "ece": 0.14207107186317441,
+     "nll": 0.5956762433052063,
+     "brier_soft": 0.0680956281721592
+    },
+    "security_incidents.urgency": {
+     "acc": 0.5,
+     "macro_f1": 0.16666666666666666,
+     "ece": 0.06062956437468529,
+     "nll": 1.0940168499946594,
+     "brier_soft": 0.11105815321207047
+    }
+   },
+   "per_seed_mean_acc": [
+    0.512,
+    0.542
+   ],
+   "trainable_params": 20065961,
+   "gflops_per_extra_decision_at_median_len": 0.172179456,
+   "trunk_depth_needed": 14,
+   "wall_s": 115.4
+  },
+  "kvq:4:1:frozen": {
+   "kind": "kvq",
+   "depth": 4,
+   "r": 1,
+   "frozen": true,
+   "window": true,
+   "mean": {
+    "acc": 0.495,
+    "macro_f1": 0.24550964751633525,
+    "ece": 0.10087502466142177,
+    "nll": 1.0756730772554874,
+    "acc_seed_std": 0.003500000000000031
+   },
+   "tasks": {
+    "agent_trace_observability.action": {
+     "acc": 0.36,
+     "macro_f1": 0.14986680106559147,
+     "ece": 0.056766156107187285,
+     "nll": 1.3199951648712158,
+     "brier_soft": 0.16197138279676437
+    },
+    "agent_trace_observability.needs_review": {
+     "acc": 0.56,
+     "macro_f1": 0.4136480384358143,
+     "ece": 0.07057763844728468,
+     "nll": 0.6989471614360809,
+     "brier_soft": 0.16650772839784622
+    },
+    "agent_trace_observability.outcome": {
+     "acc": 0.26,
+     "macro_f1": 0.10317460317460317,
+     "ece": 0.15034669041633608,
+     "nll": 1.3749886751174927,
+     "brier_soft": 0.21134915947914124
+    },
+    "agent_trace_observability.risk": {
+     "acc": 0.32999999999999996,
+     "macro_f1": 0.2020597595473833,
+     "ece": 0.06427908435463905,
+     "nll": 1.3730195760726929,
+     "brier_soft": 0.21940726041793823
+    },
+    "agent_trace_observability.urgency": {
+     "acc": 0.365,
+     "macro_f1": 0.14545365278868813,
+     "ece": 0.037463991940021514,
+     "nll": 1.3470714688301086,
+     "brier_soft": 0.13672594726085663
+    },
+    "customer_service.action": {
+     "acc": 0.52,
+     "macro_f1": 0.1368421052631579,
+     "ece": 0.07371319234371185,
+     "nll": 1.2215185165405273,
+     "brier_soft": 0.1722554862499237
+    },
+    "customer_service.category": {
+     "acc": 0.215,
+     "macro_f1": 0.1536864831688327,
+     "ece": 0.06542727679014207,
+     "nll": 1.53646981716156,
+     "brier_soft": 0.5744288265705109
+    },
+    "customer_service.churn_risk": {
+     "acc": 0.47,
+     "macro_f1": 0.1598639455782313,
+     "ece": 0.10243194967508318,
+     "nll": 1.193792700767517,
+     "brier_soft": 0.19144238531589508
+    },
+    "customer_service.needs_human": {
+     "acc": 0.67,
+     "macro_f1": 0.40119760479041916,
+     "ece": 0.10002854019403458,
+     "nll": 0.6487851142883301,
+     "brier_soft": 0.10818851739168167
+    },
+    "customer_service.urgency": {
+     "acc": 0.41000000000000003,
+     "macro_f1": 0.1793686167638744,
+     "ece": 0.02889859274029731,
+     "nll": 1.0942381024360657,
+     "brier_soft": 0.16500459611415863
+    },
+    "invoice_processing.discrepancy_severity": {
+     "acc": 0.38,
+     "macro_f1": 0.20789563669764527,
+     "ece": 0.10013567999005316,
+     "nll": 1.1604869961738586,
+     "brier_soft": 0.35047510266304016
+    },
+    "invoice_processing.disposition": {
+     "acc": 0.47000000000000003,
+     "macro_f1": 0.21874220292706573,
+     "ece": 0.11156954616308211,
+     "nll": 1.1808391213417053,
+     "brier_soft": 0.23364292085170746
+    },
+    "invoice_processing.duplicate": {
+     "acc": 0.89,
+     "macro_f1": 0.4708994708994709,
+     "ece": 0.0029684150218963756,
+     "nll": 0.3449583798646927,
+     "brier_soft": 0.07572514936327934
+    },
+    "invoice_processing.matches_order": {
+     "acc": 0.46,
+     "macro_f1": 0.3150684931506849,
+     "ece": 0.3744327679276466,
+     "nll": 1.369712471961975,
+     "brier_soft": 0.6078721731901169
+    },
+    "invoice_processing.urgency": {
+     "acc": 0.455,
+     "macro_f1": 0.18806956472519387,
+     "ece": 0.0907364819943905,
+     "nll": 1.0795403718948364,
+     "brier_soft": 0.12895847111940384
+    },
+    "security_incidents.credential_compromise": {
+     "acc": 0.625,
+     "macro_f1": 0.5315366844423133,
+     "ece": 0.07971634119749069,
+     "nll": 0.6651660203933716,
+     "brier_soft": 0.06970635056495667
+    },
+    "security_incidents.disposition": {
+     "acc": 0.74,
+     "macro_f1": 0.21264367816091953,
+     "ece": 0.24440546095371243,
+     "nll": 0.9673618376255035,
+     "brier_soft": 0.09483657777309418
+    },
+    "security_incidents.severity": {
+     "acc": 0.49,
+     "macro_f1": 0.13154362416107385,
+     "ece": 0.06763510167598724,
+     "nll": 1.2457048892974854,
+     "brier_soft": 0.14593058824539185
+    },
+    "security_incidents.true_positive": {
+     "acc": 0.73,
+     "macro_f1": 0.42196531791907516,
+     "ece": 0.08450410783290865,
+     "nll": 0.5922738909721375,
+     "brier_soft": 0.07436979562044144
+    },
+    "security_incidents.urgency": {
+     "acc": 0.5,
+     "macro_f1": 0.16666666666666666,
+     "ece": 0.11146347746253016,
+     "nll": 1.0985912680625916,
+     "brier_soft": 0.13057001307606697
+    }
+   },
+   "per_seed_mean_acc": [
+    0.49850000000000005,
+    0.4915
+   ],
+   "trainable_params": 3497,
+   "gflops_per_extra_decision_at_median_len": 0.043044864,
+   "trunk_depth_needed": 14,
+   "wall_s": 92.3
+  }
+ },
+ "seeds": [
+  0,
+  1
+ ],
+ "exactness_rel_err": 8.408641605228695e-08,
+ "fused_abs_err": 9.5367431640625e-07,
+ "latency_ms": {
+  "median_len_message": {
+   "tokens": 299,
+   "1": {
+    "probe": 15.21,
+    "blocks:2 (fused)": 17.99,
+    "kvq:2:1 (fused)": 18.57,
+    "kvq:2:4 (fused)": 18.75,
+    "kvq:4:4 (fused)": 24.67,
+    "trunk only to k": 15.17
+   },
+   "5": {
+    "probe": 15.45,
+    "blocks:2 (fused)": 16.46,
+    "kvq:2:1 (fused)": 18.78,
+    "kvq:2:4 (fused)": 19.11,
+    "kvq:4:4 (fused)": 22.8,
+    "trunk only to k": 15.22
+   },
+   "20": {
+    "probe": 18.84,
+    "blocks:2 (fused)": 24.58,
+    "kvq:2:1 (fused)": 19.89,
+    "kvq:2:4 (fused)": 19.97,
+    "kvq:4:4 (fused)": 27.55,
+    "trunk only to k": 15.23
+   }
+  },
+  "short": {
+   "tokens": 12,
+   "1": {
+    "probe": 14.63,
+    "blocks:2 (fused)": 17.45,
+    "kvq:2:1 (fused)": 17.8,
+    "kvq:2:4 (fused)": 17.94,
+    "kvq:4:4 (fused)": 23.84,
+    "trunk only to k": 14.56
+   },
+   "5": {
+    "probe": 14.85,
+    "blocks:2 (fused)": 17.78,
+    "kvq:2:1 (fused)": 18.06,
+    "kvq:2:4 (fused)": 18.23,
+    "kvq:4:4 (fused)": 23.1,
+    "trunk only to k": 14.65
+   },
+   "20": {
+    "probe": 18.03,
+    "blocks:2 (fused)": 18.84,
+    "kvq:2:1 (fused)": 19.06,
+    "kvq:2:4 (fused)": 19.12,
+    "kvq:4:4 (fused)": 23.83,
+    "trunk only to k": 14.62
+   }
+  }
+ }
+}

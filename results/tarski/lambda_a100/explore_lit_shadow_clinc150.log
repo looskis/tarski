@@ -1,0 +1,30 @@
+== clinc150: 23850 messages, tasks 3, depths [6, 11], cached in 12s
+  depth 6: shadow fitted (5668 tokens seen, test OOV 0.032); centred cos poolfit 0.757 tokmean 0.648
+   [intent] probe_real 0.8664 | probe_on_shadow 0.8244 | logreg_real 0.8447 | same_logreg_on_poolfit 0.7835 | logreg_on_tokmean_pooled 0.8336 | logreg_retrained_on_poolfit 0.7827 | tfidf 0.8156 | blocks_real 0.8644 | blocks_on_shadow_tokens 0.7693
+   [domain] probe_real 0.8195 | probe_on_shadow 0.7782 | logreg_real 0.8271 | same_logreg_on_poolfit 0.7869 | logreg_on_tokmean_pooled 0.7822 | logreg_retrained_on_poolfit 0.7865 | tfidf 0.8142 | blocks_real 0.8775 | blocks_on_shadow_tokens 0.7978
+   [oos] probe_real 0.8384 | probe_on_shadow 0.8184 | logreg_real 0.8376 | same_logreg_on_poolfit 0.8227 | logreg_on_tokmean_pooled 0.8193 | logreg_retrained_on_poolfit 0.8262 | tfidf 0.8235 | blocks_real 0.8656 | blocks_on_shadow_tokens 0.8238
+   cascade served=probe  tier0=same_probe_tokmean  : served 0.8414 tier0-only 0.8070 | LTT delta=0.01: exit 0.325 flips 0.0078 acc 0.8419 | tau=0.9: exit 0.246 flips 0.0035
+   cascade served=probe  tier0=logreg_poolfit_rt   : served 0.8414 tier0-only 0.7985 | LTT delta=0.01: exit 0.428 flips 0.0073 acc 0.8428 | tau=0.9: exit 0.458 flips 0.0093
+   cascade served=probe  tier0=tfidf               : served 0.8414 tier0-only 0.8178 | LTT delta=0.01: exit 0.359 flips 0.0069 acc 0.8437 | tau=0.9: exit 0.356 flips 0.0069
+   cascade served=logreg tier0=same_logreg_poolfit : served 0.8365 tier0-only 0.7977 | LTT delta=0.01: exit 0.405 flips 0.0067 acc 0.8373 | tau=0.9: exit 0.436 flips 0.0080
+   cascade served=logreg tier0=logreg_poolfit_rt   : served 0.8365 tier0-only 0.7985 | LTT delta=0.01: exit 0.428 flips 0.0064 acc 0.8378 | tau=0.9: exit 0.458 flips 0.0082
+   cascade served=logreg tier0=tfidf               : served 0.8365 tier0-only 0.8178 | LTT delta=0.01: exit 0.340 flips 0.0049 acc 0.8381 | tau=0.9: exit 0.356 flips 0.0060
+   cascade served=blocks tier0=same_probe_tokmean  : served 0.8692 tier0-only 0.8070 | LTT delta=0.01: exit 0.325 flips 0.0080 acc 0.8684 | tau=0.9: exit 0.246 flips 0.0035
+   cascade served=blocks tier0=logreg_poolfit_rt   : served 0.8692 tier0-only 0.7985 | LTT delta=0.01: exit 0.480 flips 0.0098 acc 0.8686 | tau=0.9: exit 0.458 flips 0.0085
+   cascade served=blocks tier0=tfidf               : served 0.8692 tier0-only 0.8178 | LTT delta=0.01: exit 0.443 flips 0.0065 acc 0.8703 | tau=0.9: exit 0.356 flips 0.0042
+   CPU latency (batch 1, 8 threads, 12 tokens): trunk to depth 6 8.94 ms vs tier 0 0.0286 ms
+  depth 11: shadow fitted (5668 tokens seen, test OOV 0.032); centred cos poolfit 0.758 tokmean 0.670
+   [intent] probe_real 0.8618 | probe_on_shadow 0.8218 | logreg_real 0.8431 | same_logreg_on_poolfit 0.7862 | logreg_on_tokmean_pooled 0.8098 | logreg_retrained_on_poolfit 0.7873 | tfidf 0.8156 | blocks_real 0.8660 | blocks_on_shadow_tokens 0.7796
+   [domain] probe_real 0.8202 | probe_on_shadow 0.7484 | logreg_real 0.8238 | same_logreg_on_poolfit 0.7787 | logreg_on_tokmean_pooled 0.7485 | logreg_retrained_on_poolfit 0.7775 | tfidf 0.8142 | blocks_real 0.8747 | blocks_on_shadow_tokens 0.8085
+   [oos] probe_real 0.8422 | probe_on_shadow 0.8182 | logreg_real 0.8376 | same_logreg_on_poolfit 0.8227 | logreg_on_tokmean_pooled 0.8187 | logreg_retrained_on_poolfit 0.8238 | tfidf 0.8235 | blocks_real 0.8687 | blocks_on_shadow_tokens 0.8244
+   cascade served=probe  tier0=same_probe_tokmean  : served 0.8414 tier0-only 0.7961 | LTT delta=0.01: exit 0.259 flips 0.0064 acc 0.8411 | tau=0.9: exit 0.222 flips 0.0044
+   cascade served=probe  tier0=logreg_poolfit_rt   : served 0.8414 tier0-only 0.7962 | LTT delta=0.01: exit 0.244 flips 0.0064 acc 0.8425 | tau=0.9: exit 0.441 flips 0.0147
+   cascade served=probe  tier0=tfidf               : served 0.8414 tier0-only 0.8178 | LTT delta=0.01: exit 0.231 flips 0.0073 acc 0.8435 | tau=0.9: exit 0.356 flips 0.0127
+   cascade served=logreg tier0=same_logreg_poolfit : served 0.8348 tier0-only 0.7959 | LTT delta=0.01: exit 0.344 flips 0.0084 acc 0.8364 | tau=0.9: exit 0.409 flips 0.0109
+   cascade served=logreg tier0=logreg_poolfit_rt   : served 0.8348 tier0-only 0.7962 | LTT delta=0.01: exit 0.333 flips 0.0078 acc 0.8361 | tau=0.9: exit 0.441 flips 0.0127
+   cascade served=logreg tier0=tfidf               : served 0.8348 tier0-only 0.8178 | LTT delta=0.01: exit 0.298 flips 0.0075 acc 0.8369 | tau=0.9: exit 0.356 flips 0.0102
+   cascade served=blocks tier0=same_probe_tokmean  : served 0.8698 tier0-only 0.7961 | LTT delta=0.01: exit 0.251 flips 0.0055 acc 0.8688 | tau=0.9: exit 0.222 flips 0.0040
+   cascade served=blocks tier0=logreg_poolfit_rt   : served 0.8698 tier0-only 0.7962 | LTT delta=0.01: exit 0.422 flips 0.0082 acc 0.8696 | tau=0.9: exit 0.441 flips 0.0093
+   cascade served=blocks tier0=tfidf               : served 0.8698 tier0-only 0.8178 | LTT delta=0.01: exit 0.443 flips 0.0073 acc 0.8711 | tau=0.9: exit 0.356 flips 0.0045
+   CPU latency (batch 1, 8 threads, 12 tokens): trunk to depth 11 14.95 ms vs tier 0 0.0288 ms
+done -> results/tarski/explore_lit_shadow_clinc150.json

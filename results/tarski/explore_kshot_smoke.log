@@ -1,0 +1,135 @@
+[    1.2s] == k-shot curve on banking77 | base jhu-clsp/ettin-encoder-17m on mps | arms ['proto', 'li', 'probe', 'blocks', 'full'] | ks ['0', '1', '5', 'all']
+[    3.1s]    6 classes, train pool 300, val pool 60, test 80 in-scope + 0 oos; cached depths [0, 3, 4] in 0.2s (10 MB)
+[    3.1s] -- k=0|seed=0: 0 train, 0 val
+[    3.1s]       proto_names: acc 0.1625
+[    3.3s]       li_untrained: acc 0.3625 (34 bag tokens)
+[    3.3s] -- k=1|seed=0: 6 train, 6 val
+[    3.4s]       proto: acc 0.3250
+[    3.4s]       proto+name: acc 0.3375
+[    3.4s]       li_untrained: acc 0.4375 (111 bag tokens)
+[    5.3s]       li: acc 0.4375, 300 steps, 1.8s
+[    6.6s]       probe: 300 epochs, 300 steps, 1.3s, val acc 0.667, T=1.00
+[    6.6s]       probe: acc 0.4125 macro-F1 0.3657 ECE 0.152
+[    9.1s]       blocks: 300 epochs, 300 steps, 2.4s, val acc 0.500, T=1.00
+[    9.1s]       blocks: acc 0.2750 macro-F1 0.2598 ECE 0.484
+[   15.6s]       full: 300 epochs, 300 steps, 6.4s, val acc 0.500, T=1.00
+[   15.6s]       full: acc 0.3250 macro-F1 0.2732 ECE 0.339
+[   15.7s] -- k=5|seed=0: 30 train, 30 val
+[   15.7s]       proto: acc 0.5875
+[   15.7s]       proto+name: acc 0.5875
+[   15.8s]       li_untrained: acc 0.8000 (455 bag tokens)
+[   17.4s]       li: acc 0.8250, 300 steps, 1.5s
+[   18.3s]       probe: 300 epochs, 300 steps, 0.9s, val acc 0.833, T=0.68
+[   18.3s]       probe: acc 0.8500 macro-F1 0.8443 ECE 0.074
+[   22.1s]       blocks: 300 epochs, 300 steps, 3.7s, val acc 0.867, T=1.30
+[   22.1s]       blocks: acc 0.7750 macro-F1 0.7705 ECE 0.139
+[   32.1s]       full: 300 epochs, 300 steps, 10.0s, val acc 0.800, T=1.49
+[   32.2s]       full: acc 0.8625 macro-F1 0.8594 ECE 0.068
+[   32.2s] -- k=all|seed=0: 300 train, 60 val
+[   32.2s]       proto: acc 0.5875
+[   32.2s]       proto+name: acc 0.5875
+[   32.4s]       li_untrained: acc 0.9125 (2011 bag tokens)
+[   37.1s]       li: acc 0.9500, 300 steps, 4.7s
+[   37.5s]       probe: 15 epochs, 150 steps, 0.4s, val acc 0.950, T=0.29
+[   37.5s]       probe: acc 0.9125 macro-F1 0.9051 ECE 0.063
+[   39.8s]       blocks: 15 epochs, 150 steps, 2.2s, val acc 1.000, T=0.05
+[   39.8s]       blocks: acc 0.9500 macro-F1 0.9489 ECE 0.048
+[   43.5s]       full: 15 epochs, 150 steps, 3.7s, val acc 0.983, T=0.44
+[   43.6s]       full: acc 0.9500 macro-F1 0.9510 ECE 0.045
+[   43.6s] == summary (test accuracy, mean over seeds)
+[   43.6s]    k            blocks         full           li     li_names li_untrained        probe   proto+name  proto_names
+[   43.6s]    k=0               -            -            -       0.3625            -            -            -       0.1625
+[   43.6s]    k=1          0.2750       0.3250       0.4375            -       0.4375       0.4125       0.3375            -
+[   43.6s]    k=5          0.7750       0.8625       0.8250            -       0.8000       0.8500       0.5875            -
+[   43.6s]    k=all        0.9500       0.9500       0.9500            -       0.9125       0.9125       0.5875            -
+[   43.6s] done
+[    1.3s] == k-shot curve on banking77 | base jhu-clsp/ettin-encoder-17m on cpu | arms ['proto', 'li', 'probe', 'blocks', 'full'] | ks ['0', '1', '5', 'all']
+[    3.0s]    6 classes, train pool 300, val pool 60, test 80 in-scope + 0 oos; cached depths [0, 3, 4] in 0.1s (10 MB)
+[    3.0s] -- k=0|seed=0: 0 train, 0 val
+[    3.0s]       proto_names: acc 0.1625
+[    3.0s]       li_untrained: acc 0.3625 (34 bag tokens)
+[    3.1s] -- k=1|seed=0: 6 train, 6 val
+[    3.1s]       proto: acc 0.3250
+[    3.1s]       proto+name: acc 0.3375
+[    3.1s]       li_untrained: acc 0.4375 (111 bag tokens)
+[    3.2s]       li: acc 0.4125, 300 steps, 0.2s
+[    3.4s]       probe: 300 epochs, 300 steps, 0.1s, val acc 0.667, T=1.00
+[    3.4s]       probe: acc 0.4000 macro-F1 0.3524 ECE 0.144
+[    4.6s]       blocks: 300 epochs, 300 steps, 1.2s, val acc 0.500, T=1.00
+[    4.6s]       blocks: acc 0.2500 macro-F1 0.2466 ECE 0.480
+[    8.5s]       full: 300 epochs, 300 steps, 3.9s, val acc 0.333, T=1.00
+[    8.6s]       full: acc 0.3250 macro-F1 0.2718 ECE 0.364
+[    8.6s] -- k=5|seed=0: 30 train, 30 val
+[    8.6s]       proto: acc 0.5750
+[    8.6s]       proto+name: acc 0.5750
+[    8.7s]       li_untrained: acc 0.8000 (455 bag tokens)
+[    9.6s]       li: acc 0.8000, 300 steps, 0.9s
+[    9.9s]       probe: 300 epochs, 300 steps, 0.3s, val acc 0.833, T=0.68
+[    9.9s]       probe: acc 0.8625 macro-F1 0.8564 ECE 0.097
+[   15.4s]       blocks: 300 epochs, 300 steps, 5.5s, val acc 0.800, T=1.65
+[   15.5s]       blocks: acc 0.6625 macro-F1 0.6298 ECE 0.131
+[   31.7s]       full: 300 epochs, 300 steps, 16.2s, val acc 0.867, T=1.63
+[   31.8s]       full: acc 0.8125 macro-F1 0.8187 ECE 0.104
+[   31.8s] -- k=all|seed=0: 300 train, 60 val
+[   31.8s]       proto: acc 0.5875
+[   31.8s]       proto+name: acc 0.5875
+[   31.9s]       li_untrained: acc 0.9125 (2011 bag tokens)
+[   34.9s]       li: acc 0.9500, 300 steps, 2.9s
+[   35.0s]       probe: 15 epochs, 150 steps, 0.1s, val acc 0.950, T=0.29
+[   35.0s]       probe: acc 0.9125 macro-F1 0.9071 ECE 0.067
+[   36.2s]       blocks: 15 epochs, 150 steps, 1.2s, val acc 0.967, T=0.54
+[   36.2s]       blocks: acc 0.9625 macro-F1 0.9639 ECE 0.042
+[   40.2s]       full: 15 epochs, 150 steps, 3.9s, val acc 0.983, T=0.54
+[   40.2s]       full: acc 0.9750 macro-F1 0.9779 ECE 0.043
+[   40.3s] == summary (test accuracy, mean over seeds)
+[   40.3s]    k            blocks         full           li     li_names li_untrained        probe   proto+name  proto_names
+[   40.3s]    k=0               -            -            -       0.3625            -            -            -       0.1625
+[   40.3s]    k=1          0.2500       0.3250       0.4125            -       0.4375       0.4000       0.3375            -
+[   40.3s]    k=5          0.6625       0.8125       0.8000            -       0.8000       0.8625       0.5750            -
+[   40.3s]    k=all        0.9625       0.9750       0.9500            -       0.9125       0.9125       0.5875            -
+[   40.3s] done
+[    1.2s] == k-shot curve on banking77 | base jhu-clsp/ettin-encoder-17m on cpu | arms ['proto', 'li', 'probe', 'blocks', 'full'] | ks ['0', '1', '5', 'all']
+[    3.0s]    6 classes, train pool 300, val pool 60, test 80 in-scope + 0 oos; cached depths [0, 3, 4] in 0.1s (10 MB)
+[    3.0s] -- k=0|seed=0: 0 train, 0 val
+[    3.0s]       proto_names: acc 0.1625
+[    3.0s]       li_untrained: acc 0.3625 (34 bag tokens)
+[    3.0s] -- k=1|seed=0: 6 train, 6 val
+[    3.0s]       proto: acc 0.3250
+[    3.0s]       proto+name: acc 0.3375
+[    3.0s]       li_untrained: acc 0.4375 (111 bag tokens)
+[    3.2s]       li: acc 0.4125, 300 steps, 0.2s
+[    3.4s]       probe: 300 epochs, 300 steps, 0.1s, val acc 0.667, T=1.00
+[    3.4s]       probe: acc 0.4000 macro-F1 0.3524 ECE 0.144
+[    4.6s]       blocks: 300 epochs, 300 steps, 1.2s, val acc 0.500, T=1.00
+[    4.6s]       blocks: acc 0.2500 macro-F1 0.2466 ECE 0.480
+[    8.5s]       full: 300 epochs, 300 steps, 3.8s, val acc 0.333, T=1.00
+[    8.5s]       full: acc 0.3250 macro-F1 0.2718 ECE 0.364
+[    8.5s] -- k=5|seed=0: 30 train, 30 val
+[    8.5s]       proto: acc 0.5750
+[    8.5s]       proto+name: acc 0.5750
+[    8.6s]       li_untrained: acc 0.8000 (455 bag tokens)
+[    9.5s]       li: acc 0.8000, 300 steps, 0.9s
+[    9.8s]       probe: 300 epochs, 300 steps, 0.3s, val acc 0.833, T=0.68
+[    9.8s]       probe: acc 0.8625 macro-F1 0.8564 ECE 0.097
+[   14.7s]       blocks: 300 epochs, 300 steps, 4.8s, val acc 0.800, T=1.65
+[   14.7s]       blocks: acc 0.6625 macro-F1 0.6298 ECE 0.131
+[   30.7s]       full: 300 epochs, 300 steps, 16.0s, val acc 0.867, T=1.63
+[   30.8s]       full: acc 0.8125 macro-F1 0.8187 ECE 0.104
+[   30.8s] -- k=all|seed=0: 300 train, 60 val
+[   30.8s]       proto: acc 0.5875
+[   30.8s]       proto+name: acc 0.5875
+[   30.9s]       li_untrained: acc 0.9125 (2011 bag tokens)
+[   33.7s]       li: acc 0.9500, 300 steps, 2.8s
+[   33.8s]       probe: 15 epochs, 150 steps, 0.1s, val acc 0.950, T=0.29
+[   33.8s]       probe: acc 0.9125 macro-F1 0.9071 ECE 0.067
+[   35.1s]       blocks: 15 epochs, 150 steps, 1.2s, val acc 0.967, T=0.54
+[   35.1s]       blocks: acc 0.9625 macro-F1 0.9639 ECE 0.042
+[   39.1s]       full: 15 epochs, 150 steps, 4.0s, val acc 0.983, T=0.54
+[   39.1s]       full: acc 0.9750 macro-F1 0.9779 ECE 0.043
+[   39.2s] == summary (test accuracy, mean over seeds)
+[   39.2s]    k            blocks         full           li     li_names li_untrained        probe   proto+name  proto_names
+[   39.2s]    k=0               -            -            -       0.3625            -            -            -       0.1625
+[   39.2s]    k=1          0.2500       0.3250       0.4125            -       0.4375       0.4000       0.3375            -
+[   39.2s]    k=5          0.6625       0.8125       0.8000            -       0.8000       0.8625       0.5750            -
+[   39.2s]    k=all        0.9625       0.9750       0.9500            -       0.9125       0.9125       0.5875            -
+[   39.2s] done

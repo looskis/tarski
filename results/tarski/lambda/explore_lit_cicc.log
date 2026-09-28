@@ -1,0 +1,20 @@
+== clinc150: 150 routes, calibration 3000 (~20/route), test 4500, probe@22 test acc 0.9269
+-- clinc150 lac alpha 0.05: marginal: cov 0.946 gap 4.9 worst10 0.802 size 1.07 bands 0.93/0.07/0.00 | classwise: cov 0.934 gap 6.2 worst10 0.740 size 2.70 bands 0.42/0.52/0.06 | clustered: cov 0.936 gap 5.4 worst10 0.768 size 2.60 bands 0.23/0.76/0.01
+-- clinc150 lac alpha 0.1: marginal: cov 0.886 gap 8.0 worst10 0.656 size 0.92 bands 0.92/0.00/0.08 | classwise: cov 0.880 gap 8.4 worst10 0.653 size 1.35 bands 0.72/0.25/0.03 | clustered: cov 0.885 gap 7.9 worst10 0.651 size 1.23 bands 0.71/0.25/0.04
+-- clinc150 aps alpha 0.05: marginal: cov 0.954 gap 3.6 worst10 0.860 size 2.02 bands 0.76/0.17/0.07 | classwise: cov 0.947 gap 5.2 worst10 0.769 size 4.20 bands 0.41/0.44/0.16 | clustered: cov 0.955 gap 3.9 worst10 0.855 size 2.19 bands 0.74/0.18/0.08
+-- clinc150 aps alpha 0.1: marginal: cov 0.898 gap 4.9 worst10 0.764 size 1.43 bands 0.78/0.12/0.10 | classwise: cov 0.899 gap 7.2 worst10 0.691 size 2.06 bands 0.63/0.26/0.10 | clustered: cov 0.901 gap 5.5 worst10 0.758 size 1.49 bands 0.78/0.13/0.09
+   laya answered 298 clarification questions in 13s
+   route-or-clarify (marginal, alpha 0.05): share_single 0.933, share_clarify 0.066, share_escalate 0.001, acc_automated_top1 0.928, acc_automated_oracle_user 0.947, laya_questions 298, clarify_band_acc_laya 0.654, clarify_band_acc_top1_same_msgs 0.564, clarify_band_acc_oracle_same_msgs 0.859
+   laya answered 1500 clarification questions in 62s
+   route-or-clarify (clustered, alpha 0.05): share_single 0.002, share_clarify 0.990, share_escalate 0.008, acc_automated_top1 0.931, acc_automated_oracle_user 0.943, laya_questions 1500, clarify_band_acc_laya 0.909, clarify_band_acc_top1_same_msgs 0.925, clarify_band_acc_oracle_same_msgs 0.946
+   open-set gate (alpha_o 0.05): known: gated 0.041, silent single 0.926 | held_out_routes: gated 0.244, silent single 0.606 | out_of_scope: gated 0.559, silent single 0.354
+== banking77: 77 routes, calibration 999 (~13/route), test 3076, probe@22 test acc 0.8921
+-- banking77 lac alpha 0.05: marginal: cov 0.954 gap 3.2 worst10 0.864 size 1.36 bands 0.76/0.24/0.00 | classwise: cov 0.994 gap 4.8 worst10 0.939 size 68.30 bands 0.00/0.00/1.00 | clustered: cov 0.958 gap 3.5 worst10 0.862 size 3.61 bands 0.13/0.85/0.03
+-- banking77 lac alpha 0.1: marginal: cov 0.895 gap 5.9 worst10 0.729 size 1.00 bands 0.95/0.03/0.02 | classwise: cov 0.935 gap 7.2 worst10 0.750 size 10.73 bands 0.00/0.00/1.00 | clustered: cov 0.902 gap 5.9 worst10 0.752 size 1.63 bands 0.60/0.39/0.01
+-- banking77 aps alpha 0.05: marginal: cov 0.957 gap 3.0 worst10 0.882 size 2.49 bands 0.62/0.29/0.09 | classwise: cov 0.995 gap 4.8 worst10 0.946 size 68.41 bands 0.00/0.00/1.00 | clustered: cov 0.961 gap 3.1 worst10 0.879 size 4.58 bands 0.22/0.64/0.14
+-- banking77 aps alpha 0.1: marginal: cov 0.908 gap 4.2 worst10 0.814 size 1.70 bands 0.70/0.22/0.08 | classwise: cov 0.930 gap 7.4 worst10 0.721 size 11.54 bands 0.00/0.00/1.00 | clustered: cov 0.912 gap 5.0 worst10 0.793 size 1.88 bands 0.67/0.25/0.09
+   laya answered 747 clarification questions in 31s
+   route-or-clarify (marginal, alpha 0.05): share_single 0.757, share_clarify 0.243, share_escalate 0.000, acc_automated_top1 0.892, acc_automated_oracle_user 0.954, laya_questions 747, clarify_band_acc_laya 0.589, clarify_band_acc_top1_same_msgs 0.635, clarify_band_acc_oracle_same_msgs 0.888
+   laya answered 1500 clarification questions in 32s
+   route-or-clarify (clustered, alpha 0.05): share_single 0.000, share_clarify 0.930, share_escalate 0.070, acc_automated_top1 0.920, acc_automated_oracle_user 0.977, laya_questions 1500, clarify_band_acc_laya 0.793, clarify_band_acc_top1_same_msgs 0.917, clarify_band_acc_oracle_same_msgs 0.975
+done in 144.6s -> results/tarski/explore_lit_cicc.json

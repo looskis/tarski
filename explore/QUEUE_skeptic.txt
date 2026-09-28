@@ -1,0 +1,2 @@
+dual_calibration | A10 | 5 | .venv/bin/python -m explore.skeptic_dual_calibration --kind probe --split 22 --out results/tarski/explore_dual_calibration.json
+depth_gating | A10 | 5 | .venv/bin/python -m explore.skeptic_depth_gating --dataset banking77 --task intent --k-shallow 4 --k-deep 18 --shallow-kind probe --deep-kind blocks --deep-depth 1 --out results/tarski/explore_depth_gating.json

@@ -1,0 +1,36 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 8969.77it/s]
+Using the latest cached version of the dataset since clinc/clinc_oos couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'plus' at /home/ubuntu/.cache/huggingface/datasets/clinc___clinc_oos/plus/0.0.0/155b9c710419136e17307b80d0a13e68cd46b4ec (last modified on Sun Sep 27 21:22:49 2026).
+[    1.4s] == confidence head on clinc150: 15250/3100/5500 messages (train/val/test), tasks: intent(151), domain(11), oos(2) | base answerdotai/ModernBERT-base on cuda | main blocks@11+2, probes [6, 11, 22], folds 0
+[   16.6s]    cached 23850 messages at [6, 11, 22] in 14.9s (1224 MB)
+[   16.6s] -- intent (151 options, 15250 train, 3100 val)
+[   74.2s]       blocks: 6 epochs, 2862 steps, 57.5s, val acc 0.936, T=1.35
+[  159.6s]       probe: 19 epochs, 9063 steps, 85.4s, val acc 0.927, T=1.22
+[  210.0s]       probe: 11 epochs, 5247 steps, 50.5s, val acc 0.914, T=1.12
+[  271.1s]       probe: 13 epochs, 6201 steps, 61.1s, val acc 0.921, T=1.27
+[  274.2s]    main test acc 0.8720
+[  274.4s] -- domain (11 options, 15250 train, 3100 val)
+[  318.6s]       blocks: 6 epochs, 2862 steps, 44.2s, val acc 0.956, T=1.87
+[  381.2s]       probe: 17 epochs, 8109 steps, 62.6s, val acc 0.926, T=1.01
+[  476.5s]       probe: 20 epochs, 9540 steps, 95.2s, val acc 0.918, T=1.02
+[  512.8s]       probe: 14 epochs, 6678 steps, 36.4s, val acc 0.914, T=1.18
+[  514.1s]    main test acc 0.8836
+[  514.3s] -- oos (2 options, 15250 train, 3100 val)
+[  544.9s]       blocks: 6 epochs, 2862 steps, 30.6s, val acc 0.981, T=2.65
+[  565.5s]       probe: 11 epochs, 5247 steps, 20.6s, val acc 0.979, T=1.10
+[  588.0s]       probe: 12 epochs, 5724 steps, 22.5s, val acc 0.979, T=0.99
+[  607.0s]       probe: 10 epochs, 4770 steps, 19.0s, val acc 0.978, T=1.07
+[  608.3s]    main test acc 0.8673
+[  608.5s]    branches trained in 592s
+[  614.1s] == val->test: 9300 head-training rows -> 16500 test rows (acc 0.874)
+[  614.1s]    msp_T1             auroc 0.808 ece 0.085 acc@80 0.940 aurc 0.044
+[  614.1s]    msp_Thard          auroc 0.853 ece 0.051 acc@80 0.947 aurc 0.032
+[  614.1s]    probe_deep_maxp    auroc 0.807 ece 0.063 acc@80 0.931 aurc 0.041
+[  614.1s]    lr[all]            auroc 0.905 ece 0.057 acc@80 0.966 aurc 0.024
+[  614.1s]    mlp[all]           auroc 0.923 ece 0.045 acc@80 0.972 aurc 0.021
+[  614.1s]    lr[msp]            auroc 0.728 ece 0.070 acc@80 0.938 aurc 0.069
+[  614.1s]    mlp[msp]           auroc 0.854 ece 0.059 acc@80 0.944 aurc 0.032
+[  614.1s]    lr[msp+qtype]      auroc 0.732 ece 0.069 acc@80 0.940 aurc 0.069
+[  614.1s]    lr[no_bundle]      auroc 0.823 ece 0.063 acc@80 0.943 aurc 0.042
+[  614.1s]    lr[no_depth]       auroc 0.882 ece 0.060 acc@80 0.965 aurc 0.029
+[  614.2s] done

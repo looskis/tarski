@@ -1,0 +1,158 @@
+{
+ "args": {
+  "smoke": true,
+  "n_heldout": 10,
+  "flag_depth": 4,
+  "cluster_depths": [
+   4,
+   22
+  ],
+  "route_depth": 22,
+  "min_sizes": [
+   3
+  ],
+  "min_proposal": 3,
+  "purity": 0.8,
+  "labels_k": 3,
+  "seed": 0,
+  "out": ""
+ },
+ "held_out": [
+  "tire_pressure",
+  "pin_change",
+  "expiration_date",
+  "order_status",
+  "cook_time",
+  "cancel",
+  "do_you_have_pets",
+  "book_flight",
+  "date",
+  "schedule_meeting"
+ ],
+ "flag": {
+  "threshold": 2243.034949787877,
+  "recall_held_out": 0.0625,
+  "recall_oos": 0.17777777777777778,
+  "known_val_flagged": 0.05,
+  "inbox_size": 35,
+  "inbox_composition": {
+   "held_out": 5,
+   "oos": 16,
+   "known": 14
+  }
+ },
+ "runs": {
+  "depth4_mcs3": {
+   "n_clusters": 5,
+   "noise_share": 0.5142857142857142,
+   "n_proposals": 5,
+   "recovered": 0,
+   "junk_proposals": 5,
+   "recovered_intents": [],
+   "ari_held_out": 0.13793103448275862,
+   "proposals": [
+    {
+     "size": 3,
+     "majority": "known",
+     "purity": 0.6666666666666666,
+     "intent": null
+    },
+    {
+     "size": 4,
+     "majority": "oos",
+     "purity": 0.25,
+     "intent": null
+    },
+    {
+     "size": 3,
+     "majority": "oos",
+     "purity": 1.0,
+     "intent": null
+    },
+    {
+     "size": 3,
+     "majority": "oos",
+     "purity": 1.0,
+     "intent": null
+    },
+    {
+     "size": 4,
+     "majority": "oos",
+     "purity": 0.75,
+     "intent": null
+    }
+   ],
+   "promoted_from_cluster": {
+    "recall_promoted": null,
+    "acc_known": 0.7547619047619047,
+    "acc_known_plus_promoted": 0.7547619047619047
+   },
+   "route_from_3_labels": {
+    "recall_promoted": null,
+    "acc_known": 0.7547619047619047,
+    "acc_known_plus_promoted": 0.7547619047619047
+   },
+   "route_from_all_inbox_labels": {
+    "recall_promoted": null,
+    "acc_known": 0.7547619047619047,
+    "acc_known_plus_promoted": 0.7547619047619047
+   }
+  },
+  "depth22_mcs3": {
+   "n_clusters": 3,
+   "noise_share": 0.08571428571428572,
+   "n_proposals": 3,
+   "recovered": 0,
+   "junk_proposals": 3,
+   "recovered_intents": [],
+   "ari_held_out": 0.0,
+   "proposals": [
+    {
+     "size": 3,
+     "majority": "oos",
+     "purity": 1.0,
+     "intent": null
+    },
+    {
+     "size": 26,
+     "majority": "oos",
+     "purity": 0.5,
+     "intent": null
+    },
+    {
+     "size": 3,
+     "majority": "known",
+     "purity": 0.6666666666666666,
+     "intent": null
+    }
+   ],
+   "promoted_from_cluster": {
+    "recall_promoted": null,
+    "acc_known": 0.7547619047619047,
+    "acc_known_plus_promoted": 0.7547619047619047
+   },
+   "route_from_3_labels": {
+    "recall_promoted": null,
+    "acc_known": 0.7547619047619047,
+    "acc_known_plus_promoted": 0.7547619047619047
+   },
+   "route_from_all_inbox_labels": {
+    "recall_promoted": null,
+    "acc_known": 0.7547619047619047,
+    "acc_known_plus_promoted": 0.7547619047619047
+   }
+  }
+ },
+ "no_promotion": {
+  "recall_promoted": null,
+  "acc_known": 0.7547619047619047,
+  "acc_known_plus_promoted": 0.7547619047619047
+ },
+ "upper_all_present_true_labels": {
+  "n_routes": 4,
+  "recall_promoted": 0.08333333333333333,
+  "acc_known": 0.7523809523809524,
+  "acc_known_plus_promoted": 0.7337962962962963
+ },
+ "wall_s": 0.6
+}

@@ -1,0 +1,9 @@
+== one-way laya | backbone=typed-decisions on cpu | val=10 test=10 pairs | 28 encoder layers + 2 head layers | ks=[0, 14, 28]
+  checks: {"block_vs_readonce": 0.0, "cache_invariance": 1.9053956066272804e-06, "cache_invariance_question_lengths": [65, 32]}
+  block@0/head=joint: acc 0.8000 (choice 0.750, score 0.750, noul 1.000) brier 0.0668 | per-question token-layers 4779 vs unsplit 4779 (5.9s)
+  block@14/head=joint: acc 0.6000 (choice 0.750, score 0.250, noul 1.000) brier 0.0383 | per-question token-layers 3414 vs unsplit 4779 (7.0s)
+  block@28/head=joint: acc 0.3000 (choice 0.500, score 0.250, noul 0.000) brier 0.2312 | per-question token-layers 2049 vs unsplit 4779 (6.0s)
+  oneway@14/head=joint: acc 0.7000 (choice 0.750, score 0.500, noul 1.000) brier 0.0556 | per-question token-layers 3414 vs unsplit 4779 (5.0s)
+  oneway@28/head=joint: acc 0.6000 (choice 0.500, score 0.500, noul 1.000) brier 0.0614 | per-question token-layers 2049 vs unsplit 4779 (2.7s)
+  oneway@28/head=oneway: acc 0.6000 (choice 0.500, score 0.500, noul 1.000) brier 0.0614 | per-question token-layers 1854 vs unsplit 4779 (2.8s)
+done -> results/tarski/explore_oneway_laya_smoke.json

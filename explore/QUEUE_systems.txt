@@ -1,0 +1,9 @@
+kvquery_typed_fixed | A100 | 25 | .venv/bin/python explore/systems_kvquery.py --dataset typed-decisions --split 11 --seeds 0 --configs probe kvq:2:1 kvq:2:4 kvq:4:4 kvq:4:4:frozen kvq:4:4:global --budget-min 40 --out results/tarski/explore_kvquery_typed_fixed.json
+dce | A10 | 8 | .venv/bin/python explore/systems_dce.py --out results/tarski/explore_dce.json
+schema | A100 | 20 | .venv/bin/python explore/systems_schema.py --out results/tarski/explore_schema.json
+planner | A10 | 10 | .venv/bin/python explore/systems_planner.py --out results/tarski/explore_planner.json
+speccache | A10 | 8 | .venv/bin/python explore/systems_speccache.py --out results/tarski/explore_speccache.json
+compaction | A100 | 25 | .venv/bin/python explore/systems_compaction.py --out results/tarski/explore_compaction.json
+jointsplit | A10 | 6 | .venv/bin/python explore/systems_jointsplit.py --out results/tarski/explore_jointsplit.json
+deltabranch | A10 | 6 | .venv/bin/python explore/systems_deltabranch.py --out results/tarski/explore_deltabranch.json
+layerbatch | A10 | 8 | .venv/bin/python explore/systems_layerbatch.py --out results/tarski/explore_layerbatch.json

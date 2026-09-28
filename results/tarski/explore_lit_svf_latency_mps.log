@@ -1,0 +1,5 @@
+checks: SVF(z=1) vs base linear rel err 2.6e-06; SharedSVF vs loop abs err 1.2e-07
+latency on mps (split 8, trunk 4.42 ms):
+   N= 1: loop full 1.10 | FusedBlocks 1.36 | loop SVF 3.58 | SharedSVF 3.57 ms
+   N= 5: loop full 3.12 | FusedBlocks 3.79 | loop SVF 16.25 | SharedSVF 3.79 ms
+   N=20: loop full 11.32 | FusedBlocks 13.12 | loop SVF 62.40 | SharedSVF 4.92 ms

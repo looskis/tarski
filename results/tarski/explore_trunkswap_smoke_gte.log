@@ -1,0 +1,77 @@
+[    1.1s] == trunk swap: gte (Alibaba-NLP/gte-modernbert-base) on cpu, 22 layers, hidden 768
+[   20.0s] == banking77: 240/60/80 messages (train/val/test), tasks: intent(77) | cached [7, 11, 22] in 17.1s (25 MB)
+[   20.0s] -- banking77 probe@7
+[   20.2s]       probe: 19 epochs, 152 steps, 0.2s, val acc 0.983, T=0.29
+[   20.3s]    probe@7: mean acc 0.9750
+[   20.3s] -- banking77 probe@11
+[   20.4s]       probe: 19 epochs, 152 steps, 0.2s, val acc 1.000, T=0.05
+[   20.5s]    probe@11: mean acc 1.0000
+[   20.5s] -- banking77 probe@22
+[   20.7s]       probe: 19 epochs, 152 steps, 0.3s, val acc 1.000, T=0.05
+[   20.8s]    probe@22: mean acc 0.9875
+[   20.8s] -- banking77 blocks@11+2
+[    1.2s] == trunk swap: gte (Alibaba-NLP/gte-modernbert-base) on cpu, 22 layers, hidden 768
+[   20.4s] == banking77: 240/60/80 messages (train/val/test), tasks: intent(77) | cached [7, 11, 22] in 17.4s (25 MB)
+[   20.4s] -- banking77 probe@7
+[   20.6s]       probe: 19 epochs, 152 steps, 0.2s, val acc 1.000, T=0.05
+[   20.7s]    probe@7: mean acc 0.9875
+[   20.7s] -- banking77 probe@11
+[   20.9s]       probe: 19 epochs, 152 steps, 0.2s, val acc 1.000, T=0.05
+[   21.0s]    probe@11: mean acc 1.0000
+[   21.0s] -- banking77 probe@22
+[   21.3s]       probe: 19 epochs, 152 steps, 0.3s, val acc 1.000, T=0.05
+[   21.4s]    probe@22: mean acc 0.9875
+[   21.4s] -- banking77 blocks@11+2
+[    1.1s] == trunk swap: gte (Alibaba-NLP/gte-modernbert-base) on cpu, 22 layers, hidden 768
+[    4.7s] == banking77: 240/60/80 messages (train/val/test), tasks: intent(77) | cached [7, 11, 22] in 1.8s (25 MB)
+[    4.7s] -- banking77 probe@7
+[    5.0s]       probe: 19 epochs, 152 steps, 0.2s, val acc 1.000, T=0.05
+[    5.0s]    probe@7: mean acc 0.9875
+[    5.0s] -- banking77 probe@11
+[    5.2s]       probe: 19 epochs, 152 steps, 0.2s, val acc 1.000, T=0.05
+[    5.3s]    probe@11: mean acc 1.0000
+[    5.3s] -- banking77 probe@22
+[    5.5s]       probe: 19 epochs, 152 steps, 0.2s, val acc 1.000, T=0.05
+[    5.5s]    probe@22: mean acc 0.9875
+[    5.5s] -- banking77 blocks@11+2
+[   13.7s]       blocks: 19 epochs, 152 steps, 8.2s, val acc 1.000, T=0.05
+[   13.9s]    blocks@11+2: mean acc 0.9750
+[   13.9s]    zero-shot [name] best name|cls|depth22: acc 0.8875
+[   13.9s]    zero-shot [name] native pooling at the top (name|cls|depth22): acc 0.8875
+[   13.9s]    zero-shot [about] best about|cls|depth22: acc 0.9000
+[   13.9s]    zero-shot [about] native pooling at the top (about|cls|depth22): acc 0.9000
+[   17.0s] == clinc150: 240/60/80 messages (train/val/test), tasks: intent(151) | cached [7, 11, 22] in 1.4s (19 MB)
+[   17.0s] -- clinc150 probe@7
+[   17.2s]       probe: 19 epochs, 152 steps, 0.2s, val acc 0.933, T=0.72
+[   17.2s]    probe@7: mean acc 0.9375
+[   17.2s] -- clinc150 probe@11
+[   17.4s]       probe: 19 epochs, 152 steps, 0.2s, val acc 0.950, T=0.48
+[   17.5s]    probe@11: mean acc 0.9625
+[   17.5s] -- clinc150 probe@22
+[   17.7s]       probe: 19 epochs, 152 steps, 0.2s, val acc 0.967, T=0.75
+[   17.8s]    probe@22: mean acc 0.9500
+[   17.8s] -- clinc150 blocks@11+2
+[   25.9s]       blocks: 19 epochs, 152 steps, 8.1s, val acc 0.967, T=1.06
+[   26.0s]    blocks@11+2: mean acc 0.9125
+[   26.0s]    zero-shot [name] best name|mean|depth22: acc 1.0000, oos auroc 0.980
+[   26.0s]    zero-shot [name] native pooling at the top (name|cls|depth22): acc 1.0000
+[   26.1s]    zero-shot [about] best about|mean|depth22: acc 1.0000, oos auroc 0.983
+[   26.1s]    zero-shot [about] native pooling at the top (about|cls|depth22): acc 1.0000
+[   33.4s] == typed-cs: 60/31/40 messages (train/val/test), tasks: customer_service.action(5), customer_service.category(5) | cached [7, 11, 22] in 4.9s (77 MB)
+[   33.4s] -- typed-cs probe@7
+[   34.7s]       probe: 150 epochs, 300 steps, 1.3s, val acc 0.484, T=0.86
+[   35.9s]       probe: 150 epochs, 300 steps, 1.2s, val acc 0.387, T=0.99
+[   36.0s]    probe@7: mean acc 0.5750
+[   36.0s] -- typed-cs probe@11
+[   37.1s]       probe: 150 epochs, 300 steps, 1.1s, val acc 0.484, T=1.05
+[   38.4s]       probe: 150 epochs, 300 steps, 1.2s, val acc 0.323, T=1.23
+[   38.4s]    probe@11: mean acc 0.5250
+[   38.4s] -- typed-cs probe@22
+[   39.8s]       probe: 150 epochs, 300 steps, 1.3s, val acc 0.323, T=2.17
+[   41.2s]       probe: 150 epochs, 300 steps, 1.3s, val acc 0.548, T=1.93
+[   41.3s]    probe@22: mean acc 0.5250
+[   41.3s] -- typed-cs blocks@11+2
+[  129.6s]       blocks: 150 epochs, 300 steps, 88.4s, val acc 0.355, T=1.61
+[  196.3s]       blocks: 150 epochs, 300 steps, 66.5s, val acc 0.452, T=2.47
+[  196.4s]    blocks@11+2: mean acc 0.5250
+[  196.4s] done

@@ -1,0 +1,13 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 7746.67it/s]
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /Users/lookevink/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 09:32:20 2026).
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /Users/lookevink/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 09:32:20 2026).
+== typed-decisions: 1080/120/400 messages (train/val/test), tasks: agent_trace_observability.action(4), agent_trace_observability.needs_review(2), agent_trace_observability.outcome(4), agent_trace_observability.risk(4), agent_trace_observability.urgency(4), customer_service.action(5), customer_service.category(5), customer_service.churn_risk(4), customer_service.needs_human(2), customer_service.urgency(4), invoice_processing.discrepancy_severity(4), invoice_processing.disposition(4), invoice_processing.duplicate(2), invoice_processing.matches_order(2), invoice_processing.urgency(4), security_incidents.credential_compromise(2), security_incidents.disposition(4), security_incidents.severity(5), security_incidents.true_positive(2), security_incidents.urgency(4) | split 11 | trunk depths cached [11, 12, 13, 14] | mps
+  exactness: stream@11+2 vs trunk CLS at depth 13: max rel err 5.05e-07 (seq len 135)
+  fused kvq (r=4) vs loop: max abs diff 3.58e-07
+  cached depths [11, 12, 13, 14] for 1600 messages in 10.4s (2237 MB)
+  probe seed 0: mean acc 0.5850 action=0.48 needs_revi=0.81 outcome=0.29 risk=0.39 urgency=0.36 action=0.56
+  probe seed 1: mean acc 0.5935 action=0.50 needs_revi=0.83 outcome=0.32 risk=0.34 urgency=0.36 action=0.58
+-- probe: mean acc 0.5893 (+-0.0042 over seeds) F1 0.3791 ECE 0.141 | 0.00M trainable | 0.000 GFLOP/decision at L=239 | trunk to 11 | 55s
+  blocks:2 seed 0: mean acc 0.5360 action=0.49 needs_revi=0.66 outcome=0.26 risk=0.28 urgency=0.36 action=0.55

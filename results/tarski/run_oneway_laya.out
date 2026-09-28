@@ -1,0 +1,21 @@
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /Users/lookevink/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 09:32:20 2026).
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /Users/lookevink/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 09:32:20 2026).
+== one-way laya | backbone=typed-decisions on mps | val=600 test=2000 pairs | 28 encoder layers + 2 head layers | ks=[0, 7, 14, 20, 24, 26, 28]
+  checks: {"block_vs_readonce": 0.0, "cache_invariance": 0.004125393461436033, "cache_invariance_question_lengths": [65, 32]}
+  block@0/head=joint: acc 0.7670 (choice 0.733, score 0.724, noul 0.858) brier 0.0548 | per-question token-layers 8736 vs unsplit 8736 (107.5s)
+  block@7/head=joint: acc 0.7035 (choice 0.707, score 0.637, noul 0.788) brier 0.0831 | per-question token-layers 7151 vs unsplit 8736 (111.9s)
+  block@14/head=joint: acc 0.6170 (choice 0.585, score 0.524, noul 0.773) brier 0.1227 | per-question token-layers 5565 vs unsplit 8736 (111.7s)
+  block@20/head=joint: acc 0.4530 (choice 0.450, score 0.329, noul 0.622) brier 0.2074 | per-question token-layers 4207 vs unsplit 8736 (108.9s)
+  block@24/head=joint: acc 0.4535 (choice 0.450, score 0.330, noul 0.622) brier 0.2089 | per-question token-layers 3301 vs unsplit 8736 (107.0s)
+  block@26/head=joint: acc 0.4535 (choice 0.450, score 0.330, noul 0.622) brier 0.2089 | per-question token-layers 2848 vs unsplit 8736 (105.2s)
+  block@28/head=joint: acc 0.4535 (choice 0.450, score 0.330, noul 0.622) brier 0.2090 | per-question token-layers 2395 vs unsplit 8736 (106.1s)
+  oneway@7/head=joint: acc 0.7160 (choice 0.712, score 0.671, noul 0.780) brier 0.0789 | per-question token-layers 7151 vs unsplit 8736 (103.5s)
+  oneway@14/head=joint: acc 0.6935 (choice 0.702, score 0.621, noul 0.782) brier 0.0894 | per-question token-layers 5565 vs unsplit 8736 (105.5s)
+  oneway@20/head=joint: acc 0.6840 (choice 0.692, score 0.608, noul 0.778) brier 0.0920 | per-question token-layers 4207 vs unsplit 8736 (109.1s)
+  oneway@24/head=joint: acc 0.6840 (choice 0.690, score 0.608, noul 0.780) brier 0.0920 | per-question token-layers 3301 vs unsplit 8736 (109.5s)
+  oneway@26/head=joint: acc 0.6840 (choice 0.690, score 0.608, noul 0.780) brier 0.0920 | per-question token-layers 2848 vs unsplit 8736 (109.0s)
+  oneway@28/head=joint: acc 0.6840 (choice 0.690, score 0.608, noul 0.780) brier 0.0921 | per-question token-layers 2395 vs unsplit 8736 (108.3s)
+  oneway@28/head=oneway: acc 0.6845 (choice 0.692, score 0.608, noul 0.780) brier 0.0921 | per-question token-layers 1942 vs unsplit 8736 (110.0s)
+done -> results/tarski/explore_oneway_laya.json

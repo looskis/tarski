@@ -1,0 +1,14 @@
+name | GPU | est. minutes | command
+kshot_banking77 | A100 | 20 | .venv/bin/python explore/lit_dm_kshot.py --dataset banking77 --out results/tarski/explore_kshot_banking77.json
+kshot_clinc150 | A100 | 25 | .venv/bin/python explore/lit_dm_kshot.py --dataset clinc150 --out results/tarski/explore_kshot_clinc150.json
+confhead_clinc150 | A10 | 15 | .venv/bin/python explore/lit_dm_confhead.py --dataset clinc150 --out results/tarski/explore_confhead_clinc150.json
+confhead_typed | A100 | 20 | .venv/bin/python explore/lit_dm_confhead.py --dataset typed-decisions --out results/tarski/explore_confhead_typed.json
+confhead_typed_cs_oof | A100 | 30 | .venv/bin/python explore/lit_dm_confhead.py --dataset typed-decisions --workflows customer_service --folds 5 --out results/tarski/explore_confhead_typed_cs_oof.json
+trunkswap_modernbert | A10 | 25 | .venv/bin/python explore/lit_dm_trunkswap.py --base modernbert --out results/tarski/explore_trunkswap_modernbert.json
+trunkswap_gte | A10 | 25 | .venv/bin/python explore/lit_dm_trunkswap.py --base gte --out results/tarski/explore_trunkswap_gte.json
+trunkswap_gliclass | A10 | 28 | .venv/bin/python explore/lit_dm_trunkswap.py --base gliclass --out results/tarski/explore_trunkswap_gliclass.json
+droid | A10 | 20 | .venv/bin/python explore/lit_dm_droid.py --out results/tarski/explore_droid.json
+synthroutes | A100 | 20 | .venv/bin/python explore/lit_dm_synthroutes.py --out results/tarski/explore_synthroutes.json
+ettin_enc | A10 | 15 | .venv/bin/python explore/lit_dm_ettin.py --arms enc --out results/tarski/explore_ettin_enc.json
+ettin_dec_causal | A100 | 25 | .venv/bin/python explore/lit_dm_ettin.py --arms dec_causal --out results/tarski/explore_ettin_dec_causal.json
+ettin_dec_bibranch | A10 | 12 | .venv/bin/python explore/lit_dm_ettin.py --arms dec_bibranch --out results/tarski/explore_ettin_dec_bibranch.json

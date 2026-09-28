@@ -1,0 +1,15 @@
+== one-way laya retraining on cuda | train 5400 val 600 test 2000 pairs | variants ['joint_ft', 'oneway_ft', 'oneway_qlora']
+   untrained: oneway test 0.6835 | joint test 0.7670 (38s)
+-- joint_ft: 369.5M trainable params, 2 epochs x 338 steps, mask joint
+   epoch 1/2 loss 0.8375 (172.5s) | oneway: val 0.7450 test 0.7090 | joint: val 0.8333 test 0.7725
+   epoch 2/2 loss 0.8023 (122.3s) | oneway: val 0.7850 test 0.7190 | joint: val 0.8500 test 0.7925
+   joint_ft: selected epoch 2 | oneway test 0.7190 | joint test 0.7925 (377.0s)
+-- oneway_ft: 369.5M trainable params, 2 epochs x 338 steps, mask oneway
+   epoch 1/2 loss 0.8554 (138.5s) | oneway: val 0.8283 test 0.7695 | joint: val 0.8367 test 0.7835
+   epoch 2/2 loss 0.8080 (139.0s) | oneway: val 0.8400 test 0.7840 | joint: val 0.8317 test 0.7885
+   oneway_ft: selected epoch 2 | oneway test 0.7840 | joint test 0.7885 (362.6s)
+-- oneway_qlora: 33.4M trainable params, 2 epochs x 338 steps, mask oneway
+   epoch 1/2 loss 0.8615 (134.0s) | oneway: val 0.8350 test 0.7370 | joint: val 0.8400 test 0.7695
+   epoch 2/2 loss 0.8347 (136.3s) | oneway: val 0.8150 test 0.7470 | joint: val 0.8383 test 0.7685
+   oneway_qlora: selected epoch 1 | oneway test 0.7370 | joint test 0.7695 (377.6s)
+done -> results/tarski/explore_oneway_train.json

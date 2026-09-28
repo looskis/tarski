@@ -1,0 +1,13 @@
+== decision atlas | cpu | typed-decisions: 160/60/80 messages (train/val/test), tasks: agent_trace_observa | n [8] x 3 draws
+   d=11  urgency -> agent_trace_observability.urgency          zero-shot +0.202 | n=8: target +0.230 atlas +0.305 calib +0.202
+   d=11  urgency -> customer_service.urgency                   zero-shot +0.233 | n=8: target -0.047 atlas +0.150 calib +0.233
+   d=11  urgency -> invoice_processing.urgency                 zero-shot +0.168 | n=8: target -0.024 atlas -0.056 calib -0.056
+   d=11  urgency -> security_incidents.urgency                 zero-shot -0.156 | n=8: target +0.064 atlas +0.039 calib -0.052
+   d=11 severity -> agent_trace_observability.risk             zero-shot +0.042 | n=8: target +0.304 atlas +0.247 calib +0.014
+   d=11 severity -> invoice_processing.discrepancy_severity    zero-shot +0.142 | n=8: target +0.292 atlas +0.079 calib -0.047
+   d=11 severity -> security_incidents.severity                zero-shot +0.032 | n=8: target -0.026 atlas -0.058 calib +0.032
+   d=11 severity -> customer_service.churn_risk                zero-shot +0.203 | n=8: target +0.030 atlas +0.002 calib +0.068
+   d=11    human -> agent_trace_observability.needs_review     zero-shot -0.234 | n=8: target +0.351 atlas +0.245 calib +0.078
+   d=11    human -> customer_service.needs_human               zero-shot +0.375 | n=8: target -0.146 atlas -0.259 calib -0.375
+-- depth 11 summary: {"urgency": {"zero_shot": 0.11145407039454018, "8": {"target_only": 0.05562750774673644, "atlas_prior": 0.10960377528724546, "calibrated": 0.08163330636324984}}, "severity": {"zero_shot": 0.10476472001323933, "8": {"target_only": 0.15015512046993404, "atlas_prior": 0.06743504696795853, "calibrated": 0.01659165763940969}}, "human": {"zero_shot": 0.07028926017038666, "8": {"target_only": 0.10244791466990565, "atlas_prior": -0.007007416663535521, "calibrated": -0.1484297533901289}}}
+done -> results/tarski/explore_atlas_smoke.json

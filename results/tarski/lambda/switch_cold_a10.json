@@ -1,0 +1,27 @@
+{
+ "device": "cuda",
+ "cold_cache": true,
+ "load_first_decision_ms": {
+  "probe|cold": 190.6,
+  "probe|warm": 176.5,
+  "blocks+1|cold": 187.4,
+  "blocks+1|warm": 184.1,
+  "blocks+2|cold": 201.0,
+  "blocks+2|warm": 190.6,
+  "full_copy|cold": 314.1,
+  "full_copy|warm": 171.2,
+  "laya_checkpoint|cold": 440.5,
+  "laya_checkpoint|warm": 304.1
+ },
+ "bytes": {
+  "probe": 34188,
+  "blocks+1": 10063244,
+  "blocks+2": 20093892,
+  "full_copy": 596072034
+ },
+ "resident_5_tasks_MB": {
+  "base + 5 blocks+2 branches": 806.5,
+  "5 full copies (plus the base already resident)": 2842.2,
+  "base alone": 614.8
+ }
+}

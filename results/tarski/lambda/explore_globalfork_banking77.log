@@ -1,0 +1,11 @@
+== global-only forks | cuda | banking77: 8994/999/3076 messages (train/val/test), tasks: intent(77) | layer types GllGllGllGllGllGllGllG
+   split 11    next layers [11, 12] (lG): mean acc 0.9200 (49s)
+   split 11  global layers [12, 15] (GG): mean acc 0.9174 (51s)
+   split 11   local layers [11, 13] (ll): mean acc 0.9142 (45s)
+   split 11   next1 layers [11] (l): mean acc 0.9080 (40s)
+   split 11 global1 layers [12] (G): mean acc 0.9054 (34s)
+   split 16    next layers [16, 17] (ll): mean acc 0.9249 (49s)
+   split 16  global layers [18, 21] (GG): mean acc 0.9200 (51s)
+   split 16   next1 layers [16] (l): mean acc 0.9187 (38s)
+   split 16 global1 layers [18] (G): mean acc 0.9239 (39s)
+done -> results/tarski/explore_globalfork_banking77.json

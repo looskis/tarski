@@ -1,0 +1,16 @@
+== banking77: 462/77/231 messages (train/val/test), tasks: intent(77) | blocks@11+2
+  cached depth 11: 2.4s (18 MB)
+  [intent]        full: test acc 0.0260 macro-F1 0.0111 NLL 4.320 (trainable 10.09M of 10.09M, 15 steps, 1.7s)
+  [intent] frozen_attn: test acc 0.0476 macro-F1 0.0098 NLL 4.335 (trainable 5.37M of 10.09M, 15 steps, 1.5s)
+  latency bs=1 N= 1: loop 2.1 ms | fused 5.1 ms | shared-attn 2.5 ms (x2.02); max|diff| 0.00e+00
+  latency bs=1 N= 4: loop 9.9 ms | fused 9.0 ms | shared-attn 8.3 ms (x1.09); max|diff| 0.00e+00
+== done in 7.4s; wrote results/tarski/explore_sharedattn_smoke.json
+   frozen-attention accuracy deltas: {'banking77/intent': 0.0216}; analytic attention share of a layer at 64 tokens 0.48
+== banking77: 462/77/231 messages (train/val/test), tasks: intent(77) | blocks@11+2
+  cached depth 11: 1.3s (18 MB)
+  [intent]        full: test acc 0.0216 macro-F1 0.0132 NLL 4.319 (trainable 10.09M of 10.09M, 15 steps, 0.8s)
+  [intent] frozen_attn: test acc 0.0476 macro-F1 0.0098 NLL 4.335 (trainable 5.37M of 10.09M, 15 steps, 0.6s)
+  latency bs=1 N= 1: loop 1.1 ms | fused 1.1 ms | shared-attn 1.1 ms (x1.00); max|diff| vs fused 0.0e+00, vs loop 0.0e+00
+  latency bs=1 N= 4: loop 4.6 ms | fused 4.1 ms | shared-attn 3.3 ms (x1.25); max|diff| vs fused 0.0e+00, vs loop 0.0e+00
+== done in 4.2s; wrote results/tarski/explore_sharedattn_smoke.json
+   frozen-attention accuracy deltas: {'banking77/intent': 0.026}; analytic attention share of a layer at 64 tokens 0.48

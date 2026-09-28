@@ -1,0 +1,22 @@
+== banking77: 8994/999/3076 messages (train/val/test), tasks: intent(77) | split 8, tasks ['intent']
+  cached depth 8: 7.1s (312 MB)
+  [intent] probe val acc of frozen layer j on h_8: 8:0.908 9:0.896 10:0.898 11:0.893 12:0.895 13:0.881 14:0.888 15:0.886 16:0.890 17:0.888 18:0.878 19:0.877 20:0.873 21:0.874  -> probe_best2 [8, 10] (21s)
+  [intent]           next layers [8, 9]: test acc 0.9145 macro-F1 0.9145 NLL 0.304 (val 0.9179, 1692 steps, 51.2s)
+  [intent]  next_reversed layers [9, 8]: test acc 0.9106 macro-F1 0.9105 NLL 0.331 (val 0.9119, 1692 steps, 48.4s)
+  [intent]            mid layers [15, 16]: test acc 0.9135 macro-F1 0.9136 NLL 0.320 (val 0.9199, 1692 steps, 46.6s)
+  [intent]            top layers [20, 21]: test acc 0.9073 macro-F1 0.9073 NLL 0.350 (val 0.9109, 1692 steps, 47.8s)
+  [intent]         stride layers [8, 15]: test acc 0.9142 macro-F1 0.9142 NLL 0.300 (val 0.9199, 1692 steps, 49.7s)
+  [intent]    probe_best2 layers [8, 10]: test acc 0.9233 macro-F1 0.9232 NLL 0.297 (val 0.9189, 1692 steps, 49.1s)
+  [intent]    random_pair layers [14, 21]: test acc 0.9187 macro-F1 0.9188 NLL 0.302 (val 0.9189, 1692 steps, 37.1s)
+== clinc150: 15250/3100/5500 messages (train/val/test), tasks: intent(151), domain(11), oos(2) | split 8, tasks ['domain']
+  cached depth 8: 6.6s (408 MB)
+  [domain] probe val acc of frozen layer j on h_8: 8:0.917 9:0.921 10:0.912 11:0.915 12:0.907 13:0.907 14:0.909 15:0.915 16:0.908 17:0.905 18:0.894 19:0.898 20:0.896 21:0.892  -> probe_best2 [8, 9] (19s)
+  [domain]           next layers [8, 9]: test acc 0.8775 macro-F1 0.8916 NLL 0.427 (val 0.9577, 2862 steps, 63.2s)
+  [domain]  next_reversed layers [9, 8]: test acc 0.8811 macro-F1 0.8943 NLL 0.386 (val 0.9587, 2862 steps, 62.7s)
+  [domain]            mid layers [15, 16]: test acc 0.8667 macro-F1 0.8805 NLL 0.474 (val 0.9587, 2862 steps, 57.3s)
+  [domain]            top layers [20, 21]: test acc 0.8584 macro-F1 0.8722 NLL 0.495 (val 0.9526, 2862 steps, 55.3s)
+  [domain]         stride layers [8, 15]: test acc 0.8691 macro-F1 0.8831 NLL 0.481 (val 0.9600, 2862 steps, 63.5s)
+  [domain]    probe_best2 layers [8, 9]: test acc 0.8716 macro-F1 0.8856 NLL 0.443 (val 0.9577, 2862 steps, 76.4s)
+  [domain]    random_pair layers [14, 21]: test acc 0.8731 macro-F1 0.8867 NLL 0.453 (val 0.9577, 2862 steps, 76.2s)
+== done in 840.9s; wrote results/tarski/explore_splice.json
+   acc - next: {'banking77/intent': {'next': 0.0, 'next_reversed': -0.0039, 'mid': -0.001, 'top': -0.0072, 'stride': -0.0003, 'probe_best2': 0.0088, 'random_pair': 0.0042}, 'clinc150/domain': {'next': 0.0, 'next_reversed': 0.0036, 'mid': -0.0107, 'top': -0.0191, 'stride': -0.0084, 'probe_best2': -0.0058, 'random_pair': -0.0044}}

@@ -1,0 +1,30 @@
+== ANE trunk | branches on cpu | powermetrics via sudo: False | work dir /var/folders/vs/7chgs54174sgl12rcfdcflkw0000gn/T/tarski_coreml_o41z9mxn
+  split 4: static re-implementation vs Trunk.taps rel err 7.4e-07
+== ANE trunk | branches on cpu | powermetrics via sudo: False | work dir /var/folders/vs/7chgs54174sgl12rcfdcflkw0000gn/T/tarski_coreml_qh9sol_q
+  split 4: static re-implementation vs Trunk.taps rel err 7.4e-07
+== ANE trunk | branches on cpu | powermetrics via sudo: False | work dir /var/folders/vs/7chgs54174sgl12rcfdcflkw0000gn/T/tarski_coreml_8vfxdfuc
+  split 4: static re-implementation vs Trunk.taps rel err 7.4e-07
+  converted fp16-weight models for buckets [32, 64] in 5s
+  converted int8-weight models for buckets [32, 64] in 13s
+   L=32 (18 tokens): torch_cpu_ms 5.41 | coreml_fp16_CPU_ONLY_ms 1.14 | coreml_fp16_CPU_AND_NE_ms 0.56 | coreml_int8_CPU_ONLY_ms 1.02 | coreml_int8_CPU_AND_NE_ms 0.37
+   L=64 (13 tokens): torch_cpu_ms 5.06 | coreml_fp16_CPU_ONLY_ms 1.97 | coreml_fp16_CPU_AND_NE_ms 0.68 | coreml_int8_CPU_ONLY_ms 1.54 | coreml_int8_CPU_AND_NE_ms 0.54
+   trained probe@4 on PyTorch (cpu) states: test acc 0.1250 (0s)
+   trained blocks:2@4 on PyTorch (cpu) states: test acc 0.1000 (5s)
+   parity fp16 weights on CPU_AND_NE: rel err 0.0041 (normal channels 0.0072), non-finite msgs 0 | probe acc 0.1250 vs 0.1250 (agree 1.0000) | blocks:2 acc 0.1000 vs 0.1000 (agree 1.0000)
+   parity int8 weights on CPU_AND_NE: rel err 0.0227 (normal channels 0.0399), non-finite msgs 0 | probe acc 0.1250 vs 0.1250 (agree 0.9750) | blocks:2 acc 0.1000 vs 0.1000 (agree 1.0000)
+   N= 1: mps_trunk+loop_ms 7.70 | ane_trunk+loop_ms 3.84 | mps_trunk+fused_ms 8.72 | ane_trunk+fused_ms 3.40 | mps_trunk+shared_svf_ms 8.72 | ane_trunk+shared_svf_ms 4.93 | pipelined_ane+fused_msgs_per_s 268.32 | sequential_mps+fused_msgs_per_s 120.43
+   N= 5: mps_trunk+loop_ms 21.26 | ane_trunk+loop_ms 14.45 | mps_trunk+fused_ms 18.74 | ane_trunk+fused_ms 12.28 | mps_trunk+shared_svf_ms 15.38 | ane_trunk+shared_svf_ms 12.08 | pipelined_ane+fused_msgs_per_s 73.13 | sequential_mps+fused_msgs_per_s 57.32
+done -> results/tarski/explore_lit_ane_smoke.json
+== ANE trunk | branches on cpu | powermetrics via sudo: False | work dir /var/folders/vs/7chgs54174sgl12rcfdcflkw0000gn/T/tarski_coreml_gb9f2j0f
+  split 4: static re-implementation vs Trunk.taps rel err 7.4e-07
+  converted fp16-weight models for buckets [32, 64] in 4s
+  converted int8-weight models for buckets [32, 64] in 12s
+   L=32 (18 tokens): torch_cpu_ms 3.82 | coreml_fp16_CPU_ONLY_ms 0.79 | coreml_fp16_CPU_AND_NE_ms 0.52 | coreml_int8_CPU_ONLY_ms 0.76 | coreml_int8_CPU_AND_NE_ms 0.36
+   L=64 (13 tokens): torch_cpu_ms 3.13 | coreml_fp16_CPU_ONLY_ms 1.35 | coreml_fp16_CPU_AND_NE_ms 0.58 | coreml_int8_CPU_ONLY_ms 1.52 | coreml_int8_CPU_AND_NE_ms 0.47
+   trained probe@4 on PyTorch (cpu) states: test acc 0.2000 (0s)
+   trained blocks:2@4 on PyTorch (cpu) states: test acc 0.1000 (4s)
+   parity fp16 weights on CPU_AND_NE: rel err 0.0041 (normal channels 0.0072), non-finite msgs 0 | probe acc 0.2000 vs 0.2000 (agree 1.0000) | blocks:2 acc 0.1000 vs 0.1000 (agree 1.0000)
+   parity int8 weights on CPU_AND_NE: rel err 0.0227 (normal channels 0.0399), non-finite msgs 0 | probe acc 0.2000 vs 0.2000 (agree 0.9500) | blocks:2 acc 0.1000 vs 0.1000 (agree 1.0000)
+   N= 1: mps_trunk+loop_ms 5.16 | ane_trunk+loop_ms 2.63 | mps_trunk+fused_ms 5.36 | ane_trunk+fused_ms 2.74 | mps_trunk+shared_svf_ms 5.92 | ane_trunk+shared_svf_ms 3.27 | pipelined_ane+fused_msgs_per_s 370.26 | sequential_mps+fused_msgs_per_s 184.22
+   N= 5: mps_trunk+loop_ms 12.14 | ane_trunk+loop_ms 9.83 | mps_trunk+fused_ms 11.49 | ane_trunk+fused_ms 8.82 | mps_trunk+shared_svf_ms 10.04 | ane_trunk+shared_svf_ms 7.08 | pipelined_ane+fused_msgs_per_s 109.68 | sequential_mps+fused_msgs_per_s 84.65
+done -> results/tarski/explore_lit_ane_smoke.json

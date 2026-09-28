@@ -1,0 +1,42 @@
+== clinc150: threads train/val/test 984/300/246 (test thread length mean 12.2, max 16) | split 11 | cuda
+  sanity: masked incremental path (all active) vs plain encode: max rel err 0.00e+00
+  full train: 10000 steps in 13.8s
+  full val: 3100 steps in 4.4s
+  full test: 3008 steps in 4.6s
+  mode stale: test encoded in 9.1s, trunk FLOPs vs full re-encode 0.146
+  mode band16: test encoded in 6.3s, trunk FLOPs vs full re-encode 0.351
+  mode band32: test encoded in 6.4s, trunk FLOPs vs full re-encode 0.528
+  mode band64: test encoded in 6.4s, trunk FLOPs vs full re-encode 0.792
+  mode select10: test encoded in 8.7s, trunk FLOPs vs full re-encode 0.302
+  mode select25: test encoded in 12.1s, trunk FLOPs vs full re-encode 0.418
+  mode stale: cosine to full (new message, pooled at depth 11) mean 0.9894 p05 0.9807
+  mode band16: cosine to full (new message, pooled at depth 11) mean 0.9994 p05 0.9983
+  mode band32: cosine to full (new message, pooled at depth 11) mean 0.9998 p05 0.9994
+  mode band64: cosine to full (new message, pooled at depth 11) mean 1.0000 p05 0.9999
+  mode select10: cosine to full (new message, pooled at depth 11) mean 0.9931 p05 0.9839
+  mode select25: cosine to full (new message, pooled at depth 11) mean 0.9961 p05 0.9874
+   [probe trained on full] intent: full=0.849/1.000 stale=0.845/0.912 band16=0.849/0.981 band32=0.848/0.990 band64=0.851/0.997 select10=0.848/0.932 select25=0.839/0.952  (acc/agree, 29s)
+   [probe trained on full] domain: full=0.762/1.000 stale=0.732/0.879 band16=0.767/0.976 band32=0.766/0.987 band64=0.762/0.997 select10=0.744/0.904 select25=0.757/0.924  (acc/agree, 24s)
+   [probe trained on full] oos: full=0.819/1.000 stale=0.818/0.999 band16=0.819/1.000 band32=0.819/1.000 band64=0.819/1.000 select10=0.818/0.999 select25=0.818/0.999  (acc/agree, 23s)
+-- probe|train=full: full 0.8103 | stale 0.7983 | band16 0.8118 | band32 0.8113 | band64 0.8108 | select10 0.8036 | select25 0.8050
+   [probe trained on stale] intent: full=0.808/1.000 stale=0.843/0.890 band16=0.811/0.975 band32=0.810/0.988 band64=0.808/0.997 select10=0.835/0.912 select25=0.819/0.941  (acc/agree, 10s)
+   [probe trained on stale] domain: full=0.746/1.000 stale=0.776/0.865 band16=0.750/0.975 band32=0.749/0.988 band64=0.746/0.998 select10=0.772/0.893 select25=0.768/0.927  (acc/agree, 9s)
+   [probe trained on stale] oos: full=0.821/1.000 stale=0.819/0.998 band16=0.821/1.000 band32=0.821/1.000 band64=0.821/1.000 select10=0.820/0.998 select25=0.820/0.998  (acc/agree, 10s)
+-- probe|train=stale: full 0.7920 | stale 0.8127 | band16 0.7941 | band32 0.7933 | band64 0.7920 | select10 0.8090 | select25 0.8022
+   [blocks:2 trained on full] intent: full=0.862/1.000 stale=0.845/0.926 band16=0.860/0.983 band32=0.859/0.990 band64=0.861/0.998 select10=0.848/0.940 select25=0.850/0.957  (acc/agree, 38s)
+   [blocks:2 trained on full] domain: full=0.879/1.000 stale=0.853/0.950 band16=0.874/0.987 band32=0.876/0.993 band64=0.879/0.999 select10=0.858/0.960 select25=0.864/0.970  (acc/agree, 49s)
+   [blocks:2 trained on full] oos: full=0.836/1.000 stale=0.835/0.996 band16=0.836/0.998 band32=0.836/0.999 band64=0.836/1.000 select10=0.835/0.996 select25=0.835/0.997  (acc/agree, 49s)
+-- blocks:2|train=full: full 0.8589 | stale 0.8445 | band16 0.8567 | band32 0.8568 | band64 0.8587 | select10 0.8470 | select25 0.8497
+   [blocks:2 trained on stale] intent: full=0.863/1.000 stale=0.869/0.933 band16=0.864/0.985 band32=0.864/0.992 band64=0.864/0.997 select10=0.869/0.946 select25=0.863/0.956  (acc/agree, 50s)
+   [blocks:2 trained on stale] domain: full=0.899/1.000 stale=0.888/0.944 band16=0.894/0.981 band32=0.898/0.991 band64=0.899/0.998 select10=0.888/0.949 select25=0.894/0.962  (acc/agree, 52s)
+   [blocks:2 trained on stale] oos: full=0.841/1.000 stale=0.838/0.995 band16=0.841/0.997 band32=0.840/0.998 band64=0.841/1.000 select10=0.838/0.995 select25=0.842/0.995  (acc/agree, 50s)
+-- blocks:2|train=stale: full 0.8678 | stale 0.8650 | band16 0.8664 | band32 0.8676 | band64 0.8680 | select10 0.8650 | select25 0.8662
+== summary: mean acc over tasks and all thread steps (agreement with full); trunk FLOPs vs re-encode
+  full      FLOPs x1.000  cos 1.0000  probe|train=full: 0.8103 (1.000) probe|train=stale: 0.7920 (1.000) blocks:2|train=full: 0.8589 (1.000) blocks:2|train=stale: 0.8678 (1.000)
+  stale     FLOPs x0.146  cos 0.9894  probe|train=full: 0.7983 (0.930) probe|train=stale: 0.8127 (0.918) blocks:2|train=full: 0.8445 (0.958) blocks:2|train=stale: 0.8650 (0.958)
+  band16    FLOPs x0.351  cos 0.9994  probe|train=full: 0.8118 (0.986) probe|train=stale: 0.7941 (0.983) blocks:2|train=full: 0.8567 (0.989) blocks:2|train=stale: 0.8664 (0.988)
+  band32    FLOPs x0.528  cos 0.9998  probe|train=full: 0.8113 (0.992) probe|train=stale: 0.7933 (0.992) blocks:2|train=full: 0.8568 (0.994) blocks:2|train=stale: 0.8676 (0.994)
+  band64    FLOPs x0.792  cos 1.0000  probe|train=full: 0.8108 (0.998) probe|train=stale: 0.7920 (0.998) blocks:2|train=full: 0.8587 (0.999) blocks:2|train=stale: 0.8680 (0.998)
+  select10  FLOPs x0.302  cos 0.9931  probe|train=full: 0.8036 (0.945) probe|train=stale: 0.8090 (0.934) blocks:2|train=full: 0.8470 (0.966) blocks:2|train=stale: 0.8650 (0.964)
+  select25  FLOPs x0.418  cos 0.9961  probe|train=full: 0.8050 (0.959) probe|train=stale: 0.8022 (0.955) blocks:2|train=full: 0.8497 (0.975) blocks:2|train=stale: 0.8662 (0.971)
+done

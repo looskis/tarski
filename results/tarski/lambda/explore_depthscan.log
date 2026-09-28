@@ -1,0 +1,38 @@
+== depth scan | base answerdotai/ModernBERT-base on cuda | smoke=False | layer types GllGllGllGllGllGllGllG
+-- typed-decisions: 1080/120/400 messages (train/val/test), tasks: agent_trace_observability.action(4), agent_trace_observability.needs_review(2), agent_trace_observability.outcome(4), agent_trace_observability.risk(4), agent_trace_observability.urgency(4), customer_service.action(5), customer_service.category(5), customer_service.churn_risk(4), customer_service.needs_human(2), customer_service.urgency(4), invoice_processing.discrepancy_severity(4), invoice_processing.disposition(4), invoice_processing.duplicate(2), invoice_processing.matches_order(2), invoice_processing.urgency(4), security_incidents.credential_compromise(2), security_incidents.disposition(4), security_incidents.severity(5), security_incidents.true_positive(2), security_incidents.urgency(4)
+  one trunk pass over 1600 messages, 22 depths: 9.2s (train vocab 4639 token ids, median 240 tokens)
+  [mean] mean acc at val-best depth 0.6970; by depth 1:0.664 2:0.676 3:0.696 4:0.704 5:0.713 6:0.710 7:0.695 8:0.682 9:0.692 10:0.697 11:0.679 12:0.689 13:0.680 14:0.690 15:0.689 16:0.686 17:0.696 18:0.694 19:0.697 20:0.706 21:0.709 22:0.703
+  [mean] sawtooth: {"after_global_mean_acc": 0.6906, "after_global_mean_bump": -0.0017, "after_local_mean_acc": 0.6944, "after_local_mean_bump": 0.0014}
+  [cls] mean acc at val-best depth 0.6540; by depth 1:0.632 2:0.632 3:0.618 4:0.625 5:0.626 6:0.602 7:0.618 8:0.614 9:0.624 10:0.632 11:0.630 12:0.622 13:0.642 14:0.650 15:0.624 16:0.649 17:0.621 18:0.630 19:0.658 20:0.653 21:0.656 22:0.664
+  [cls] sawtooth: {"after_global_mean_acc": 0.64, "after_global_mean_bump": 0.0112, "after_local_mean_acc": 0.6287, "after_local_mean_bump": -0.0051}
+  [centred] mean acc at val-best depth 0.6935; by depth 3:0.687 6:0.691 9:0.668 11:0.685 12:0.683 16:0.689 22:0.691
+  [multitap_6_11_16_22] mean acc at val-best depth 0.7020; by depth 0:0.702
+  centred - mean by depth: 3:-0.009 6:-0.019 9:-0.024 11:+0.006 12:-0.006 16:+0.002 22:-0.012
+  urgency transfer [mean@11] within 0.676 across 0.085
+  urgency transfer [mean@22] within 0.678 across 0.049
+  urgency transfer [centred@11] within 0.677 across 0.088
+  urgency transfer [centred@22] within 0.675 across 0.060
+-- clinc150: 15250/3100/5500 messages (train/val/test), tasks: intent(151), domain(11), oos(2)
+  one trunk pass over 23850 messages, 22 depths: 16.9s (train vocab 5668 token ids, median 11 tokens)
+  [mean] mean acc at val-best depth 0.8011; by depth 1:0.794 2:0.796 3:0.795 4:0.794 5:0.796 6:0.799 7:0.797 8:0.798 9:0.802 10:0.800 11:0.797 12:0.798 13:0.798 14:0.798 15:0.796 16:0.796 17:0.797 18:0.799 19:0.801 20:0.802 21:0.802 22:0.801
+  [mean] sawtooth: {"after_global_mean_acc": 0.7975, "after_global_mean_bump": -0.0005, "after_local_mean_acc": 0.7982, "after_local_mean_bump": 0.0003}
+  [cls] mean acc at val-best depth 0.7693; by depth 1:0.763 2:0.769 3:0.762 4:0.759 5:0.747 6:0.742 7:0.745 8:0.741 9:0.739 10:0.742 11:0.744 12:0.742 13:0.744 14:0.747 15:0.745 16:0.735 17:0.721 18:0.719 19:0.725 20:0.713 21:0.709 22:0.747
+  [cls] sawtooth: {"after_global_mean_acc": 0.7451, "after_global_mean_bump": 0.0032, "after_local_mean_acc": 0.7386, "after_local_mean_bump": -0.0025}
+  [centred] mean acc at val-best depth 0.7909; by depth 3:0.789 6:0.786 9:0.790 11:0.790 12:0.788 16:0.784 22:0.785
+  [multitap_6_11_16_22] mean acc at val-best depth 0.8357; by depth 0:0.836
+  centred - mean by depth: 3:-0.007 6:-0.013 9:-0.012 11:-0.007 12:-0.010 16:-0.012 22:-0.016
+  OOD best single depth 1: {"auroc": 0.8614, "oos_missed_at_95_inscope": 0.654, "binary_acc_valthr": 0.8185, "majority_acc": 0.8182, "in_scope_ncm_acc": 0.8889}
+  OOD multi_depth_mean_z: {"auroc": 0.8443, "oos_missed_at_95_inscope": 0.762, "binary_acc_valthr": 0.8182, "majority_acc": 0.8182}
+  OOD multi_depth_mean_z_ge6: {"auroc": 0.8328, "oos_missed_at_95_inscope": 0.8, "binary_acc_valthr": 0.8182, "majority_acc": 0.8182}
+  OOD cross_depth_disagreement: {"auroc": 0.9137, "oos_missed_at_95_inscope": 0.445, "binary_acc_valthr": 0.8633, "majority_acc": 0.8182}
+  OOD supervised_ridge_oos_probe: {"auroc": 0.8395, "oos_missed_at_95_inscope": 0.509, "binary_acc_valthr": 0.8445, "majority_acc": 0.8182}
+-- banking77: 8994/999/3076 messages (train/val/test), tasks: intent(77)
+  one trunk pass over 13069 messages, 22 depths: 10.4s (train vocab 2998 token ids, median 13 tokens)
+  [mean] mean acc at val-best depth 0.8436; by depth 1:0.850 2:0.851 3:0.843 4:0.846 5:0.844 6:0.850 7:0.846 8:0.840 9:0.844 10:0.849 11:0.848 12:0.846 13:0.847 14:0.843 15:0.848 16:0.851 17:0.849 18:0.845 19:0.846 20:0.850 21:0.851 22:0.857
+  [mean] sawtooth: {"after_global_mean_acc": 0.849, "after_global_mean_bump": 0.0018, "after_local_mean_acc": 0.8465, "after_local_mean_bump": -0.0009}
+  [cls] mean acc at val-best depth 0.8131; by depth 1:0.814 2:0.813 3:0.799 4:0.786 5:0.759 6:0.759 7:0.758 8:0.743 9:0.741 10:0.745 11:0.743 12:0.746 13:0.739 14:0.750 15:0.748 16:0.725 17:0.705 18:0.703 19:0.713 20:0.696 21:0.681 22:0.749
+  [cls] sawtooth: {"after_global_mean_acc": 0.7539, "after_global_mean_bump": 0.0036, "after_local_mean_acc": 0.7418, "after_local_mean_bump": -0.004}
+  [centred] mean acc at val-best depth 0.8345; by depth 3:0.835 6:0.829 9:0.827 11:0.830 12:0.824 16:0.804 22:0.836
+  [multitap_6_11_16_22] mean acc at val-best depth 0.8969; by depth 0:0.897
+  centred - mean by depth: 3:-0.008 6:-0.022 9:-0.017 11:-0.018 12:-0.021 16:-0.047 22:-0.020
+done -> results/tarski/explore_depthscan.json

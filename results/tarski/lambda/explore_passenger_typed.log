@@ -1,0 +1,20 @@
+== passengers | base answerdotai/ModernBERT-base on cuda | smoke=False
+  parity: {"message_vs_taps": 0.0084, "passenger_vs_oneway_full": 0.0208, "twoway_full_vs_stock": 0.0}
+-- typed-decisions: 1080/120/400 messages (train/val/test), tasks: agent_trace_observability.action(4), agent_trace_observability.needs_review(2), agent_trace_observability.outcome(4), agent_trace_observability.risk(4), agent_trace_observability.urgency(4), customer_service.action(5), customer_service.category(5), customer_service.churn_risk(4), customer_service.needs_human(2), customer_service.urgency(4), invoice_processing.discrepancy_severity(4), invoice_processing.disposition(4), invoice_processing.duplicate(2), invoice_processing.matches_order(2), invoice_processing.urgency(4), security_incidents.credential_compromise(2), security_incidents.disposition(4), security_incidents.severity(5), security_incidents.true_positive(2), security_incidents.urgency(4) | configs ['P4r0', 'P4r8', 'P4r8@11', 'P1r0'] | epochs 8 bs 16
+  baseline cache depth 22: 9.8s
+  baseline probe@22 mean: {"acc": 0.6565, "macro_f1": 0.4821, "ece": 0.1424, "nll": 0.833, "brier_soft": 0.1134, "auroc": 0.8287}
+  baseline logreg@11 mean: {"acc": 0.6795, "macro_f1": 0.5505, "ece": 0.136, "nll": 0.7659, "brier_soft": 0.1046, "auroc": 0.8169}
+  baseline logreg@22 mean: {"acc": 0.675, "macro_f1": 0.5407, "ece": 0.1278, "nll": 0.7654, "brier_soft": 0.1031, "auroc": 0.8139}
+    epoch 1/8 loss 1.1831 val acc P4r0=0.426 P4r8=0.454 P4r8@11=0.452 P1r0=0.462 (27.5s)
+    epoch 2/8 loss 1.1381 val acc P4r0=0.477 P4r8=0.514 P4r8@11=0.479 P1r0=0.502 (24.7s)
+    epoch 3/8 loss 1.1041 val acc P4r0=0.535 P4r8=0.530 P4r8@11=0.538 P1r0=0.552 (24.6s)
+    epoch 4/8 loss 1.0843 val acc P4r0=0.538 P4r8=0.531 P4r8@11=0.539 P1r0=0.528 (24.7s)
+    epoch 5/8 loss 1.0680 val acc P4r0=0.549 P4r8=0.555 P4r8@11=0.510 P1r0=0.557 (24.7s)
+    epoch 6/8 loss 1.0533 val acc P4r0=0.540 P4r8=0.568 P4r8@11=0.525 P1r0=0.544 (24.7s)
+    epoch 7/8 loss 1.0446 val acc P4r0=0.562 P4r8=0.548 P4r8@11=0.529 P1r0=0.588 (29.7s)
+    epoch 8/8 loss 1.0400 val acc P4r0=0.561 P4r8=0.557 P4r8@11=0.515 P1r0=0.586 (32.7s)
+  P4r0: mean {"acc": 0.5565, "macro_f1": 0.3294, "ece": 0.1164, "nll": 0.9802, "brier_soft": 0.1587, "auroc": 0.708} | 7337 params/task | 88 token-layers/decision
+  P4r8: mean {"acc": 0.558, "macro_f1": 0.3311, "ece": 0.1011, "nll": 0.9425, "brier_soft": 0.1549, "auroc": 0.6722} | 818345 params/task | 88 token-layers/decision
+  P4r8@11: mean {"acc": 0.4985, "macro_f1": 0.2371, "ece": 0.0981, "nll": 1.029, "brier_soft": 0.1786, "auroc": 0.6443} | 412841 params/task | 44 token-layers/decision
+  P1r0: mean {"acc": 0.559, "macro_f1": 0.3443, "ece": 0.1136, "nll": 0.9722, "brier_soft": 0.1572, "auroc": 0.6883} | 5033 params/task | 22 token-layers/decision
+done -> results/tarski/explore_passenger_typed.json

@@ -1,0 +1,16 @@
+checks: SVF(z=1) vs base linear rel err 2.0e-04; SharedSVF vs loop abs err 6.0e-07
+latency on cuda (split 8, trunk 5.73 ms):
+   N= 1: loop full 1.23 | FusedBlocks 1.58 | loop SVF 1.73 | SharedSVF 1.74 ms
+   N= 5: loop full 6.16 | FusedBlocks 3.75 | loop SVF 9.74 | SharedSVF 2.18 ms
+   N=20: loop full 23.30 | FusedBlocks 4.84 | loop SVF 34.40 | SharedSVF 1.80 ms
+== banking77 split 8: 1 tasks, cached in 3s
+   probe    : mean acc 0.8911 | trainable 60.7k (0.12 MB fp16) | 11s
+   full     : mean acc 0.9223 | trainable 10090.1k (20.18 MB fp16) | 25s
+   svf      : mean acc 0.8706 | trainable 66.1k (0.13 MB fp16) | 41s
+   svf_norm : mean acc 0.8843 | trainable 69.2k (0.14 MB fp16) | 41s
+   lora8    : mean acc 0.8999 | trainable 213.6k (0.43 MB fp16) | 36s
+== banking77 split 14: 1 tasks, cached in 7s
+   full     : mean acc 0.9304 | trainable 10090.1k (20.18 MB fp16) | 40s
+   svf      : mean acc 0.9119 | trainable 66.1k (0.13 MB fp16) | 38s
+   svf_norm : mean acc 0.9138 | trainable 69.2k (0.14 MB fp16) | 39s
+done -> results/tarski/explore_lit_svf_banking77.json

@@ -1,0 +1,168 @@
+{
+ "device": "mps",
+ "base": "answerdotai/ModernBERT-base",
+ "layers": 22,
+ "per_message_ms": {
+  "short": {
+   "1": {
+    "separate_models": 9.49,
+    "probe@11": 4.94,
+    "blocks@11+1": 5.07,
+    "blocks@11+2": 5.32,
+    "blocks@16+2": 7.42,
+    "blocks@20+2": 9.08,
+    "mixed@8-18+2": 5.97,
+    "laya (question-in-input)": 20.75
+   },
+   "2": {
+    "separate_models": 18.47,
+    "probe@11": 4.99,
+    "blocks@11+1": 5.39,
+    "blocks@11+2": 6.01,
+    "blocks@16+2": 8.02,
+    "blocks@20+2": 9.66,
+    "mixed@8-18+2": 6.04,
+    "fused blocks@11+2": 6.68,
+    "fused blocks@16+2": 10.0,
+    "laya (question-in-input)": 31.45
+   },
+   "3": {
+    "separate_models": 27.7,
+    "probe@11": 5.0,
+    "blocks@11+1": 5.69,
+    "blocks@11+2": 6.65,
+    "blocks@16+2": 8.57,
+    "blocks@20+2": 10.31,
+    "mixed@8-18+2": 8.01,
+    "fused blocks@11+2": 7.17,
+    "fused blocks@16+2": 9.27,
+    "laya (question-in-input)": 41.52
+   },
+   "5": {
+    "separate_models": 46.73,
+    "probe@11": 5.08,
+    "blocks@11+1": 6.52,
+    "blocks@11+2": 7.89,
+    "blocks@16+2": 9.71,
+    "blocks@20+2": 11.49,
+    "mixed@8-18+2": 10.88,
+    "fused blocks@11+2": 8.39,
+    "fused blocks@16+2": 10.67,
+    "laya (question-in-input)": 51.39
+   },
+   "10": {
+    "separate_models": 93.18,
+    "probe@11": 5.69,
+    "blocks@11+1": 8.25,
+    "blocks@11+2": 10.86,
+    "blocks@16+2": 12.5,
+    "blocks@20+2": 14.83,
+    "mixed@8-18+2": 13.77,
+    "fused blocks@11+2": 11.66,
+    "fused blocks@16+2": 13.93,
+    "laya (question-in-input)": 70.85
+   },
+   "20": {
+    "separate_models": 180.16,
+    "probe@11": 6.3,
+    "blocks@11+1": 11.65,
+    "blocks@11+2": 16.67,
+    "blocks@16+2": 18.5,
+    "blocks@20+2": 20.38,
+    "mixed@8-18+2": 19.52,
+    "fused blocks@11+2": 18.01,
+    "fused blocks@16+2": 20.21,
+    "laya (question-in-input)": 115.32
+   }
+  },
+  "long": {
+   "1": {
+    "separate_models": 25.59,
+    "probe@11": 13.01,
+    "blocks@11+1": 13.85,
+    "blocks@11+2": 14.77,
+    "blocks@16+2": 20.82,
+    "blocks@20+2": 25.1,
+    "mixed@8-18+2": 11.36,
+    "laya (question-in-input)": 111.27
+   },
+   "2": {
+    "separate_models": 51.07,
+    "probe@11": 13.22,
+    "blocks@11+1": 15.23,
+    "blocks@11+2": 16.71,
+    "blocks@16+2": 22.58,
+    "blocks@20+2": 26.85,
+    "mixed@8-18+2": 16.72,
+    "fused blocks@11+2": 17.97,
+    "fused blocks@16+2": 23.86,
+    "laya (question-in-input)": 219.88
+   },
+   "3": {
+    "separate_models": 76.5,
+    "probe@11": 13.28,
+    "blocks@11+1": 16.11,
+    "blocks@11+2": 18.61,
+    "blocks@16+2": 24.58,
+    "blocks@20+2": 28.87,
+    "mixed@8-18+2": 22.26,
+    "fused blocks@11+2": 20.16,
+    "fused blocks@16+2": 26.1,
+    "laya (question-in-input)": 323.46
+   },
+   "5": {
+    "separate_models": 127.19,
+    "probe@11": 13.98,
+    "blocks@11+1": 18.01,
+    "blocks@11+2": 22.49,
+    "blocks@16+2": 28.25,
+    "blocks@20+2": 32.51,
+    "mixed@8-18+2": 30.29,
+    "fused blocks@11+2": 24.97,
+    "fused blocks@16+2": 31.08,
+    "laya (question-in-input)": 239.82
+   },
+   "10": {
+    "separate_models": 254.3,
+    "probe@11": 14.43,
+    "blocks@11+1": 23.36,
+    "blocks@11+2": 31.56,
+    "blocks@16+2": 37.49,
+    "blocks@20+2": 41.44,
+    "mixed@8-18+2": 39.83,
+    "fused blocks@11+2": 37.37,
+    "fused blocks@16+2": 43.25,
+    "laya (question-in-input)": 468.97
+   },
+   "20": {
+    "separate_models": 507.3,
+    "probe@11": 15.64,
+    "blocks@11+1": 33.32,
+    "blocks@11+2": 49.8,
+    "blocks@16+2": 56.51,
+    "blocks@20+2": 59.97,
+    "mixed@8-18+2": 57.95,
+    "fused blocks@11+2": 61.92,
+    "fused blocks@16+2": 68.04,
+    "laya (question-in-input)": 936.62
+   }
+  }
+ },
+ "switch_ms": {
+  "probe": 7.62,
+  "blocks+1": 12.6,
+  "blocks+2": 17.96,
+  "full_copy": 83.74
+ },
+ "bytes": {
+  "probe": 34188,
+  "blocks+1": 10063244,
+  "blocks+2": 20093892,
+  "full_copy": 596072034
+ },
+ "laya": "convaiinnovations/laya (ModernBERT-large cross-encoder, 421M), Agent.predict",
+ "tokens": {
+  "short": 20,
+  "long": 512
+ }
+}

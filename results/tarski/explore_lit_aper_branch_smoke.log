@@ -1,0 +1,27 @@
+== APER on forked branches | CLINC150, 3 sessions (10 + 5 x 2) | blocks@4+1 | trunk cpu
+   cached trunk depth 4 for 220 messages in 0.2s
+   session-1 branch: 150 epochs, val acc 0.9000, test acc on session-1 routes 0.9000 (9s)
+  trunk pass: 220 messages at depths [4, 22] in 0.8s
+   trunk@4: lda shrink 0.001, klda c 0.1 shrink 0.01
+   trunk@22: lda shrink 0.001, klda c 0.1 shrink 0.01
+   branch: lda shrink 0.001, klda c 0.1 shrink 0.01
+   concat_trunk@4_branch: lda shrink 0.001, klda c 0.1 shrink 0.01
+   concat_trunk@22_branch: lda shrink 0.001, klda c 0.1 shrink 0.01
+-- session 1/3 (10 routes): lda:trunk@4 0.8333 | klda:trunk@4 0.8667 | lda:trunk@22 0.9000 | klda:trunk@22 0.9000 | lda:branch 0.9000 | klda:branch 0.9000 | lda:concat_trunk@4_branch 0.9000 | klda:concat_trunk@4_branch 0.8667 | lda:concat_trunk@22_branch 0.9000 | klda:concat_trunk@22_branch 0.9333 | seq_newrows:branch 0.9000 | seq_newrows_wa:branch 0.9000
+-- session 2/3 (15 routes): lda:trunk@4 0.8444 | klda:trunk@4 0.8000 | lda:trunk@22 0.8667 | klda:trunk@22 0.7556 | lda:branch 0.8889 | klda:branch 0.8667 | lda:concat_trunk@4_branch 0.8667 | klda:concat_trunk@4_branch 0.8000 | lda:concat_trunk@22_branch 0.8889 | klda:concat_trunk@22_branch 0.8222 | seq_newrows:branch 0.6667 | seq_newrows_wa:branch 0.7778
+-- session 3/3 (20 routes): lda:trunk@4 0.8667 | klda:trunk@4 0.8333 | lda:trunk@22 0.8667 | klda:trunk@22 0.7500 | lda:branch 0.9000 | klda:branch 0.8667 | lda:concat_trunk@4_branch 0.9000 | klda:concat_trunk@4_branch 0.8500 | lda:concat_trunk@22_branch 0.8833 | klda:concat_trunk@22_branch 0.8500 | seq_newrows:branch 0.5333 | seq_newrows_wa:branch 0.7333
+== final (all routes) | avg incremental | session-1 routes | later routes
+   lda:branch                               0.9000 | 0.8963 | 0.8667 | 0.9333
+   lda:concat_trunk@4_branch                0.9000 | 0.8889 | 0.9000 | 0.9000
+   lda:concat_trunk@22_branch               0.8833 | 0.8907 | 0.8667 | 0.9000
+   lda:trunk@4                              0.8667 | 0.8481 | 0.8667 | 0.8667
+   lda:trunk@22                             0.8667 | 0.8778 | 0.9333 | 0.8000
+   klda:branch                              0.8667 | 0.8778 | 0.8667 | 0.8667
+   klda:concat_trunk@4_branch               0.8500 | 0.8389 | 0.8333 | 0.8667
+   klda:concat_trunk@22_branch              0.8500 | 0.8685 | 0.8667 | 0.8333
+   klda:trunk@4                             0.8333 | 0.8333 | 0.8667 | 0.8000
+   klda:trunk@22                            0.7500 | 0.8019 | 0.7667 | 0.7333
+   seq_newrows_wa:branch                    0.7333 | 0.8037 | 0.6667 | 0.8000
+   seq_newrows:branch                       0.5333 | 0.7000 | 0.3000 | 0.7667
+   reference: joint blocks branch on all 20 routes: 0.9000 (8s)
+done in 20.7s -> results/tarski/explore_lit_aper_branch_smoke.json

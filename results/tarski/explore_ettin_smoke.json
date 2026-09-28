@@ -1,0 +1,466 @@
+{
+ "config": {
+  "encoder": "jhu-clsp/ettin-encoder-17m",
+  "decoder": "jhu-clsp/ettin-decoder-17m",
+  "arms": [
+   "enc",
+   "dec_causal",
+   "dec_bibranch"
+  ],
+  "datasets": [
+   "banking77",
+   "typed-cs"
+  ],
+  "depths": [
+   3,
+   7
+  ],
+  "device": "cpu",
+  "smoke": true,
+  "out": "results/tarski/explore_ettin_smoke.json",
+  "block_split": {
+   "banking77": 4,
+   "clinc150": 4,
+   "typed-cs": 4
+  },
+  "stock_forward_max_abs_diff": 0.0
+ },
+ "enc": {
+  "banking77": {
+   "probe@3|mean": {
+    "mean_acc": 0.925,
+    "mean_macro_f1": 0.07172488327611667,
+    "tasks": {
+     "intent": {
+      "acc": 0.925,
+      "macro_f1": 0.07172488327611667,
+      "ece": 0.052470582723617556,
+      "nll": 0.20765140652656555,
+      "n": 80,
+      "opt_steps": 152,
+      "epochs_run": 19,
+      "train_s": 0.1
+     }
+    }
+   },
+   "probe@7|mean": {
+    "mean_acc": 0.8125,
+    "mean_macro_f1": 0.06316609288343436,
+    "tasks": {
+     "intent": {
+      "acc": 0.8125,
+      "macro_f1": 0.06316609288343436,
+      "ece": 0.06668210178613664,
+      "nll": 0.5013437271118164,
+      "n": 80,
+      "opt_steps": 152,
+      "epochs_run": 19,
+      "train_s": 0.1
+     }
+    }
+   },
+   "blocks@4+2|mean|bidir": {
+    "mean_acc": 0.95,
+    "mean_macro_f1": 0.07337282890682661,
+    "tasks": {
+     "intent": {
+      "acc": 0.95,
+      "macro_f1": 0.07337282890682661,
+      "ece": 0.04136738181114197,
+      "nll": 0.10425366461277008,
+      "n": 80,
+      "opt_steps": 152,
+      "epochs_run": 19,
+      "train_s": 1.2
+     }
+    }
+   }
+  },
+  "typed-cs": {
+   "probe@3|mean": {
+    "mean_acc": 0.44999999999999996,
+    "mean_macro_f1": 0.18440677966101693,
+    "tasks": {
+     "customer_service.action": {
+      "acc": 0.475,
+      "macro_f1": 0.1288135593220339,
+      "ece": 0.227543443441391,
+      "nll": 1.31148362159729,
+      "n": 40,
+      "opt_steps": 300,
+      "epochs_run": 150,
+      "train_s": 0.4
+     },
+     "customer_service.category": {
+      "acc": 0.425,
+      "macro_f1": 0.24,
+      "ece": 0.1523215651512146,
+      "nll": 1.4699896574020386,
+      "n": 40,
+      "opt_steps": 300,
+      "epochs_run": 150,
+      "train_s": 0.4
+     }
+    }
+   },
+   "probe@7|mean": {
+    "mean_acc": 0.4375,
+    "mean_macro_f1": 0.15834617360041087,
+    "tasks": {
+     "customer_service.action": {
+      "acc": 0.475,
+      "macro_f1": 0.1288135593220339,
+      "ece": 0.08811190053820613,
+      "nll": 1.2830787897109985,
+      "n": 40,
+      "opt_steps": 300,
+      "epochs_run": 150,
+      "train_s": 0.4
+     },
+     "customer_service.category": {
+      "acc": 0.4,
+      "macro_f1": 0.18787878787878787,
+      "ece": 0.14083549231290818,
+      "nll": 1.4614944458007812,
+      "n": 40,
+      "opt_steps": 300,
+      "epochs_run": 150,
+      "train_s": 0.4
+     }
+    }
+   },
+   "blocks@4+2|mean|bidir": {
+    "mean_acc": 0.375,
+    "mean_macro_f1": 0.2682475857475858,
+    "tasks": {
+     "customer_service.action": {
+      "acc": 0.275,
+      "macro_f1": 0.11590909090909092,
+      "ece": 0.2384986884891987,
+      "nll": 1.341528296470642,
+      "n": 40,
+      "opt_steps": 300,
+      "epochs_run": 150,
+      "train_s": 13.6
+     },
+     "customer_service.category": {
+      "acc": 0.475,
+      "macro_f1": 0.4205860805860806,
+      "ece": 0.17885535806417466,
+      "nll": 1.3906720876693726,
+      "n": 40,
+      "opt_steps": 300,
+      "epochs_run": 150,
+      "train_s": 13.7
+     }
+    }
+   }
+  }
+ },
+ "dec_causal": {
+  "banking77": {
+   "probe@3|mean": {
+    "mean_acc": 0.9375,
+    "mean_macro_f1": 0.07251676894534037,
+    "tasks": {
+     "intent": {
+      "acc": 0.9375,
+      "macro_f1": 0.07251676894534037,
+      "ece": 0.05853331685066223,
+      "nll": 0.19940224289894104,
+      "n": 80,
+      "opt_steps": 152,
+      "epochs_run": 19,
+      "train_s": 0.1
+     }
+    }
+   },
+   "probe@3|last": {
+    "mean_acc": 0.6125,
+    "mean_macro_f1": 0.047652586362263785,
+    "tasks": {
+     "intent": {
+      "acc": 0.6125,
+      "macro_f1": 0.047652586362263785,
+      "ece": 0.15485985092818735,
+      "nll": 1.173694372177124,
+      "n": 80,
+      "opt_steps": 152,
+      "epochs_run": 19,
+      "train_s": 0.1
+     }
+    }
+   },
+   "probe@7|mean": {
+    "mean_acc": 0.925,
+    "mean_macro_f1": 0.07217869983339809,
+    "tasks": {
+     "intent": {
+      "acc": 0.925,
+      "macro_f1": 0.07217869983339809,
+      "ece": 0.06749343648552895,
+      "nll": 0.2536071240901947,
+      "n": 80,
+      "opt_steps": 176,
+      "epochs_run": 22,
+      "train_s": 0.1
+     }
+    }
+   },
+   "probe@7|last": {
+    "mean_acc": 0.7875,
+    "mean_macro_f1": 0.06152832159471697,
+    "tasks": {
+     "intent": {
+      "acc": 0.7875,
+      "macro_f1": 0.06152832159471697,
+      "ece": 0.08660242035984995,
+      "nll": 0.6075312495231628,
+      "n": 80,
+      "opt_steps": 152,
+      "epochs_run": 19,
+      "train_s": 0.1
+     }
+    }
+   },
+   "blocks@4+2|last": {
+    "mean_acc": 0.8625,
+    "mean_macro_f1": 0.06668716249997038,
+    "tasks": {
+     "intent": {
+      "acc": 0.8625,
+      "macro_f1": 0.06668716249997038,
+      "ece": 0.08999162167310716,
+      "nll": 0.47611483931541443,
+      "n": 80,
+      "opt_steps": 152,
+      "epochs_run": 19,
+      "train_s": 1.2
+     }
+    }
+   },
+   "blocks@4+2|mean": {
+    "mean_acc": 0.85,
+    "mean_macro_f1": 0.06645025260947714,
+    "tasks": {
+     "intent": {
+      "acc": 0.85,
+      "macro_f1": 0.06645025260947714,
+      "ece": 0.08456001095473767,
+      "nll": 0.45412999391555786,
+      "n": 80,
+      "opt_steps": 152,
+      "epochs_run": 19,
+      "train_s": 1.2
+     }
+    }
+   }
+  },
+  "typed-cs": {
+   "probe@3|mean": {
+    "mean_acc": 0.42500000000000004,
+    "mean_macro_f1": 0.17718449825151608,
+    "tasks": {
+     "customer_service.action": {
+      "acc": 0.45,
+      "macro_f1": 0.12413793103448276,
+      "ece": 0.12103410437703131,
+      "nll": 1.3144760131835938,
+      "n": 40,
+      "opt_steps": 300,
+      "epochs_run": 150,
+      "train_s": 0.3
+     },
+     "customer_service.category": {
+      "acc": 0.4,
+      "macro_f1": 0.2302310654685494,
+      "ece": 0.11450864374637605,
+      "nll": 1.5100829601287842,
+      "n": 40,
+      "opt_steps": 300,
+      "epochs_run": 150,
+      "train_s": 0.3
+     }
+    }
+   },
+   "probe@3|last": {
+    "mean_acc": 0.2625,
+    "mean_macro_f1": 0.1573202614379085,
+    "tasks": {
+     "customer_service.action": {
+      "acc": 0.325,
+      "macro_f1": 0.15019607843137256,
+      "ece": 0.1944574937224388,
+      "nll": 1.4232920408248901,
+      "n": 40,
+      "opt_steps": 300,
+      "epochs_run": 150,
+      "train_s": 0.3
+     },
+     "customer_service.category": {
+      "acc": 0.2,
+      "macro_f1": 0.16444444444444445,
+      "ece": 0.02160959243774413,
+      "nll": 1.617653250694275,
+      "n": 40,
+      "opt_steps": 300,
+      "epochs_run": 150,
+      "train_s": 0.3
+     }
+    }
+   },
+   "probe@7|mean": {
+    "mean_acc": 0.42500000000000004,
+    "mean_macro_f1": 0.29497207227470384,
+    "tasks": {
+     "customer_service.action": {
+      "acc": 0.45,
+      "macro_f1": 0.16592592592592595,
+      "ece": 0.11234938502311707,
+      "nll": 1.3187177181243896,
+      "n": 40,
+      "opt_steps": 300,
+      "epochs_run": 150,
+      "train_s": 0.3
+     },
+     "customer_service.category": {
+      "acc": 0.4,
+      "macro_f1": 0.42401821862348177,
+      "ece": 0.1247801523655653,
+      "nll": 1.4624906778335571,
+      "n": 40,
+      "opt_steps": 300,
+      "epochs_run": 150,
+      "train_s": 0.3
+     }
+    }
+   },
+   "probe@7|last": {
+    "mean_acc": 0.3,
+    "mean_macro_f1": 0.1680368906455863,
+    "tasks": {
+     "customer_service.action": {
+      "acc": 0.35,
+      "macro_f1": 0.13971014492753622,
+      "ece": 0.16574928760528565,
+      "nll": 1.3398752212524414,
+      "n": 40,
+      "opt_steps": 300,
+      "epochs_run": 150,
+      "train_s": 0.3
+     },
+     "customer_service.category": {
+      "acc": 0.25,
+      "macro_f1": 0.19636363636363635,
+      "ece": 0.051683971285820016,
+      "nll": 1.5784120559692383,
+      "n": 40,
+      "opt_steps": 300,
+      "epochs_run": 150,
+      "train_s": 0.3
+     }
+    }
+   },
+   "blocks@4+2|last": {
+    "mean_acc": 0.3125,
+    "mean_macro_f1": 0.1888045417360099,
+    "tasks": {
+     "customer_service.action": {
+      "acc": 0.325,
+      "macro_f1": 0.14938440492476063,
+      "ece": 0.22509376183152197,
+      "nll": 1.4110578298568726,
+      "n": 40,
+      "opt_steps": 300,
+      "epochs_run": 150,
+      "train_s": 13.5
+     },
+     "customer_service.category": {
+      "acc": 0.3,
+      "macro_f1": 0.2282246785472592,
+      "ece": 0.053395039588212984,
+      "nll": 1.6072986125946045,
+      "n": 40,
+      "opt_steps": 300,
+      "epochs_run": 150,
+      "train_s": 13.5
+     }
+    }
+   },
+   "blocks@4+2|mean": {
+    "mean_acc": 0.375,
+    "mean_macro_f1": 0.32166666666666666,
+    "tasks": {
+     "customer_service.action": {
+      "acc": 0.325,
+      "macro_f1": 0.14777777777777779,
+      "ece": 0.2430088073015213,
+      "nll": 1.4557918310165405,
+      "n": 40,
+      "opt_steps": 300,
+      "epochs_run": 150,
+      "train_s": 13.6
+     },
+     "customer_service.category": {
+      "acc": 0.425,
+      "macro_f1": 0.49555555555555547,
+      "ece": 0.09823835343122482,
+      "nll": 1.441382646560669,
+      "n": 40,
+      "opt_steps": 300,
+      "epochs_run": 150,
+      "train_s": 13.6
+     }
+    }
+   }
+  }
+ },
+ "dec_bibranch": {
+  "banking77": {
+   "blocks@4+2|mean|bidir": {
+    "mean_acc": 0.9125,
+    "mean_macro_f1": 0.07073799097787103,
+    "tasks": {
+     "intent": {
+      "acc": 0.9125,
+      "macro_f1": 0.07073799097787103,
+      "ece": 0.08425229117274285,
+      "nll": 0.4291655123233795,
+      "n": 80,
+      "opt_steps": 152,
+      "epochs_run": 19,
+      "train_s": 1.2
+     }
+    }
+   }
+  },
+  "typed-cs": {
+   "blocks@4+2|mean|bidir": {
+    "mean_acc": 0.47500000000000003,
+    "mean_macro_f1": 0.34813617754794224,
+    "tasks": {
+     "customer_service.action": {
+      "acc": 0.55,
+      "macro_f1": 0.30095238095238097,
+      "ece": 0.14496623426675795,
+      "nll": 1.224611520767212,
+      "n": 40,
+      "opt_steps": 300,
+      "epochs_run": 150,
+      "train_s": 13.5
+     },
+     "customer_service.category": {
+      "acc": 0.4,
+      "macro_f1": 0.3953199741435035,
+      "ece": 0.14569335579872128,
+      "nll": 1.5395698547363281,
+      "n": 40,
+      "opt_steps": 300,
+      "epochs_run": 150,
+      "train_s": 13.5
+     }
+    }
+   }
+  }
+ }
+}

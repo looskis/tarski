@@ -1,0 +1,27 @@
+== clinc150: 1359/151/453 messages (train/val/test), tasks: intent(151), domain(11), oos(2) | depths [2, 4, 6, 8, 12, 16, 22]
+  trunk pass: 4.1s
+  [intent] single-depth probe acc: 2:0.817 4:0.790 6:0.762 8:0.773 12:0.742 16:0.693 22:0.764
+  [domain] single-depth probe acc: 2:0.881 4:0.872 6:0.879 8:0.848 12:0.852 16:0.845 22:0.876
+  [oos] single-depth probe acc: 2:0.993 4:0.993 6:0.993 8:0.993 12:0.993 16:0.993 22:0.993
+  [intent] fusion: fused(inv-NLL) >= single at 7/7 depths; fused@6 0.8035 vs single@6 0.7616 vs single@22 0.7638; fused@22 0.8146
+  [domain] fusion: fused(inv-NLL) >= single at 7/7 depths; fused@6 0.8918 vs single@6 0.8786 vs single@22 0.8764; fused@22 0.9139
+  [oos] fusion: fused(inv-NLL) >= single at 7/7 depths; fused@6 0.9934 vs single@6 0.9934 vs single@22 0.9934; fused@22 0.9934
+  anytime bundle over ['intent', 'domain', 'oos']: fixed@22 mean acc 0.8779
+    voi tau=0.01: mean depth 22.00  acc single 0.8779  fused 0.9073
+    voi tau=0.02: mean depth 22.00  acc single 0.8779  fused 0.9073
+    voi tau=0.05: mean depth 13.77  acc single 0.8801  fused 0.9065
+    voi tau= 0.1: mean depth  9.82  acc single 0.8889  fused 0.9051
+    voi tau= 0.2: mean depth  7.49  acc single 0.8911  fused 0.9014
+    voi tau= 0.3: mean depth  6.00  acc single 0.8999  fused 0.9021
+    voi tau= 0.5: mean depth  4.33  acc single 0.9036  fused 0.9014
+    msp> 0.5: mean depth  4.46  acc 0.9021
+    msp> 0.7: mean depth  7.05  acc 0.8955
+    msp> 0.8: mean depth  8.93  acc 0.8904
+    msp> 0.9: mean depth 11.82  acc 0.8830
+    msp>0.95: mean depth 14.11  acc 0.8801
+    msp>0.98: mean depth 17.02  acc 0.8793
+    patience 1: mean depth  5.68  acc 0.8940
+    patience 2: mean depth  9.51  acc 0.8933
+    patience 3: mean depth 12.29  acc 0.8859
+    patience 4: mean depth 16.07  acc 0.8889
+== done in 7.1s; wrote results/tarski/explore_anytime_smoke.json

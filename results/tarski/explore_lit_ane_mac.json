@@ -1,0 +1,202 @@
+{
+ "args": {
+  "splits": [
+   8,
+   14
+  ],
+  "buckets": [
+   32,
+   64
+  ],
+  "units": [
+   "CPU_ONLY",
+   "CPU_AND_GPU",
+   "CPU_AND_NE",
+   "ALL"
+  ],
+  "parity_unit": "CPU_AND_NE",
+  "n_test": 0,
+  "min_steps": 300,
+  "work": "/private/tmp/claude-501/-Users-lookevink-projects-tarski/ebd1d56a-ed8f-4cd0-92e7-25b37988e8d6/scratchpad/coreml",
+  "smoke": false,
+  "out": "results/tarski/explore_lit_ane_mac.json"
+ },
+ "device": "mps",
+ "powermetrics": false,
+ "splits": {
+  "8": {
+   "reimpl_rel_err": 6.755898880328459e-07,
+   "latency_ms": {
+    "32": {
+     "tokens": 18,
+     "torch_cpu_ms": 7.422187511110678,
+     "torch_mps_ms": 8.265916505479254,
+     "coreml_fp16_CPU_ONLY_ms": 1.5260209911502898,
+     "coreml_fp16_CPU_AND_GPU_ms": 3.6546454939525574,
+     "coreml_fp16_CPU_AND_NE_ms": 0.8141870057443157,
+     "coreml_fp16_ALL_ms": 3.8011040160199627,
+     "coreml_int8_CPU_ONLY_ms": 1.3959374919068068,
+     "coreml_int8_CPU_AND_GPU_ms": 3.9428744930773973,
+     "coreml_int8_CPU_AND_NE_ms": 0.5676244909409434,
+     "coreml_int8_ALL_ms": 3.9294375019380823
+    },
+    "64": {
+     "tokens": 39,
+     "torch_cpu_ms": 9.785021000425331,
+     "torch_mps_ms": 8.195146001526155,
+     "coreml_fp16_CPU_ONLY_ms": 3.0581454921048135,
+     "coreml_fp16_CPU_AND_GPU_ms": 3.9043959841364995,
+     "coreml_fp16_CPU_AND_NE_ms": 0.966271007200703,
+     "coreml_fp16_ALL_ms": 0.9599585027899593,
+     "coreml_int8_CPU_ONLY_ms": 3.0726039985893294,
+     "coreml_int8_CPU_AND_GPU_ms": 4.081499995663762,
+     "coreml_int8_CPU_AND_NE_ms": 0.7542709936387837,
+     "coreml_int8_ALL_ms": 1.2972294935025275
+    }
+   },
+   "load_avg_after_latency": [
+    4.61083984375,
+    4.208984375,
+    3.67724609375
+   ],
+   "parity": {
+    "fp16": {
+     "rel_err_all": 0.0031382863212177157,
+     "rel_err_normal_channels": 0.006870976135368047,
+     "messages_with_nonfinite": 0,
+     "seconds": 3.2,
+     "probe": {
+      "acc_torch": 0.8901170492172241,
+      "acc_coreml": 0.8904421329498291,
+      "agreement": 0.9983745217323303
+     },
+     "blocks:2": {
+      "acc_torch": 0.9197009205818176,
+      "acc_coreml": 0.9193758368492126,
+      "agreement": 0.9986996054649353
+     }
+    },
+    "int8": {
+     "rel_err_all": 0.01761899826236304,
+     "rel_err_normal_channels": 0.0500088638665746,
+     "messages_with_nonfinite": 0,
+     "seconds": 2.2,
+     "probe": {
+      "acc_torch": 0.8901170492172241,
+      "acc_coreml": 0.8910923004150391,
+      "agreement": 0.9856957197189331
+     },
+     "blocks:2": {
+      "acc_torch": 0.9197009205818176,
+      "acc_coreml": 0.9184005260467529,
+      "agreement": 0.9941482543945312
+     }
+    }
+   }
+  },
+  "14": {
+   "reimpl_rel_err": 9.617101568437647e-07,
+   "latency_ms": {
+    "32": {
+     "tokens": 18,
+     "torch_cpu_ms": 14.418229504371993,
+     "torch_mps_ms": 9.905875005642883,
+     "coreml_fp16_CPU_ONLY_ms": 2.685437008040026,
+     "coreml_fp16_CPU_AND_GPU_ms": 5.899645999306813,
+     "coreml_fp16_CPU_AND_NE_ms": 2.1428330073831603,
+     "coreml_fp16_ALL_ms": 6.032625009538606,
+     "coreml_int8_CPU_ONLY_ms": 2.540541492635384,
+     "coreml_int8_CPU_AND_GPU_ms": 6.37706249835901,
+     "coreml_int8_CPU_AND_NE_ms": 1.2184369988972321,
+     "coreml_int8_ALL_ms": 6.660208018729463
+    },
+    "64": {
+     "tokens": 39,
+     "torch_cpu_ms": 16.574770503211766,
+     "torch_mps_ms": 10.434791998704895,
+     "coreml_fp16_CPU_ONLY_ms": 4.931541494443081,
+     "coreml_fp16_CPU_AND_GPU_ms": 6.30272900161799,
+     "coreml_fp16_CPU_AND_NE_ms": 1.6569375002291054,
+     "coreml_fp16_ALL_ms": 1.5731459861854091,
+     "coreml_int8_CPU_ONLY_ms": 4.93487500352785,
+     "coreml_int8_CPU_AND_GPU_ms": 7.4144794925814494,
+     "coreml_int8_CPU_AND_NE_ms": 2.0806250104214996,
+     "coreml_int8_ALL_ms": 2.3749995161779225
+    }
+   },
+   "load_avg_after_latency": [
+    4.14013671875,
+    4.0810546875,
+    3.716796875
+   ],
+   "parity": {
+    "fp16": {
+     "rel_err_all": 0.004257215458760108,
+     "rel_err_normal_channels": 0.004772288661743907,
+     "messages_with_nonfinite": 0,
+     "seconds": 4.1,
+     "probe": {
+      "acc_torch": 0.8774382472038269,
+      "acc_coreml": 0.8771131634712219,
+      "agreement": 0.9983745217323303
+     }
+    },
+    "int8": {
+     "rel_err_all": Infinity,
+     "rel_err_normal_channels": Infinity,
+     "messages_with_nonfinite": 2868,
+     "seconds": 3.0,
+     "probe": {
+      "acc_torch": 0.8774382472038269,
+      "acc_coreml": 0.0695708692073822,
+      "agreement": 0.07769831269979477
+     }
+    }
+   }
+  }
+ },
+ "fused": {
+  "split": 8,
+  "bucket": 32,
+  "rows": [
+   {
+    "n": 1,
+    "mps_trunk+loop_ms": 9.063395991688594,
+    "ane_trunk+loop_ms": 3.9828125009080395,
+    "mps_trunk+fused_ms": 9.82645851036068,
+    "ane_trunk+fused_ms": 4.977062490070239,
+    "mps_trunk+shared_svf_ms": 13.214521008194424,
+    "ane_trunk+shared_svf_ms": 10.380562991485931,
+    "pipelined_ane+fused_msgs_per_s": 247.37500334675153,
+    "sequential_mps+fused_msgs_per_s": 106.7338781567504
+   },
+   {
+    "n": 5,
+    "mps_trunk+loop_ms": 12.58664598572068,
+    "ane_trunk+loop_ms": 10.011374994064681,
+    "mps_trunk+fused_ms": 11.482646499644034,
+    "ane_trunk+fused_ms": 7.8286249918164685,
+    "mps_trunk+shared_svf_ms": 12.510957996710204,
+    "ane_trunk+shared_svf_ms": 9.456167012103833,
+    "pipelined_ane+fused_msgs_per_s": 118.67381123488502,
+    "sequential_mps+fused_msgs_per_s": 77.69085431081305
+   },
+   {
+    "n": 20,
+    "mps_trunk+loop_ms": 21.9604169978993,
+    "ane_trunk+loop_ms": 23.81195849739015,
+    "mps_trunk+fused_ms": 22.88856251107063,
+    "ane_trunk+fused_ms": 19.627187502919696,
+    "mps_trunk+shared_svf_ms": 11.440062502515502,
+    "ane_trunk+shared_svf_ms": 8.821916504530236,
+    "pipelined_ane+fused_msgs_per_s": 52.37016568573596,
+    "sequential_mps+fused_msgs_per_s": 43.61297241965788
+   }
+  ],
+  "load_avg": [
+   3.70751953125,
+   3.9326171875,
+   3.68603515625
+  ]
+ }
+}

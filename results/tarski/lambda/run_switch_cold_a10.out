@@ -1,0 +1,55 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 9052.11it/s]
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 9042.79it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  3.81it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  3.81it/s]
+probe cold 190.6 ms
+probe warm 176.5 ms
+blocks+1 cold 187.4 ms
+blocks+1 warm 184.1 ms
+blocks+2 cold 201.0 ms
+blocks+2 warm 190.6 ms
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 4267.39it/s]
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 4499.57it/s]
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 4844.18it/s]
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 4406.20it/s]
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 4222.06it/s]
+full_copy cold 314.1 ms
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 8401.02it/s]
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 8233.88it/s]
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 8360.03it/s]
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 8099.68it/s]
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 8268.16it/s]
+full_copy warm 171.2 ms
+laya_checkpoint cold 440.5 ms
+laya_checkpoint warm 304.1 ms
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 2935.13it/s]
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 8353.20it/s]
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 8338.33it/s]
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 8459.19it/s]
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 8298.81it/s]
+{
+ "device": "cuda",
+ "cold_cache": true,
+ "load_first_decision_ms": {
+  "probe|cold": 190.6,
+  "probe|warm": 176.5,
+  "blocks+1|cold": 187.4,
+  "blocks+1|warm": 184.1,
+  "blocks+2|cold": 201.0,
+  "blocks+2|warm": 190.6,
+  "full_copy|cold": 314.1,
+  "full_copy|warm": 171.2,
+  "laya_checkpoint|cold": 440.5,
+  "laya_checkpoint|warm": 304.1
+ },
+ "bytes": {
+  "probe": 34188,
+  "blocks+1": 10063244,
+  "blocks+2": 20093892,
+  "full_copy": 596072034
+ },
+ "resident_5_tasks_MB": {
+  "base + 5 blocks+2 branches": 806.5,
+  "5 full copies (plus the base already resident)": 2842.2,
+  "base alone": 614.8
+ }
+}

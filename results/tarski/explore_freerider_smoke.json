@@ -1,0 +1,947 @@
+{
+ "config": {
+  "smoke": true,
+  "datasets": [
+   "clinc150",
+   "typed_cs",
+   "banking77"
+  ],
+  "depth": 2,
+  "out": "results/tarski/explore_freerider_smoke.json"
+ },
+ "source": "/Users/lookevink/projects/tarski/results/tarski/lambda",
+ "datasets": {
+  "clinc150": {
+   "seeds": [
+    "sweep_clinc150_s0",
+    "sweep_clinc150_s1",
+    "sweep_clinc150_s2"
+   ],
+   "splits": [
+    6,
+    11,
+    16,
+    20
+   ],
+   "aggregate": {
+    "6": {
+     "cheapest": {
+      "mean": 0.8703434343434343,
+      "std": 0.0015666663410377614
+     },
+     "ride_to_D": {
+      "mean": 0.8703434343434343,
+      "std": 0.0015666663410377614
+     },
+     "ride_best_leq_D": {
+      "mean": 0.8703434343434343,
+      "std": 0.0015666663410377614
+     }
+    },
+    "11": {
+     "cheapest": {
+      "mean": 0.8703434343434343,
+      "std": 0.0015666663410377614
+     },
+     "ride_to_D": {
+      "mean": 0.8707272727272728,
+      "std": 0.0026721706284907297
+     },
+     "ride_best_leq_D": {
+      "mean": 0.8701616161616162,
+      "std": 0.0011287850541170576
+     }
+    },
+    "16": {
+     "cheapest": {
+      "mean": 0.8703434343434343,
+      "std": 0.0015666663410377614
+     },
+     "ride_to_D": {
+      "mean": 0.8811111111111112,
+      "std": 0.0018734582819183358
+     },
+     "ride_best_leq_D": {
+      "mean": 0.8766060606060607,
+      "std": 0.0013342512909865387
+     }
+    },
+    "20": {
+     "cheapest": {
+      "mean": 0.8703434343434343,
+      "std": 0.0015666663410377614
+     },
+     "ride_to_D": {
+      "mean": 0.8753333333333333,
+      "std": 0.00034639248887834986
+     },
+     "ride_best_leq_D": {
+      "mean": 0.8766060606060607,
+      "std": 0.0013342512909865387
+     }
+    }
+   },
+   "per_seed": {
+    "sweep_clinc150_s0": {
+     "splits": [
+      6,
+      11,
+      16,
+      20
+     ],
+     "tasks": [
+      "domain",
+      "intent",
+      "oos"
+     ],
+     "acc": {
+      "domain": {
+       "6": 0.8776363636363637,
+       "11": 0.8836363636363637,
+       "16": 0.886,
+       "20": 0.8774545454545455
+      },
+      "intent": {
+       "6": 0.8652727272727273,
+       "11": 0.8710909090909091,
+       "16": 0.8816363636363637,
+       "20": 0.8703636363636363
+      },
+      "oos": {
+       "6": 0.8654545454545455,
+       "11": 0.8672727272727273,
+       "16": 0.8678181818181818,
+       "20": 0.8781818181818182
+      }
+     },
+     "val_acc": {
+      "domain": {
+       "6": 0.9596773982048035,
+       "11": 0.9558064341545105,
+       "16": 0.9638709425926208,
+       "20": 0.957741916179657
+      },
+      "intent": {
+       "6": 0.9358064532279968,
+       "11": 0.9370967745780945,
+       "16": 0.9454838633537292,
+       "20": 0.9383870959281921
+      },
+      "oos": {
+       "6": 0.981290340423584,
+       "11": 0.981290340423584,
+       "16": 0.981290340423584,
+       "20": 0.9809677600860596
+      }
+     },
+     "own_best_split": {
+      "domain": 16,
+      "intent": 16,
+      "oos": 6
+     },
+     "own_best_mean_acc": 0.8776969696969698,
+     "policies": {
+      "6": {
+       "cheapest": 0.8694545454545454,
+       "ride_to_D": 0.8694545454545454,
+       "ride_best_leq_D": 0.8694545454545454,
+       "per_task_gain_ride_to_D": {
+        "domain": 0.0,
+        "intent": 0.0,
+        "oos": 0.0
+       },
+       "per_task_gain_ride_best": {
+        "domain": 0.0,
+        "intent": 0.0,
+        "oos": 0.0
+       }
+      },
+      "11": {
+       "cheapest": 0.8694545454545454,
+       "ride_to_D": 0.874,
+       "ride_best_leq_D": 0.8713939393939395,
+       "per_task_gain_ride_to_D": {
+        "domain": 0.006000000000000005,
+        "intent": 0.0058181818181818334,
+        "oos": 0.0018181818181818299
+       },
+       "per_task_gain_ride_best": {
+        "domain": 0.0,
+        "intent": 0.0058181818181818334,
+        "oos": 0.0
+       }
+      },
+      "16": {
+       "cheapest": 0.8694545454545454,
+       "ride_to_D": 0.8784848484848485,
+       "ride_best_leq_D": 0.8776969696969698,
+       "per_task_gain_ride_to_D": {
+        "domain": 0.008363636363636351,
+        "intent": 0.016363636363636358,
+        "oos": 0.0023636363636363455
+       },
+       "per_task_gain_ride_best": {
+        "domain": 0.008363636363636351,
+        "intent": 0.016363636363636358,
+        "oos": 0.0
+       }
+      },
+      "20": {
+       "cheapest": 0.8694545454545454,
+       "ride_to_D": 0.8753333333333334,
+       "ride_best_leq_D": 0.8776969696969698,
+       "per_task_gain_ride_to_D": {
+        "domain": -0.0001818181818181719,
+        "intent": 0.005090909090909035,
+        "oos": 0.012727272727272698
+       },
+       "per_task_gain_ride_best": {
+        "domain": 0.008363636363636351,
+        "intent": 0.016363636363636358,
+        "oos": 0.0
+       }
+      }
+     }
+    },
+    "sweep_clinc150_s1": {
+     "splits": [
+      6,
+      11,
+      16,
+      20
+     ],
+     "tasks": [
+      "domain",
+      "intent",
+      "oos"
+     ],
+     "acc": {
+      "domain": {
+       "6": 0.8783636363636363,
+       "11": 0.876,
+       "16": 0.8874545454545455,
+       "20": 0.878
+      },
+      "intent": {
+       "6": 0.8723636363636363,
+       "11": 0.8630909090909091,
+       "16": 0.8778181818181818,
+       "20": 0.8743636363636363
+      },
+      "oos": {
+       "6": 0.866909090909091,
+       "11": 0.8632727272727273,
+       "16": 0.8829090909090909,
+       "20": 0.8749090909090909
+      }
+     },
+     "val_acc": {
+      "domain": {
+       "6": 0.9587096571922302,
+       "11": 0.9596773982048035,
+       "16": 0.9625806212425232,
+       "20": 0.957741916179657
+      },
+      "intent": {
+       "6": 0.9319354891777039,
+       "11": 0.9403225779533386,
+       "16": 0.9474193453788757,
+       "20": 0.9377419352531433
+      },
+      "oos": {
+       "6": 0.9816129207611084,
+       "11": 0.9806451797485352,
+       "16": 0.9796774387359619,
+       "20": 0.9806451797485352
+      }
+     },
+     "own_best_split": {
+      "domain": 16,
+      "intent": 16,
+      "oos": 6
+     },
+     "own_best_mean_acc": 0.8773939393939395,
+     "policies": {
+      "6": {
+       "cheapest": 0.8725454545454546,
+       "ride_to_D": 0.8725454545454546,
+       "ride_best_leq_D": 0.8725454545454546,
+       "per_task_gain_ride_to_D": {
+        "domain": 0.0,
+        "intent": 0.0,
+        "oos": 0.0
+       },
+       "per_task_gain_ride_best": {
+        "domain": 0.0,
+        "intent": 0.0,
+        "oos": 0.0
+       }
+      },
+      "11": {
+       "cheapest": 0.8725454545454546,
+       "ride_to_D": 0.8674545454545455,
+       "ride_best_leq_D": 0.8686666666666668,
+       "per_task_gain_ride_to_D": {
+        "domain": -0.0023636363636363455,
+        "intent": -0.00927272727272721,
+        "oos": -0.0036363636363636598
+       },
+       "per_task_gain_ride_best": {
+        "domain": -0.0023636363636363455,
+        "intent": -0.00927272727272721,
+        "oos": 0.0
+       }
+      },
+      "16": {
+       "cheapest": 0.8725454545454546,
+       "ride_to_D": 0.8827272727272728,
+       "ride_best_leq_D": 0.8773939393939395,
+       "per_task_gain_ride_to_D": {
+        "domain": 0.00909090909090915,
+        "intent": 0.00545454545454549,
+        "oos": 0.015999999999999903
+       },
+       "per_task_gain_ride_best": {
+        "domain": 0.00909090909090915,
+        "intent": 0.00545454545454549,
+        "oos": 0.0
+       }
+      },
+      "20": {
+       "cheapest": 0.8725454545454546,
+       "ride_to_D": 0.8757575757575756,
+       "ride_best_leq_D": 0.8773939393939395,
+       "per_task_gain_ride_to_D": {
+        "domain": -0.0003636363636363438,
+        "intent": 0.0020000000000000018,
+        "oos": 0.007999999999999896
+       },
+       "per_task_gain_ride_best": {
+        "domain": 0.00909090909090915,
+        "intent": 0.00545454545454549,
+        "oos": 0.0
+       }
+      }
+     }
+    },
+    "sweep_clinc150_s2": {
+     "splits": [
+      6,
+      11,
+      16,
+      20
+     ],
+     "tasks": [
+      "domain",
+      "intent",
+      "oos"
+     ],
+     "acc": {
+      "domain": {
+       "6": 0.8696363636363637,
+       "11": 0.8772727272727273,
+       "16": 0.8852727272727273,
+       "20": 0.8747272727272727
+      },
+      "intent": {
+       "6": 0.8729090909090909,
+       "11": 0.8694545454545455,
+       "16": 0.8743636363636363,
+       "20": 0.8743636363636363
+      },
+      "oos": {
+       "6": 0.8645454545454545,
+       "11": 0.8654545454545455,
+       "16": 0.8867272727272727,
+       "20": 0.8756363636363637
+      }
+     },
+     "val_acc": {
+      "domain": {
+       "6": 0.957741916179657,
+       "11": 0.9625806212425232,
+       "16": 0.9654838442802429,
+       "20": 0.9587096571922302
+      },
+      "intent": {
+       "6": 0.9332258105278015,
+       "11": 0.9377419352531433,
+       "16": 0.9438709616661072,
+       "20": 0.9377419352531433
+      },
+      "oos": {
+       "6": 0.981290340423584,
+       "11": 0.9800000190734863,
+       "16": 0.9806451797485352,
+       "20": 0.9803225994110107
+      }
+     },
+     "own_best_split": {
+      "domain": 16,
+      "intent": 16,
+      "oos": 6
+     },
+     "own_best_mean_acc": 0.8747272727272728,
+     "policies": {
+      "6": {
+       "cheapest": 0.8690303030303029,
+       "ride_to_D": 0.8690303030303029,
+       "ride_best_leq_D": 0.8690303030303029,
+       "per_task_gain_ride_to_D": {
+        "domain": 0.0,
+        "intent": 0.0,
+        "oos": 0.0
+       },
+       "per_task_gain_ride_best": {
+        "domain": 0.0,
+        "intent": 0.0,
+        "oos": 0.0
+       }
+      },
+      "11": {
+       "cheapest": 0.8690303030303029,
+       "ride_to_D": 0.8707272727272727,
+       "ride_best_leq_D": 0.8704242424242423,
+       "per_task_gain_ride_to_D": {
+        "domain": 0.007636363636363663,
+        "intent": -0.003454545454545377,
+        "oos": 0.0009090909090909705
+       },
+       "per_task_gain_ride_best": {
+        "domain": 0.007636363636363663,
+        "intent": -0.003454545454545377,
+        "oos": 0.0
+       }
+      },
+      "16": {
+       "cheapest": 0.8690303030303029,
+       "ride_to_D": 0.8821212121212122,
+       "ride_best_leq_D": 0.8747272727272728,
+       "per_task_gain_ride_to_D": {
+        "domain": 0.01563636363636367,
+        "intent": 0.0014545454545454861,
+        "oos": 0.02218181818181819
+       },
+       "per_task_gain_ride_best": {
+        "domain": 0.01563636363636367,
+        "intent": 0.0014545454545454861,
+        "oos": 0.0
+       }
+      },
+      "20": {
+       "cheapest": 0.8690303030303029,
+       "ride_to_D": 0.874909090909091,
+       "ride_best_leq_D": 0.8747272727272728,
+       "per_task_gain_ride_to_D": {
+        "domain": 0.005090909090909035,
+        "intent": 0.0014545454545454861,
+        "oos": 0.011090909090909151
+       },
+       "per_task_gain_ride_best": {
+        "domain": 0.01563636363636367,
+        "intent": 0.0014545454545454861,
+        "oos": 0.0
+       }
+      }
+     }
+    }
+   }
+  },
+  "typed_cs": {
+   "seeds": [
+    "sweep_typed_cs_s0"
+   ],
+   "splits": [
+    8,
+    14,
+    20
+   ],
+   "aggregate": {
+    "8": {
+     "cheapest": {
+      "mean": 0.742,
+      "std": 0.0
+     },
+     "ride_to_D": {
+      "mean": 0.742,
+      "std": 0.0
+     },
+     "ride_best_leq_D": {
+      "mean": 0.742,
+      "std": 0.0
+     }
+    },
+    "14": {
+     "cheapest": {
+      "mean": 0.742,
+      "std": 0.0
+     },
+     "ride_to_D": {
+      "mean": 0.7859999999999999,
+      "std": 0.0
+     },
+     "ride_best_leq_D": {
+      "mean": 0.782,
+      "std": 0.0
+     }
+    },
+    "20": {
+     "cheapest": {
+      "mean": 0.742,
+      "std": 0.0
+     },
+     "ride_to_D": {
+      "mean": 0.754,
+      "std": 0.0
+     },
+     "ride_best_leq_D": {
+      "mean": 0.782,
+      "std": 0.0
+     }
+    }
+   },
+   "per_seed": {
+    "sweep_typed_cs_s0": {
+     "splits": [
+      8,
+      14,
+      20
+     ],
+     "tasks": [
+      "customer_service.action",
+      "customer_service.category",
+      "customer_service.churn_risk",
+      "customer_service.needs_human",
+      "customer_service.urgency"
+     ],
+     "acc": {
+      "customer_service.action": {
+       "8": 0.54,
+       "14": 0.66,
+       "20": 0.62
+      },
+      "customer_service.category": {
+       "8": 0.93,
+       "14": 0.89,
+       "20": 0.91
+      },
+      "customer_service.churn_risk": {
+       "8": 0.74,
+       "14": 0.8,
+       "20": 0.78
+      },
+      "customer_service.needs_human": {
+       "8": 0.77,
+       "14": 0.84,
+       "20": 0.79
+      },
+      "customer_service.urgency": {
+       "8": 0.73,
+       "14": 0.74,
+       "20": 0.67
+      }
+     },
+     "val_acc": {
+      "customer_service.action": {
+       "8": 0.5806451439857483,
+       "14": 0.6774193644523621,
+       "20": 0.5806451439857483
+      },
+      "customer_service.category": {
+       "8": 0.8709677457809448,
+       "14": 0.774193525314331,
+       "20": 0.8064516186714172
+      },
+      "customer_service.churn_risk": {
+       "8": 0.8387096524238586,
+       "14": 0.8387096524238586,
+       "20": 0.8064516186714172
+      },
+      "customer_service.needs_human": {
+       "8": 0.6451612710952759,
+       "14": 0.7096773982048035,
+       "20": 0.6774193644523621
+      },
+      "customer_service.urgency": {
+       "8": 0.6774193644523621,
+       "14": 0.7096773982048035,
+       "20": 0.6774193644523621
+      }
+     },
+     "own_best_split": {
+      "customer_service.action": 14,
+      "customer_service.category": 8,
+      "customer_service.churn_risk": 8,
+      "customer_service.needs_human": 14,
+      "customer_service.urgency": 14
+     },
+     "own_best_mean_acc": 0.782,
+     "policies": {
+      "8": {
+       "cheapest": 0.742,
+       "ride_to_D": 0.742,
+       "ride_best_leq_D": 0.742,
+       "per_task_gain_ride_to_D": {
+        "customer_service.action": 0.0,
+        "customer_service.category": 0.0,
+        "customer_service.churn_risk": 0.0,
+        "customer_service.needs_human": 0.0,
+        "customer_service.urgency": 0.0
+       },
+       "per_task_gain_ride_best": {
+        "customer_service.action": 0.0,
+        "customer_service.category": 0.0,
+        "customer_service.churn_risk": 0.0,
+        "customer_service.needs_human": 0.0,
+        "customer_service.urgency": 0.0
+       }
+      },
+      "14": {
+       "cheapest": 0.742,
+       "ride_to_D": 0.7859999999999999,
+       "ride_best_leq_D": 0.782,
+       "per_task_gain_ride_to_D": {
+        "customer_service.action": 0.12,
+        "customer_service.category": -0.040000000000000036,
+        "customer_service.churn_risk": 0.06000000000000005,
+        "customer_service.needs_human": 0.06999999999999995,
+        "customer_service.urgency": 0.010000000000000009
+       },
+       "per_task_gain_ride_best": {
+        "customer_service.action": 0.12,
+        "customer_service.category": 0.0,
+        "customer_service.churn_risk": 0.0,
+        "customer_service.needs_human": 0.06999999999999995,
+        "customer_service.urgency": 0.010000000000000009
+       }
+      },
+      "20": {
+       "cheapest": 0.742,
+       "ride_to_D": 0.754,
+       "ride_best_leq_D": 0.782,
+       "per_task_gain_ride_to_D": {
+        "customer_service.action": 0.07999999999999996,
+        "customer_service.category": -0.020000000000000018,
+        "customer_service.churn_risk": 0.040000000000000036,
+        "customer_service.needs_human": 0.020000000000000018,
+        "customer_service.urgency": -0.05999999999999994
+       },
+       "per_task_gain_ride_best": {
+        "customer_service.action": 0.12,
+        "customer_service.category": 0.0,
+        "customer_service.churn_risk": 0.0,
+        "customer_service.needs_human": 0.06999999999999995,
+        "customer_service.urgency": 0.010000000000000009
+       }
+      }
+     }
+    }
+   }
+  },
+  "banking77": {
+   "seeds": [
+    "sweep_banking77_s0",
+    "sweep_banking77_s1",
+    "sweep_banking77_s2"
+   ],
+   "splits": [
+    4,
+    8,
+    14,
+    18
+   ],
+   "aggregate": {
+    "4": {
+     "cheapest": {
+      "mean": 0.9066970091027308,
+      "std": 0.0030148304601741744
+     },
+     "ride_to_D": {
+      "mean": 0.9066970091027308,
+      "std": 0.0030148304601741744
+     },
+     "ride_best_leq_D": {
+      "mean": 0.9066970091027308,
+      "std": 0.0030148304601741744
+     }
+    },
+    "8": {
+     "cheapest": {
+      "mean": 0.9066970091027308,
+      "std": 0.0030148304601741744
+     },
+     "ride_to_D": {
+      "mean": 0.9203511053315996,
+      "std": 0.001914122424431689
+     },
+     "ride_best_leq_D": {
+      "mean": 0.9203511053315996,
+      "std": 0.001914122424431689
+     }
+    },
+    "14": {
+     "cheapest": {
+      "mean": 0.9066970091027308,
+      "std": 0.0030148304601741744
+     },
+     "ride_to_D": {
+      "mean": 0.9270697876029476,
+      "std": 0.002658830547547746
+     },
+     "ride_best_leq_D": {
+      "mean": 0.9250108365843087,
+      "std": 0.005337499070665246
+     }
+    },
+    "18": {
+     "cheapest": {
+      "mean": 0.9066970091027308,
+      "std": 0.0030148304601741744
+     },
+     "ride_to_D": {
+      "mean": 0.9290203727785001,
+      "std": 0.0009321982300653249
+     },
+     "ride_best_leq_D": {
+      "mean": 0.9290203727785001,
+      "std": 0.0009321982300653249
+     }
+    }
+   },
+   "per_seed": {
+    "sweep_banking77_s0": {
+     "splits": [
+      4,
+      8,
+      14,
+      18
+     ],
+     "tasks": [
+      "intent"
+     ],
+     "acc": {
+      "intent": {
+       "4": 0.9109232769830949,
+       "8": 0.9223016905071522,
+       "14": 0.9304291287386216,
+       "18": 0.9278283485045513
+      }
+     },
+     "val_acc": {
+      "intent": {
+       "4": 0.9199199080467224,
+       "8": 0.9229229092597961,
+       "14": 0.9259259104728699,
+       "18": 0.9279279112815857
+      }
+     },
+     "own_best_split": {
+      "intent": 18
+     },
+     "own_best_mean_acc": 0.9278283485045513,
+     "policies": {
+      "4": {
+       "cheapest": 0.9109232769830949,
+       "ride_to_D": 0.9109232769830949,
+       "ride_best_leq_D": 0.9109232769830949,
+       "per_task_gain_ride_to_D": {
+        "intent": 0.0
+       },
+       "per_task_gain_ride_best": {
+        "intent": 0.0
+       }
+      },
+      "8": {
+       "cheapest": 0.9109232769830949,
+       "ride_to_D": 0.9223016905071522,
+       "ride_best_leq_D": 0.9223016905071522,
+       "per_task_gain_ride_to_D": {
+        "intent": 0.011378413524057218
+       },
+       "per_task_gain_ride_best": {
+        "intent": 0.011378413524057218
+       }
+      },
+      "14": {
+       "cheapest": 0.9109232769830949,
+       "ride_to_D": 0.9304291287386216,
+       "ride_best_leq_D": 0.9304291287386216,
+       "per_task_gain_ride_to_D": {
+        "intent": 0.01950585175552666
+       },
+       "per_task_gain_ride_best": {
+        "intent": 0.01950585175552666
+       }
+      },
+      "18": {
+       "cheapest": 0.9109232769830949,
+       "ride_to_D": 0.9278283485045513,
+       "ride_best_leq_D": 0.9278283485045513,
+       "per_task_gain_ride_to_D": {
+        "intent": 0.016905071521456372
+       },
+       "per_task_gain_ride_best": {
+        "intent": 0.016905071521456372
+       }
+      }
+     }
+    },
+    "sweep_banking77_s1": {
+     "splits": [
+      4,
+      8,
+      14,
+      18
+     ],
+     "tasks": [
+      "intent"
+     ],
+     "acc": {
+      "intent": {
+       "4": 0.9050715214564369,
+       "8": 0.9177503250975293,
+       "14": 0.923927178153446,
+       "18": 0.9301040312093628
+      }
+     },
+     "val_acc": {
+      "intent": {
+       "4": 0.9209209084510803,
+       "8": 0.9229229092597961,
+       "14": 0.9219219088554382,
+       "18": 0.9279279112815857
+      }
+     },
+     "own_best_split": {
+      "intent": 18
+     },
+     "own_best_mean_acc": 0.9301040312093628,
+     "policies": {
+      "4": {
+       "cheapest": 0.9050715214564369,
+       "ride_to_D": 0.9050715214564369,
+       "ride_best_leq_D": 0.9050715214564369,
+       "per_task_gain_ride_to_D": {
+        "intent": 0.0
+       },
+       "per_task_gain_ride_best": {
+        "intent": 0.0
+       }
+      },
+      "8": {
+       "cheapest": 0.9050715214564369,
+       "ride_to_D": 0.9177503250975293,
+       "ride_best_leq_D": 0.9177503250975293,
+       "per_task_gain_ride_to_D": {
+        "intent": 0.012678803641092418
+       },
+       "per_task_gain_ride_best": {
+        "intent": 0.012678803641092418
+       }
+      },
+      "14": {
+       "cheapest": 0.9050715214564369,
+       "ride_to_D": 0.923927178153446,
+       "ride_best_leq_D": 0.9177503250975293,
+       "per_task_gain_ride_to_D": {
+        "intent": 0.01885565669700917
+       },
+       "per_task_gain_ride_best": {
+        "intent": 0.012678803641092418
+       }
+      },
+      "18": {
+       "cheapest": 0.9050715214564369,
+       "ride_to_D": 0.9301040312093628,
+       "ride_best_leq_D": 0.9301040312093628,
+       "per_task_gain_ride_to_D": {
+        "intent": 0.025032509752925924
+       },
+       "per_task_gain_ride_best": {
+        "intent": 0.025032509752925924
+       }
+      }
+     }
+    },
+    "sweep_banking77_s2": {
+     "splits": [
+      4,
+      8,
+      14,
+      18
+     ],
+     "tasks": [
+      "intent"
+     ],
+     "acc": {
+      "intent": {
+       "4": 0.9040962288686606,
+       "8": 0.9210013003901171,
+       "14": 0.926853055916775,
+       "18": 0.9291287386215865
+      }
+     },
+     "val_acc": {
+      "intent": {
+       "4": 0.912912905216217,
+       "8": 0.9169169068336487,
+       "14": 0.9219219088554382,
+       "18": 0.9309309124946594
+      }
+     },
+     "own_best_split": {
+      "intent": 18
+     },
+     "own_best_mean_acc": 0.9291287386215865,
+     "policies": {
+      "4": {
+       "cheapest": 0.9040962288686606,
+       "ride_to_D": 0.9040962288686606,
+       "ride_best_leq_D": 0.9040962288686606,
+       "per_task_gain_ride_to_D": {
+        "intent": 0.0
+       },
+       "per_task_gain_ride_best": {
+        "intent": 0.0
+       }
+      },
+      "8": {
+       "cheapest": 0.9040962288686606,
+       "ride_to_D": 0.9210013003901171,
+       "ride_best_leq_D": 0.9210013003901171,
+       "per_task_gain_ride_to_D": {
+        "intent": 0.016905071521456483
+       },
+       "per_task_gain_ride_best": {
+        "intent": 0.016905071521456483
+       }
+      },
+      "14": {
+       "cheapest": 0.9040962288686606,
+       "ride_to_D": 0.926853055916775,
+       "ride_best_leq_D": 0.926853055916775,
+       "per_task_gain_ride_to_D": {
+        "intent": 0.022756827048114436
+       },
+       "per_task_gain_ride_best": {
+        "intent": 0.022756827048114436
+       }
+      },
+      "18": {
+       "cheapest": 0.9040962288686606,
+       "ride_to_D": 0.9291287386215865,
+       "ride_best_leq_D": 0.9291287386215865,
+       "per_task_gain_ride_to_D": {
+        "intent": 0.025032509752925924
+       },
+       "per_task_gain_ride_best": {
+        "intent": 0.025032509752925924
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "wall_seconds": 0.0
+}

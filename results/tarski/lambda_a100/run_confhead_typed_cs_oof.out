@@ -1,0 +1,161 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 5588.12it/s]
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 22:52:09 2026).
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 22:52:09 2026).
+[    1.6s] == confidence head on typed-decisions: 269/31/100 messages (train/val/test), tasks: customer_service.action(5), customer_service.category(5), customer_service.churn_risk(4), customer_service.needs_human(2), customer_service.urgency(4) | base answerdotai/ModernBERT-base on cuda | main blocks@14+2, probes [6, 14, 22], folds 5
+[    4.8s]    cached 400 messages at [6, 14, 22] in 3.1s (507 MB)
+[    4.8s] -- customer_service.action (5 options, 269 train, 31 val)
+[   34.9s]       blocks: 34 epochs, 306 steps, 30.1s, val acc 0.516, T=0.84
+[   38.8s]       probe: 34 epochs, 306 steps, 4.0s, val acc 0.548, T=0.66
+[   43.0s]       probe: 34 epochs, 306 steps, 4.1s, val acc 0.548, T=0.67
+[   48.6s]       probe: 34 epochs, 306 steps, 5.6s, val acc 0.677, T=0.57
+[   49.1s]    main test acc 0.5900
+[   78.6s]       blocks: 43 epochs, 301 steps, 29.3s, val acc 0.645, T=0.91
+[   83.0s]       probe: 43 epochs, 301 steps, 4.4s, val acc 0.645, T=0.64
+[   88.7s]       probe: 43 epochs, 301 steps, 5.7s, val acc 0.548, T=0.67
+[   94.6s]       probe: 43 epochs, 301 steps, 5.9s, val acc 0.645, T=0.60
+[  121.8s]       blocks: 43 epochs, 301 steps, 26.8s, val acc 0.645, T=0.62
+[  127.7s]       probe: 43 epochs, 301 steps, 5.9s, val acc 0.613, T=0.65
+[  133.5s]       probe: 43 epochs, 301 steps, 5.9s, val acc 0.613, T=0.63
+[  138.8s]       probe: 43 epochs, 301 steps, 5.3s, val acc 0.677, T=0.56
+[  166.2s]       blocks: 43 epochs, 301 steps, 27.0s, val acc 0.677, T=0.76
+[  172.0s]       probe: 43 epochs, 301 steps, 5.8s, val acc 0.581, T=0.64
+[  176.6s]       probe: 43 epochs, 301 steps, 4.6s, val acc 0.548, T=0.62
+[  180.9s]       probe: 43 epochs, 301 steps, 4.3s, val acc 0.645, T=0.55
+[  212.6s]       blocks: 43 epochs, 301 steps, 31.3s, val acc 0.645, T=0.72
+[  216.3s]       probe: 43 epochs, 301 steps, 3.8s, val acc 0.613, T=0.75
+[  220.7s]       probe: 43 epochs, 301 steps, 4.3s, val acc 0.516, T=0.74
+[  226.1s]       probe: 43 epochs, 301 steps, 5.5s, val acc 0.613, T=0.64
+[  253.6s]       blocks: 43 epochs, 301 steps, 27.0s, val acc 0.548, T=0.74
+[  259.1s]       probe: 43 epochs, 301 steps, 5.5s, val acc 0.581, T=0.60
+[  264.6s]       probe: 43 epochs, 301 steps, 5.6s, val acc 0.548, T=0.64
+[  270.0s]       probe: 43 epochs, 301 steps, 5.4s, val acc 0.677, T=0.50
+[  270.4s] -- customer_service.category (5 options, 269 train, 31 val)
+[  290.6s]       blocks: 34 epochs, 306 steps, 20.2s, val acc 0.710, T=0.89
+[  294.1s]       probe: 34 epochs, 306 steps, 3.5s, val acc 0.581, T=0.41
+[  297.4s]       probe: 34 epochs, 306 steps, 3.3s, val acc 0.548, T=0.48
+[  300.6s]       probe: 34 epochs, 306 steps, 3.2s, val acc 0.710, T=0.56
+[  300.9s]    main test acc 0.8800
+[  329.5s]       blocks: 43 epochs, 301 steps, 28.4s, val acc 0.774, T=0.93
+[  334.6s]       probe: 43 epochs, 301 steps, 5.0s, val acc 0.581, T=0.40
+[  338.4s]       probe: 43 epochs, 301 steps, 3.8s, val acc 0.484, T=0.51
+[  342.3s]       probe: 43 epochs, 301 steps, 3.9s, val acc 0.710, T=0.57
+[  379.2s]       blocks: 43 epochs, 301 steps, 36.5s, val acc 0.774, T=0.85
+[  384.7s]       probe: 43 epochs, 301 steps, 5.5s, val acc 0.548, T=0.44
+[  389.7s]       probe: 43 epochs, 301 steps, 5.0s, val acc 0.516, T=0.52
+[  394.1s]       probe: 43 epochs, 301 steps, 4.5s, val acc 0.742, T=0.60
+[  430.0s]       blocks: 43 epochs, 301 steps, 35.4s, val acc 0.774, T=0.88
+[  435.4s]       probe: 43 epochs, 301 steps, 5.4s, val acc 0.516, T=0.42
+[  440.2s]       probe: 43 epochs, 301 steps, 4.7s, val acc 0.516, T=0.60
+[  444.9s]       probe: 43 epochs, 301 steps, 4.7s, val acc 0.677, T=0.60
+[  482.0s]       blocks: 43 epochs, 301 steps, 36.6s, val acc 0.806, T=0.93
+[  488.2s]       probe: 43 epochs, 301 steps, 6.2s, val acc 0.548, T=0.61
+[  493.4s]       probe: 43 epochs, 301 steps, 5.2s, val acc 0.581, T=0.72
+[  498.0s]       probe: 43 epochs, 301 steps, 4.6s, val acc 0.613, T=0.74
+[  533.7s]       blocks: 43 epochs, 301 steps, 35.3s, val acc 0.806, T=0.70
+[  539.2s]       probe: 43 epochs, 301 steps, 5.5s, val acc 0.548, T=0.39
+[  544.7s]       probe: 43 epochs, 301 steps, 5.5s, val acc 0.548, T=0.50
+[  549.8s]       probe: 43 epochs, 301 steps, 5.1s, val acc 0.710, T=0.53
+[  550.2s] -- customer_service.churn_risk (4 options, 269 train, 31 val)
+[  583.6s]       blocks: 34 epochs, 306 steps, 33.4s, val acc 0.774, T=0.35
+[  589.0s]       probe: 34 epochs, 306 steps, 5.4s, val acc 0.548, T=0.31
+[  593.9s]       probe: 34 epochs, 306 steps, 4.9s, val acc 0.581, T=0.47
+[  597.8s]       probe: 34 epochs, 306 steps, 4.0s, val acc 0.677, T=0.34
+[  598.4s]    main test acc 0.8100
+[  626.2s]       blocks: 43 epochs, 301 steps, 27.7s, val acc 0.806, T=0.54
+[  630.0s]       probe: 43 epochs, 301 steps, 3.8s, val acc 0.613, T=0.20
+[  633.9s]       probe: 43 epochs, 301 steps, 3.9s, val acc 0.581, T=0.37
+[  637.9s]       probe: 43 epochs, 301 steps, 4.0s, val acc 0.677, T=0.32
+[  662.1s]       blocks: 43 epochs, 301 steps, 23.8s, val acc 0.742, T=0.45
+[  666.0s]       probe: 43 epochs, 301 steps, 3.9s, val acc 0.581, T=0.35
+[  669.5s]       probe: 43 epochs, 301 steps, 3.5s, val acc 0.548, T=0.53
+[  673.7s]       probe: 43 epochs, 301 steps, 4.1s, val acc 0.548, T=0.41
+[  706.9s]       blocks: 43 epochs, 301 steps, 32.8s, val acc 0.710, T=0.45
+[  710.9s]       probe: 43 epochs, 301 steps, 4.0s, val acc 0.613, T=0.36
+[  714.7s]       probe: 43 epochs, 301 steps, 3.8s, val acc 0.581, T=0.58
+[  718.1s]       probe: 43 epochs, 301 steps, 3.5s, val acc 0.677, T=0.38
+[  742.4s]       blocks: 43 epochs, 301 steps, 23.9s, val acc 0.645, T=0.59
+[  745.8s]       probe: 43 epochs, 301 steps, 3.5s, val acc 0.677, T=0.32
+[  749.5s]       probe: 43 epochs, 301 steps, 3.6s, val acc 0.548, T=0.54
+[  753.3s]       probe: 43 epochs, 301 steps, 3.8s, val acc 0.613, T=0.41
+[  776.9s]       blocks: 43 epochs, 301 steps, 23.2s, val acc 0.774, T=0.52
+[  780.0s]       probe: 43 epochs, 301 steps, 3.2s, val acc 0.613, T=0.36
+[  783.5s]       probe: 43 epochs, 301 steps, 3.4s, val acc 0.581, T=0.49
+[  787.1s]       probe: 43 epochs, 301 steps, 3.6s, val acc 0.677, T=0.36
+[  787.4s] -- customer_service.needs_human (2 options, 269 train, 31 val)
+[  807.9s]       blocks: 34 epochs, 306 steps, 20.5s, val acc 0.742, T=0.42
+[  811.2s]       probe: 34 epochs, 306 steps, 3.3s, val acc 0.742, T=0.33
+[  814.4s]       probe: 34 epochs, 306 steps, 3.2s, val acc 0.677, T=0.43
+[  817.5s]       probe: 34 epochs, 306 steps, 3.1s, val acc 0.806, T=nan
+[  817.9s]    main test acc 0.8000
+[  840.3s]       blocks: 43 epochs, 301 steps, 22.2s, val acc 0.548, T=1.46
+[  844.6s]       probe: 43 epochs, 301 steps, 4.3s, val acc 0.774, T=0.05
+[  848.8s]       probe: 43 epochs, 301 steps, 4.3s, val acc 0.677, T=0.49
+[  852.9s]       probe: 43 epochs, 301 steps, 4.0s, val acc 0.742, T=0.46
+[  878.8s]       blocks: 43 epochs, 301 steps, 25.6s, val acc 0.774, T=0.50
+[  882.8s]       probe: 43 epochs, 301 steps, 3.9s, val acc 0.774, T=0.26
+[  886.7s]       probe: 43 epochs, 301 steps, 4.0s, val acc 0.710, T=0.35
+[  890.5s]       probe: 43 epochs, 301 steps, 3.8s, val acc 0.806, T=0.32
+[  915.7s]       blocks: 43 epochs, 301 steps, 24.7s, val acc 0.774, T=0.60
+[  920.0s]       probe: 43 epochs, 301 steps, 4.3s, val acc 0.839, T=0.26
+[  924.3s]       probe: 43 epochs, 301 steps, 4.4s, val acc 0.710, T=0.29
+[  928.5s]       probe: 43 epochs, 301 steps, 4.2s, val acc 0.806, T=nan
+[  954.8s]       blocks: 43 epochs, 301 steps, 25.9s, val acc 0.742, T=0.61
+[  959.3s]       probe: 43 epochs, 301 steps, 4.5s, val acc 0.774, T=0.35
+[  964.2s]       probe: 43 epochs, 301 steps, 4.9s, val acc 0.742, T=0.40
+[  969.3s]       probe: 43 epochs, 301 steps, 5.1s, val acc 0.806, T=0.37
+[  999.4s]       blocks: 43 epochs, 301 steps, 29.8s, val acc 0.774, T=0.46
+[ 1004.5s]       probe: 43 epochs, 301 steps, 5.0s, val acc 0.774, T=0.26
+[ 1009.5s]       probe: 43 epochs, 301 steps, 5.1s, val acc 0.806, T=0.24
+[ 1014.7s]       probe: 43 epochs, 301 steps, 5.2s, val acc 0.806, T=0.05
+[ 1015.1s] -- customer_service.urgency (4 options, 269 train, 31 val)
+[ 1043.6s]       blocks: 34 epochs, 306 steps, 28.5s, val acc 0.710, T=0.59
+[ 1047.8s]       probe: 34 epochs, 306 steps, 4.2s, val acc 0.452, T=0.60
+[ 1051.7s]       probe: 34 epochs, 306 steps, 3.9s, val acc 0.516, T=0.60
+[ 1055.7s]       probe: 34 epochs, 306 steps, 4.0s, val acc 0.645, T=0.52
+[ 1056.2s]    main test acc 0.6900
+[ 1082.0s]       blocks: 43 epochs, 301 steps, 25.7s, val acc 0.645, T=0.75
+[ 1086.0s]       probe: 43 epochs, 301 steps, 3.9s, val acc 0.516, T=0.64
+[ 1090.1s]       probe: 43 epochs, 301 steps, 4.1s, val acc 0.516, T=0.56
+[ 1094.2s]       probe: 43 epochs, 301 steps, 4.0s, val acc 0.613, T=0.50
+[ 1119.8s]       blocks: 43 epochs, 301 steps, 25.3s, val acc 0.677, T=0.68
+[ 1124.2s]       probe: 43 epochs, 301 steps, 4.3s, val acc 0.548, T=0.68
+[ 1128.2s]       probe: 43 epochs, 301 steps, 4.1s, val acc 0.581, T=0.66
+[ 1132.4s]       probe: 43 epochs, 301 steps, 4.2s, val acc 0.645, T=0.55
+[ 1158.0s]       blocks: 43 epochs, 301 steps, 25.2s, val acc 0.613, T=0.70
+[ 1161.9s]       probe: 43 epochs, 301 steps, 4.0s, val acc 0.484, T=0.69
+[ 1166.0s]       probe: 43 epochs, 301 steps, 4.1s, val acc 0.484, T=0.71
+[ 1171.2s]       probe: 43 epochs, 301 steps, 5.1s, val acc 0.645, T=0.62
+[ 1204.9s]       blocks: 43 epochs, 301 steps, 33.4s, val acc 0.742, T=0.56
+[ 1209.9s]       probe: 43 epochs, 301 steps, 4.9s, val acc 0.581, T=0.52
+[ 1214.9s]       probe: 43 epochs, 301 steps, 5.0s, val acc 0.645, T=0.50
+[ 1219.8s]       probe: 43 epochs, 301 steps, 4.9s, val acc 0.645, T=0.49
+[ 1254.2s]       blocks: 43 epochs, 301 steps, 34.0s, val acc 0.710, T=0.59
+[ 1259.4s]       probe: 43 epochs, 301 steps, 5.2s, val acc 0.516, T=0.61
+[ 1264.6s]       probe: 43 epochs, 301 steps, 5.2s, val acc 0.548, T=0.56
+[ 1269.7s]       probe: 43 epochs, 301 steps, 5.1s, val acc 0.613, T=0.53
+[ 1270.1s]    branches trained in 1265s
+[ 1271.0s] == val->test: 155 head-training rows -> 500 test rows (acc 0.754)
+[ 1271.0s]    msp_T1             auroc 0.788 ece 0.108 acc@80 0.833 aurc 0.098
+[ 1271.0s]    msp_Thard          auroc 0.799 ece 0.050 acc@80 0.843 aurc 0.101
+[ 1271.0s]    probe_deep_maxp    auroc 0.636 ece 0.222 acc@80 0.780 aurc 0.154
+[ 1271.0s]    lr[all]            auroc 0.793 ece 0.087 acc@80 0.830 aurc 0.099
+[ 1271.0s]    mlp[all]           auroc 0.748 ece 0.205 acc@80 0.823 aurc 0.120
+[ 1271.0s]    lr[msp]            auroc 0.789 ece 0.051 acc@80 0.833 aurc 0.100
+[ 1271.0s]    mlp[msp]           auroc 0.794 ece 0.056 acc@80 0.835 aurc 0.103
+[ 1271.0s]    lr[msp+qtype]      auroc 0.794 ece 0.054 acc@80 0.833 aurc 0.097
+[ 1271.0s]    lr[no_bundle]      auroc 0.792 ece 0.087 acc@80 0.828 aurc 0.099
+[ 1271.0s]    lr[no_depth]       auroc 0.792 ece 0.080 acc@80 0.833 aurc 0.098
+[ 1275.1s] == oof->test: 1345 head-training rows -> 500 test rows (acc 0.754)
+[ 1275.1s]    msp_T1             auroc 0.788 ece 0.108 acc@80 0.833 aurc 0.098
+[ 1275.1s]    msp_Thard          auroc 0.799 ece 0.050 acc@80 0.843 aurc 0.101
+[ 1275.1s]    probe_deep_maxp    auroc 0.636 ece 0.222 acc@80 0.780 aurc 0.154
+[ 1275.1s]    lr[all]            auroc 0.806 ece 0.046 acc@80 0.845 aurc 0.095
+[ 1275.1s]    mlp[all]           auroc 0.759 ece 0.139 acc@80 0.807 aurc 0.109
+[ 1275.1s]    lr[msp]            auroc 0.785 ece 0.046 acc@80 0.833 aurc 0.100
+[ 1275.1s]    mlp[msp]           auroc 0.784 ece 0.059 acc@80 0.830 aurc 0.099
+[ 1275.1s]    lr[msp+qtype]      auroc 0.792 ece 0.043 acc@80 0.835 aurc 0.097
+[ 1275.1s]    lr[no_bundle]      auroc 0.804 ece 0.046 acc@80 0.843 aurc 0.095
+[ 1275.1s]    lr[no_depth]       auroc 0.795 ece 0.053 acc@80 0.838 aurc 0.098
+[ 1275.2s] done

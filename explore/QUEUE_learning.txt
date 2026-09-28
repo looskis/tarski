@@ -1,0 +1,8 @@
+name | GPU | est. minutes | command
+proper_score_objectives | A10 | 10 | .venv/bin/python explore/learning_proper_score_objectives.py --out results/tarski/explore_proper_score_objectives.json
+active_distillation | A100 | 15 | .venv/bin/python explore/learning_active_distillation.py --out results/tarski/explore_active_distillation.json
+label_efficiency | A100 | 25 | .venv/bin/python explore/learning_label_efficiency.py --out results/tarski/explore_label_efficiency.json
+self_training | A10 | 8 | .venv/bin/python explore/learning_self_training.py --out results/tarski/explore_self_training.json
+outlier_exposure | A10 | 8 | .venv/bin/python explore/learning_outlier_exposure.py --out results/tarski/explore_outlier_exposure.json
+route_imprinting | A10 | 6 | .venv/bin/python explore/learning_route_imprinting.py --out results/tarski/explore_route_imprinting.json
+curriculum | A10 | 6 | .venv/bin/python explore/learning_curriculum.py --out results/tarski/explore_curriculum.json

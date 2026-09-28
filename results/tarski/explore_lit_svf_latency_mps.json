@@ -1,0 +1,53 @@
+{
+ "args": {
+  "plan": [
+   "banking77:8:probe,full,svf,svf_norm,lora8",
+   "banking77:14:full,svf,svf_norm",
+   "clinc150:11:full,svf_norm",
+   "typed-decisions:14:full,svf_norm"
+  ],
+  "typed_workflows": [
+   "customer_service"
+  ],
+  "min_steps": 300,
+  "epochs": 6,
+  "latency": false,
+  "latency_only": true,
+  "device": "mps",
+  "smoke": false,
+  "out": "results/tarski/explore_lit_svf_latency_mps.json"
+ },
+ "runs": {},
+ "checks": {
+  "svf_z1_rel_err": 2.626899913593661e-06,
+  "shared_vs_loop_abs_err": 1.1920928955078125e-07
+ },
+ "latency": {
+  "device": "mps",
+  "split": 8,
+  "rows": [
+   {
+    "n": 1,
+    "loop_full_ms": 1.1019169905921444,
+    "fused_full_ms": 1.3571250019595027,
+    "loop_svf_ms": 3.5811039997497573,
+    "shared_svf_ms": 3.5667085176100954
+   },
+   {
+    "n": 5,
+    "loop_full_ms": 3.120583511190489,
+    "fused_full_ms": 3.7927709927316755,
+    "loop_svf_ms": 16.25410398992244,
+    "shared_svf_ms": 3.7897919974057004
+   },
+   {
+    "n": 20,
+    "loop_full_ms": 11.318458506138995,
+    "fused_full_ms": 13.123395503498614,
+    "loop_svf_ms": 62.40206249640323,
+    "shared_svf_ms": 4.918082995573059
+   }
+  ],
+  "trunk_ms": 4.416540992679074
+ }
+}

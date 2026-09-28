@@ -1,0 +1,200 @@
+{
+ "config": {
+  "smoke": true,
+  "device": "cpu",
+  "depths": [
+   4
+  ],
+  "pca": [
+   8,
+   0
+  ],
+  "candidates": 4000,
+  "max_detectors": 500,
+  "self_radius_quantile": [
+   0.1,
+   0.5
+  ],
+  "proposal_scale": 1.0,
+  "seed": 0,
+  "out": "results/tarski/explore_negsel_smoke.json"
+ },
+ "device": "cpu",
+ "n_test": 750,
+ "n_test_oos": 150,
+ "depths": {
+  "4_pca8_q0.1": {
+   "depth": 4,
+   "pca": 8,
+   "self_radius_quantile": 0.1,
+   "ood": {
+    "nsa_max_margin": {
+     "auroc": 0.4598888888888889,
+     "aupr": 0.18263494340565095,
+     "fpr95": 0.9483333333333334
+    },
+    "nsa_count": {
+     "auroc": 0.491,
+     "aupr": 0.19620844564240794,
+     "fpr95": 1.0
+    },
+    "knn1_pca": {
+     "auroc": 0.5176111111111111,
+     "aupr": 0.2118264104757148,
+     "fpr95": 0.925
+    },
+    "knn1_full": {
+     "auroc": 0.8556999999999999,
+     "aupr": 0.6102925182192592,
+     "fpr95": 0.45666666666666667
+    },
+    "knn10_full": {
+     "auroc": 0.7719333333333332,
+     "aupr": 0.4883773028197026,
+     "fpr95": 0.6566666666666666
+    }
+   },
+   "n_detectors": 500,
+   "survival_rate": 0.8364999890327454,
+   "self_radius": 0.005524271633476019,
+   "median_detector_radius": 9.129398345947266,
+   "pca_explained_variance": 0.29646652936935425,
+   "coverage_inscope_test": 0.215,
+   "coverage_oos_test": 0.2,
+   "spearman_nsa_vs_knn1_pca": 0.143690139893582,
+   "bound_holds_fraction": 1.0,
+   "median_gap_to_knn1_bound": 6.6383466720581055,
+   "seconds": 0.1
+  },
+  "4_pca8_q0.5": {
+   "depth": 4,
+   "pca": 8,
+   "self_radius_quantile": 0.5,
+   "ood": {
+    "nsa_max_margin": {
+     "auroc": 0.3680111111111111,
+     "aupr": 0.1560286553483861,
+     "fpr95": 0.9816666666666667
+    },
+    "nsa_count": {
+     "auroc": 0.5,
+     "aupr": 0.2,
+     "fpr95": 1.0
+    },
+    "knn1_pca": {
+     "auroc": 0.5176111111111111,
+     "aupr": 0.2118264104757148,
+     "fpr95": 0.925
+    },
+    "knn1_full": {
+     "auroc": 0.8556999999999999,
+     "aupr": 0.6102925182192592,
+     "fpr95": 0.45666666666666667
+    },
+    "knn10_full": {
+     "auroc": 0.7719333333333332,
+     "aupr": 0.4883773028197026,
+     "fpr95": 0.6566666666666666
+    }
+   },
+   "n_detectors": 500,
+   "survival_rate": 0.828249990940094,
+   "self_radius": 5.141967296600342,
+   "median_detector_radius": 15.313264846801758,
+   "pca_explained_variance": 0.29646652936935425,
+   "coverage_inscope_test": 0.0,
+   "coverage_oos_test": 0.0,
+   "spearman_nsa_vs_knn1_pca": 0.33007508280014713,
+   "bound_holds_fraction": 1.0,
+   "median_gap_to_knn1_bound": 6.999094009399414,
+   "seconds": 0.0
+  },
+  "4_pca0_q0.1": {
+   "depth": 4,
+   "pca": 0,
+   "self_radius_quantile": 0.1,
+   "ood": {
+    "nsa_max_margin": {
+     "auroc": 0.49782222222222217,
+     "aupr": 0.19811480936042716,
+     "fpr95": 0.9166666666666666
+    },
+    "nsa_count": {
+     "auroc": 0.4886555555555555,
+     "aupr": 0.19616066842537433,
+     "fpr95": 1.0
+    },
+    "knn1_pca": {
+     "auroc": 0.7761777777777779,
+     "aupr": 0.3865357414167352,
+     "fpr95": 0.49
+    },
+    "knn1_full": {
+     "auroc": 0.8556999999999999,
+     "aupr": 0.6102925182192592,
+     "fpr95": 0.45666666666666667
+    },
+    "knn10_full": {
+     "auroc": 0.7719333333333332,
+     "aupr": 0.4883773028197026,
+     "fpr95": 0.6566666666666666
+    }
+   },
+   "n_detectors": 500,
+   "survival_rate": 0.8472499847412109,
+   "self_radius": 0.015625,
+   "median_detector_radius": 44.81061553955078,
+   "pca_explained_variance": 1.0,
+   "coverage_inscope_test": 0.095,
+   "coverage_oos_test": 0.07333333333333333,
+   "spearman_nsa_vs_knn1_pca": -0.43622225817290333,
+   "bound_holds_fraction": 1.0,
+   "median_gap_to_knn1_bound": 28.177980422973633,
+   "seconds": 0.1
+  },
+  "4_pca0_q0.5": {
+   "depth": 4,
+   "pca": 0,
+   "self_radius_quantile": 0.5,
+   "ood": {
+    "nsa_max_margin": {
+     "auroc": 0.4326888888888889,
+     "aupr": 0.17050197379119544,
+     "fpr95": 0.9716666666666667
+    },
+    "nsa_count": {
+     "auroc": 0.5,
+     "aupr": 0.2,
+     "fpr95": 1.0
+    },
+    "knn1_pca": {
+     "auroc": 0.7761777777777779,
+     "aupr": 0.3865357414167352,
+     "fpr95": 0.49
+    },
+    "knn1_full": {
+     "auroc": 0.8556999999999999,
+     "aupr": 0.6102925182192592,
+     "fpr95": 0.45666666666666667
+    },
+    "knn10_full": {
+     "auroc": 0.7719333333333332,
+     "aupr": 0.4883773028197026,
+     "fpr95": 0.6566666666666666
+    }
+   },
+   "n_detectors": 500,
+   "survival_rate": 0.8880000114440918,
+   "self_radius": 17.9888916015625,
+   "median_detector_radius": 73.06278991699219,
+   "pca_explained_variance": 1.0,
+   "coverage_inscope_test": 0.0,
+   "coverage_oos_test": 0.0,
+   "spearman_nsa_vs_knn1_pca": -0.5404592085029016,
+   "bound_holds_fraction": 1.0,
+   "median_gap_to_knn1_bound": 29.45238494873047,
+   "seconds": 0.1
+  }
+ },
+ "wall_seconds": 1.5
+}

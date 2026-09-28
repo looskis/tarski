@@ -1,0 +1,14 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 8887.08it/s]
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 18:59:51 2026).
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 18:59:51 2026).
+== typed-decisions: 1080/120/400 messages (train/val/test), tasks: agent_trace_observability.action(4), agent_trace_observability.needs_review(2), agent_trace_observability.outcome(4), agent_trace_observability.risk(4), agent_trace_observability.urgency(4), customer_service.action(5), customer_service.category(5), customer_service.churn_risk(4), customer_service.needs_human(2), customer_service.urgency(4), invoice_processing.discrepancy_severity(4), invoice_processing.disposition(4), invoice_processing.duplicate(2), invoice_processing.matches_order(2), invoice_processing.urgency(4), security_incidents.credential_compromise(2), security_incidents.disposition(4), security_incidents.severity(5), security_incidents.true_positive(2), security_incidents.urgency(4) | split 11 | structure tokens 0.432 of 364141 | 370 train signatures (1.2s)
+  templates from 1080 train messages in 9.5s; 365/370 signatures used; templated token fraction 0.432 (all splits)
+  encoded all messages normally and templated in 16.2s
+  test value-token cosine (templated vs normal) 0.9989; pooled 0.9997; trunk FLOPs ratio ~0.568
+-- probe|train=normal (20 tasks): eval normal 0.6260 | eval templated 0.5895
+-- probe|train=templated (20 tasks): eval normal 0.6010 | eval templated 0.5915
+-- blocks:2|train=normal (10 tasks): eval normal 0.7450 | eval templated 0.7460
+-- blocks:2|train=templated (10 tasks): eval normal 0.7370 | eval templated 0.7510
+done

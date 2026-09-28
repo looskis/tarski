@@ -1,0 +1,23 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 8923.91it/s]
+Using the latest cached version of the dataset since clinc/clinc_oos couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'plus' at /home/ubuntu/.cache/huggingface/datasets/clinc___clinc_oos/plus/0.0.0/155b9c710419136e17307b80d0a13e68cd46b4ec (last modified on Sun Sep 27 21:22:49 2026).
+[intent] independent acc 0.8780
+[domain] independent acc 0.8836
+[oos] independent acc 0.8673
+[intent] mean@1.0: own head 0.7913, refit head 0.8522
+[domain] mean@1.0: own head 0.8271, refit head 0.8467
+[oos] mean@1.0: own head 0.7847, refit head 0.8655
+[intent] ties@1.0: own head 0.8358, refit head 0.8453
+[domain] ties@1.0: own head 0.8638, refit head 0.8520
+[oos] ties@1.0: own head 0.6915, refit head 0.8656
+[intent] ties@0.5: own head 0.4200, refit head 0.8656
+[domain] ties@0.5: own head 0.7222, refit head 0.8433
+[oos] ties@0.5: own head 0.8487, refit head 0.8638
+[intent] base_copy: own head 0.1895, refit head 0.8607
+[domain] base_copy: own head 0.3664, refit head 0.8207
+[oos] base_copy: own head 0.8193, refit head 0.8525
+[intent] joint multi-task body 0.8382
+[domain] joint multi-task body 0.8507
+[oos] joint multi-task body 0.8602
+mean: {"independent": 0.8763, "mean@1.0+own_head": 0.801, "mean@1.0+refit_head": 0.8548, "ties@1.0+own_head": 0.797, "ties@1.0+refit_head": 0.8543, "ties@0.5+own_head": 0.6636, "ties@0.5+refit_head": 0.8576, "base_copy+own_head": 0.4584, "base_copy+refit_head": 0.8447, "joint": 0.8497}
+done

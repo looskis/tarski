@@ -1,0 +1,28 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 9075.65it/s]
+Using the latest cached version of the dataset since clinc/clinc_oos couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'plus' at /home/ubuntu/.cache/huggingface/datasets/clinc___clinc_oos/plus/0.0.0/155b9c710419136e17307b80d0a13e68cd46b4ec (last modified on Sun Sep 27 21:22:49 2026).
+== workload short: depths [6, 11, 16, 22], bmax 16, static saturated throughput 158.9 req/s
+   load 0.3 static       p50   116.5 p95   166.7 p99   183.4 ms | shallow p50   107.6 |   44.0 req/s | mean batch 3.5
+   load 0.3 static+exit  p50    38.5 p95   203.4 p99   426.5 ms | shallow p50    20.5 |   42.7 req/s | mean batch 1.5
+   load 0.3 layerwise    p50    31.1 p95    60.5 p99    71.8 ms | shallow p50    15.9 |   44.0 req/s | mean batch 1.3
+   load 0.6 static       p50   414.7 p95   571.6 p99   649.5 ms | shallow p50   402.0 |   85.2 req/s | mean batch 14.6
+   load 0.6 static+exit  p50    57.7 p95   276.7 p99   341.1 ms | shallow p50    38.2 |   96.2 req/s | mean batch 3.4
+   load 0.6 layerwise    p50    51.8 p95    83.7 p99    96.1 ms | shallow p50    37.5 |   96.6 req/s | mean batch 2.9
+   load 0.9 static       p50    74.7 p95   100.4 p99   103.1 ms | shallow p50    75.4 |  153.2 req/s | mean batch 7.5
+   load 0.9 static+exit  p50    53.7 p95    88.4 p99    97.0 ms | shallow p50    36.2 |  153.6 req/s | mean batch 4.7
+   load 0.9 layerwise    p50    53.9 p95    89.6 p99    99.7 ms | shallow p50    34.0 |  153.0 req/s | mean batch 4.6
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 18:59:51 2026).
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 18:59:51 2026).
+== workload long: depths [11, 22], bmax 16, static saturated throughput 141.8 req/s
+   load 0.3 static       p50    65.9 p95    98.7 p99   109.8 ms | shallow p50    61.1 |   42.7 req/s | mean batch 2.1
+   load 0.3 static+exit  p50    57.2 p95    93.2 p99   103.2 ms | shallow p50    44.9 |   42.7 req/s | mean batch 1.7
+   load 0.3 layerwise    p50    57.9 p95    95.0 p99   102.6 ms | shallow p50    44.4 |   42.8 req/s | mean batch 1.8
+   load 0.6 static       p50  1361.5 p95  3376.9 p99  3475.0 ms | shallow p50  1308.1 |   51.2 req/s | mean batch 8.6
+   load 0.6 static+exit  p50    53.3 p95    84.9 p99    93.3 ms | shallow p50    40.9 |   84.1 req/s | mean batch 2.8
+   load 0.6 layerwise    p50    54.7 p95    83.9 p99    90.6 ms | shallow p50    41.7 |   84.1 req/s | mean batch 2.8
+   load 0.9 static       p50    89.9 p95   138.5 p99   150.4 ms | shallow p50    92.6 |  125.3 req/s | mean batch 7.4
+   load 0.9 static+exit  p50    64.7 p95    99.1 p99   109.4 ms | shallow p50    49.3 |  126.1 req/s | mean batch 4.6
+   load 0.9 layerwise    p50    65.4 p95   100.4 p99   109.3 ms | shallow p50    49.8 |  126.1 req/s | mean batch 4.6
+done

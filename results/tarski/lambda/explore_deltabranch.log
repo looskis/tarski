@@ -1,0 +1,19 @@
+== banking77: 8994/999/3076 messages (train/val/test), tasks: intent(77) | blocks@8+2 | task intent
+   [blocks:2@8] intent: test acc 0.9178 (28s)
+   delta bit     : acc 0.8823 (full-copy 0.9178) | 1.38 MB (14.6x smaller)
+   delta bit-row : acc 0.9012 (full-copy 0.9178) | 1.40 MB (14.4x smaller)
+   delta svd8    : acc 0.8576 (full-copy 0.9178) | 0.43 MB (46.6x smaller)
+   delta svd32   : acc 0.8995 (full-copy 0.9178) | 1.35 MB (14.9x smaller)
+   delta svd128  : acc 0.9164 (full-copy 0.9178) | 5.04 MB (4.0x smaller)
+   delta top1    : acc 0.4665 (full-copy 0.9178) | 0.73 MB (27.7x smaller)
+   delta top10   : acc 0.7975 (full-copy 0.9178) | 6.14 MB (3.3x smaller)
+   [blocks:2@8] intent: test acc 0.9070 (15s)
+   LoRA r=16 (frozen norms): acc 0.9070 vs full-copy 0.9178 | 0.73 MB of trainable weights
+  shared-product fused vs looped LoRA branches: max abs diff 5.25e-06
+  latency short (9 tok) N=1: {'dense_fused': 1.669, 'shared_paid': 1.779, 'shared_free': 1.673} ms (branches only)
+  latency short (9 tok) N=5: {'dense_fused': 1.656, 'shared_paid': 1.793, 'shared_free': 1.714} ms (branches only)
+  latency short (9 tok) N=20: {'dense_fused': 4.265, 'shared_paid': 4.119, 'shared_free': 4.075} ms (branches only)
+  latency long (273 tok) N=1: {'dense_fused': 1.775, 'shared_paid': 1.851, 'shared_free': 1.868} ms (branches only)
+  latency long (273 tok) N=5: {'dense_fused': 2.906, 'shared_paid': 2.921, 'shared_free': 3.05} ms (branches only)
+  latency long (273 tok) N=20: {'dense_fused': 10.997, 'shared_paid': 10.36, 'shared_free': 10.051} ms (branches only)
+done

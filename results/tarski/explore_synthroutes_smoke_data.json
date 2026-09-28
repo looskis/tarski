@@ -1,0 +1,86 @@
+{
+ "intents": {
+  "restaurant_reviews": [
+   "What's the best place to eat at a restaurant?",
+   "Can you recommend a good restaurant?",
+   "How do I know if a restaurant is suitable for me?",
+   "Are there any restaurant reviews you can share?",
+   "What's the best dining experience?",
+   "Do you have any restaurant recommendations?"
+  ],
+  "nutrition_info": [
+   "nutrition info for the kitchen",
+   "tip for a healthy meal plan",
+   "how to cook with ingredients",
+   "best practices for a healthy diet",
+   "what you should eat in the kitchen",
+   "get the best meal ideas"
+  ],
+  "account_blocked": [
+   "Account blocked, can't access anything.",
+   "I tried to access my banking account, it's blocked.",
+   "My banking account is blocked, can't do anything.",
+   "I tried to access my account, but it's blocked.",
+   "Banking account is blocked, can't log in.",
+   "My account is blocked, can't access it."
+  ],
+  "oil_change_how": [
+   "Oil change how?",
+   "Need oil change help?",
+   "How to oil change?",
+   "Oil change what?",
+   "What's the oil change?",
+   "Oil change how can I?"
+  ]
+ },
+ "oos": [
+  "Share how the sun changes with the seasons.",
+  "Talk about the beauty of nature in the morning.",
+  "Explore the mysteries of the stars.",
+  "Discuss the impact of technology on our daily lives.",
+  "Examine the world around us through the lens of science.",
+  "Explore the sounds of the ocean.",
+  "Reflect on the significance of the earth.",
+  "Explore the wonders of the animals.",
+  "Discuss how the environment affects our lives.",
+  "Explore the mysteries of the universe.",
+  "Explore the importance of preserving the world."
+ ],
+ "round1_seconds": 26.9,
+ "refine": {
+  "pairs": [
+   [
+    "nutrition_info",
+    "oil_change_how"
+   ]
+  ],
+  "from_confusions": 0,
+  "messages": [
+   [
+    1,
+    "Can you provide me with cooking tips for the kitchen?"
+   ],
+   [
+    1,
+    "What is the best way to prepare healthy meals?"
+   ],
+   [
+    1,
+    "I need help with my dinner recipe."
+   ],
+   [
+    3,
+    "I can help you schedule your daily commute to work."
+   ],
+   [
+    3,
+    "Oil change for your car is essential for smooth driving."
+   ],
+   [
+    3,
+    "I can provide you with daily meal prep instructions."
+   ]
+  ],
+  "seconds": 6.1
+ }
+}

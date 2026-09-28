@@ -1,0 +1,252 @@
+{
+ "config": {
+  "smoke": true,
+  "device": "cpu",
+  "split": 14,
+  "depth": 2,
+  "kinds": [
+   "probe",
+   "blocks"
+  ],
+  "conditions": [
+   "none",
+   "global",
+   "field"
+  ],
+  "tasks": [
+   "customer_service.category",
+   "invoice_processing.duplicate"
+  ],
+  "field_depth": 2,
+  "epochs": 1,
+  "min_steps": 6,
+  "seed": 0,
+  "out": "results/tarski/explore_template_smoke.json"
+ },
+ "device": "cpu",
+ "tasks": {
+  "customer_service.category": {
+   "probe/none": {
+    "acc": 0.15,
+    "macro_f1": 0.05217391304347826,
+    "nll": 1.6911637783050537,
+    "ece": 0.09787235260009766,
+    "n": 20,
+    "brier_soft": 0.6205174922943115,
+    "val_acc": 0.375,
+    "temperature": 1.0,
+    "train_s": 0.0,
+    "epochs_run": 3,
+    "steps_run": 6,
+    "params": 5381,
+    "trainable_params": 5381
+   },
+   "probe/global": {
+    "acc": 0.4,
+    "macro_f1": 0.11428571428571428,
+    "nll": 1.547620177268982,
+    "ece": 0.1305628895759582,
+    "n": 20,
+    "brier_soft": 0.571947455406189,
+    "val_acc": 0.125,
+    "temperature": 1.0,
+    "train_s": 0.0,
+    "epochs_run": 3,
+    "steps_run": 6,
+    "params": 5381,
+    "trainable_params": 5381
+   },
+   "probe/field": {
+    "acc": 0.35,
+    "macro_f1": 0.15434782608695652,
+    "nll": 1.5627667903900146,
+    "ece": 0.1426067665219307,
+    "n": 20,
+    "brier_soft": 0.5781508684158325,
+    "val_acc": 0.375,
+    "temperature": 1.0,
+    "train_s": 0.0,
+    "epochs_run": 3,
+    "steps_run": 6,
+    "params": 5381,
+    "trainable_params": 5381
+   },
+   "blocks/none": {
+    "acc": 0.4,
+    "macro_f1": 0.11428571428571428,
+    "nll": 1.5251436233520508,
+    "ece": 0.05695698261260985,
+    "n": 20,
+    "brier_soft": 0.5531948804855347,
+    "val_acc": 0.125,
+    "temperature": 1.0,
+    "train_s": 3.1,
+    "epochs_run": 3,
+    "steps_run": 6,
+    "params": 10034693,
+    "trainable_params": 10034693
+   },
+   "blocks/global": {
+    "acc": 0.4,
+    "macro_f1": 0.11428571428571428,
+    "nll": 1.5978944301605225,
+    "ece": 0.21130765974521637,
+    "n": 20,
+    "brier_soft": 0.5842729210853577,
+    "val_acc": 0.125,
+    "temperature": 1.0,
+    "train_s": 3.0,
+    "epochs_run": 3,
+    "steps_run": 6,
+    "params": 10034693,
+    "trainable_params": 10034693
+   },
+   "blocks/field": {
+    "acc": 0.4,
+    "macro_f1": 0.11428571428571428,
+    "nll": 1.6017624139785767,
+    "ece": 0.10040895789861679,
+    "n": 20,
+    "brier_soft": 0.598047137260437,
+    "val_acc": 0.125,
+    "temperature": 1.0,
+    "train_s": 3.1,
+    "epochs_run": 3,
+    "steps_run": 6,
+    "params": 10034693,
+    "trainable_params": 10034693
+   }
+  },
+  "invoice_processing.duplicate": {
+   "probe/none": {
+    "acc": 1.0,
+    "macro_f1": 0.5,
+    "nll": 0.17482002079486847,
+    "ece": 0.160389244556427,
+    "n": 20,
+    "brier_soft": 0.03703557327389717,
+    "val_acc": 0.875,
+    "temperature": 1.0,
+    "train_s": 0.0,
+    "epochs_run": 3,
+    "steps_run": 6,
+    "params": 3074,
+    "trainable_params": 3074
+   },
+   "probe/global": {
+    "acc": 0.0,
+    "macro_f1": 0.0,
+    "nll": 0.8909511566162109,
+    "ece": 0.589684009552002,
+    "n": 20,
+    "brier_soft": 0.638485312461853,
+    "val_acc": 0.125,
+    "temperature": 1.0,
+    "train_s": 0.0,
+    "epochs_run": 3,
+    "steps_run": 6,
+    "params": 3074,
+    "trainable_params": 3074
+   },
+   "probe/field": {
+    "acc": 0.0,
+    "macro_f1": 0.0,
+    "nll": 0.7386038303375244,
+    "ece": 0.5221739113330841,
+    "n": 20,
+    "brier_soft": 0.49508795142173767,
+    "val_acc": 0.125,
+    "temperature": 1.0,
+    "train_s": 0.0,
+    "epochs_run": 3,
+    "steps_run": 6,
+    "params": 3074,
+    "trainable_params": 3074
+   },
+   "blocks/none": {
+    "acc": 1.0,
+    "macro_f1": 0.5,
+    "nll": 0.02347705140709877,
+    "ece": 0.023203253746032715,
+    "n": 20,
+    "brier_soft": 0.0002757025940809399,
+    "val_acc": 0.875,
+    "temperature": 1.0,
+    "train_s": 2.3,
+    "epochs_run": 3,
+    "steps_run": 6,
+    "params": 10032386,
+    "trainable_params": 10032386
+   },
+   "blocks/global": {
+    "acc": 1.0,
+    "macro_f1": 0.5,
+    "nll": 0.03262406215071678,
+    "ece": 0.03209400177001953,
+    "n": 20,
+    "brier_soft": 0.0003325152792967856,
+    "val_acc": 0.875,
+    "temperature": 1.0,
+    "train_s": 2.6,
+    "epochs_run": 3,
+    "steps_run": 6,
+    "params": 10032386,
+    "trainable_params": 10032386
+   },
+   "blocks/field": {
+    "acc": 1.0,
+    "macro_f1": 0.5,
+    "nll": 0.02759615145623684,
+    "ece": 0.027213871479034424,
+    "n": 20,
+    "brier_soft": 0.0002594521502032876,
+    "val_acc": 0.875,
+    "temperature": 1.0,
+    "train_s": 2.3,
+    "epochs_run": 3,
+    "steps_run": 6,
+    "params": 10032386,
+    "trainable_params": 10032386
+   }
+  }
+ },
+ "mean": {
+  "probe/none": {
+   "acc": 0.575,
+   "macro_f1": 0.27608695652173915,
+   "nll": 0.9329918995499611,
+   "brier_soft": 0.32877653278410435
+  },
+  "probe/global": {
+   "acc": 0.2,
+   "macro_f1": 0.05714285714285714,
+   "nll": 1.2192856669425964,
+   "brier_soft": 0.605216383934021
+  },
+  "probe/field": {
+   "acc": 0.175,
+   "macro_f1": 0.07717391304347826,
+   "nll": 1.1506853103637695,
+   "brier_soft": 0.5366194099187851
+  },
+  "blocks/none": {
+   "acc": 0.7,
+   "macro_f1": 0.30714285714285716,
+   "nll": 0.7743103373795748,
+   "brier_soft": 0.2767352915398078
+  },
+  "blocks/global": {
+   "acc": 0.7,
+   "macro_f1": 0.30714285714285716,
+   "nll": 0.8152592461556196,
+   "brier_soft": 0.2923027181823272
+  },
+  "blocks/field": {
+   "acc": 0.7,
+   "macro_f1": 0.30714285714285716,
+   "nll": 0.8146792827174067,
+   "brier_soft": 0.29915329470532015
+  }
+ },
+ "wall_seconds": 26.7
+}

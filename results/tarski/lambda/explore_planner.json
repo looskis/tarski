@@ -1,0 +1,588 @@
+{
+ "dataset": "clinc150",
+ "root": "intent",
+ "shallow": 4,
+ "split": 11,
+ "fd_weighted_purity": {
+  "domain": 1.0,
+  "oos": 1.0
+ },
+ "branch_acc": {
+  "probe@4": {
+   "intent": 0.8674545454545455,
+   "domain": 0.8247272727272728,
+   "oos": 0.8527272727272728
+  },
+  "blocks@11+2": {
+   "intent": 0.8710909090909091,
+   "domain": 0.8836363636363637,
+   "oos": 0.8672727272727273
+  }
+ },
+ "plans": {
+  "all-blocks": {
+   "mean_acc": 0.874,
+   "acc": {
+    "intent": 0.8710909090909091,
+    "domain": 0.8836363636363637,
+    "oos": 0.8672727272727273
+   },
+   "layer_equiv": 17.0
+  },
+  "fd@tau=0.5": {
+   "mean_acc": 0.8896969696969697,
+   "acc": {
+    "intent": 0.8710909090909091,
+    "domain": 0.8956363636363637,
+    "oos": 0.9023636363636364
+   },
+   "layer_equiv": 13.347636363636363
+  },
+  "exit@tau=0.5": {
+   "mean_acc": 0.8607878787878788,
+   "acc": {
+    "intent": 0.8710909090909091,
+    "domain": 0.8516363636363636,
+    "oos": 0.8596363636363636
+   },
+   "layer_equiv": 5.692363636363637,
+   "exit_rate": 0.8698181818181818
+  },
+  "exit+fd@tau=0.5": {
+   "mean_acc": 0.8966666666666666,
+   "acc": {
+    "intent": 0.8729090909090909,
+    "domain": 0.9016363636363637,
+    "oos": 0.9154545454545454
+   },
+   "layer_equiv": 4.942363636363637,
+   "exit_rate": 0.9121818181818182
+  },
+  "fd@tau=0.7": {
+   "mean_acc": 0.8864848484848485,
+   "acc": {
+    "intent": 0.8710909090909091,
+    "domain": 0.8954545454545455,
+    "oos": 0.8929090909090909
+   },
+   "layer_equiv": 13.587636363636364
+  },
+  "exit@tau=0.7": {
+   "mean_acc": 0.8707272727272727,
+   "acc": {
+    "intent": 0.8712727272727273,
+    "domain": 0.8747272727272727,
+    "oos": 0.8661818181818182
+   },
+   "layer_equiv": 7.819636363636364,
+   "exit_rate": 0.7061818181818181
+  },
+  "exit+fd@tau=0.7": {
+   "mean_acc": 0.8936363636363636,
+   "acc": {
+    "intent": 0.8765454545454545,
+    "domain": 0.9003636363636364,
+    "oos": 0.904
+   },
+   "layer_equiv": 5.941090909090909,
+   "exit_rate": 0.8247272727272728
+  },
+  "fd@tau=0.8": {
+   "mean_acc": 0.8836363636363637,
+   "acc": {
+    "intent": 0.8710909090909091,
+    "domain": 0.8925454545454545,
+    "oos": 0.8872727272727273
+   },
+   "layer_equiv": 13.741090909090909
+  },
+  "exit@tau=0.8": {
+   "mean_acc": 0.8744242424242424,
+   "acc": {
+    "intent": 0.8727272727272727,
+    "domain": 0.8823636363636363,
+    "oos": 0.8681818181818182
+   },
+   "layer_equiv": 8.805272727272728,
+   "exit_rate": 0.6303636363636363
+  },
+  "exit+fd@tau=0.8": {
+   "mean_acc": 0.8903636363636362,
+   "acc": {
+    "intent": 0.8774545454545455,
+    "domain": 0.897090909090909,
+    "oos": 0.8965454545454545
+   },
+   "layer_equiv": 6.5261818181818185,
+   "exit_rate": 0.7756363636363637
+  },
+  "fd@tau=0.9": {
+   "mean_acc": 0.8807272727272727,
+   "acc": {
+    "intent": 0.8710909090909091,
+    "domain": 0.8907272727272727,
+    "oos": 0.8803636363636363
+   },
+   "layer_equiv": 13.966545454545454
+  },
+  "exit@tau=0.9": {
+   "mean_acc": 0.875090909090909,
+   "acc": {
+    "intent": 0.8732727272727273,
+    "domain": 0.8845454545454545,
+    "oos": 0.8674545454545455
+   },
+   "layer_equiv": 10.16909090909091,
+   "exit_rate": 0.5254545454545455
+  },
+  "exit+fd@tau=0.9": {
+   "mean_acc": 0.8863636363636364,
+   "acc": {
+    "intent": 0.8763636363636363,
+    "domain": 0.8956363636363637,
+    "oos": 0.887090909090909
+   },
+   "layer_equiv": 7.425272727272727,
+   "exit_rate": 0.7005454545454546
+  },
+  "fd@tau=0.95": {
+   "mean_acc": 0.8783030303030303,
+   "acc": {
+    "intent": 0.8710909090909091,
+    "domain": 0.8885454545454545,
+    "oos": 0.8752727272727273
+   },
+   "layer_equiv": 14.213818181818182
+  },
+  "exit@tau=0.95": {
+   "mean_acc": 0.8750303030303029,
+   "acc": {
+    "intent": 0.8729090909090909,
+    "domain": 0.8849090909090909,
+    "oos": 0.8672727272727273
+   },
+   "layer_equiv": 11.525818181818181,
+   "exit_rate": 0.42109090909090907
+  },
+  "exit+fd@tau=0.95": {
+   "mean_acc": 0.8826060606060606,
+   "acc": {
+    "intent": 0.8752727272727273,
+    "domain": 0.8923636363636364,
+    "oos": 0.8801818181818182
+   },
+   "layer_equiv": 8.298727272727273,
+   "exit_rate": 0.6292727272727273
+  },
+  "fd@tau=0.98": {
+   "mean_acc": 0.8753333333333333,
+   "acc": {
+    "intent": 0.8710909090909091,
+    "domain": 0.8852727272727273,
+    "oos": 0.8696363636363637
+   },
+   "layer_equiv": 14.573818181818181
+  },
+  "exit@tau=0.98": {
+   "mean_acc": 0.8745454545454545,
+   "acc": {
+    "intent": 0.8718181818181818,
+    "domain": 0.8845454545454545,
+    "oos": 0.8672727272727273
+   },
+   "layer_equiv": 13.388363636363636,
+   "exit_rate": 0.2778181818181818
+  },
+  "exit+fd@tau=0.98": {
+   "mean_acc": 0.878,
+   "acc": {
+    "intent": 0.874,
+    "domain": 0.8885454545454545,
+    "oos": 0.8714545454545455
+   },
+   "layer_equiv": 9.430181818181818,
+   "exit_rate": 0.5385454545454545
+  },
+  "fd@tau=0.99": {
+   "mean_acc": 0.8746060606060606,
+   "acc": {
+    "intent": 0.8710909090909091,
+    "domain": 0.8841818181818182,
+    "oos": 0.8685454545454545
+   },
+   "layer_equiv": 14.867636363636363
+  },
+  "exit@tau=0.99": {
+   "mean_acc": 0.8743636363636363,
+   "acc": {
+    "intent": 0.8714545454545455,
+    "domain": 0.8843636363636364,
+    "oos": 0.8672727272727273
+   },
+   "layer_equiv": 14.634,
+   "exit_rate": 0.182
+  },
+  "exit+fd@tau=0.99": {
+   "mean_acc": 0.8764242424242425,
+   "acc": {
+    "intent": 0.8732727272727273,
+    "domain": 0.8865454545454545,
+    "oos": 0.8694545454545455
+   },
+   "layer_equiv": 10.282727272727273,
+   "exit_rate": 0.4721818181818182
+  },
+  "fd@tau=0.995": {
+   "mean_acc": 0.8742424242424242,
+   "acc": {
+    "intent": 0.8710909090909091,
+    "domain": 0.8843636363636364,
+    "oos": 0.8672727272727273
+   },
+   "layer_equiv": 15.188363636363636
+  },
+  "exit@tau=0.995": {
+   "mean_acc": 0.8740606060606061,
+   "acc": {
+    "intent": 0.8712727272727273,
+    "domain": 0.8836363636363637,
+    "oos": 0.8672727272727273
+   },
+   "layer_equiv": 15.709454545454545,
+   "exit_rate": 0.09927272727272728
+  },
+  "exit+fd@tau=0.995": {
+   "mean_acc": 0.8753939393939394,
+   "acc": {
+    "intent": 0.8723636363636363,
+    "domain": 0.8861818181818182,
+    "oos": 0.8676363636363637
+   },
+   "layer_equiv": 11.23709090909091,
+   "exit_rate": 0.3978181818181818
+  }
+ },
+ "typed_fd": {
+  "agent_trace_observability.action -> agent_trace_observability.needs_review": {
+   "purity": 0.9452554744525548,
+   "majority_baseline": 0.5145985401459854
+  },
+  "agent_trace_observability.action -> agent_trace_observability.outcome": {
+   "purity": 0.5948905109489051,
+   "majority_baseline": 0.45985401459854014
+  },
+  "agent_trace_observability.action -> agent_trace_observability.risk": {
+   "purity": 0.5656934306569343,
+   "majority_baseline": 0.3613138686131387
+  },
+  "agent_trace_observability.action -> agent_trace_observability.urgency": {
+   "purity": 0.5656934306569343,
+   "majority_baseline": 0.49635036496350365
+  },
+  "agent_trace_observability.needs_review -> agent_trace_observability.action": {
+   "purity": 0.8029197080291971,
+   "majority_baseline": 0.4416058394160584
+  },
+  "agent_trace_observability.needs_review -> agent_trace_observability.outcome": {
+   "purity": 0.4708029197080292,
+   "majority_baseline": 0.45985401459854014
+  },
+  "agent_trace_observability.needs_review -> agent_trace_observability.risk": {
+   "purity": 0.49635036496350365,
+   "majority_baseline": 0.3613138686131387
+  },
+  "agent_trace_observability.needs_review -> agent_trace_observability.urgency": {
+   "purity": 0.49635036496350365,
+   "majority_baseline": 0.49635036496350365
+  },
+  "agent_trace_observability.outcome -> agent_trace_observability.action": {
+   "purity": 0.6386861313868614,
+   "majority_baseline": 0.4416058394160584
+  },
+  "agent_trace_observability.outcome -> agent_trace_observability.needs_review": {
+   "purity": 0.7481751824817519,
+   "majority_baseline": 0.5145985401459854
+  },
+  "agent_trace_observability.outcome -> agent_trace_observability.risk": {
+   "purity": 0.5766423357664233,
+   "majority_baseline": 0.3613138686131387
+  },
+  "agent_trace_observability.outcome -> agent_trace_observability.urgency": {
+   "purity": 0.6715328467153284,
+   "majority_baseline": 0.49635036496350365
+  },
+  "agent_trace_observability.risk -> agent_trace_observability.action": {
+   "purity": 0.7372262773722628,
+   "majority_baseline": 0.4416058394160584
+  },
+  "agent_trace_observability.risk -> agent_trace_observability.needs_review": {
+   "purity": 0.8321167883211679,
+   "majority_baseline": 0.5145985401459854
+  },
+  "agent_trace_observability.risk -> agent_trace_observability.outcome": {
+   "purity": 0.6678832116788321,
+   "majority_baseline": 0.45985401459854014
+  },
+  "agent_trace_observability.risk -> agent_trace_observability.urgency": {
+   "purity": 0.7591240875912408,
+   "majority_baseline": 0.49635036496350365
+  },
+  "agent_trace_observability.urgency -> agent_trace_observability.action": {
+   "purity": 0.6642335766423357,
+   "majority_baseline": 0.4416058394160584
+  },
+  "agent_trace_observability.urgency -> agent_trace_observability.needs_review": {
+   "purity": 0.781021897810219,
+   "majority_baseline": 0.5145985401459854
+  },
+  "agent_trace_observability.urgency -> agent_trace_observability.outcome": {
+   "purity": 0.6751824817518248,
+   "majority_baseline": 0.45985401459854014
+  },
+  "agent_trace_observability.urgency -> agent_trace_observability.risk": {
+   "purity": 0.6678832116788321,
+   "majority_baseline": 0.3613138686131387
+  },
+  "customer_service.action -> customer_service.category": {
+   "purity": 0.30855018587360594,
+   "majority_baseline": 0.24907063197026022
+  },
+  "customer_service.action -> customer_service.churn_risk": {
+   "purity": 0.5241635687732342,
+   "majority_baseline": 0.483271375464684
+  },
+  "customer_service.action -> customer_service.needs_human": {
+   "purity": 0.8810408921933085,
+   "majority_baseline": 0.6617100371747212
+  },
+  "customer_service.action -> customer_service.urgency": {
+   "purity": 0.46096654275092935,
+   "majority_baseline": 0.4052044609665427
+  },
+  "customer_service.category -> customer_service.action": {
+   "purity": 0.5576208178438662,
+   "majority_baseline": 0.5576208178438662
+  },
+  "customer_service.category -> customer_service.churn_risk": {
+   "purity": 0.49070631970260226,
+   "majority_baseline": 0.483271375464684
+  },
+  "customer_service.category -> customer_service.needs_human": {
+   "purity": 0.6617100371747212,
+   "majority_baseline": 0.6617100371747212
+  },
+  "customer_service.category -> customer_service.urgency": {
+   "purity": 0.44981412639405205,
+   "majority_baseline": 0.4052044609665427
+  },
+  "customer_service.churn_risk -> customer_service.action": {
+   "purity": 0.6356877323420075,
+   "majority_baseline": 0.5576208178438662
+  },
+  "customer_service.churn_risk -> customer_service.category": {
+   "purity": 0.3308550185873606,
+   "majority_baseline": 0.24907063197026022
+  },
+  "customer_service.churn_risk -> customer_service.needs_human": {
+   "purity": 0.7397769516728625,
+   "majority_baseline": 0.6617100371747212
+  },
+  "customer_service.churn_risk -> customer_service.urgency": {
+   "purity": 0.49814126394052044,
+   "majority_baseline": 0.4052044609665427
+  },
+  "customer_service.needs_human -> customer_service.action": {
+   "purity": 0.7546468401486989,
+   "majority_baseline": 0.5576208178438662
+  },
+  "customer_service.needs_human -> customer_service.category": {
+   "purity": 0.27137546468401486,
+   "majority_baseline": 0.24907063197026022
+  },
+  "customer_service.needs_human -> customer_service.churn_risk": {
+   "purity": 0.5055762081784386,
+   "majority_baseline": 0.483271375464684
+  },
+  "customer_service.needs_human -> customer_service.urgency": {
+   "purity": 0.4646840148698885,
+   "majority_baseline": 0.4052044609665427
+  },
+  "customer_service.urgency -> customer_service.action": {
+   "purity": 0.5910780669144982,
+   "majority_baseline": 0.5576208178438662
+  },
+  "customer_service.urgency -> customer_service.category": {
+   "purity": 0.27137546468401486,
+   "majority_baseline": 0.24907063197026022
+  },
+  "customer_service.urgency -> customer_service.churn_risk": {
+   "purity": 0.5390334572490706,
+   "majority_baseline": 0.483271375464684
+  },
+  "customer_service.urgency -> customer_service.needs_human": {
+   "purity": 0.7472118959107806,
+   "majority_baseline": 0.6617100371747212
+  },
+  "invoice_processing.discrepancy_severity -> invoice_processing.disposition": {
+   "purity": 0.7644787644787645,
+   "majority_baseline": 0.4247104247104247
+  },
+  "invoice_processing.discrepancy_severity -> invoice_processing.duplicate": {
+   "purity": 0.9111969111969112,
+   "majority_baseline": 0.9111969111969112
+  },
+  "invoice_processing.discrepancy_severity -> invoice_processing.matches_order": {
+   "purity": 0.9305019305019305,
+   "majority_baseline": 0.5173745173745173
+  },
+  "invoice_processing.discrepancy_severity -> invoice_processing.urgency": {
+   "purity": 0.43243243243243246,
+   "majority_baseline": 0.43243243243243246
+  },
+  "invoice_processing.disposition -> invoice_processing.discrepancy_severity": {
+   "purity": 0.7722007722007722,
+   "majority_baseline": 0.4671814671814672
+  },
+  "invoice_processing.disposition -> invoice_processing.duplicate": {
+   "purity": 0.9498069498069498,
+   "majority_baseline": 0.9111969111969112
+  },
+  "invoice_processing.disposition -> invoice_processing.matches_order": {
+   "purity": 0.8918918918918919,
+   "majority_baseline": 0.5173745173745173
+  },
+  "invoice_processing.disposition -> invoice_processing.urgency": {
+   "purity": 0.4671814671814672,
+   "majority_baseline": 0.43243243243243246
+  },
+  "invoice_processing.duplicate -> invoice_processing.discrepancy_severity": {
+   "purity": 0.4671814671814672,
+   "majority_baseline": 0.4671814671814672
+  },
+  "invoice_processing.duplicate -> invoice_processing.disposition": {
+   "purity": 0.4362934362934363,
+   "majority_baseline": 0.4247104247104247
+  },
+  "invoice_processing.duplicate -> invoice_processing.matches_order": {
+   "purity": 0.5405405405405406,
+   "majority_baseline": 0.5173745173745173
+  },
+  "invoice_processing.duplicate -> invoice_processing.urgency": {
+   "purity": 0.4362934362934363,
+   "majority_baseline": 0.43243243243243246
+  },
+  "invoice_processing.matches_order -> invoice_processing.discrepancy_severity": {
+   "purity": 0.694980694980695,
+   "majority_baseline": 0.4671814671814672
+  },
+  "invoice_processing.matches_order -> invoice_processing.disposition": {
+   "purity": 0.7413127413127413,
+   "majority_baseline": 0.4247104247104247
+  },
+  "invoice_processing.matches_order -> invoice_processing.duplicate": {
+   "purity": 0.9111969111969112,
+   "majority_baseline": 0.9111969111969112
+  },
+  "invoice_processing.matches_order -> invoice_processing.urgency": {
+   "purity": 0.44015444015444016,
+   "majority_baseline": 0.43243243243243246
+  },
+  "invoice_processing.urgency -> invoice_processing.discrepancy_severity": {
+   "purity": 0.4671814671814672,
+   "majority_baseline": 0.4671814671814672
+  },
+  "invoice_processing.urgency -> invoice_processing.disposition": {
+   "purity": 0.4247104247104247,
+   "majority_baseline": 0.4247104247104247
+  },
+  "invoice_processing.urgency -> invoice_processing.duplicate": {
+   "purity": 0.9111969111969112,
+   "majority_baseline": 0.9111969111969112
+  },
+  "invoice_processing.urgency -> invoice_processing.matches_order": {
+   "purity": 0.5212355212355212,
+   "majority_baseline": 0.5173745173745173
+  },
+  "security_incidents.credential_compromise -> security_incidents.disposition": {
+   "purity": 0.7122302158273381,
+   "majority_baseline": 0.7122302158273381
+  },
+  "security_incidents.credential_compromise -> security_incidents.severity": {
+   "purity": 0.4316546762589928,
+   "majority_baseline": 0.4316546762589928
+  },
+  "security_incidents.credential_compromise -> security_incidents.true_positive": {
+   "purity": 0.8705035971223022,
+   "majority_baseline": 0.6870503597122302
+  },
+  "security_incidents.credential_compromise -> security_incidents.urgency": {
+   "purity": 0.60431654676259,
+   "majority_baseline": 0.5215827338129496
+  },
+  "security_incidents.disposition -> security_incidents.credential_compromise": {
+   "purity": 0.7302158273381295,
+   "majority_baseline": 0.5575539568345323
+  },
+  "security_incidents.disposition -> security_incidents.severity": {
+   "purity": 0.44964028776978415,
+   "majority_baseline": 0.4316546762589928
+  },
+  "security_incidents.disposition -> security_incidents.true_positive": {
+   "purity": 0.8597122302158273,
+   "majority_baseline": 0.6870503597122302
+  },
+  "security_incidents.disposition -> security_incidents.urgency": {
+   "purity": 0.6366906474820144,
+   "majority_baseline": 0.5215827338129496
+  },
+  "security_incidents.severity -> security_incidents.credential_compromise": {
+   "purity": 0.6510791366906474,
+   "majority_baseline": 0.5575539568345323
+  },
+  "security_incidents.severity -> security_incidents.disposition": {
+   "purity": 0.7266187050359713,
+   "majority_baseline": 0.7122302158273381
+  },
+  "security_incidents.severity -> security_incidents.true_positive": {
+   "purity": 0.7302158273381295,
+   "majority_baseline": 0.6870503597122302
+  },
+  "security_incidents.severity -> security_incidents.urgency": {
+   "purity": 0.6834532374100719,
+   "majority_baseline": 0.5215827338129496
+  },
+  "security_incidents.true_positive -> security_incidents.credential_compromise": {
+   "purity": 0.8705035971223022,
+   "majority_baseline": 0.5575539568345323
+  },
+  "security_incidents.true_positive -> security_incidents.disposition": {
+   "purity": 0.7122302158273381,
+   "majority_baseline": 0.7122302158273381
+  },
+  "security_incidents.true_positive -> security_incidents.severity": {
+   "purity": 0.4316546762589928,
+   "majority_baseline": 0.4316546762589928
+  },
+  "security_incidents.true_positive -> security_incidents.urgency": {
+   "purity": 0.6402877697841727,
+   "majority_baseline": 0.5215827338129496
+  },
+  "security_incidents.urgency -> security_incidents.credential_compromise": {
+   "purity": 0.7841726618705036,
+   "majority_baseline": 0.5575539568345323
+  },
+  "security_incidents.urgency -> security_incidents.disposition": {
+   "purity": 0.7410071942446043,
+   "majority_baseline": 0.7122302158273381
+  },
+  "security_incidents.urgency -> security_incidents.severity": {
+   "purity": 0.5683453237410072,
+   "majority_baseline": 0.4316546762589928
+  },
+  "security_incidents.urgency -> security_incidents.true_positive": {
+   "purity": 0.8489208633093526,
+   "majority_baseline": 0.6870503597122302
+  }
+ },
+ "typed_fd_ge_0.95": 0
+}

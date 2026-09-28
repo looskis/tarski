@@ -1,0 +1,292 @@
+{
+ "config": {
+  "smoke": false,
+  "device": null,
+  "dataset": "typed_cs",
+  "split": 14,
+  "depth": 2,
+  "epochs": 6,
+  "replay_epochs": 3,
+  "min_steps": 300,
+  "seed": 0,
+  "out": "results/tarski/explore_consolidate_typed_cs.json"
+ },
+ "device": "cuda",
+ "tasks": [
+  "customer_service.action",
+  "customer_service.category",
+  "customer_service.churn_risk",
+  "customer_service.needs_human",
+  "customer_service.urgency"
+ ],
+ "independent": {
+  "customer_service.action": {
+   "acc": 0.61,
+   "macro_f1": 0.3421487603305785,
+   "nll": 0.9217493534088135,
+   "ece": 0.11903220087289808,
+   "n": 100,
+   "brier_soft": 0.11768144369125366,
+   "val_acc": 0.6451612710952759,
+   "temperature": 1.1282691955566406,
+   "train_s": 45.6,
+   "epochs_run": 34,
+   "steps_run": 306,
+   "params": 10034693,
+   "trainable_params": 10034693
+  },
+  "customer_service.category": {
+   "acc": 0.89,
+   "macro_f1": 0.8936985732455419,
+   "nll": 0.3232690691947937,
+   "ece": 0.11836557060480118,
+   "n": 100,
+   "brier_soft": 0.08452878147363663,
+   "val_acc": 0.774193525314331,
+   "temperature": 1.2243314981460571,
+   "train_s": 44.1,
+   "epochs_run": 34,
+   "steps_run": 306,
+   "params": 10034693,
+   "trainable_params": 10034693
+  },
+  "customer_service.churn_risk": {
+   "acc": 0.8,
+   "macro_f1": 0.6023548853542656,
+   "nll": 0.7189889550209045,
+   "ece": 0.25935715019702915,
+   "n": 100,
+   "brier_soft": 0.07191288471221924,
+   "val_acc": 0.8387096524238586,
+   "temperature": 1.124764084815979,
+   "train_s": 44.0,
+   "epochs_run": 34,
+   "steps_run": 306,
+   "params": 10033924,
+   "trainable_params": 10033924
+  },
+  "customer_service.needs_human": {
+   "acc": 0.84,
+   "macro_f1": 0.8015873015873016,
+   "nll": 0.4609242379665375,
+   "ece": 0.14687839329242705,
+   "n": 100,
+   "brier_soft": 0.05711185932159424,
+   "val_acc": 0.6774193644523621,
+   "temperature": 0.9046198725700378,
+   "train_s": 45.0,
+   "epochs_run": 34,
+   "steps_run": 306,
+   "params": 10032386,
+   "trainable_params": 10032386
+  },
+  "customer_service.urgency": {
+   "acc": 0.74,
+   "macro_f1": 0.526889367816092,
+   "nll": 0.6735185384750366,
+   "ece": 0.15653114557266234,
+   "n": 100,
+   "brier_soft": 0.05530203506350517,
+   "val_acc": 0.7096773982048035,
+   "temperature": 1.024888515472412,
+   "train_s": 64.9,
+   "epochs_run": 34,
+   "steps_run": 306,
+   "params": 10033924,
+   "trainable_params": 10033924
+  }
+ },
+ "consolidated": {
+  "customer_service.action": {
+   "acc": 0.62,
+   "macro_f1": 0.34172924158576956,
+   "nll": 0.9352043867111206,
+   "ece": 0.09581837952136991,
+   "n": 100,
+   "brier_soft": 0.12221856415271759
+  },
+  "customer_service.category": {
+   "acc": 0.9,
+   "macro_f1": 0.9019445466813888,
+   "nll": 0.3520217537879944,
+   "ece": 0.109094075858593,
+   "n": 100,
+   "brier_soft": 0.10273385792970657
+  },
+  "customer_service.churn_risk": {
+   "acc": 0.73,
+   "macro_f1": 0.5534520191055146,
+   "nll": 0.8146188855171204,
+   "ece": 0.211540901362896,
+   "n": 100,
+   "brier_soft": 0.09981022030115128
+  },
+  "customer_service.needs_human": {
+   "acc": 0.81,
+   "macro_f1": 0.771607164322635,
+   "nll": 0.4758951663970947,
+   "ece": 0.1183437067270279,
+   "n": 100,
+   "brier_soft": 0.0591474249958992
+  },
+  "customer_service.urgency": {
+   "acc": 0.64,
+   "macro_f1": 0.4839424141749723,
+   "nll": 0.7804863452911377,
+   "ece": 0.14323027342557904,
+   "n": 100,
+   "brier_soft": 0.085673026740551
+  }
+ },
+ "joint": {
+  "customer_service.action": {
+   "acc": 0.6,
+   "macro_f1": 0.33530349939018667,
+   "nll": 0.9740126729011536,
+   "ece": 0.10195179522037508,
+   "n": 100,
+   "brier_soft": 0.12380146980285645
+  },
+  "customer_service.category": {
+   "acc": 0.9,
+   "macro_f1": 0.9035870218532758,
+   "nll": 0.35364165902137756,
+   "ece": 0.1048056524991989,
+   "n": 100,
+   "brier_soft": 0.09936847537755966
+  },
+  "customer_service.churn_risk": {
+   "acc": 0.72,
+   "macro_f1": 0.5354663360671371,
+   "nll": 0.8988808989524841,
+   "ece": 0.2477932485938072,
+   "n": 100,
+   "brier_soft": 0.10222438722848892
+  },
+  "customer_service.needs_human": {
+   "acc": 0.79,
+   "macro_f1": 0.7304582210242587,
+   "nll": 0.5195475220680237,
+   "ece": 0.126832315325737,
+   "n": 100,
+   "brier_soft": 0.06849121302366257
+  },
+  "customer_service.urgency": {
+   "acc": 0.59,
+   "macro_f1": 0.43209724251798154,
+   "nll": 0.8779441118240356,
+   "ece": 0.11539192527532578,
+   "n": 100,
+   "brier_soft": 0.10898439586162567
+  }
+ },
+ "incremental": {
+  "old_tasks": [
+   "customer_service.action",
+   "customer_service.category",
+   "customer_service.churn_risk",
+   "customer_service.needs_human"
+  ],
+  "new_task": "customer_service.urgency",
+  "stage_a": {
+   "customer_service.action": {
+    "acc": 0.65,
+    "macro_f1": 0.3626895068755534,
+    "nll": 0.9443197846412659,
+    "ece": 0.13334410488605503,
+    "n": 100,
+    "brier_soft": 0.12247462570667267
+   },
+   "customer_service.category": {
+    "acc": 0.88,
+    "macro_f1": 0.8805342902711324,
+    "nll": 0.3385636806488037,
+    "ece": 0.11653553456068037,
+    "n": 100,
+    "brier_soft": 0.10002434998750687
+   },
+   "customer_service.churn_risk": {
+    "acc": 0.71,
+    "macro_f1": 0.5380178028658271,
+    "nll": 0.8341686129570007,
+    "ece": 0.20483788132667535,
+    "n": 100,
+    "brier_soft": 0.09982483088970184
+   },
+   "customer_service.needs_human": {
+    "acc": 0.8,
+    "macro_f1": 0.7619047619047619,
+    "nll": 0.4642798602581024,
+    "ece": 0.1309563708305359,
+    "n": 100,
+    "brier_soft": 0.06216331571340561
+   }
+  },
+  "stage_b": {
+   "customer_service.action": {
+    "acc": 0.65,
+    "macro_f1": 0.35416131792896877,
+    "nll": 0.9481940269470215,
+    "ece": 0.12697409182786942,
+    "n": 100,
+    "brier_soft": 0.12107645720243454
+   },
+   "customer_service.category": {
+    "acc": 0.88,
+    "macro_f1": 0.8805342902711324,
+    "nll": 0.34177497029304504,
+    "ece": 0.08819255352020264,
+    "n": 100,
+    "brier_soft": 0.10282479226589203
+   },
+   "customer_service.churn_risk": {
+    "acc": 0.74,
+    "macro_f1": 0.5609771083491328,
+    "nll": 0.8190292119979858,
+    "ece": 0.22369019210338598,
+    "n": 100,
+    "brier_soft": 0.10018818080425262
+   },
+   "customer_service.needs_human": {
+    "acc": 0.77,
+    "macro_f1": 0.7235244620747686,
+    "nll": 0.4716740548610687,
+    "ece": 0.1373303991556168,
+    "n": 100,
+    "brier_soft": 0.059720829129219055
+   },
+   "customer_service.urgency": {
+    "acc": 0.65,
+    "macro_f1": 0.48841725620751836,
+    "nll": 0.7947854399681091,
+    "ece": 0.11307195484638213,
+    "n": 100,
+    "brier_soft": 0.09256905317306519
+   }
+  },
+  "forgetting_acc": {
+   "customer_service.action": 0.0,
+   "customer_service.category": 0.0,
+   "customer_service.churn_risk": 0.030000000000000027,
+   "customer_service.needs_human": -0.030000000000000027
+  },
+  "seconds": 171.5
+ },
+ "independent_train_s": 243.5,
+ "consolidated_train": {
+  "seconds": 84.8,
+  "epochs": 34,
+  "steps": 306
+ },
+ "joint_train": {
+  "seconds": 82.7,
+  "epochs": 34,
+  "steps": 306
+ },
+ "mean_acc": {
+  "independent": 0.776,
+  "consolidated": 0.74,
+  "joint": 0.72
+ },
+ "wall_seconds": 586.4
+}

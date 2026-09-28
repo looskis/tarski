@@ -1,0 +1,18 @@
+== banking77: pool 8994 messages, split 8, cached in 3s
+   B=  77 random   : logreg 0.2085 | lda 0.1897 | probe 0.1775 | blocks:2 0.1634 | class coverage 0.59
+   B=  77 typiclust: logreg 0.2646 | lda 0.2721 | probe 0.2401 | blocks:2 0.2388 | class coverage 0.63
+   B=  77 kmedoid  : logreg 0.2698 | lda 0.2583 | probe 0.2399 | class coverage 0.68
+   B=  77 probcover: logreg 0.2126 | lda 0.1908 | probe 0.1951 | blocks:2 0.1726 | class coverage 0.60
+   B= 154 random   : logreg 0.2991 | lda 0.3030 | probe 0.2591 | class coverage 0.83
+   B= 154 typiclust: logreg 0.4078 | lda 0.4213 | probe 0.3609 | class coverage 0.90
+   B= 154 kmedoid  : logreg 0.4264 | lda 0.4174 | probe 0.3747 | class coverage 0.96
+   B= 154 probcover: logreg 0.3183 | lda 0.2991 | probe 0.2796 | class coverage 0.86
+   B= 385 random   : logreg 0.5056 | lda 0.5342 | probe 0.4589 | blocks:2 0.5314 | class coverage 0.98
+   B= 385 typiclust: logreg 0.6172 | lda 0.6481 | probe 0.5670 | blocks:2 0.6198 | class coverage 0.99
+   B= 385 kmedoid  : logreg 0.6172 | lda 0.6461 | probe 0.5645 | class coverage 0.99
+   B= 385 probcover: logreg 0.4789 | lda 0.5179 | probe 0.4356 | blocks:2 0.5325 | class coverage 0.97
+   B= 770 random   : logreg 0.6655 | lda 0.6929 | probe 0.6279 | class coverage 1.00
+   B= 770 typiclust: logreg 0.7138 | lda 0.7389 | probe 0.6804 | class coverage 1.00
+   B= 770 kmedoid  : logreg 0.7294 | lda 0.7560 | probe 0.6986 | class coverage 1.00
+   B= 770 probcover: logreg 0.6456 | lda 0.6886 | probe 0.6008 | class coverage 1.00
+done -> results/tarski/explore_lit_coldstart_banking77.json

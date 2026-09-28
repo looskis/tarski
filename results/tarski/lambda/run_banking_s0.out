@@ -1,0 +1,131 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 9192.02it/s]
+Using the latest cached version of the dataset since mteb/banking77 couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /home/ubuntu/.cache/huggingface/datasets/mteb___banking77/default/0.0.0/18072d2685ea682290f7b8924d94c62acc19c0b2 (last modified on Sun Sep 27 21:22:46 2026).
+== banking77: 8994/999/3076 messages (train/val/test), tasks: intent(77) | base answerdotai/ModernBERT-base on cuda | seed 0
+-- probe@8
+  cached trunk depth 8 for 13069 messages in 4.9s (312 MB)
+  [intent] probe split=8, 77 labels, 8994 train
+    epoch 1/20 loss 3.9223 val acc 0.5045 (1.8s)
+    epoch 2/20 loss 1.5700 val acc 0.8168 (1.4s)
+    epoch 3/20 loss 0.5500 val acc 0.8709 (1.1s)
+    epoch 4/20 loss 0.3086 val acc 0.8819 (1.1s)
+    epoch 5/20 loss 0.2177 val acc 0.8829 (1.1s)
+    epoch 6/20 loss 0.1651 val acc 0.8869 (1.1s)
+    epoch 7/20 loss 0.1295 val acc 0.9029 (1.1s)
+    epoch 8/20 loss 0.1086 val acc 0.8949 (1.1s)
+    epoch 9/20 loss 0.0896 val acc 0.8979 (1.1s)
+    epoch 10/20 loss 0.0741 val acc 0.8939 (1.1s)
+  [intent] test acc 0.8849 macro-F1 0.8850 ECE 0.013 (T=0.99, 12s, 0.06M params)
+   probe@8 mean: {"acc": 0.8849, "macro_f1": 0.885, "ece": 0.013, "nll": 0.4228}
+-- probe@22
+  cached trunk depth 22 for 13069 messages in 5.9s (312 MB)
+  [intent] probe split=22, 77 labels, 8994 train
+    epoch 1/20 loss 3.7072 val acc 0.6026 (1.5s)
+    epoch 2/20 loss 1.2523 val acc 0.8228 (1.1s)
+    epoch 3/20 loss 0.4888 val acc 0.8659 (1.1s)
+    epoch 4/20 loss 0.2810 val acc 0.8709 (1.1s)
+    epoch 5/20 loss 0.1976 val acc 0.8829 (1.1s)
+    epoch 6/20 loss 0.1488 val acc 0.8889 (1.1s)
+    epoch 7/20 loss 0.1155 val acc 0.8899 (1.3s)
+    epoch 8/20 loss 0.0923 val acc 0.8869 (1.2s)
+    epoch 9/20 loss 0.0770 val acc 0.8939 (1.1s)
+    epoch 10/20 loss 0.0669 val acc 0.8909 (1.2s)
+    epoch 11/20 loss 0.0570 val acc 0.8919 (1.1s)
+    epoch 12/20 loss 0.0489 val acc 0.8929 (1.2s)
+  [intent] test acc 0.8810 macro-F1 0.8812 ECE 0.010 (T=1.13, 14s, 0.06M params)
+   probe@22 mean: {"acc": 0.881, "macro_f1": 0.8812, "ece": 0.0099, "nll": 0.4285}
+-- blocks@4+1
+  cached trunk depth 4 for 13069 messages in 1.6s (312 MB)
+  [intent] blocks split=4 depth=1, 77 labels, 8994 train
+    epoch 1/6 loss 2.7775 val acc 0.7998 (4.6s)
+    epoch 2/6 loss 0.5426 val acc 0.8659 (2.5s)
+    epoch 3/6 loss 0.2847 val acc 0.9019 (2.2s)
+    epoch 4/6 loss 0.1636 val acc 0.9039 (2.2s)
+    epoch 5/6 loss 0.1001 val acc 0.9079 (2.2s)
+    epoch 6/6 loss 0.0753 val acc 0.9099 (2.2s)
+  [intent] test acc 0.9025 macro-F1 0.9023 ECE 0.015 (T=1.07, 16s, 5.08M params)
+   blocks@4+1 mean: {"acc": 0.9025, "macro_f1": 0.9023, "ece": 0.0154, "nll": 0.3492}
+-- blocks@4+2
+  [intent] blocks split=4 depth=2, 77 labels, 8994 train
+    epoch 1/6 loss 2.5187 val acc 0.8488 (3.5s)
+    epoch 2/6 loss 0.4200 val acc 0.8839 (3.5s)
+    epoch 3/6 loss 0.1614 val acc 0.9189 (5.8s)
+    epoch 4/6 loss 0.0576 val acc 0.9159 (5.0s)
+    epoch 5/6 loss 0.0173 val acc 0.9199 (3.7s)
+    epoch 6/6 loss 0.0083 val acc 0.9169 (3.4s)
+  [intent] test acc 0.9109 macro-F1 0.9109 ECE 0.009 (T=1.33, 25s, 10.09M params)
+   blocks@4+2 mean: {"acc": 0.9109, "macro_f1": 0.9109, "ece": 0.0094, "nll": 0.3217}
+-- blocks@8+1
+  cached trunk depth 8 for 13069 messages in 2.2s (312 MB)
+  [intent] blocks split=8 depth=1, 77 labels, 8994 train
+    epoch 1/6 loss 2.8319 val acc 0.7898 (2.4s)
+    epoch 2/6 loss 0.4934 val acc 0.8779 (2.2s)
+    epoch 3/6 loss 0.2449 val acc 0.9009 (2.2s)
+    epoch 4/6 loss 0.1330 val acc 0.9059 (4.2s)
+    epoch 5/6 loss 0.0793 val acc 0.9069 (5.1s)
+    epoch 6/6 loss 0.0600 val acc 0.9099 (5.1s)
+  [intent] test acc 0.9103 macro-F1 0.9103 ECE 0.015 (T=1.14, 21s, 5.08M params)
+   blocks@8+1 mean: {"acc": 0.9103, "macro_f1": 0.9103, "ece": 0.015, "nll": 0.3301}
+-- blocks@8+2
+  [intent] blocks split=8 depth=2, 77 labels, 8994 train
+    epoch 1/6 loss 2.3749 val acc 0.8328 (7.1s)
+    epoch 2/6 loss 0.3967 val acc 0.8799 (7.2s)
+    epoch 3/6 loss 0.1647 val acc 0.9119 (7.2s)
+    epoch 4/6 loss 0.0614 val acc 0.9169 (7.1s)
+    epoch 5/6 loss 0.0190 val acc 0.9229 (7.2s)
+    epoch 6/6 loss 0.0098 val acc 0.9229 (7.2s)
+  [intent] test acc 0.9223 macro-F1 0.9224 ECE 0.015 (T=1.39, 43s, 10.09M params)
+   blocks@8+2 mean: {"acc": 0.9223, "macro_f1": 0.9224, "ece": 0.0152, "nll": 0.3009}
+-- blocks@14+1
+  cached trunk depth 14 for 13069 messages in 6.5s (312 MB)
+  [intent] blocks split=14 depth=1, 77 labels, 8994 train
+    epoch 1/6 loss 2.7946 val acc 0.8028 (5.3s)
+    epoch 2/6 loss 0.4929 val acc 0.8799 (5.3s)
+    epoch 3/6 loss 0.2434 val acc 0.8969 (5.3s)
+    epoch 4/6 loss 0.1364 val acc 0.8999 (5.1s)
+    epoch 5/6 loss 0.0849 val acc 0.9089 (7.5s)
+    epoch 6/6 loss 0.0634 val acc 0.9079 (7.9s)
+  [intent] test acc 0.9057 macro-F1 0.9061 ECE 0.015 (T=1.15, 36s, 5.08M params)
+   blocks@14+1 mean: {"acc": 0.9057, "macro_f1": 0.9061, "ece": 0.0146, "nll": 0.3321}
+-- blocks@14+2
+  [intent] blocks split=14 depth=2, 77 labels, 8994 train
+    epoch 1/6 loss 2.1969 val acc 0.8679 (10.5s)
+    epoch 2/6 loss 0.3215 val acc 0.8939 (10.5s)
+    epoch 3/6 loss 0.1292 val acc 0.9119 (10.5s)
+    epoch 4/6 loss 0.0457 val acc 0.9219 (10.4s)
+    epoch 5/6 loss 0.0155 val acc 0.9259 (10.5s)
+    epoch 6/6 loss 0.0078 val acc 0.9219 (10.5s)
+  [intent] test acc 0.9304 macro-F1 0.9303 ECE 0.018 (T=1.42, 63s, 10.09M params)
+   blocks@14+2 mean: {"acc": 0.9304, "macro_f1": 0.9303, "ece": 0.0179, "nll": 0.2763}
+-- blocks@18+1
+  cached trunk depth 18 for 13069 messages in 10.9s (312 MB)
+  [intent] blocks split=18 depth=1, 77 labels, 8994 train
+    epoch 1/6 loss 2.2760 val acc 0.8789 (7.9s)
+    epoch 2/6 loss 0.3211 val acc 0.9029 (7.9s)
+    epoch 3/6 loss 0.1586 val acc 0.9259 (7.9s)
+    epoch 4/6 loss 0.0811 val acc 0.9239 (7.9s)
+    epoch 5/6 loss 0.0475 val acc 0.9349 (8.2s)
+    epoch 6/6 loss 0.0356 val acc 0.9319 (8.4s)
+  [intent] test acc 0.9272 macro-F1 0.9272 ECE 0.015 (T=1.20, 48s, 5.08M params)
+   blocks@18+1 mean: {"acc": 0.9272, "macro_f1": 0.9272, "ece": 0.0145, "nll": 0.2624}
+-- blocks@18+2
+  [intent] blocks split=18 depth=2, 77 labels, 8994 train
+    epoch 1/6 loss 2.1145 val acc 0.8819 (11.1s)
+    epoch 2/6 loss 0.2833 val acc 0.9009 (11.2s)
+    epoch 3/6 loss 0.1101 val acc 0.9219 (11.1s)
+    epoch 4/6 loss 0.0380 val acc 0.9269 (10.9s)
+    epoch 5/6 loss 0.0133 val acc 0.9279 (11.1s)
+    epoch 6/6 loss 0.0086 val acc 0.9279 (11.2s)
+  [intent] test acc 0.9278 macro-F1 0.9277 ECE 0.013 (T=1.34, 67s, 10.09M params)
+   blocks@18+2 mean: {"acc": 0.9278, "macro_f1": 0.9277, "ece": 0.013, "nll": 0.2593}
+-- full
+  cached trunk depth 0 for 13069 messages in 4.3s (312 MB)
+  [intent] blocks split=0 depth=22, 77 labels, 8994 train
+    epoch 1/5 loss 1.7026 val acc 0.8959 (74.1s)
+    epoch 2/5 loss 0.2695 val acc 0.9139 (74.3s)
+    epoch 3/5 loss 0.0919 val acc 0.9259 (74.2s)
+    epoch 4/5 loss 0.0181 val acc 0.9399 (74.2s)
+    epoch 5/5 loss 0.0038 val acc 0.9429 (74.0s)
+  [intent] test acc 0.9425 macro-F1 0.9422 ECE 0.009 (T=1.53, 371s, 110.39M params)
+   full mean: {"acc": 0.9425, "macro_f1": 0.9422, "ece": 0.0094, "nll": 0.2272}
+done

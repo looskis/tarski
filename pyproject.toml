@@ -1,0 +1,23 @@
+[project]
+name = "tarski"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "coremltools>=9.0",
+    "datasets>=5.0.1",
+    "fastapi>=0.141.1",
+    "httpx>=0.28.1",
+    "laya>=0.3.20",
+    "numpy>=2.5.3",
+    "safetensors>=0.8.0",
+    "scikit-learn>=1.9.1",
+    "tabicl>=2.2.0",
+    "torch>=2.14.0",
+    "transformers>=5.17.0",
+    "uvicorn>=0.54.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]

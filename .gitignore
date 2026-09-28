@@ -1,0 +1,17 @@
+# secrets
+.env.local
+.env
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# trained branches and model weights (users' own)
+branches/
+*.safetensors
+
+# session worktrees, OS noise
+.claude/worktrees/
+.DS_Store

@@ -1,0 +1,55 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 5951.13it/s]
+[    1.0s] == k-shot curve on clinc150 | base answerdotai/ModernBERT-base on cuda | arms ['proto', 'li', 'probe', 'blocks', 'full'] | ks ['0', '1', '5', '10', '25', 'all']
+Using the latest cached version of the dataset since clinc/clinc_oos couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'plus' at /home/ubuntu/.cache/huggingface/datasets/clinc___clinc_oos/plus/0.0.0/155b9c710419136e17307b80d0a13e68cd46b4ec (last modified on Sun Sep 27 22:52:08 2026).
+[   13.7s]    150 classes, train pool 15000, val pool 3000, test 4500 in-scope + 1000 oos; cached depths [0, 8, 11] in 11.4s (1227 MB)
+[   13.7s] -- k=0|seed=0: 0 train, 0 val
+[   13.7s] -- k=1|seed=0: 150 train, 150 val
+[   13.7s] -- k=1|seed=1: 150 train, 150 val
+[   13.7s] -- k=1|seed=2: 150 train, 150 val
+[   13.7s] -- k=5|seed=0: 750 train, 750 val
+[   13.7s] -- k=5|seed=1: 750 train, 750 val
+[   13.7s] -- k=5|seed=2: 750 train, 750 val
+[   13.7s] -- k=10|seed=0: 1500 train, 1500 val
+[   13.8s] -- k=10|seed=1: 1500 train, 1500 val
+[   13.8s] -- k=10|seed=2: 1500 train, 1500 val
+[   13.8s] -- k=25|seed=0: 3750 train, 1500 val
+[   19.9s]       li_untrained: acc 0.0067 (42465 bag tokens)
+[   82.9s]       li: acc 0.8613, 1180 steps, 59.2s
+[  104.7s]       probe: 20 epochs, 2360 steps, 21.6s, val acc 0.880, T=0.96
+[  104.9s]       probe: acc 0.8853 macro-F1 0.8849 ECE 0.012, oos auroc 0.899
+[  113.0s]       blocks: 6 epochs, 708 steps, 7.9s, val acc 0.894, T=1.00
+[  113.3s]       blocks: acc 0.8973 macro-F1 0.8966 ECE 0.016, oos auroc 0.907
+[  146.0s]       full: 5 epochs, 590 steps, 32.4s, val acc 0.967, T=1.06
+[  147.6s]       full: acc 0.9553 macro-F1 0.9553 ECE 0.011, oos auroc 0.960
+[  147.8s] -- k=25|seed=1: 3750 train, 1500 val
+[  148.1s]       proto: acc 0.4611, oos auroc 0.707
+[  148.2s]       proto+name: acc 0.4653, oos auroc 0.707
+[  150.9s]       li_untrained: acc 0.7940 (42113 bag tokens)
+[  190.4s]       li: acc 0.8591, 1180 steps, 36.0s
+[  205.4s]       probe: 20 epochs, 2360 steps, 14.9s, val acc 0.887, T=0.93
+[  205.6s]       probe: acc 0.8762 macro-F1 0.8757 ECE 0.012, oos auroc 0.893
+[  213.1s]       blocks: 6 epochs, 708 steps, 7.3s, val acc 0.891, T=0.99
+[  213.5s]       blocks: acc 0.8898 macro-F1 0.8888 ECE 0.009, oos auroc 0.897
+[  259.4s]       full: 5 epochs, 590 steps, 45.7s, val acc 0.957, T=1.08
+[  261.9s]       full: acc 0.9509 macro-F1 0.9507 ECE 0.013, oos auroc 0.958
+[  262.1s] -- k=all|seed=0: 15000 train, 3000 val
+[  262.6s]       proto: acc 0.4249, oos auroc 0.670
+[  262.8s]       proto+name: acc 0.4238, oos auroc 0.668
+[  268.0s]       li_untrained: acc 0.0067 (42465 bag tokens)
+[  425.5s]       li: acc 0.9107, 4690 steps, 155.0s
+[  460.2s]       probe: 13 epochs, 6097 steps, 34.5s, val acc 0.935, T=1.12
+[  460.5s]       probe: acc 0.9264 macro-F1 0.9261 ECE 0.009, oos auroc 0.922
+[  492.8s]       blocks: 6 epochs, 2814 steps, 32.2s, val acc 0.946, T=1.30
+[  493.1s]       blocks: acc 0.9447 macro-F1 0.9445 ECE 0.009, oos auroc 0.944
+[  679.1s]       full: 5 epochs, 2345 steps, 185.7s, val acc 0.979, T=1.44
+[  681.4s]       full: acc 0.9682 macro-F1 0.9681 ECE 0.009, oos auroc 0.978
+[  681.6s] == summary (test accuracy, mean over seeds)
+[  681.6s]    k            blocks         full           li     li_names li_untrained        probe        proto   proto+name  proto_names
+[  681.6s]    k=0               -            -            -       0.1331            -            -            -            -       0.0247
+[  681.6s]    k=1          0.2253       0.4001       0.4426            -       0.3786       0.3150            -       0.2436            -
+[  681.6s]    k=5          0.6764       0.8444       0.6970            -       0.6149       0.6826            -       0.3730            -
+[  681.6s]    k=10         0.8013       0.9187       0.7843            -       0.7164       0.8013            -       0.4317            -
+[  681.6s]    k=25         0.8936       0.9531       0.8602            -       0.4003       0.8808       0.4727       0.4718            -
+[  681.6s]    k=all        0.9447       0.9682       0.9107            -       0.0067       0.9264            -       0.4238            -
+[  681.6s] done

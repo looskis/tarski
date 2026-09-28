@@ -1,0 +1,6 @@
+== OOS-inbox route discovery | 140 known routes, 10 held out: tire_pressure, pin_change, expiration_date, order_status, cook_time, cancel, do_you_have_pets, book_flight, date, schedule_meeting
+   flag: held-out recall 0.062, OOS recall 0.178, inbox 35 = {'held_out': 5, 'oos': 16, 'known': 14}
+-- depth 4, min size 3: 5 clusters, 5 proposals, recovered 0/10, junk 5, ARI 0.138 | promoted recall None vs 3-label None vs all-label None; known acc 0.7548
+-- depth 22, min size 3: 3 clusters, 3 proposals, recovered 0/10, junk 3, ARI 0.0 | promoted recall None vs 3-label None vs all-label None; known acc 0.7548
+   upper bound (all 4 held-out intents in the inbox, true labels): {'n_routes': 4, 'recall_promoted': 0.08333333333333333, 'acc_known': 0.7523809523809524, 'acc_known_plus_promoted': 0.7337962962962963}
+done in 0.6s -> results/tarski/explore_lit_discovery_smoke.json

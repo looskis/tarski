@@ -1,0 +1,1620 @@
+{
+ "args": {
+  "datasets": [
+   "clinc150"
+  ],
+  "selectors": [
+   "random",
+   "typiclust",
+   "kmedoid",
+   "probcover"
+  ],
+  "learners": [
+   "logreg",
+   "lda",
+   "probe",
+   "blocks:2"
+  ],
+  "blocks_selectors": [
+   "random",
+   "typiclust",
+   "probcover"
+  ],
+  "blocks_seeds": 2,
+  "blocks_workflows": [
+   "customer_service"
+  ],
+  "probe_epochs": 20,
+  "min_steps": 300,
+  "steps": 300,
+  "device": null,
+  "smoke": false,
+  "out": "results/tarski/explore_lit_coldstart_clinc150.json"
+ },
+ "config": {
+  "banking77": {
+   "split": 8,
+   "budgets": [
+    77,
+    154,
+    385,
+    770
+   ],
+   "blocks_budgets": [
+    77,
+    385
+   ]
+  },
+  "clinc150": {
+   "split": 11,
+   "budgets": [
+    150,
+    300,
+    750
+   ],
+   "blocks_budgets": [
+    150,
+    750
+   ]
+  },
+  "typed-decisions": {
+   "split": 11,
+   "budgets": [
+    10,
+    40
+   ],
+   "blocks_budgets": [
+    40
+   ]
+  }
+ },
+ "datasets": {
+  "clinc150": {
+   "150": {
+    "random": [
+     {
+      "selector": "random",
+      "seed": 0,
+      "tasks": {
+       "intent": {
+        "n_labelled": 150,
+        "classes_covered": 99,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.2250909090909091,
+         "macro_f1": 0.18731455658026666
+        },
+        "lda": {
+         "acc": 0.21,
+         "macro_f1": 0.19478466847591372
+        },
+        "probe": {
+         "acc": 0.2010909090909091,
+         "macro_f1": 0.17531674562799957
+        },
+        "blocks:2": {
+         "acc": 0.17909090909090908,
+         "macro_f1": 0.14878007963827536
+        }
+       },
+       "domain": {
+        "n_labelled": 150,
+        "classes_covered": 11,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.5174545454545455,
+         "macro_f1": 0.5182940721040723
+        },
+        "lda": {
+         "acc": 0.5427272727272727,
+         "macro_f1": 0.5506589552372975
+        },
+        "probe": {
+         "acc": 0.48927272727272725,
+         "macro_f1": 0.49066474688760137
+        },
+        "blocks:2": {
+         "acc": 0.484,
+         "macro_f1": 0.48681511994510696
+        }
+       },
+       "oos": {
+        "n_labelled": 150,
+        "classes_covered": 2,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.5601818181818182,
+         "macro_f1": 0.4772199820358098
+        },
+        "lda": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        },
+        "probe": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        },
+        "blocks:2": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        }
+       }
+      },
+      "s": 39.4
+     },
+     {
+      "selector": "random",
+      "seed": 1,
+      "tasks": {
+       "intent": {
+        "n_labelled": 150,
+        "classes_covered": 96,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.22563636363636363,
+         "macro_f1": 0.18080977173772822
+        },
+        "lda": {
+         "acc": 0.21563636363636363,
+         "macro_f1": 0.18520024938275273
+        },
+        "probe": {
+         "acc": 0.21363636363636362,
+         "macro_f1": 0.17680742321811607
+        },
+        "blocks:2": {
+         "acc": 0.19236363636363638,
+         "macro_f1": 0.15152148643063565
+        }
+       },
+       "domain": {
+        "n_labelled": 150,
+        "classes_covered": 11,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.4903636363636364,
+         "macro_f1": 0.4950413101146571
+        },
+        "lda": {
+         "acc": 0.523090909090909,
+         "macro_f1": 0.5291869268041278
+        },
+        "probe": {
+         "acc": 0.48618181818181816,
+         "macro_f1": 0.49116269950991415
+        },
+        "blocks:2": {
+         "acc": 0.43963636363636366,
+         "macro_f1": 0.4423973205943797
+        }
+       },
+       "oos": {
+        "n_labelled": 150,
+        "classes_covered": 2,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.5396363636363637,
+         "macro_f1": 0.4511864084024362
+        },
+        "lda": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        },
+        "probe": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        },
+        "blocks:2": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        }
+       }
+      },
+      "s": 38.2
+     },
+     {
+      "selector": "random",
+      "seed": 2,
+      "tasks": {
+       "intent": {
+        "n_labelled": 150,
+        "classes_covered": 99,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.21363636363636362,
+         "macro_f1": 0.1738546343022112
+        },
+        "lda": {
+         "acc": 0.19927272727272727,
+         "macro_f1": 0.17517419228447662
+        },
+        "probe": {
+         "acc": 0.2030909090909091,
+         "macro_f1": 0.15968586482674715
+        }
+       },
+       "domain": {
+        "n_labelled": 150,
+        "classes_covered": 11,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.5030909090909091,
+         "macro_f1": 0.5063324159038204
+        },
+        "lda": {
+         "acc": 0.5263636363636364,
+         "macro_f1": 0.5297506871409458
+        },
+        "probe": {
+         "acc": 0.4863636363636364,
+         "macro_f1": 0.49149646982706924
+        }
+       },
+       "oos": {
+        "n_labelled": 150,
+        "classes_covered": 2,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.5456363636363636,
+         "macro_f1": 0.4544101085427957
+        },
+        "lda": {
+         "acc": 0.8189090909090909,
+         "macro_f1": 0.45416413577383147
+        },
+        "probe": {
+         "acc": 0.8185454545454546,
+         "macro_f1": 0.45208602598763264
+        }
+       }
+      },
+      "s": 12.1
+     }
+    ],
+    "typiclust": [
+     {
+      "selector": "typiclust",
+      "seed": 0,
+      "tasks": {
+       "intent": {
+        "n_labelled": 150,
+        "classes_covered": 100,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.2807272727272727,
+         "macro_f1": 0.24913634926523523
+        },
+        "lda": {
+         "acc": 0.29309090909090907,
+         "macro_f1": 0.2956568612410197
+        },
+        "probe": {
+         "acc": 0.2701818181818182,
+         "macro_f1": 0.24963273792335966
+        },
+        "blocks:2": {
+         "acc": 0.24436363636363637,
+         "macro_f1": 0.21113291968327438
+        }
+       },
+       "domain": {
+        "n_labelled": 150,
+        "classes_covered": 10,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.5454545454545454,
+         "macro_f1": 0.5457983833352057
+        },
+        "lda": {
+         "acc": 0.5718181818181818,
+         "macro_f1": 0.5821640628166566
+        },
+        "probe": {
+         "acc": 0.5410909090909091,
+         "macro_f1": 0.54548212240873
+        },
+        "blocks:2": {
+         "acc": 0.5254545454545455,
+         "macro_f1": 0.52801818130112
+        }
+       },
+       "oos": {
+        "n_labelled": 150,
+        "classes_covered": 1,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.5678181818181818,
+         "macro_f1": 0.5051693686383549
+        },
+        "lda": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        },
+        "probe": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        },
+        "blocks:2": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        }
+       }
+      },
+      "s": 43.5
+     },
+     {
+      "selector": "typiclust",
+      "seed": 1,
+      "tasks": {
+       "intent": {
+        "n_labelled": 150,
+        "classes_covered": 101,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.28545454545454546,
+         "macro_f1": 0.2546678125728991
+        },
+        "lda": {
+         "acc": 0.286,
+         "macro_f1": 0.2877681257971364
+        },
+        "probe": {
+         "acc": 0.26981818181818185,
+         "macro_f1": 0.24977476186940797
+        },
+        "blocks:2": {
+         "acc": 0.25727272727272726,
+         "macro_f1": 0.22522996599102155
+        }
+       },
+       "domain": {
+        "n_labelled": 150,
+        "classes_covered": 10,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.5245454545454545,
+         "macro_f1": 0.5244826370953416
+        },
+        "lda": {
+         "acc": 0.5596363636363636,
+         "macro_f1": 0.5646688941399719
+        },
+        "probe": {
+         "acc": 0.5178181818181818,
+         "macro_f1": 0.5205182752711877
+        },
+        "blocks:2": {
+         "acc": 0.5241818181818182,
+         "macro_f1": 0.5266954067716985
+        }
+       },
+       "oos": {
+        "n_labelled": 150,
+        "classes_covered": 1,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.56,
+         "macro_f1": 0.4941806836761808
+        },
+        "lda": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        },
+        "probe": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        },
+        "blocks:2": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        }
+       }
+      },
+      "s": 42.7
+     }
+    ],
+    "kmedoid": [
+     {
+      "selector": "kmedoid",
+      "seed": 0,
+      "tasks": {
+       "intent": {
+        "n_labelled": 150,
+        "classes_covered": 111,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.27490909090909094,
+         "macro_f1": 0.2532264203082502
+        },
+        "lda": {
+         "acc": 0.2718181818181818,
+         "macro_f1": 0.2739163990420836
+        },
+        "probe": {
+         "acc": 0.25872727272727275,
+         "macro_f1": 0.2433874436479106
+        }
+       },
+       "domain": {
+        "n_labelled": 150,
+        "classes_covered": 10,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.54,
+         "macro_f1": 0.5415338455455898
+        },
+        "lda": {
+         "acc": 0.5749090909090909,
+         "macro_f1": 0.580150486710405
+        },
+        "probe": {
+         "acc": 0.5310909090909091,
+         "macro_f1": 0.5336422298171133
+        }
+       },
+       "oos": {
+        "n_labelled": 150,
+        "classes_covered": 1,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.578,
+         "macro_f1": 0.5146535615714358
+        },
+        "lda": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        },
+        "probe": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        }
+       }
+      },
+      "s": 14.4
+     },
+     {
+      "selector": "kmedoid",
+      "seed": 1,
+      "tasks": {
+       "intent": {
+        "n_labelled": 150,
+        "classes_covered": 115,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.2730909090909091,
+         "macro_f1": 0.26120916099123903
+        },
+        "lda": {
+         "acc": 0.26545454545454544,
+         "macro_f1": 0.27888473955369747
+        },
+        "probe": {
+         "acc": 0.26345454545454544,
+         "macro_f1": 0.2606742089993884
+        }
+       },
+       "domain": {
+        "n_labelled": 150,
+        "classes_covered": 11,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.5145454545454545,
+         "macro_f1": 0.5151765290235365
+        },
+        "lda": {
+         "acc": 0.5541818181818182,
+         "macro_f1": 0.5585963902678598
+        },
+        "probe": {
+         "acc": 0.514,
+         "macro_f1": 0.516161968947274
+        }
+       },
+       "oos": {
+        "n_labelled": 150,
+        "classes_covered": 2,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.5612727272727273,
+         "macro_f1": 0.4929440266215943
+        },
+        "lda": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        },
+        "probe": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        }
+       }
+      },
+      "s": 17.3
+     }
+    ],
+    "probcover": [
+     {
+      "selector": "probcover",
+      "seed": 0,
+      "tasks": {
+       "intent": {
+        "n_labelled": 150,
+        "classes_covered": 99,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.2061818181818182,
+         "macro_f1": 0.17397216171438457
+        },
+        "lda": {
+         "acc": 0.20236363636363636,
+         "macro_f1": 0.1860706874437187
+        },
+        "probe": {
+         "acc": 0.19272727272727272,
+         "macro_f1": 0.1672577750588257
+        },
+        "blocks:2": {
+         "acc": 0.1690909090909091,
+         "macro_f1": 0.1400148208617732
+        }
+       },
+       "domain": {
+        "n_labelled": 150,
+        "classes_covered": 11,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.5047272727272727,
+         "macro_f1": 0.5051999180125186
+        },
+        "lda": {
+         "acc": 0.5261818181818182,
+         "macro_f1": 0.5265341800215617
+        },
+        "probe": {
+         "acc": 0.49454545454545457,
+         "macro_f1": 0.4924170128710731
+        },
+        "blocks:2": {
+         "acc": 0.4649090909090909,
+         "macro_f1": 0.4617171793072076
+        }
+       },
+       "oos": {
+        "n_labelled": 150,
+        "classes_covered": 2,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.5494545454545454,
+         "macro_f1": 0.4525495549298979
+        },
+        "lda": {
+         "acc": 0.8183636363636364,
+         "macro_f1": 0.4520290284493124
+        },
+        "probe": {
+         "acc": 0.8183636363636364,
+         "macro_f1": 0.45104400549945106
+        },
+        "blocks:2": {
+         "acc": 0.8185454545454546,
+         "macro_f1": 0.45208602598763264
+        }
+       }
+      },
+      "s": 39.1
+     }
+    ]
+   },
+   "300": {
+    "random": [
+     {
+      "selector": "random",
+      "seed": 0,
+      "tasks": {
+       "intent": {
+        "n_labelled": 300,
+        "classes_covered": 135,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.33,
+         "macro_f1": 0.3165970084034941
+        },
+        "lda": {
+         "acc": 0.3849090909090909,
+         "macro_f1": 0.35985408662697976
+        },
+        "probe": {
+         "acc": 0.3109090909090909,
+         "macro_f1": 0.2906027144933118
+        }
+       },
+       "domain": {
+        "n_labelled": 300,
+        "classes_covered": 11,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.5996363636363636,
+         "macro_f1": 0.6041194363159933
+        },
+        "lda": {
+         "acc": 0.6252727272727273,
+         "macro_f1": 0.6314826915464516
+        },
+        "probe": {
+         "acc": 0.5787272727272728,
+         "macro_f1": 0.5812382371440381
+        }
+       },
+       "oos": {
+        "n_labelled": 300,
+        "classes_covered": 2,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.5945454545454546,
+         "macro_f1": 0.5045578256353778
+        },
+        "lda": {
+         "acc": 0.8174545454545454,
+         "macro_f1": 0.4575425360524972
+        },
+        "probe": {
+         "acc": 0.8183636363636364,
+         "macro_f1": 0.45104400549945106
+        }
+       }
+      },
+      "s": 12.4
+     },
+     {
+      "selector": "random",
+      "seed": 1,
+      "tasks": {
+       "intent": {
+        "n_labelled": 300,
+        "classes_covered": 132,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.336,
+         "macro_f1": 0.3222511268108015
+        },
+        "lda": {
+         "acc": 0.37454545454545457,
+         "macro_f1": 0.3701629643033821
+        },
+        "probe": {
+         "acc": 0.31763636363636366,
+         "macro_f1": 0.2956560893741038
+        }
+       },
+       "domain": {
+        "n_labelled": 300,
+        "classes_covered": 11,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.5992727272727273,
+         "macro_f1": 0.6006207580725292
+        },
+        "lda": {
+         "acc": 0.6321818181818182,
+         "macro_f1": 0.6369124530882677
+        },
+        "probe": {
+         "acc": 0.5790909090909091,
+         "macro_f1": 0.5787982343370174
+        }
+       },
+       "oos": {
+        "n_labelled": 300,
+        "classes_covered": 2,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.5976363636363636,
+         "macro_f1": 0.5108215091921066
+        },
+        "lda": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        },
+        "probe": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        }
+       }
+      },
+      "s": 11.9
+     },
+     {
+      "selector": "random",
+      "seed": 2,
+      "tasks": {
+       "intent": {
+        "n_labelled": 300,
+        "classes_covered": 125,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.30654545454545457,
+         "macro_f1": 0.2668725955141621
+        },
+        "lda": {
+         "acc": 0.33545454545454545,
+         "macro_f1": 0.3013063053986347
+        },
+        "probe": {
+         "acc": 0.29563636363636364,
+         "macro_f1": 0.2529490226227832
+        }
+       },
+       "domain": {
+        "n_labelled": 300,
+        "classes_covered": 11,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.5774545454545454,
+         "macro_f1": 0.5802025123972302
+        },
+        "lda": {
+         "acc": 0.6023636363636363,
+         "macro_f1": 0.6093224728665256
+        },
+        "probe": {
+         "acc": 0.5552727272727273,
+         "macro_f1": 0.5591808260244048
+        }
+       },
+       "oos": {
+        "n_labelled": 300,
+        "classes_covered": 2,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.6025454545454545,
+         "macro_f1": 0.5090649244589629
+        },
+        "lda": {
+         "acc": 0.8203636363636364,
+         "macro_f1": 0.4643003608923884
+        },
+        "probe": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        }
+       }
+      },
+      "s": 11.6
+     }
+    ],
+    "typiclust": [
+     {
+      "selector": "typiclust",
+      "seed": 0,
+      "tasks": {
+       "intent": {
+        "n_labelled": 300,
+        "classes_covered": 140,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.39890909090909094,
+         "macro_f1": 0.4095104032329306
+        },
+        "lda": {
+         "acc": 0.42018181818181816,
+         "macro_f1": 0.44788309304453455
+        },
+        "probe": {
+         "acc": 0.3781818181818182,
+         "macro_f1": 0.38630578591182574
+        }
+       },
+       "domain": {
+        "n_labelled": 300,
+        "classes_covered": 10,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.6207272727272727,
+         "macro_f1": 0.6212826433101943
+        },
+        "lda": {
+         "acc": 0.6403636363636364,
+         "macro_f1": 0.647059901409757
+        },
+        "probe": {
+         "acc": 0.5976363636363636,
+         "macro_f1": 0.6014236710148458
+        }
+       },
+       "oos": {
+        "n_labelled": 300,
+        "classes_covered": 1,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.604,
+         "macro_f1": 0.5164766856109533
+        },
+        "lda": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        },
+        "probe": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        }
+       }
+      },
+      "s": 17.5
+     },
+     {
+      "selector": "typiclust",
+      "seed": 1,
+      "tasks": {
+       "intent": {
+        "n_labelled": 300,
+        "classes_covered": 139,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.3861818181818182,
+         "macro_f1": 0.38916065392264193
+        },
+        "lda": {
+         "acc": 0.4143636363636364,
+         "macro_f1": 0.4388641525211024
+        },
+        "probe": {
+         "acc": 0.3698181818181818,
+         "macro_f1": 0.36813103656898183
+        }
+       },
+       "domain": {
+        "n_labelled": 300,
+        "classes_covered": 10,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.6096363636363636,
+         "macro_f1": 0.609268439239464
+        },
+        "lda": {
+         "acc": 0.6374545454545455,
+         "macro_f1": 0.6401719516268476
+        },
+        "probe": {
+         "acc": 0.5841818181818181,
+         "macro_f1": 0.5856036010487116
+        }
+       },
+       "oos": {
+        "n_labelled": 300,
+        "classes_covered": 1,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.6001818181818181,
+         "macro_f1": 0.5162455228862125
+        },
+        "lda": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        },
+        "probe": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        }
+       }
+      },
+      "s": 19.0
+     }
+    ],
+    "kmedoid": [
+     {
+      "selector": "kmedoid",
+      "seed": 0,
+      "tasks": {
+       "intent": {
+        "n_labelled": 300,
+        "classes_covered": 139,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.40054545454545454,
+         "macro_f1": 0.41231578776027084
+        },
+        "lda": {
+         "acc": 0.4258181818181818,
+         "macro_f1": 0.45554546924898304
+        },
+        "probe": {
+         "acc": 0.37472727272727274,
+         "macro_f1": 0.39157937037348733
+        }
+       },
+       "domain": {
+        "n_labelled": 300,
+        "classes_covered": 10,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.6247272727272727,
+         "macro_f1": 0.6251558316679042
+        },
+        "lda": {
+         "acc": 0.6487272727272727,
+         "macro_f1": 0.6521171836487594
+        },
+        "probe": {
+         "acc": 0.606,
+         "macro_f1": 0.608581171553741
+        }
+       },
+       "oos": {
+        "n_labelled": 300,
+        "classes_covered": 1,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.6110909090909091,
+         "macro_f1": 0.5252244847356917
+        },
+        "lda": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        },
+        "probe": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        }
+       }
+      },
+      "s": 17.5
+     },
+     {
+      "selector": "kmedoid",
+      "seed": 1,
+      "tasks": {
+       "intent": {
+        "n_labelled": 300,
+        "classes_covered": 140,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.39836363636363636,
+         "macro_f1": 0.4115282318618624
+        },
+        "lda": {
+         "acc": 0.42818181818181816,
+         "macro_f1": 0.4686301652920614
+        },
+        "probe": {
+         "acc": 0.38036363636363635,
+         "macro_f1": 0.39544263918429545
+        }
+       },
+       "domain": {
+        "n_labelled": 300,
+        "classes_covered": 11,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.6023636363636363,
+         "macro_f1": 0.6016958322353377
+        },
+        "lda": {
+         "acc": 0.638,
+         "macro_f1": 0.641109648120624
+        },
+        "probe": {
+         "acc": 0.5827272727272728,
+         "macro_f1": 0.5829598857716496
+        }
+       },
+       "oos": {
+        "n_labelled": 300,
+        "classes_covered": 2,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.6187272727272727,
+         "macro_f1": 0.5376648883991949
+        },
+        "lda": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        },
+        "probe": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        }
+       }
+      },
+      "s": 16.3
+     }
+    ],
+    "probcover": [
+     {
+      "selector": "probcover",
+      "seed": 0,
+      "tasks": {
+       "intent": {
+        "n_labelled": 300,
+        "classes_covered": 133,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.31236363636363634,
+         "macro_f1": 0.2962774856859737
+        },
+        "lda": {
+         "acc": 0.3409090909090909,
+         "macro_f1": 0.3468578163337932
+        },
+        "probe": {
+         "acc": 0.28745454545454546,
+         "macro_f1": 0.27221044160786356
+        }
+       },
+       "domain": {
+        "n_labelled": 300,
+        "classes_covered": 11,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.6056363636363636,
+         "macro_f1": 0.6073684820285543
+        },
+        "lda": {
+         "acc": 0.6247272727272727,
+         "macro_f1": 0.6271293526368248
+        },
+        "probe": {
+         "acc": 0.586,
+         "macro_f1": 0.5856681877252163
+        }
+       },
+       "oos": {
+        "n_labelled": 300,
+        "classes_covered": 2,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.6010909090909091,
+         "macro_f1": 0.5068813487953635
+        },
+        "lda": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45392822194263344
+        },
+        "probe": {
+         "acc": 0.8183636363636364,
+         "macro_f1": 0.45104400549945106
+        }
+       }
+      },
+      "s": 17.0
+     }
+    ]
+   },
+   "750": {
+    "random": [
+     {
+      "selector": "random",
+      "seed": 0,
+      "tasks": {
+       "intent": {
+        "n_labelled": 750,
+        "classes_covered": 150,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.5516363636363636,
+         "macro_f1": 0.568923825502747
+        },
+        "lda": {
+         "acc": 0.6432727272727272,
+         "macro_f1": 0.6402557287526962
+        },
+        "probe": {
+         "acc": 0.5503636363636364,
+         "macro_f1": 0.5516519010209482
+        },
+        "blocks:2": {
+         "acc": 0.5556363636363636,
+         "macro_f1": 0.5751093113888738
+        }
+       },
+       "domain": {
+        "n_labelled": 750,
+        "classes_covered": 11,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.6845454545454546,
+         "macro_f1": 0.6889249645954111
+        },
+        "lda": {
+         "acc": 0.6970909090909091,
+         "macro_f1": 0.7033923833396133
+        },
+        "probe": {
+         "acc": 0.6632727272727272,
+         "macro_f1": 0.6668887658339098
+        },
+        "blocks:2": {
+         "acc": 0.7169090909090909,
+         "macro_f1": 0.7244148040342263
+        }
+       },
+       "oos": {
+        "n_labelled": 750,
+        "classes_covered": 2,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.7416363636363636,
+         "macro_f1": 0.5861828105671401
+        },
+        "lda": {
+         "acc": 0.8289090909090909,
+         "macro_f1": 0.5189060934998175
+        },
+        "probe": {
+         "acc": 0.8187272727272727,
+         "macro_f1": 0.4541051620337532
+        },
+        "blocks:2": {
+         "acc": 0.8196363636363636,
+         "macro_f1": 0.4592612414394593
+        }
+       }
+      },
+      "s": 42.9
+     },
+     {
+      "selector": "random",
+      "seed": 1,
+      "tasks": {
+       "intent": {
+        "n_labelled": 750,
+        "classes_covered": 151,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.51,
+         "macro_f1": 0.5294263278314871
+        },
+        "lda": {
+         "acc": 0.5787272727272728,
+         "macro_f1": 0.5984869265708291
+        },
+        "probe": {
+         "acc": 0.5029090909090909,
+         "macro_f1": 0.5171856518634732
+        },
+        "blocks:2": {
+         "acc": 0.5223636363636364,
+         "macro_f1": 0.5435566748230872
+        }
+       },
+       "domain": {
+        "n_labelled": 750,
+        "classes_covered": 11,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.6834545454545454,
+         "macro_f1": 0.6885194905857909
+        },
+        "lda": {
+         "acc": 0.6918181818181818,
+         "macro_f1": 0.6980871733354082
+        },
+        "probe": {
+         "acc": 0.662,
+         "macro_f1": 0.6657674652506334
+        },
+        "blocks:2": {
+         "acc": 0.7067272727272728,
+         "macro_f1": 0.7134001526648748
+        }
+       },
+       "oos": {
+        "n_labelled": 750,
+        "classes_covered": 2,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.7283636363636363,
+         "macro_f1": 0.5449142043923949
+        },
+        "lda": {
+         "acc": 0.8229090909090909,
+         "macro_f1": 0.47742784855962456
+        },
+        "probe": {
+         "acc": 0.8183636363636364,
+         "macro_f1": 0.45104400549945106
+        },
+        "blocks:2": {
+         "acc": 0.8185454545454546,
+         "macro_f1": 0.45208602598763264
+        }
+       }
+      },
+      "s": 41.8
+     },
+     {
+      "selector": "random",
+      "seed": 2,
+      "tasks": {
+       "intent": {
+        "n_labelled": 750,
+        "classes_covered": 151,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.5563636363636364,
+         "macro_f1": 0.5764626336861806
+        },
+        "lda": {
+         "acc": 0.6476363636363637,
+         "macro_f1": 0.6585217138967177
+        },
+        "probe": {
+         "acc": 0.5434545454545454,
+         "macro_f1": 0.5575367801066037
+        }
+       },
+       "domain": {
+        "n_labelled": 750,
+        "classes_covered": 11,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.6881818181818182,
+         "macro_f1": 0.6949811041521547
+        },
+        "lda": {
+         "acc": 0.6985454545454546,
+         "macro_f1": 0.7088833392568951
+        },
+        "probe": {
+         "acc": 0.6569090909090909,
+         "macro_f1": 0.6625673838722457
+        }
+       },
+       "oos": {
+        "n_labelled": 750,
+        "classes_covered": 2,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.7527272727272727,
+         "macro_f1": 0.5747737603120205
+        },
+        "lda": {
+         "acc": 0.8347272727272728,
+         "macro_f1": 0.5463979259239097
+        },
+        "probe": {
+         "acc": 0.8205454545454546,
+         "macro_f1": 0.46341893029546505
+        }
+       }
+      },
+      "s": 18.9
+     }
+    ],
+    "typiclust": [
+     {
+      "selector": "typiclust",
+      "seed": 0,
+      "tasks": {
+       "intent": {
+        "n_labelled": 750,
+        "classes_covered": 151,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.5661818181818182,
+         "macro_f1": 0.6139533186774929
+        },
+        "lda": {
+         "acc": 0.6147272727272727,
+         "macro_f1": 0.6837040889726371
+        },
+        "probe": {
+         "acc": 0.5474545454545454,
+         "macro_f1": 0.5968926312624931
+        },
+        "blocks:2": {
+         "acc": 0.5618181818181818,
+         "macro_f1": 0.6038994085180225
+        }
+       },
+       "domain": {
+        "n_labelled": 750,
+        "classes_covered": 11,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.6783636363636364,
+         "macro_f1": 0.6805609836582952
+        },
+        "lda": {
+         "acc": 0.684,
+         "macro_f1": 0.6891259706338194
+        },
+        "probe": {
+         "acc": 0.6563636363636364,
+         "macro_f1": 0.6594858238900563
+        },
+        "blocks:2": {
+         "acc": 0.7085454545454546,
+         "macro_f1": 0.7124187877353532
+        }
+       },
+       "oos": {
+        "n_labelled": 750,
+        "classes_covered": 2,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.7250909090909091,
+         "macro_f1": 0.5926625176630467
+        },
+        "lda": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        },
+        "probe": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        },
+        "blocks:2": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        }
+       }
+      },
+      "s": 53.8
+     },
+     {
+      "selector": "typiclust",
+      "seed": 1,
+      "tasks": {
+       "intent": {
+        "n_labelled": 750,
+        "classes_covered": 151,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.5763636363636364,
+         "macro_f1": 0.6285124254671139
+        },
+        "lda": {
+         "acc": 0.6314545454545455,
+         "macro_f1": 0.6978866178911539
+        },
+        "probe": {
+         "acc": 0.5594545454545454,
+         "macro_f1": 0.6129108931298457
+        },
+        "blocks:2": {
+         "acc": 0.5707272727272727,
+         "macro_f1": 0.6189450000646503
+        }
+       },
+       "domain": {
+        "n_labelled": 750,
+        "classes_covered": 11,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.6863636363636364,
+         "macro_f1": 0.6882693583707337
+        },
+        "lda": {
+         "acc": 0.6918181818181818,
+         "macro_f1": 0.6966262996363255
+        },
+        "probe": {
+         "acc": 0.6692727272727272,
+         "macro_f1": 0.6720646995924987
+        },
+        "blocks:2": {
+         "acc": 0.7125454545454546,
+         "macro_f1": 0.7153905418474231
+        }
+       },
+       "oos": {
+        "n_labelled": 750,
+        "classes_covered": 2,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.7247272727272728,
+         "macro_f1": 0.5977663885923514
+        },
+        "lda": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        },
+        "probe": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        },
+        "blocks:2": {
+         "acc": 0.8183636363636364,
+         "macro_f1": 0.45104400549945106
+        }
+       }
+      },
+      "s": 55.5
+     }
+    ],
+    "kmedoid": [
+     {
+      "selector": "kmedoid",
+      "seed": 0,
+      "tasks": {
+       "intent": {
+        "n_labelled": 750,
+        "classes_covered": 151,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.5861818181818181,
+         "macro_f1": 0.6301761191234093
+        },
+        "lda": {
+         "acc": 0.614909090909091,
+         "macro_f1": 0.6761686435980789
+        },
+        "probe": {
+         "acc": 0.5665454545454546,
+         "macro_f1": 0.6102265415151017
+        }
+       },
+       "domain": {
+        "n_labelled": 750,
+        "classes_covered": 11,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.6916363636363636,
+         "macro_f1": 0.693199347121412
+        },
+        "lda": {
+         "acc": 0.6987272727272728,
+         "macro_f1": 0.7016801694060095
+        },
+        "probe": {
+         "acc": 0.6692727272727272,
+         "macro_f1": 0.6713974989167784
+        }
+       },
+       "oos": {
+        "n_labelled": 750,
+        "classes_covered": 2,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.734909090909091,
+         "macro_f1": 0.5814958431405295
+        },
+        "lda": {
+         "acc": 0.8185454545454546,
+         "macro_f1": 0.45208602598763264
+        },
+        "probe": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        }
+       }
+      },
+      "s": 31.0
+     },
+     {
+      "selector": "kmedoid",
+      "seed": 1,
+      "tasks": {
+       "intent": {
+        "n_labelled": 750,
+        "classes_covered": 151,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.5729090909090909,
+         "macro_f1": 0.62051851239624
+        },
+        "lda": {
+         "acc": 0.6165454545454545,
+         "macro_f1": 0.6822319929554678
+        },
+        "probe": {
+         "acc": 0.5587272727272727,
+         "macro_f1": 0.6067131761752979
+        }
+       },
+       "domain": {
+        "n_labelled": 750,
+        "classes_covered": 11,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.6901818181818182,
+         "macro_f1": 0.6916442696361929
+        },
+        "lda": {
+         "acc": 0.696,
+         "macro_f1": 0.6999272204018339
+        },
+        "probe": {
+         "acc": 0.6689090909090909,
+         "macro_f1": 0.6713917857817946
+        }
+       },
+       "oos": {
+        "n_labelled": 750,
+        "classes_covered": 2,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.716,
+         "macro_f1": 0.5701143452807953
+        },
+        "lda": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        },
+        "probe": {
+         "acc": 0.8181818181818182,
+         "macro_f1": 0.45
+        }
+       }
+      },
+      "s": 31.4
+     }
+    ],
+    "probcover": [
+     {
+      "selector": "probcover",
+      "seed": 0,
+      "tasks": {
+       "intent": {
+        "n_labelled": 750,
+        "classes_covered": 150,
+        "n_classes": 151,
+        "logreg": {
+         "acc": 0.5494545454545454,
+         "macro_f1": 0.5675237405453512
+        },
+        "lda": {
+         "acc": 0.6285454545454545,
+         "macro_f1": 0.6337883926190747
+        },
+        "probe": {
+         "acc": 0.5318181818181819,
+         "macro_f1": 0.5475354081256915
+        },
+        "blocks:2": {
+         "acc": 0.524,
+         "macro_f1": 0.5398991620903955
+        }
+       },
+       "domain": {
+        "n_labelled": 750,
+        "classes_covered": 11,
+        "n_classes": 11,
+        "logreg": {
+         "acc": 0.6883636363636364,
+         "macro_f1": 0.6941812685356794
+        },
+        "lda": {
+         "acc": 0.7,
+         "macro_f1": 0.7073673677624351
+        },
+        "probe": {
+         "acc": 0.6787272727272727,
+         "macro_f1": 0.6836096343249901
+        },
+        "blocks:2": {
+         "acc": 0.7170909090909091,
+         "macro_f1": 0.7264987819323951
+        }
+       },
+       "oos": {
+        "n_labelled": 750,
+        "classes_covered": 2,
+        "n_classes": 2,
+        "logreg": {
+         "acc": 0.7467272727272727,
+         "macro_f1": 0.5603519456843707
+        },
+        "lda": {
+         "acc": 0.8263636363636364,
+         "macro_f1": 0.5157189648694562
+        },
+        "probe": {
+         "acc": 0.8189090909090909,
+         "macro_f1": 0.4551402809876781
+        },
+        "blocks:2": {
+         "acc": 0.8194545454545454,
+         "macro_f1": 0.4630130909178863
+        }
+       }
+      },
+      "s": 43.3
+     }
+    ]
+   }
+  }
+ },
+ "wall_s": {
+  "clinc150": 688.7
+ }
+}

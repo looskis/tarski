@@ -1,0 +1,204 @@
+[    3.7s] == confidence head on typed-decisions: 70/31/40 messages (train/val/test), tasks: customer_service.action(5), customer_service.category(5), customer_service.churn_risk(4), customer_service.needs_human(2), customer_service.urgency(4) | base jhu-clsp/ettin-encoder-17m on cpu | main blocks@4+2, probes [2, 4, 7], folds 2
+[    4.5s]    cached 141 messages at [2, 4, 7] in 0.8s (61 MB)
+[    4.5s] -- customer_service.action (5 options, 70 train, 31 val)
+[   55.0s]       blocks: 100 epochs, 300 steps, 50.5s, val acc 0.516, T=0.94
+[   56.5s]       probe: 100 epochs, 300 steps, 1.5s, val acc 0.516, T=0.74
+[   58.1s]       probe: 100 epochs, 300 steps, 1.6s, val acc 0.452, T=0.77
+[   59.6s]       probe: 100 epochs, 300 steps, 1.5s, val acc 0.548, T=0.72
+[   59.8s]    main test acc 0.5750
+[  112.0s]       blocks: 150 epochs, 300 steps, 52.1s, val acc 0.548, T=0.92
+[  113.2s]       probe: 150 epochs, 300 steps, 1.1s, val acc 0.452, T=0.84
+[  114.3s]       probe: 150 epochs, 300 steps, 1.1s, val acc 0.419, T=0.94
+[  115.4s]       probe: 150 epochs, 300 steps, 1.1s, val acc 0.484, T=0.85
+[  165.7s]       blocks: 150 epochs, 300 steps, 50.1s, val acc 0.516, T=0.92
+[  166.8s]       probe: 150 epochs, 300 steps, 1.1s, val acc 0.581, T=0.86
+[  167.9s]       probe: 150 epochs, 300 steps, 1.1s, val acc 0.613, T=0.86
+[  169.7s]       probe: 150 epochs, 300 steps, 1.7s, val acc 0.581, T=0.82
+[  169.9s] -- customer_service.category (5 options, 70 train, 31 val)
+[  214.1s]       blocks: 100 epochs, 300 steps, 44.2s, val acc 0.774, T=0.78
+[  215.1s]       probe: 100 epochs, 300 steps, 1.0s, val acc 0.516, T=0.98
+[  216.1s]       probe: 100 epochs, 300 steps, 1.0s, val acc 0.452, T=1.23
+[  217.1s]       probe: 100 epochs, 300 steps, 1.0s, val acc 0.516, T=0.76
+[  217.3s]    main test acc 0.8750
+[  276.2s]       blocks: 150 epochs, 300 steps, 58.9s, val acc 0.484, T=1.86
+[  278.0s]       probe: 150 epochs, 300 steps, 1.8s, val acc 0.323, T=1.27
+[  279.3s]       probe: 150 epochs, 300 steps, 1.3s, val acc 0.323, T=1.42
+[  280.5s]       probe: 150 epochs, 300 steps, 1.2s, val acc 0.290, T=0.85
+[  326.8s]       blocks: 150 epochs, 300 steps, 46.2s, val acc 0.419, T=1.47
+[  328.3s]       probe: 150 epochs, 300 steps, 1.5s, val acc 0.355, T=1.48
+[  329.4s]       probe: 150 epochs, 300 steps, 1.1s, val acc 0.419, T=1.56
+[  330.5s]       probe: 150 epochs, 300 steps, 1.1s, val acc 0.387, T=1.32
+[  330.7s] -- customer_service.churn_risk (4 options, 70 train, 31 val)
+[  385.2s]       blocks: 100 epochs, 300 steps, 54.5s, val acc 0.677, T=0.62
+[  386.2s]       probe: 100 epochs, 300 steps, 1.0s, val acc 0.484, T=0.70
+[  387.2s]       probe: 100 epochs, 300 steps, 1.0s, val acc 0.452, T=0.68
+[  388.2s]       probe: 100 epochs, 300 steps, 1.0s, val acc 0.484, T=0.81
+[  388.4s]    main test acc 0.6000
+[  435.8s]       blocks: 150 epochs, 300 steps, 47.3s, val acc 0.613, T=0.82
+[  437.0s]       probe: 150 epochs, 300 steps, 1.2s, val acc 0.484, T=0.80
+[  438.1s]       probe: 150 epochs, 300 steps, 1.2s, val acc 0.452, T=0.77
+[  439.3s]       probe: 150 epochs, 300 steps, 1.2s, val acc 0.355, T=1.01
+[  495.8s]       blocks: 150 epochs, 300 steps, 56.4s, val acc 0.419, T=1.96
+[  496.9s]       probe: 150 epochs, 300 steps, 1.1s, val acc 0.484, T=0.91
+[  497.9s]       probe: 150 epochs, 300 steps, 1.1s, val acc 0.387, T=1.00
+[  499.2s]       probe: 150 epochs, 300 steps, 1.3s, val acc 0.452, T=0.92
+[  499.4s] -- customer_service.needs_human (2 options, 70 train, 31 val)
+[  551.2s]       blocks: 100 epochs, 300 steps, 51.8s, val acc 0.484, T=2.28
+[  552.6s]       probe: 100 epochs, 300 steps, 1.4s, val acc 0.677, T=1.01
+[  554.0s]       probe: 100 epochs, 300 steps, 1.4s, val acc 0.645, T=1.05
+[  555.4s]       probe: 100 epochs, 300 steps, 1.4s, val acc 0.710, T=0.95
+[  555.6s]    main test acc 0.7500
+[  619.0s]       blocks: 150 epochs, 300 steps, 63.4s, val acc 0.613, T=1.84
+[  620.7s]       probe: 150 epochs, 300 steps, 1.7s, val acc 0.613, T=2.18
+[  622.0s]       probe: 150 epochs, 300 steps, 1.2s, val acc 0.581, T=3.19
+[  623.2s]       probe: 150 epochs, 300 steps, 1.2s, val acc 0.645, T=1.56
+[  665.9s]       blocks: 150 epochs, 300 steps, 42.6s, val acc 0.581, T=1.47
+[  667.0s]       probe: 150 epochs, 300 steps, 1.1s, val acc 0.742, T=0.80
+[  668.1s]       probe: 150 epochs, 300 steps, 1.1s, val acc 0.645, T=1.05
+[  669.2s]       probe: 150 epochs, 300 steps, 1.1s, val acc 0.742, T=0.75
+[  669.4s] -- customer_service.urgency (4 options, 70 train, 31 val)
+[  715.6s]       blocks: 100 epochs, 300 steps, 46.2s, val acc 0.452, T=1.01
+[  717.1s]       probe: 100 epochs, 300 steps, 1.5s, val acc 0.387, T=1.13
+[  718.6s]       probe: 100 epochs, 300 steps, 1.5s, val acc 0.419, T=1.19
+[  720.0s]       probe: 100 epochs, 300 steps, 1.4s, val acc 0.419, T=1.15
+[  720.2s]    main test acc 0.6500
+[  793.4s]       blocks: 150 epochs, 300 steps, 73.1s, val acc 0.516, T=1.18
+[  795.1s]       probe: 150 epochs, 300 steps, 1.7s, val acc 0.484, T=1.22
+[  796.8s]       probe: 150 epochs, 300 steps, 1.7s, val acc 0.452, T=1.19
+[  798.5s]       probe: 150 epochs, 300 steps, 1.7s, val acc 0.484, T=1.28
+[  863.9s]       blocks: 150 epochs, 300 steps, 65.1s, val acc 0.484, T=1.26
+[  865.5s]       probe: 150 epochs, 300 steps, 1.6s, val acc 0.355, T=1.31
+[  867.3s]       probe: 150 epochs, 300 steps, 1.8s, val acc 0.452, T=1.28
+[  869.1s]       probe: 150 epochs, 300 steps, 1.7s, val acc 0.452, T=1.14
+[  869.3s]    branches trained in 865s
+[  869.5s] == val->test: 155 head-training rows -> 200 test rows (acc 0.690)
+[  869.5s]    msp_T1             auroc 0.710 ece 0.090 acc@80 0.738 aurc 0.163
+[  869.5s]    msp_Thard          auroc 0.700 ece 0.083 acc@80 0.744 aurc 0.173
+[  869.5s]    probe_deep_maxp    auroc 0.504 ece 0.213 acc@80 0.662 aurc 0.275
+[  869.5s]    lr[all]            auroc 0.655 ece 0.113 acc@80 0.731 aurc 0.193
+[  869.5s]    mlp[all]           auroc 0.589 ece 0.365 acc@80 0.725 aurc 0.238
+[  869.5s]    lr[msp]            auroc 0.699 ece 0.088 acc@80 0.731 aurc 0.167
+[  869.5s]    mlp[msp]           auroc 0.702 ece 0.067 acc@80 0.725 aurc 0.164
+[  869.5s]    lr[msp+qtype]      auroc 0.698 ece 0.089 acc@80 0.731 aurc 0.168
+[  869.5s]    lr[no_bundle]      auroc 0.674 ece 0.098 acc@80 0.738 aurc 0.183
+[  869.5s]    lr[no_depth]       auroc 0.666 ece 0.099 acc@80 0.731 aurc 0.182
+[  870.2s] == oof->test: 350 head-training rows -> 200 test rows (acc 0.690)
+[  870.2s]    msp_T1             auroc 0.710 ece 0.090 acc@80 0.738 aurc 0.163
+[  870.2s]    msp_Thard          auroc 0.700 ece 0.083 acc@80 0.744 aurc 0.173
+[  870.2s]    probe_deep_maxp    auroc 0.504 ece 0.213 acc@80 0.662 aurc 0.275
+[  870.2s]    lr[all]            auroc 0.642 ece 0.151 acc@80 0.725 aurc 0.205
+[  870.2s]    mlp[all]           auroc 0.562 ece 0.372 acc@80 0.700 aurc 0.264
+[  870.2s]    lr[msp]            auroc 0.709 ece 0.133 acc@80 0.750 aurc 0.167
+[  870.2s]    mlp[msp]           auroc 0.685 ece 0.109 acc@80 0.725 aurc 0.187
+[  870.2s]    lr[msp+qtype]      auroc 0.703 ece 0.133 acc@80 0.744 aurc 0.170
+[  870.2s]    lr[no_bundle]      auroc 0.652 ece 0.158 acc@80 0.725 aurc 0.202
+[  870.2s]    lr[no_depth]       auroc 0.661 ece 0.167 acc@80 0.731 aurc 0.196
+[  870.2s] done
+[    3.4s] == confidence head on typed-decisions: 70/31/40 messages (train/val/test), tasks: customer_service.action(5), customer_service.category(5) | base jhu-clsp/ettin-encoder-17m on cpu | main blocks@4+2, probes [2, 4, 7], folds 2
+[    3.7s]    cached 141 messages at [2, 4, 7] in 0.2s (28 MB)
+[    3.7s] -- customer_service.action (5 options, 70 train, 31 val)
+[   18.9s]       blocks: 100 epochs, 300 steps, 15.2s, val acc 0.452, T=1.24
+[   19.4s]       probe: 100 epochs, 300 steps, 0.5s, val acc 0.548, T=0.72
+[   19.9s]       probe: 100 epochs, 300 steps, 0.5s, val acc 0.548, T=0.79
+[   20.5s]       probe: 100 epochs, 300 steps, 0.6s, val acc 0.548, T=0.76
+[   20.6s]    main test acc 0.4000
+[   35.2s]       blocks: 150 epochs, 300 steps, 14.5s, val acc 0.581, T=1.11
+[   35.7s]       probe: 150 epochs, 300 steps, 0.5s, val acc 0.548, T=0.66
+[   36.2s]       probe: 150 epochs, 300 steps, 0.5s, val acc 0.548, T=0.68
+[   36.8s]       probe: 150 epochs, 300 steps, 0.6s, val acc 0.548, T=0.73
+[   49.4s]       blocks: 150 epochs, 300 steps, 12.4s, val acc 0.484, T=1.36
+[   49.9s]       probe: 150 epochs, 300 steps, 0.5s, val acc 0.548, T=0.79
+[   50.3s]       probe: 150 epochs, 300 steps, 0.4s, val acc 0.548, T=0.87
+[   50.7s]       probe: 150 epochs, 300 steps, 0.4s, val acc 0.548, T=0.82
+[   50.8s] -- customer_service.category (5 options, 70 train, 31 val)
+[   62.2s]       blocks: 100 epochs, 300 steps, 11.4s, val acc 0.323, T=5.19
+[   62.6s]       probe: 100 epochs, 300 steps, 0.4s, val acc 0.226, T=1.28
+[   63.0s]       probe: 100 epochs, 300 steps, 0.5s, val acc 0.226, T=1.44
+[   63.4s]       probe: 100 epochs, 300 steps, 0.4s, val acc 0.226, T=1.64
+[   63.4s]    main test acc 0.5000
+[   80.7s]       blocks: 150 epochs, 300 steps, 17.2s, val acc 0.258, T=5.72
+[   81.4s]       probe: 150 epochs, 300 steps, 0.7s, val acc 0.226, T=1.42
+[   81.9s]       probe: 150 epochs, 300 steps, 0.6s, val acc 0.258, T=1.62
+[   82.5s]       probe: 150 epochs, 300 steps, 0.6s, val acc 0.226, T=1.88
+[   99.5s]       blocks: 150 epochs, 300 steps, 16.9s, val acc 0.258, T=10.25
+[  100.1s]       probe: 150 epochs, 300 steps, 0.6s, val acc 0.258, T=3.46
+[  100.7s]       probe: 150 epochs, 300 steps, 0.6s, val acc 0.290, T=3.76
+[  101.5s]       probe: 150 epochs, 300 steps, 0.8s, val acc 0.290, T=3.52
+[  101.6s]    branches trained in 98s
+[  101.9s] == val->test: 62 head-training rows -> 80 test rows (acc 0.450)
+[  101.9s]    msp_T1             auroc 0.685 ece 0.166 acc@80 0.438 aurc 0.375
+[  101.9s]    msp_Thard          auroc 0.539 ece 0.176 acc@80 0.484 aurc 0.498
+[  101.9s]    probe_deep_maxp    auroc 0.511 ece 0.092 acc@80 0.469 aurc 0.543
+[  101.9s]    lr[all]            auroc 0.352 ece 0.270 acc@80 0.375 aurc 0.633
+[  101.9s]    mlp[all]           auroc 0.456 ece 0.463 acc@80 0.438 aurc 0.568
+[  101.9s]    lr[msp]            auroc 0.315 ece 0.290 acc@80 0.375 aurc 0.619
+[  101.9s]    mlp[msp]           auroc 0.390 ece 0.382 acc@80 0.359 aurc 0.555
+[  101.9s]    lr[msp+qtype]      auroc 0.315 ece 0.290 acc@80 0.375 aurc 0.619
+[  101.9s]    lr[no_bundle]      auroc 0.354 ece 0.265 acc@80 0.375 aurc 0.633
+[  101.9s]    lr[no_depth]       auroc 0.345 ece 0.325 acc@80 0.391 aurc 0.618
+[  102.2s] == oof->test: 140 head-training rows -> 80 test rows (acc 0.450)
+[  102.2s]    msp_T1             auroc 0.685 ece 0.166 acc@80 0.438 aurc 0.375
+[  102.2s]    msp_Thard          auroc 0.539 ece 0.176 acc@80 0.484 aurc 0.498
+[  102.2s]    probe_deep_maxp    auroc 0.511 ece 0.092 acc@80 0.469 aurc 0.543
+[  102.2s]    lr[all]            auroc 0.451 ece 0.234 acc@80 0.422 aurc 0.596
+[  102.2s]    mlp[all]           auroc 0.433 ece 0.461 acc@80 0.453 aurc 0.637
+[  102.2s]    lr[msp]            auroc 0.381 ece 0.190 acc@80 0.422 aurc 0.597
+[  102.2s]    mlp[msp]           auroc 0.387 ece 0.195 acc@80 0.438 aurc 0.594
+[  102.2s]    lr[msp+qtype]      auroc 0.381 ece 0.190 acc@80 0.422 aurc 0.597
+[  102.2s]    lr[no_bundle]      auroc 0.427 ece 0.222 acc@80 0.406 aurc 0.630
+[  102.2s]    lr[no_depth]       auroc 0.480 ece 0.154 acc@80 0.453 aurc 0.542
+[  102.2s] done
+[    3.9s] == confidence head on typed-decisions: 70/31/40 messages (train/val/test), tasks: customer_service.action(5), customer_service.category(5) | base jhu-clsp/ettin-encoder-17m on cpu | main blocks@4+2, probes [2, 4, 7], folds 2
+[    4.1s]    cached 141 messages at [2, 4, 7] in 0.2s (28 MB)
+[    4.1s] -- customer_service.action (5 options, 70 train, 31 val)
+[   14.7s]       blocks: 100 epochs, 300 steps, 10.6s, val acc 0.419, T=1.16
+[   15.0s]       probe: 100 epochs, 300 steps, 0.3s, val acc 0.548, T=0.72
+[   15.3s]       probe: 100 epochs, 300 steps, 0.3s, val acc 0.548, T=0.79
+[   15.6s]       probe: 100 epochs, 300 steps, 0.3s, val acc 0.548, T=0.76
+[   15.7s]    main test acc 0.4750
+[   24.9s]       blocks: 150 epochs, 300 steps, 9.2s, val acc 0.581, T=1.11
+[   25.2s]       probe: 150 epochs, 300 steps, 0.3s, val acc 0.548, T=0.66
+[   25.5s]       probe: 150 epochs, 300 steps, 0.3s, val acc 0.548, T=0.68
+[   25.8s]       probe: 150 epochs, 300 steps, 0.3s, val acc 0.548, T=0.73
+[   35.1s]       blocks: 150 epochs, 300 steps, 9.2s, val acc 0.484, T=1.36
+[   35.4s]       probe: 150 epochs, 300 steps, 0.3s, val acc 0.548, T=0.79
+[   35.7s]       probe: 150 epochs, 300 steps, 0.3s, val acc 0.548, T=0.87
+[   36.0s]       probe: 150 epochs, 300 steps, 0.3s, val acc 0.548, T=0.82
+[   36.1s] -- customer_service.category (5 options, 70 train, 31 val)
+[   46.7s]       blocks: 100 epochs, 300 steps, 10.6s, val acc 0.323, T=5.19
+[   47.0s]       probe: 100 epochs, 300 steps, 0.3s, val acc 0.226, T=1.28
+[   47.3s]       probe: 100 epochs, 300 steps, 0.3s, val acc 0.226, T=1.44
+[   47.6s]       probe: 100 epochs, 300 steps, 0.3s, val acc 0.226, T=1.64
+[   47.6s]    main test acc 0.5000
+[   56.9s]       blocks: 150 epochs, 300 steps, 9.2s, val acc 0.258, T=5.72
+[   57.2s]       probe: 150 epochs, 300 steps, 0.3s, val acc 0.226, T=1.42
+[   57.5s]       probe: 150 epochs, 300 steps, 0.3s, val acc 0.258, T=1.62
+[   57.8s]       probe: 150 epochs, 300 steps, 0.3s, val acc 0.226, T=1.88
+[   67.0s]       blocks: 150 epochs, 300 steps, 9.2s, val acc 0.258, T=10.25
+[   67.3s]       probe: 150 epochs, 300 steps, 0.3s, val acc 0.258, T=3.46
+[   67.7s]       probe: 150 epochs, 300 steps, 0.4s, val acc 0.290, T=3.76
+[   68.0s]       probe: 150 epochs, 300 steps, 0.3s, val acc 0.290, T=3.52
+[   68.1s]    branches trained in 64s
+[   68.2s] == val->test: 62 head-training rows -> 80 test rows (acc 0.487)
+[   68.2s]    msp_T1             auroc 0.610 ece 0.104 acc@80 0.469 aurc 0.389
+[   68.2s]    msp_Thard          auroc 0.543 ece 0.152 acc@80 0.531 aurc 0.490
+[   68.2s]    probe_deep_maxp    auroc 0.532 ece 0.123 acc@80 0.516 aurc 0.503
+[   68.2s]    lr[all]            auroc 0.480 ece 0.247 acc@80 0.453 aurc 0.506
+[   68.2s]    mlp[all]           auroc 0.593 ece 0.376 acc@80 0.500 aurc 0.428
+[   68.2s]    lr[msp]            auroc 0.393 ece 0.186 acc@80 0.422 aurc 0.544
+[   68.2s]    mlp[msp]           auroc 0.467 ece 0.241 acc@80 0.453 aurc 0.476
+[   68.2s]    lr[msp+qtype]      auroc 0.393 ece 0.186 acc@80 0.422 aurc 0.544
+[   68.2s]    lr[no_bundle]      auroc 0.448 ece 0.181 acc@80 0.438 aurc 0.553
+[   68.2s]    lr[no_depth]       auroc 0.478 ece 0.201 acc@80 0.453 aurc 0.495
+[   68.4s] == oof->test: 140 head-training rows -> 80 test rows (acc 0.487)
+[   68.4s]    msp_T1             auroc 0.610 ece 0.104 acc@80 0.469 aurc 0.389
+[   68.4s]    msp_Thard          auroc 0.543 ece 0.152 acc@80 0.531 aurc 0.490
+[   68.4s]    probe_deep_maxp    auroc 0.532 ece 0.123 acc@80 0.516 aurc 0.503
+[   68.4s]    lr[all]            auroc 0.507 ece 0.256 acc@80 0.469 aurc 0.510
+[   68.4s]    mlp[all]           auroc 0.397 ece 0.478 acc@80 0.469 aurc 0.637
+[   68.4s]    lr[msp]            auroc 0.475 ece 0.156 acc@80 0.500 aurc 0.513
+[   68.4s]    mlp[msp]           auroc 0.461 ece 0.157 acc@80 0.500 aurc 0.522
+[   68.4s]    lr[msp+qtype]      auroc 0.475 ece 0.156 acc@80 0.500 aurc 0.513
+[   68.4s]    lr[no_bundle]      auroc 0.487 ece 0.173 acc@80 0.453 aurc 0.542
+[   68.4s]    lr[no_depth]       auroc 0.563 ece 0.167 acc@80 0.516 aurc 0.430
+[   68.4s] done

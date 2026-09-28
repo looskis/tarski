@@ -1,0 +1,37 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 9346.25it/s]
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 18:59:51 2026).
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 18:59:51 2026).
+[customer_service.action] independent acc 0.6100
+[customer_service.category] independent acc 0.8900
+[customer_service.churn_risk] independent acc 0.8000
+[customer_service.needs_human] independent acc 0.8400
+[customer_service.urgency] independent acc 0.7400
+[customer_service.action] mean@1.0: own head 0.5700, refit head 0.5700
+[customer_service.category] mean@1.0: own head 0.5800, refit head 0.8700
+[customer_service.churn_risk] mean@1.0: own head 0.6100, refit head 0.7100
+[customer_service.needs_human] mean@1.0: own head 0.7200, refit head 0.7200
+[customer_service.urgency] mean@1.0: own head 0.5400, refit head 0.6100
+[customer_service.action] ties@1.0: own head 0.6000, refit head 0.6300
+[customer_service.category] ties@1.0: own head 0.6300, refit head 0.8900
+[customer_service.churn_risk] ties@1.0: own head 0.5400, refit head 0.7300
+[customer_service.needs_human] ties@1.0: own head 0.7000, refit head 0.7600
+[customer_service.urgency] ties@1.0: own head 0.6000, refit head 0.6000
+[customer_service.action] ties@0.5: own head 0.5900, refit head 0.5600
+[customer_service.category] ties@0.5: own head 0.4000, refit head 0.8400
+[customer_service.churn_risk] ties@0.5: own head 0.5500, refit head 0.7200
+[customer_service.needs_human] ties@0.5: own head 0.8000, refit head 0.7500
+[customer_service.urgency] ties@0.5: own head 0.4800, refit head 0.5900
+[customer_service.action] base_copy: own head 0.5200, refit head 0.5700
+[customer_service.category] base_copy: own head 0.2800, refit head 0.7600
+[customer_service.churn_risk] base_copy: own head 0.5500, refit head 0.6400
+[customer_service.needs_human] base_copy: own head 0.5600, refit head 0.7800
+[customer_service.urgency] base_copy: own head 0.4500, refit head 0.5300
+[customer_service.action] joint multi-task body 0.5500
+[customer_service.category] joint multi-task body 0.4100
+[customer_service.churn_risk] joint multi-task body 0.5100
+[customer_service.needs_human] joint multi-task body 0.7100
+[customer_service.urgency] joint multi-task body 0.5200
+mean: {"independent": 0.776, "mean@1.0+own_head": 0.604, "mean@1.0+refit_head": 0.696, "ties@1.0+own_head": 0.614, "ties@1.0+refit_head": 0.722, "ties@0.5+own_head": 0.564, "ties@0.5+refit_head": 0.692, "base_copy+own_head": 0.472, "base_copy+refit_head": 0.656, "joint": 0.54}
+done

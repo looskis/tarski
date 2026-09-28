@@ -1,0 +1,20 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 9284.19it/s]
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 18:59:51 2026).
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 18:59:51 2026).
+loaded typed-decisions: 1080/120/400 messages (train/val/test), tasks: agent_trace_observability.action(4), agent_trace_observability.needs_review(2), agent_trace_observability.outcome(4), agent_trace_observability.risk(4), agent_trace_observability.urgency(4), customer_service.action(5), customer_service.category(5), customer_service.churn_risk(4), customer_service.needs_human(2), customer_service.urgency(4), invoice_processing.discrepancy_severity(4), invoice_processing.disposition(4), invoice_processing.duplicate(2), invoice_processing.matches_order(2), invoice_processing.urgency(4), security_incidents.credential_compromise(2), security_incidents.disposition(4), security_incidents.severity(5), security_incidents.true_positive(2), security_incidents.urgency(4)
+[customer_service.action] train=269 val=31 test=100 labels=['answer_directly', 'close_no_action', 'escalate_to_human', 'execute_refund', 'request_information']
+  cached trunk depths [3, 8] for 400 messages in 2.9s
+  random-order baseline: acc=0.580 f1=0.240 epochs=34 90%-of-best@epoch=2
+  easy-to-hard curriculum: acc=0.560 f1=0.212 epochs=34 90%-of-best@epoch=1
+[invoice_processing.urgency] train=259 val=41 test=100 labels=['0', '1', '2', '3']
+  cached trunk depths [3, 8] for 400 messages in 2.1s
+  random-order baseline: acc=0.510 f1=0.279 epochs=34 90%-of-best@epoch=14
+  easy-to-hard curriculum: acc=0.500 f1=0.272 epochs=34 90%-of-best@epoch=19
+
+=== curriculum summary ===
+[customer_service.action] random acc=0.580 (90%@ep2)  curriculum acc=0.560 (90%@ep1)
+[invoice_processing.urgency] random acc=0.510 (90%@ep14)  curriculum acc=0.500 (90%@ep19)
+wrote results/tarski/explore_curriculum.json
+total elapsed: 30.9s

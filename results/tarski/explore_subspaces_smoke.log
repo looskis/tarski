@@ -1,0 +1,16 @@
+== shared decision subspaces | trunk cpu, fits cpu | split 11 | ranks [2, 8]
+-- typed-decisions: 160/60/80 messages (train/val/test), tasks: agent_trace_observability.action(4), agent_trace_observability.needs_review(2), agent_trace_observa
+   affinity: within-group 0.3442674046778444 (shuffled-label null 0.06973925723273974) across 0.007088906649846361 random 0.00412436500462766
+   bottleneck         workflow: r=2:0.4580 r=8:0.4842
+   bottleneck  affinity_greedy: r=2:0.4412 r=8:0.5357
+   bottleneck        singleton: r=2:0.5348 r=8:0.5118
+   bottleneck          random0: r=2:0.5032 r=8:0.5360
+   bottleneck          random1: r=2:0.4967 r=8:0.5253
+   bottleneck          random2: r=2:0.4915 r=8:0.5202
+   fused blocks@11+2: separate 0.5017 vs fused 0.5048 (45s)
+-- clinc150: 320/100/100 messages (train/val/test), tasks: intent(151), domain(11), oos(2)
+   affinity: within-group 0.6305430406636511 (shuffled-label null 0.29192354005438975) across None random 0.1155949361477771
+   bottleneck              all: r=2:0.3900 r=8:0.4967
+   bottleneck        singleton: r=2:0.4367 r=8:0.5167
+   fused blocks@11+2: separate 0.3967 vs fused 0.4167 (4s)
+done -> results/tarski/explore_subspaces_smoke.json

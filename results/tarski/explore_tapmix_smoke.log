@@ -1,0 +1,56 @@
+== tap mixing | cpu / fits on cpu | taps [4, 8, 12, 16, 22] | lambdas [0.1, 0.3, 1.0, 3.0, 10.0] | steps 40
+-- banking77 (1 tasks, 2s)
+      single_best: acc 0.3625  mean trunk cut 4.0
+        single@22: acc 0.3875  mean trunk cut 22.0
+         prefix@4: acc 0.3625  mean trunk cut 4.0
+         prefix@8: acc 0.4125  mean trunk cut 8.0
+        prefix@12: acc 0.4250  mean trunk cut 12.0
+        prefix@16: acc 0.1875  mean trunk cut 16.0
+        prefix@22: acc 0.3125  mean trunk cut 22.0
+      glasso(0.1): acc 0.3125  mean trunk cut 22.0
+      glasso(0.3): acc 0.3875  mean trunk cut 12.0
+      glasso(1.0): acc 0.4250  mean trunk cut 8.0
+      glasso(3.0): acc 0.3625  mean trunk cut 4.0
+     glasso(10.0): acc 0.3125  mean trunk cut 22.0
+    select(0.005): acc 0.3625  mean trunk cut 4.0
+     select(0.01): acc 0.3625  mean trunk cut 4.0
+     select(0.02): acc 0.3625  mean trunk cut 4.0
+     select(0.05): acc 0.3625  mean trunk cut 4.0
+   share of the full multi-tap gain kept with the trunk cut at 12: None
+-- clinc150 (3 tasks, 3s)
+      single_best: acc 0.6400  mean trunk cut 12.0
+        single@22: acc 0.6167  mean trunk cut 22.0
+         prefix@4: acc 0.6333  mean trunk cut 4.0
+         prefix@8: acc 0.6033  mean trunk cut 8.0
+        prefix@12: acc 0.5700  mean trunk cut 12.0
+        prefix@16: acc 0.5833  mean trunk cut 16.0
+        prefix@22: acc 0.5733  mean trunk cut 22.0
+      glasso(0.1): acc 0.5733  mean trunk cut 22.0
+      glasso(0.3): acc 0.5800  mean trunk cut 22.0
+      glasso(1.0): acc 0.6267  mean trunk cut 8.0
+      glasso(3.0): acc 0.6133  mean trunk cut 22.0
+     glasso(10.0): acc 0.5733  mean trunk cut 22.0
+    select(0.005): acc 0.5967  mean trunk cut 22.0
+     select(0.01): acc 0.5967  mean trunk cut 22.0
+     select(0.02): acc 0.5967  mean trunk cut 22.0
+     select(0.05): acc 0.5933  mean trunk cut 16.0
+   share of the full multi-tap gain kept with the trunk cut at 12: None
+-- typed-decisions (20 tasks, 8s)
+      single_best: acc 0.5436  mean trunk cut 15.2
+        single@22: acc 0.5951  mean trunk cut 22.0
+         prefix@4: acc 0.5536  mean trunk cut 4.0
+         prefix@8: acc 0.5422  mean trunk cut 8.0
+        prefix@12: acc 0.4924  mean trunk cut 12.0
+        prefix@16: acc 0.5519  mean trunk cut 16.0
+        prefix@22: acc 0.5133  mean trunk cut 22.0
+      glasso(0.1): acc 0.5133  mean trunk cut 22.0
+      glasso(0.3): acc 0.5133  mean trunk cut 22.0
+      glasso(1.0): acc 0.5137  mean trunk cut 22.0
+      glasso(3.0): acc 0.5148  mean trunk cut 22.0
+     glasso(10.0): acc 0.5133  mean trunk cut 22.0
+    select(0.005): acc 0.5314  mean trunk cut 15.3
+     select(0.01): acc 0.5314  mean trunk cut 15.3
+     select(0.02): acc 0.5314  mean trunk cut 15.3
+     select(0.05): acc 0.5314  mean trunk cut 15.3
+   share of the full multi-tap gain kept with the trunk cut at 12: None
+done -> results/tarski/explore_tapmix_smoke.json

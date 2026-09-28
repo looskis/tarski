@@ -1,0 +1,22 @@
+== banking77: 8994/999/3076 messages (train/val/test), tasks: intent(77) | blocks@11+2
+  cached depth 11: 7.4s (312 MB)
+  [intent]        full: test acc 0.9207 macro-F1 0.9205 NLL 0.306 (trainable 10.09M of 10.09M, 1692 steps, 51.1s)
+  [intent] frozen_attn: test acc 0.9090 macro-F1 0.9091 NLL 0.338 (trainable 5.37M of 10.09M, 1692 steps, 42.4s)
+== clinc150: 15250/3100/5500 messages (train/val/test), tasks: intent(151), domain(11), oos(2) | blocks@11+2
+  cached depth 11: 10.1s (408 MB)
+  [intent]        full: test acc 0.8711 macro-F1 0.8984 NLL 0.529 (trainable 10.15M of 10.15M, 2862 steps, 66.7s)
+  [intent] frozen_attn: test acc 0.8680 macro-F1 0.8961 NLL 0.531 (trainable 5.43M of 10.15M, 2862 steps, 52.3s)
+  [domain]        full: test acc 0.8836 macro-F1 0.8964 NLL 0.389 (trainable 10.04M of 10.04M, 2862 steps, 63.9s)
+  [domain] frozen_attn: test acc 0.8729 macro-F1 0.8863 NLL 0.436 (trainable 5.32M of 10.04M, 2862 steps, 53.8s)
+  [oos]        full: test acc 0.8673 macro-F1 0.6782 NLL 0.464 (trainable 10.03M of 10.03M, 2862 steps, 57.0s)
+  [oos] frozen_attn: test acc 0.8613 macro-F1 0.6559 NLL 0.472 (trainable 5.31M of 10.03M, 2862 steps, 48.7s)
+  latency bs=1 N= 1: loop 1.0 ms | fused 1.4 ms | shared-attn 1.3 ms (x1.08); max|diff| vs fused 0.0e+00, vs loop 4.8e-07
+  latency bs=1 N= 4: loop 4.0 ms | fused 2.5 ms | shared-attn 2.1 ms (x1.20); max|diff| vs fused 4.3e-06, vs loop 9.1e-06
+  latency bs=1 N=10: loop 9.7 ms | fused 4.3 ms | shared-attn 3.7 ms (x1.16); max|diff| vs fused 4.3e-06, vs loop 9.1e-06
+  latency bs=1 N=20: loop 19.6 ms | fused 8.2 ms | shared-attn 6.3 ms (x1.30); max|diff| vs fused 4.3e-06, vs loop 9.1e-06
+  latency bs=16 N= 1: loop 2.2 ms | fused 2.3 ms | shared-attn 2.3 ms (x1.02); max|diff| vs fused 0.0e+00, vs loop 0.0e+00
+  latency bs=16 N= 4: loop 8.8 ms | fused 6.7 ms | shared-attn 5.3 ms (x1.27); max|diff| vs fused 5.2e-06, vs loop 6.4e-06
+  latency bs=16 N=10: loop 21.2 ms | fused 17.5 ms | shared-attn 13.2 ms (x1.32); max|diff| vs fused 5.2e-06, vs loop 6.4e-06
+  latency bs=16 N=20: loop 42.6 ms | fused 33.0 ms | shared-attn 24.2 ms (x1.36); max|diff| vs fused 5.2e-06, vs loop 6.4e-06
+== done in 461.8s; wrote results/tarski/explore_sharedattn.json
+   frozen-attention accuracy deltas: {'banking77/intent': -0.0117, 'clinc150/intent': -0.0031, 'clinc150/domain': -0.0107, 'clinc150/oos': -0.006}; analytic attention share of a layer at 64 tokens 0.48

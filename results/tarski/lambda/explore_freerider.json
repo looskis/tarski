@@ -1,0 +1,15 @@
+{
+ "config": {
+  "smoke": false,
+  "datasets": [
+   "clinc150",
+   "typed_cs",
+   "banking77"
+  ],
+  "depth": 2,
+  "out": "results/tarski/explore_freerider.json"
+ },
+ "source": "/home/ubuntu/tarski/results/tarski/lambda",
+ "datasets": {},
+ "wall_seconds": 0.0
+}

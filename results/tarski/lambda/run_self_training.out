@@ -1,0 +1,28 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 9064.52it/s]
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 18:59:51 2026).
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 18:59:51 2026).
+loaded typed-decisions: 1080/120/400 messages (train/val/test), tasks: agent_trace_observability.action(4), agent_trace_observability.needs_review(2), agent_trace_observability.outcome(4), agent_trace_observability.risk(4), agent_trace_observability.urgency(4), customer_service.action(5), customer_service.category(5), customer_service.churn_risk(4), customer_service.needs_human(2), customer_service.urgency(4), invoice_processing.discrepancy_severity(4), invoice_processing.disposition(4), invoice_processing.duplicate(2), invoice_processing.matches_order(2), invoice_processing.urgency(4), security_incidents.credential_compromise(2), security_incidents.disposition(4), security_incidents.severity(5), security_incidents.true_positive(2), security_incidents.urgency(4)
+[customer_service.action] pool=269 (labelled=60, unlabelled=209) val=31 test=100 labels=['answer_directly', 'close_no_action', 'escalate_to_human', 'execute_refund', 'request_information']
+  baseline (labelled-only, n=60): acc=0.500 f1=0.178
+  oracle (full pool, TRUE labels, n=269): acc=0.580 f1=0.240
+  round 1: +52 pseudo (agreement-admitted; acc-vs-hidden-gold 0.65), total pseudo=52 -> test acc=0.520 f1=0.138
+  round 2: +39 pseudo (agreement-admitted; acc-vs-hidden-gold 0.59), total pseudo=91 -> test acc=0.520 f1=0.138
+  round 3: +30 pseudo (agreement-admitted; acc-vs-hidden-gold 0.63), total pseudo=121 -> test acc=0.520 f1=0.137
+  round 4: +22 pseudo (agreement-admitted; acc-vs-hidden-gold 0.45), total pseudo=143 -> test acc=0.520 f1=0.137
+  round 5: +16 pseudo (agreement-admitted; acc-vs-hidden-gold 0.38), total pseudo=159 -> test acc=0.520 f1=0.137
+[customer_service.urgency] pool=269 (labelled=60, unlabelled=209) val=31 test=100 labels=['0', '1', '2', '3']
+  baseline (labelled-only, n=60): acc=0.540 f1=0.337
+  oracle (full pool, TRUE labels, n=269): acc=0.550 f1=0.300
+  round 1: +52 pseudo (agreement-admitted; acc-vs-hidden-gold 0.44), total pseudo=52 -> test acc=0.540 f1=0.291
+  round 2: +39 pseudo (agreement-admitted; acc-vs-hidden-gold 0.46), total pseudo=91 -> test acc=0.520 f1=0.280
+  round 3: +30 pseudo (agreement-admitted; acc-vs-hidden-gold 0.23), total pseudo=121 -> test acc=0.520 f1=0.280
+  round 4: +22 pseudo (agreement-admitted; acc-vs-hidden-gold 0.45), total pseudo=143 -> test acc=0.490 f1=0.265
+  round 5: +16 pseudo (agreement-admitted; acc-vs-hidden-gold 0.56), total pseudo=159 -> test acc=0.500 f1=0.269
+
+=== self-training summary ===
+[customer_service.action] baseline acc=0.500 -> self-trained acc=0.520 (n_pseudo=159)  vs oracle (full pool, true labels) acc=0.580
+[customer_service.urgency] baseline acc=0.540 -> self-trained acc=0.500 (n_pseudo=159)  vs oracle (full pool, true labels) acc=0.550
+wrote results/tarski/explore_self_training.json
+total elapsed: 112.6s

@@ -1,0 +1,176 @@
+{
+ "args": {
+  "plan": [
+   "banking77:8:probe,full,svf,svf_norm,lora8",
+   "banking77:14:full,svf,svf_norm"
+  ],
+  "typed_workflows": [
+   "customer_service"
+  ],
+  "min_steps": 300,
+  "epochs": 6,
+  "latency": true,
+  "latency_only": false,
+  "device": null,
+  "smoke": false,
+  "out": "results/tarski/explore_lit_svf_banking77.json"
+ },
+ "runs": {
+  "banking77:8": {
+   "probe": {
+    "mean_acc": 0.8910923276983095,
+    "trainable_params": 60749,
+    "per_task": {
+     "intent": {
+      "acc": 0.8910923276983095,
+      "macro_f1": 0.8912043521853278,
+      "ece": 0.02050668424569431,
+      "trainable_params": 60749,
+      "stored_bytes_fp16": 121498,
+      "train_s": 11.3
+     }
+    },
+    "wall_s": 11.4
+   },
+   "full": {
+    "mean_acc": 0.9223016905071522,
+    "trainable_params": 10090061,
+    "per_task": {
+     "intent": {
+      "acc": 0.9223016905071522,
+      "macro_f1": 0.9224033122254227,
+      "ece": 0.015154146113383315,
+      "trainable_params": 10090061,
+      "stored_bytes_fp16": 20180122,
+      "train_s": 24.1
+     }
+    },
+    "wall_s": 24.6
+   },
+   "svf": {
+    "mean_acc": 0.8706111833550065,
+    "trainable_params": 66125,
+    "per_task": {
+     "intent": {
+      "acc": 0.8706111833550065,
+      "macro_f1": 0.8710132046186412,
+      "ece": 0.015833001007339264,
+      "trainable_params": 66125,
+      "stored_bytes_fp16": 132250,
+      "train_s": 39.1
+     }
+    },
+    "wall_s": 41.3
+   },
+   "svf_norm": {
+    "mean_acc": 0.8842652795838751,
+    "trainable_params": 69197,
+    "per_task": {
+     "intent": {
+      "acc": 0.8842652795838751,
+      "macro_f1": 0.8845331394176792,
+      "ece": 0.014751830534290102,
+      "trainable_params": 69197,
+      "stored_bytes_fp16": 138394,
+      "train_s": 39.1
+     }
+    },
+    "wall_s": 40.9
+   },
+   "lora8": {
+    "mean_acc": 0.8998699609882965,
+    "trainable_params": 213581,
+    "per_task": {
+     "intent": {
+      "acc": 0.8998699609882965,
+      "macro_f1": 0.8997321554114519,
+      "ece": 0.017500547345810066,
+      "trainable_params": 213581,
+      "stored_bytes_fp16": 427162,
+      "train_s": 35.7
+     }
+    },
+    "wall_s": 36.2
+   }
+  },
+  "banking77:14": {
+   "full": {
+    "mean_acc": 0.9304291287386216,
+    "trainable_params": 10090061,
+    "per_task": {
+     "intent": {
+      "acc": 0.9304291287386216,
+      "macro_f1": 0.9303297340487703,
+      "ece": 0.01785736592057779,
+      "trainable_params": 10090061,
+      "stored_bytes_fp16": 20180122,
+      "train_s": 39.3
+     }
+    },
+    "wall_s": 39.9
+   },
+   "svf": {
+    "mean_acc": 0.9118985695708712,
+    "trainable_params": 66125,
+    "per_task": {
+     "intent": {
+      "acc": 0.9118985695708712,
+      "macro_f1": 0.9121285020006779,
+      "ece": 0.016507494937924045,
+      "trainable_params": 66125,
+      "stored_bytes_fp16": 132250,
+      "train_s": 36.7
+     }
+    },
+    "wall_s": 38.4
+   },
+   "svf_norm": {
+    "mean_acc": 0.9138491547464239,
+    "trainable_params": 69197,
+    "per_task": {
+     "intent": {
+      "acc": 0.9138491547464239,
+      "macro_f1": 0.9140522780314523,
+      "ece": 0.024095765771574372,
+      "trainable_params": 69197,
+      "stored_bytes_fp16": 138394,
+      "train_s": 37.5
+     }
+    },
+    "wall_s": 39.2
+   }
+  }
+ },
+ "checks": {
+  "svf_z1_rel_err": 0.00020123139256611466,
+  "shared_vs_loop_abs_err": 5.960464477539062e-07
+ },
+ "latency": {
+  "device": "cuda",
+  "split": 8,
+  "rows": [
+   {
+    "n": 1,
+    "loop_full_ms": 1.2269569997442886,
+    "fused_full_ms": 1.575637001224095,
+    "loop_svf_ms": 1.7263480021938449,
+    "shared_svf_ms": 1.7396799994457979
+   },
+   {
+    "n": 5,
+    "loop_full_ms": 6.158385498565622,
+    "fused_full_ms": 3.7543430025834823,
+    "loop_svf_ms": 9.736123500260874,
+    "shared_svf_ms": 2.1819234989379765
+   },
+   {
+    "n": 20,
+    "loop_full_ms": 23.297070500120753,
+    "fused_full_ms": 4.835580499275238,
+    "loop_svf_ms": 34.397425999486586,
+    "shared_svf_ms": 1.8020070001512067
+   }
+  ],
+  "trunk_ms": 5.728144500608323
+ }
+}

@@ -1,0 +1,149 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 5500.83it/s]
+[    0.9s] == k-shot curve on banking77 | base answerdotai/ModernBERT-base on cuda | arms ['proto', 'li', 'probe', 'blocks', 'full'] | ks ['0', '1', '5', '10', '25', 'all']
+Using the latest cached version of the dataset since mteb/banking77 couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /home/ubuntu/.cache/huggingface/datasets/mteb___banking77/default/0.0.0/18072d2685ea682290f7b8924d94c62acc19c0b2 (last modified on Sun Sep 27 22:52:06 2026).
+[    9.0s]    77 classes, train pool 8994, val pool 999, test 3076 in-scope + 0 oos; cached depths [0, 8, 14] in 6.8s (939 MB)
+[    9.0s] -- k=0|seed=0: 0 train, 0 val
+[    9.0s]       proto_names: acc 0.0163
+[    9.6s]       li_untrained: acc 0.1593 (430 bag tokens)
+[    9.8s] -- k=1|seed=0: 77 train, 77 val
+[    9.9s]       proto: acc 0.1843
+[    9.9s]       proto+name: acc 0.2224
+[   10.4s]       li_untrained: acc 0.2906 (1636 bag tokens)
+[   15.3s]       li: acc 0.3111, 300 steps, 4.3s
+[   19.9s]       probe: 100 epochs, 300 steps, 4.4s, val acc 0.260, T=1.06
+[   20.1s]       probe: acc 0.2285 macro-F1 0.2257 ECE 0.036
+[   28.0s]       blocks: 100 epochs, 300 steps, 7.7s, val acc 0.208, T=1.70
+[   28.4s]       blocks: acc 0.1586 macro-F1 0.1540 ECE 0.092
+[   76.2s]       full: 100 epochs, 300 steps, 47.5s, val acc 0.286, T=1.18
+[   78.1s]       full: acc 0.2624 macro-F1 0.2479 ECE 0.060
+[   78.4s] -- k=1|seed=1: 77 train, 77 val
+[   78.4s]       proto: acc 0.1495
+[   78.4s]       proto+name: acc 0.1977
+[   79.0s]       li_untrained: acc 0.2903 (1652 bag tokens)
+[   83.8s]       li: acc 0.3225, 300 steps, 4.3s
+[   88.1s]       probe: 100 epochs, 300 steps, 4.1s, val acc 0.286, T=1.20
+[   88.4s]       probe: acc 0.2204 macro-F1 0.2237 ECE 0.039
+[   96.3s]       blocks: 100 epochs, 300 steps, 7.7s, val acc 0.169, T=2.04
+[   96.7s]       blocks: acc 0.1547 macro-F1 0.1555 ECE 0.044
+[  145.3s]       full: 100 epochs, 300 steps, 48.4s, val acc 0.351, T=1.22
+[  147.3s]       full: acc 0.2552 macro-F1 0.2513 ECE 0.051
+[  147.5s] -- k=1|seed=2: 77 train, 77 val
+[  147.6s]       proto: acc 0.1762
+[  147.6s]       proto+name: acc 0.2214
+[  148.2s]       li_untrained: acc 0.3092 (1646 bag tokens)
+[  152.9s]       li: acc 0.3342, 300 steps, 4.3s
+[  157.3s]       probe: 100 epochs, 300 steps, 4.1s, val acc 0.273, T=1.17
+[  157.5s]       probe: acc 0.2334 macro-F1 0.2260 ECE 0.042
+[  165.1s]       blocks: 100 epochs, 300 steps, 7.4s, val acc 0.169, T=2.18
+[  165.5s]       blocks: acc 0.1713 macro-F1 0.1645 ECE 0.034
+[  212.1s]       full: 100 epochs, 300 steps, 46.3s, val acc 0.260, T=1.18
+[  214.1s]       full: acc 0.2682 macro-F1 0.2607 ECE 0.064
+[  214.3s] -- k=5|seed=0: 385 train, 381 val
+[  214.4s]       proto: acc 0.2614
+[  214.5s]       proto+name: acc 0.2715
+[  215.5s]       li_untrained: acc 0.5432 (6499 bag tokens)
+[  221.6s]       li: acc 0.5741, 312 steps, 5.2s
+[  225.4s]       probe: 24 epochs, 312 steps, 3.6s, val acc 0.528, T=0.78
+[  225.6s]       probe: acc 0.5572 macro-F1 0.5612 ECE 0.038
+[  233.1s]       blocks: 24 epochs, 312 steps, 7.3s, val acc 0.693, T=1.12
+[  233.5s]       blocks: acc 0.6694 macro-F1 0.6691 ECE 0.031
+[  276.2s]       full: 24 epochs, 312 steps, 42.5s, val acc 0.709, T=1.15
+[  278.1s]       full: acc 0.7055 macro-F1 0.6990 ECE 0.044
+[  278.4s] -- k=5|seed=1: 385 train, 381 val
+[  278.5s]       proto: acc 0.2780
+[  278.6s]       proto+name: acc 0.2887
+[  279.6s]       li_untrained: acc 0.5471 (6454 bag tokens)
+[  285.7s]       li: acc 0.5832, 312 steps, 5.2s
+[  289.8s]       probe: 24 epochs, 312 steps, 4.0s, val acc 0.572, T=0.72
+[  290.1s]       probe: acc 0.5387 macro-F1 0.5412 ECE 0.023
+[  297.6s]       blocks: 24 epochs, 312 steps, 7.3s, val acc 0.706, T=1.08
+[  298.0s]       blocks: acc 0.6837 macro-F1 0.6806 ECE 0.026
+[  330.2s]       full: 24 epochs, 312 steps, 32.0s, val acc 0.772, T=1.00
+[  331.5s]       full: acc 0.7087 macro-F1 0.7055 ECE 0.055
+[  331.7s] -- k=5|seed=2: 385 train, 381 val
+[  331.9s]       proto: acc 0.2422
+[  332.0s]       proto+name: acc 0.2523
+[  332.5s]       li_untrained: acc 0.5215 (6392 bag tokens)
+[  335.7s]       li: acc 0.5566, 312 steps, 2.7s
+[  337.8s]       probe: 24 epochs, 312 steps, 2.0s, val acc 0.543, T=0.80
+[  338.0s]       probe: acc 0.5280 macro-F1 0.5307 ECE 0.031
+[  342.4s]       blocks: 24 epochs, 312 steps, 4.3s, val acc 0.690, T=1.10
+[  342.7s]       blocks: acc 0.6791 macro-F1 0.6759 ECE 0.015
+[  384.6s]       full: 24 epochs, 312 steps, 41.6s, val acc 0.664, T=1.17
+[  386.6s]       full: acc 0.6668 macro-F1 0.6597 ECE 0.025
+[  386.8s] -- k=10|seed=0: 770 train, 730 val
+[  387.0s]       proto: acc 0.3153
+[  387.1s]       proto+name: acc 0.3225
+[  388.0s]       li_untrained: acc 0.6382 (12158 bag tokens)
+[  393.1s]       li: acc 0.6739, 300 steps, 4.2s
+[  396.6s]       probe: 20 epochs, 500 steps, 3.3s, val acc 0.670, T=0.82
+[  396.7s]       probe: acc 0.6814 macro-F1 0.6845 ECE 0.031
+[  402.5s]       blocks: 12 epochs, 300 steps, 5.6s, val acc 0.793, T=1.08
+[  402.9s]       blocks: acc 0.7906 macro-F1 0.7907 ECE 0.014
+[  440.8s]       full: 12 epochs, 300 steps, 37.7s, val acc 0.827, T=1.16
+[  442.1s]       full: acc 0.8254 macro-F1 0.8248 ECE 0.025
+[  442.3s] -- k=10|seed=1: 770 train, 730 val
+[  442.4s]       proto: acc 0.3192
+[  442.6s]       proto+name: acc 0.3264
+[  443.6s]       li_untrained: acc 0.6508 (12545 bag tokens)
+[  449.3s]       li: acc 0.6684, 300 steps, 4.6s
+[  453.2s]       probe: 20 epochs, 500 steps, 3.7s, val acc 0.692, T=0.80
+[  453.4s]       probe: acc 0.6889 macro-F1 0.6906 ECE 0.016
+[  460.5s]       blocks: 12 epochs, 300 steps, 6.9s, val acc 0.801, T=1.11
+[  460.9s]       blocks: acc 0.8040 macro-F1 0.8039 ECE 0.015
+[  497.6s]       full: 12 epochs, 300 steps, 36.5s, val acc 0.856, T=1.18
+[  498.8s]       full: acc 0.8433 macro-F1 0.8429 ECE 0.018
+[  499.0s] -- k=10|seed=2: 770 train, 730 val
+[  499.2s]       proto: acc 0.3306
+[  499.3s]       proto+name: acc 0.3388
+[  500.2s]       li_untrained: acc 0.6424 (12018 bag tokens)
+[  505.4s]       li: acc 0.6632, 300 steps, 4.1s
+[  509.7s]       probe: 20 epochs, 500 steps, 4.1s, val acc 0.674, T=0.84
+[  509.9s]       probe: acc 0.6834 macro-F1 0.6828 ECE 0.027
+[  517.1s]       blocks: 12 epochs, 300 steps, 7.0s, val acc 0.799, T=1.09
+[  517.5s]       blocks: acc 0.7900 macro-F1 0.7910 ECE 0.016
+[  552.9s]       full: 12 epochs, 300 steps, 35.1s, val acc 0.822, T=1.18
+[  554.1s]       full: acc 0.8267 macro-F1 0.8251 ECE 0.013
+[  554.3s] -- k=25|seed=0: 1925 train, 730 val
+[  554.5s]       proto: acc 0.3696
+[  554.6s]       proto+name: acc 0.3703
+[  556.7s]       li_untrained: acc 0.7367 (29795 bag tokens)
+[  588.9s]       li: acc 0.7773, 610 steps, 28.7s
+[  600.8s]       probe: 20 epochs, 1220 steps, 11.7s, val acc 0.792, T=0.94
+[  600.9s]       probe: acc 0.7975 macro-F1 0.7975 ECE 0.012
+[  605.5s]       blocks: 6 epochs, 366 steps, 4.4s, val acc 0.864, T=1.02
+[  605.7s]       blocks: acc 0.8713 macro-F1 0.8712 ECE 0.016
+[  638.5s]       full: 5 epochs, 305 steps, 32.6s, val acc 0.896, T=1.10
+[  640.5s]       full: acc 0.8989 macro-F1 0.8992 ECE 0.011
+[  640.8s] -- k=25|seed=1: 1925 train, 730 val
+[  641.0s]       proto: acc 0.3940
+[  641.1s]       proto+name: acc 0.3963
+[  644.4s]       li_untrained: acc 0.7471 (30005 bag tokens)
+[  673.5s]       li: acc 0.7724, 610 steps, 27.0s
+[  681.1s]       probe: 20 epochs, 1220 steps, 7.3s, val acc 0.795, T=0.98
+[  681.3s]       probe: acc 0.8014 macro-F1 0.8019 ECE 0.018
+[  688.8s]       blocks: 6 epochs, 366 steps, 7.3s, val acc 0.878, T=1.04
+[  689.1s]       blocks: acc 0.8586 macro-F1 0.8586 ECE 0.015
+[  724.7s]       full: 5 epochs, 305 steps, 35.3s, val acc 0.890, T=1.12
+[  726.3s]       full: acc 0.8895 macro-F1 0.8894 ECE 0.009
+[  726.5s] -- k=all|seed=0: 8994 train, 999 val
+[  726.8s]       proto: acc 0.3401
+[  726.9s]       proto+name: acc 0.3378
+[  729.8s]       li_untrained: acc 0.7367 (29795 bag tokens)
+[  861.5s]       li: acc 0.8700, 2820 steps, 127.9s
+[  882.0s]       probe: 10 epochs, 2820 steps, 20.3s, val acc 0.907, T=0.99
+[  882.1s]       probe: acc 0.8826 macro-F1 0.8829 ECE 0.009
+[  906.0s]       blocks: 6 epochs, 1692 steps, 23.6s, val acc 0.925, T=1.42
+[  906.4s]       blocks: acc 0.9301 macro-F1 0.9300 ECE 0.017
+[ 1109.5s]       full: 5 epochs, 1410 steps, 202.9s, val acc 0.942, T=1.49
+[ 1112.4s]       full: acc 0.9386 macro-F1 0.9384 ECE 0.010
+[ 1112.7s] == summary (test accuracy, mean over seeds)
+[ 1112.7s]    k            blocks         full           li     li_names li_untrained        probe   proto+name  proto_names
+[ 1112.7s]    k=0               -            -            -       0.1593            -            -            -       0.0163
+[ 1112.7s]    k=1          0.1616       0.2619       0.3226            -       0.2967       0.2275       0.2138            -
+[ 1112.7s]    k=5          0.6774       0.6936       0.5713            -       0.5373       0.5413       0.2708            -
+[ 1112.7s]    k=10         0.7949       0.8318       0.6685            -       0.6438       0.6845       0.3292            -
+[ 1112.7s]    k=25         0.8649       0.8942       0.7749            -       0.7419       0.7994       0.3833            -
+[ 1112.7s]    k=all        0.9301       0.9386       0.8700            -       0.7367       0.8826       0.3378            -
+[ 1112.7s] done

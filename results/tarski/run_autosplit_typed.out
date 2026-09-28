@@ -1,0 +1,26 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 39111.81it/s]
+probe curves for 20 task(s) in 49s
+tol 0.005: agent_trace_observability.action->2, agent_trace_observability.needs_review->12, agent_trace_observability.outcome->9, agent_trace_observability.risk->12, agent_trace_observability.urgency->2, customer_service.action->12, customer_service.category->1, customer_service.churn_risk->1, customer_service.needs_human->16, customer_service.urgency->20, invoice_processing.discrepancy_severity->19, invoice_processing.disposition->20, invoice_processing.duplicate->16, invoice_processing.matches_order->16, invoice_processing.urgency->2, security_incidents.credential_compromise->20, security_incidents.disposition->15, security_incidents.severity->10, security_incidents.true_positive->17, security_incidents.urgency->10
+  probe@1 customer_service.category: acc 0.7400 (2s)
+  probe@1 customer_service.churn_risk: acc 0.6500 (2s)
+  probe@2 agent_trace_observability.action: acc 0.5100 (1s)
+  probe@2 agent_trace_observability.urgency: acc 0.3800 (1s)
+  probe@2 invoice_processing.urgency: acc 0.6300 (2s)
+  probe@9 agent_trace_observability.outcome: acc 0.3200 (1s)
+  probe@10 security_incidents.severity: acc 0.5400 (1s)
+  probe@10 security_incidents.urgency: acc 0.5400 (1s)
+  probe@12 agent_trace_observability.needs_review: acc 0.8100 (1s)
+  probe@12 agent_trace_observability.risk: acc 0.3800 (1s)
+  probe@12 customer_service.action: acc 0.5500 (2s)
+  probe@15 security_incidents.disposition: acc 0.7400 (1s)
+  probe@16 customer_service.needs_human: acc 0.7400 (2s)
+  probe@16 invoice_processing.duplicate: acc 0.8900 (2s)
+  probe@16 invoice_processing.matches_order: acc 0.7600 (2s)
+  probe@17 security_incidents.true_positive: acc 0.7600 (1s)
+  probe@19 invoice_processing.discrepancy_severity: acc 0.4700 (2s)
+  probe@20 customer_service.urgency: acc 0.5700 (2s)
+  probe@20 invoice_processing.disposition: acc 0.4800 (2s)
+  probe@20 security_incidents.credential_compromise: acc 0.7100 (1s)
+tol 0.01: agent_trace_observability.action->2, agent_trace_observability.needs_review->12, agent_trace_observability.outcome->9, agent_trace_observability.risk->12, agent_trace_observability.urgency->2, customer_service.action->12, customer_service.category->1, customer_service.churn_risk->1, customer_service.needs_human->16, customer_service.urgency->20, invoice_processing.discrepancy_severity->19, invoice_processing.disposition->20, invoice_processing.duplicate->16, invoice_processing.matches_order->16, invoice_processing.urgency->2, security_incidents.credential_compromise->20, security_incidents.disposition->15, security_incidents.severity->10, security_incidents.true_positive->17, security_incidents.urgency->10
+tol 0.02: agent_trace_observability.action->2, agent_trace_observability.needs_review->12, agent_trace_observability.outcome->9, agent_trace_observability.risk->12, agent_trace_observability.urgency->2, customer_service.action->12, customer_service.category->1, customer_service.churn_risk->1, customer_service.needs_human->16, customer_service.urgency->20, invoice_processing.discrepancy_severity->19, invoice_processing.disposition->20, invoice_processing.duplicate->16, invoice_processing.matches_order->16, invoice_processing.urgency->2, security_incidents.credential_compromise->20, security_incidents.disposition->15, security_incidents.severity->10, security_incidents.true_positive->17, security_incidents.urgency->10
+done

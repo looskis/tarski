@@ -1,0 +1,119 @@
+{
+ "args": {
+  "smoke": true,
+  "backbone": "typed-decisions",
+  "ks": [
+   0,
+   7,
+   14,
+   20,
+   24,
+   26,
+   28
+  ],
+  "bs": 32,
+  "limit": 0,
+  "out": ""
+ },
+ "device": "cpu",
+ "checks": {
+  "block_vs_readonce": 0.0,
+  "cache_invariance": 1.9053956066272804e-06,
+  "cache_invariance_question_lengths": [
+   65,
+   32
+  ]
+ },
+ "runs": {
+  "block@0/head=joint": {
+   "acc": 0.8,
+   "brier": 0.06675249738618731,
+   "ece": 0.2446064919233322,
+   "n": 10,
+   "acc_choice": 0.75,
+   "acc_score": 0.75,
+   "acc_noul": 1.0,
+   "question_tokens": 61.8,
+   "state_tokens": 97.50000000000001,
+   "per_question_token_layers": 4779.000000000001,
+   "per_message_token_layers_shared": 0.0,
+   "unsplit_per_question": 4779.0,
+   "s": 5.9
+  },
+  "block@14/head=joint": {
+   "acc": 0.6,
+   "brier": 0.03829884803853929,
+   "ece": 0.3025389343500138,
+   "n": 10,
+   "acc_choice": 0.75,
+   "acc_score": 0.25,
+   "acc_noul": 1.0,
+   "question_tokens": 61.8,
+   "state_tokens": 97.50000000000001,
+   "per_question_token_layers": 3414.0,
+   "per_message_token_layers_shared": 1365.0000000000002,
+   "unsplit_per_question": 4779.0,
+   "s": 7.0
+  },
+  "block@28/head=joint": {
+   "acc": 0.3,
+   "brier": 0.23119695782661437,
+   "ece": 0.19720628261566162,
+   "n": 10,
+   "acc_choice": 0.5,
+   "acc_score": 0.25,
+   "acc_noul": 0.0,
+   "question_tokens": 61.8,
+   "state_tokens": 97.50000000000001,
+   "per_question_token_layers": 2049.0,
+   "per_message_token_layers_shared": 2730.0000000000005,
+   "unsplit_per_question": 4779.0,
+   "s": 6.0
+  },
+  "oneway@14/head=joint": {
+   "acc": 0.7,
+   "brier": 0.0555861617118353,
+   "ece": 0.33220355510711674,
+   "n": 10,
+   "acc_choice": 0.75,
+   "acc_score": 0.5,
+   "acc_noul": 1.0,
+   "question_tokens": 61.8,
+   "state_tokens": 97.50000000000001,
+   "per_question_token_layers": 3414.0,
+   "per_message_token_layers_shared": 1365.0000000000002,
+   "unsplit_per_question": 4779.0,
+   "s": 5.0
+  },
+  "oneway@28/head=joint": {
+   "acc": 0.6,
+   "brier": 0.06139426504378207,
+   "ece": 0.31945101916790003,
+   "n": 10,
+   "acc_choice": 0.5,
+   "acc_score": 0.5,
+   "acc_noul": 1.0,
+   "question_tokens": 61.8,
+   "state_tokens": 97.50000000000001,
+   "per_question_token_layers": 2049.0,
+   "per_message_token_layers_shared": 2730.0000000000005,
+   "unsplit_per_question": 4779.0,
+   "s": 2.7
+  },
+  "oneway@28/head=oneway": {
+   "acc": 0.6,
+   "brier": 0.0613908592320513,
+   "ece": 0.31947916746139526,
+   "n": 10,
+   "acc_choice": 0.5,
+   "acc_score": 0.5,
+   "acc_noul": 1.0,
+   "question_tokens": 61.8,
+   "state_tokens": 97.50000000000001,
+   "per_question_token_layers": 1853.9999999999998,
+   "per_message_token_layers_shared": 2925.0000000000005,
+   "unsplit_per_question": 4779.0,
+   "s": 2.8
+  }
+ }
+}

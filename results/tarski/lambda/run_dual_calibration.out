@@ -1,0 +1,74 @@
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 18:59:51 2026).
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 18:59:51 2026).
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 8740.31it/s]
+-- agent_trace_observability.action
+   n_val=26 has_soft=True T_hard=1.00 T_soft=1.00 | ECE  T1=0.102 T_hard=0.102 T_soft=0.102 | Brier-soft  T_hard=0.105 T_soft=0.105
+-- agent_trace_observability.needs_review
+   n_val=26 has_soft=True T_hard=1.00 T_soft=1.00 | ECE  T1=0.195 T_hard=0.195 T_soft=0.195 | Brier-soft  T_hard=0.099 T_soft=0.099
+-- agent_trace_observability.outcome
+   n_val=26 has_soft=True T_hard=1.00 T_soft=1.00 | ECE  T1=0.076 T_hard=0.076 T_soft=0.076 | Brier-soft  T_hard=0.171 T_soft=0.171
+-- agent_trace_observability.risk
+   n_val=26 has_soft=True T_hard=1.00 T_soft=1.00 | ECE  T1=0.063 T_hard=0.063 T_soft=0.063 | Brier-soft  T_hard=0.176 T_soft=0.176
+-- agent_trace_observability.urgency
+   n_val=26 has_soft=True T_hard=1.00 T_soft=1.00 | ECE  T1=0.025 T_hard=0.025 T_soft=0.025 | Brier-soft  T_hard=0.109 T_soft=0.109
+-- customer_service.action
+   n_val=31 has_soft=True T_hard=0.58 T_soft=0.91 | ECE  T1=0.113 T_hard=0.100 T_soft=0.131 | Brier-soft  T_hard=0.169 T_soft=0.136
+-- customer_service.category
+   n_val=31 has_soft=True T_hard=0.39 T_soft=0.43 | ECE  T1=0.354 T_hard=0.131 T_soft=0.171 | Brier-soft  T_hard=0.251 T_soft=0.255
+-- customer_service.churn_risk
+   n_val=31 has_soft=True T_hard=0.35 T_soft=0.84 | ECE  T1=0.205 T_hard=0.100 T_soft=0.192 | Brier-soft  T_hard=0.184 T_soft=0.149
+-- customer_service.needs_human
+   n_val=31 has_soft=True T_hard=nan T_soft=0.72 | ECE  T1=0.107 T_hard=0.000 T_soft=0.121 | Brier-soft  T_hard=nan T_soft=0.067
+-- customer_service.urgency
+   n_val=31 has_soft=True T_hard=0.53 T_soft=0.86 | ECE  T1=0.163 T_hard=0.059 T_soft=0.112 | Brier-soft  T_hard=0.120 T_soft=0.119
+-- invoice_processing.discrepancy_severity
+   n_val=41 has_soft=True T_hard=0.79 T_soft=1.08 | ECE  T1=0.171 T_hard=0.184 T_soft=0.223 | Brier-soft  T_hard=0.300 T_soft=0.305
+-- invoice_processing.disposition
+   n_val=41 has_soft=True T_hard=1.05 T_soft=1.29 | ECE  T1=0.112 T_hard=0.118 T_soft=0.134 | Brier-soft  T_hard=0.219 T_soft=0.224
+-- invoice_processing.duplicate
+   n_val=41 has_soft=True T_hard=1.14 T_soft=1.09 | ECE  T1=0.017 T_hard=0.026 T_soft=0.003 | Brier-soft  T_hard=0.075 T_soft=0.075
+-- invoice_processing.matches_order
+   n_val=41 has_soft=True T_hard=0.63 T_soft=0.80 | ECE  T1=0.145 T_hard=0.116 T_soft=0.132 | Brier-soft  T_hard=0.282 T_soft=0.292
+-- invoice_processing.urgency
+   n_val=41 has_soft=True T_hard=0.22 T_soft=0.89 | ECE  T1=0.177 T_hard=0.153 T_soft=0.165 | Brier-soft  T_hard=0.160 T_soft=0.106
+-- security_incidents.credential_compromise
+   n_val=22 has_soft=True T_hard=1.00 T_soft=1.00 | ECE  T1=0.148 T_hard=0.148 T_soft=0.148 | Brier-soft  T_hard=0.056 T_soft=0.056
+-- security_incidents.disposition
+   n_val=22 has_soft=True T_hard=1.00 T_soft=1.00 | ECE  T1=0.259 T_hard=0.259 T_soft=0.259 | Brier-soft  T_hard=0.077 T_soft=0.077
+-- security_incidents.severity
+   n_val=22 has_soft=True T_hard=1.00 T_soft=1.00 | ECE  T1=0.159 T_hard=0.159 T_soft=0.159 | Brier-soft  T_hard=0.091 T_soft=0.091
+-- security_incidents.true_positive
+   n_val=22 has_soft=True T_hard=1.00 T_soft=1.00 | ECE  T1=0.179 T_hard=0.179 T_soft=0.179 | Brier-soft  T_hard=0.047 T_soft=0.047
+-- security_incidents.urgency
+   n_val=22 has_soft=True T_hard=1.00 T_soft=1.00 | ECE  T1=0.168 T_hard=0.168 T_soft=0.168 | Brier-soft  T_hard=0.084 T_soft=0.084
+{
+  "mean": {
+    "T1": {
+      "acc": 0.602,
+      "macro_f1": 0.39414769855111637,
+      "ece": 0.1469212784320116,
+      "nll": 0.9316490456461907,
+      "brier_soft": 0.14287887290120124
+    },
+    "T_hard": {
+      "acc": 0.581,
+      "macro_f1": 0.3750694890293858,
+      "ece": 0.11809457637369633,
+      "nll": NaN,
+      "brier_soft": NaN
+    },
+    "T_soft": {
+      "acc": 0.602,
+      "macro_f1": 0.39414769855111637,
+      "ece": 0.13787038087844855,
+      "nll": 0.9131756886839867,
+      "brier_soft": 0.13716419748961925
+    }
+  },
+  "n_tasks": 20,
+  "n_tasks_with_soft_labels": 20
+}
+headline: mean ECE today's default (T_soft) = 0.1379 vs correctness-optimal (T_hard) = 0.1181 (lower is better-calibrated w.r.t. hard correctness, which is what ECE measures); mean Brier-vs-soft T_soft = 0.1372 vs T_hard = nan (lower is closer to the teacher's distribution). acc is identical across variants by construction: 0.6020 / 0.5810 / 0.6020
+wrote results/tarski/explore_dual_calibration.json

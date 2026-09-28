@@ -1,0 +1,31 @@
+{
+ "held_out_domain": "auto_and_commute",
+ "n_shots": 10,
+ "n_replay": 60,
+ "before_imprinting": {
+  "old_domain_acc": 0.6262214983713354,
+  "new_domain_acc": 0.0,
+  "overall_acc": 0.5126666666666667
+ },
+ "after_imprinting_zero_shot_finetune": {
+  "old_domain_acc": 0.0,
+  "new_domain_acc": 1.0,
+  "overall_acc": 0.18133333333333335
+ },
+ "after_surgical_finetune": {
+  "old_domain_acc": 0.6026058631921825,
+  "new_domain_acc": 0.15808823529411764,
+  "overall_acc": 0.522
+ },
+ "after_naive_finetune": {
+  "old_domain_acc": 0.5570032573289903,
+  "new_domain_acc": 0.1801470588235294,
+  "overall_acc": 0.4886666666666667
+ },
+ "ceiling_full_retrain": {
+  "old_domain_acc": 0.6123778501628665,
+  "new_domain_acc": 0.8602941176470589,
+  "overall_acc": 0.6573333333333333
+ },
+ "elapsed_s": 56.4
+}

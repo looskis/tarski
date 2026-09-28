@@ -1,0 +1,21 @@
+== drift monitors on CLINC150 | 130 known intents, 20 held out (tire_change, oil_change_when, freeze_account, bill_due, application_status, apr...) | primary probe depth 22 | fits cpu
+  trunk pass: 1790 messages at depths [8, 12, 16] in 4.3s
+  trunk pass: 390 messages at depths [4, 8, 12, 16, 22] in 1.8s
+  trunk pass: 390 messages at depths [4, 8, 12, 16, 22] in 2.0s
+   source accuracy (half B) 0.6786; proxy mean 0.2888; error-estimator AUROC on B 0.850; UCBs proxy_mean 0.4130, proxy_quant 0.2495, oos_rate 0.1404
+-- none: post-shift acc 0.7208 (source 0.6786), harmful 0.00 | proxy_mean FA 0.00 det 0.00 | proxy_quant FA 0.00 det 0.00 | oos_rate FA 0.00 det 0.00 | msp_cusum FA 0.00 det 0.00 | mmd FA 0.00 det 0.00
+   labels 25: uniform width 0.324 cover 0.88 certify-drop 0.00 | ppi_uniform width 0.278 cover 0.93 certify-drop 0.00 | active width 0.259 cover 0.95 certify-drop 0.00
+   labels 50: uniform width 0.227 cover 0.87 certify-drop 0.00 | ppi_uniform width 0.199 cover 0.95 certify-drop 0.00 | active width 0.192 cover 0.95 certify-drop 0.00
+-- new_routes: post-shift acc 0.5117 (source 0.6786), harmful 1.00 | proxy_mean FA 0.00 det 0.00 | proxy_quant FA 0.00 det 0.00 | oos_rate FA 0.00 det 0.00 | msp_cusum FA 0.00 det 0.33 delay 172 | mmd FA 0.00 det 0.00
+   labels 25: uniform width 0.373 cover 0.92 certify-drop 0.23 | ppi_uniform width 0.327 cover 0.98 certify-drop 0.23 | active width 0.313 cover 0.93 certify-drop 0.33
+   labels 50: uniform width 0.257 cover 0.97 certify-drop 0.42 | ppi_uniform width 0.233 cover 0.95 certify-drop 0.62 | active width 0.232 cover 0.95 certify-drop 0.67
+-- prior: post-shift acc 0.6750 (source 0.6786), harmful 0.33 | proxy_mean FA 0.00 det 0.00 | proxy_quant FA 0.00 det 0.00 | oos_rate FA 0.00 det 0.00 | msp_cusum FA 0.00 det 0.33 delay 147 | mmd FA 0.00 det 0.00
+   labels 25: uniform width 0.351 cover 0.93 certify-drop 0.03 | ppi_uniform width 0.280 cover 0.98 certify-drop 0.02 | active width 0.251 cover 0.98 certify-drop 0.02
+   labels 50: uniform width 0.238 cover 0.93 certify-drop 0.03 | ppi_uniform width 0.202 cover 0.98 certify-drop 0.03 | active width 0.189 cover 0.95 certify-drop 0.02
+-- typos_0.1: post-shift acc 0.4042 (source 0.6786), harmful 1.00 | proxy_mean FA 0.00 det 0.00 | proxy_quant FA 0.00 det 0.00 | oos_rate FA 0.00 det 0.00 | msp_cusum FA 0.00 det 1.00 delay 29 | mmd FA 0.00 det 0.00
+   labels 25: uniform width 0.366 cover 0.97 certify-drop 0.72 | ppi_uniform width 0.342 cover 1.00 certify-drop 0.80 | active width 0.335 cover 1.00 certify-drop 0.78
+   labels 50: uniform width 0.250 cover 0.95 certify-drop 0.93 | ppi_uniform width 0.242 cover 1.00 certify-drop 1.00 | active width 0.243 cover 0.97 certify-drop 1.00
+-- typos_0.2: post-shift acc 0.1467 (source 0.6786), harmful 1.00 | proxy_mean FA 0.00 det 0.00 | proxy_quant FA 0.00 det 0.00 | oos_rate FA 0.00 det 0.00 | msp_cusum FA 0.00 det 1.00 delay 35 | mmd FA 0.00 det 0.00
+   labels 25: uniform width 0.252 cover 0.92 certify-drop 1.00 | ppi_uniform width 0.328 cover 0.98 certify-drop 1.00 | active width 0.331 cover 0.95 certify-drop 1.00
+   labels 50: uniform width 0.181 cover 0.92 certify-drop 1.00 | ppi_uniform width 0.231 cover 0.95 certify-drop 1.00 | active width 0.234 cover 0.95 certify-drop 1.00
+done in 12.0s -> results/tarski/explore_lit_drift_smoke.json

@@ -1,0 +1,218 @@
+{
+ "config": {
+  "smoke": false,
+  "out": "results/tarski/explore_self_training.json",
+  "split": 8,
+  "labelled_n": 60,
+  "rounds": 5,
+  "admit_frac": 0.25,
+  "epochs": 8,
+  "seed": 0,
+  "device": null,
+  "tasks": null
+ },
+ "results": {
+  "customer_service.action": {
+   "labels": [
+    "answer_directly",
+    "close_no_action",
+    "escalate_to_human",
+    "execute_refund",
+    "request_information"
+   ],
+   "n_pool": 269,
+   "n_test": 100,
+   "baseline": {
+    "acc": 0.5,
+    "macro_f1": 0.17833333333333332,
+    "nll": 1.1784124374389648,
+    "ece": 0.08018180757761001,
+    "n": 100,
+    "brier_soft": 0.1733994334936142
+   },
+   "oracle_full_pool_true_labels": {
+    "acc": 0.58,
+    "macro_f1": 0.24044444444444446,
+    "nll": 1.1215758323669434,
+    "ece": 0.11225353062152862,
+    "n": 100,
+    "brier_soft": 0.14442141354084015
+   },
+   "curve": [
+    {
+     "round": 0,
+     "n_labelled": 60,
+     "n_pseudo": 0,
+     "pseudo_label_acc_vs_hidden_gold": null,
+     "acc": 0.5,
+     "macro_f1": 0.17833333333333332,
+     "nll": 1.1784124374389648,
+     "ece": 0.08018180757761001,
+     "n": 100,
+     "brier_soft": 0.1733994334936142
+    },
+    {
+     "round": 1,
+     "n_labelled": 60,
+     "n_pseudo": 52,
+     "pseudo_label_acc_vs_hidden_gold": 0.6538461538461539,
+     "acc": 0.52,
+     "macro_f1": 0.13774834437086092,
+     "nll": 1.175353765487671,
+     "ece": 0.06234589815139772,
+     "n": 100,
+     "brier_soft": 0.17153391242027283
+    },
+    {
+     "round": 2,
+     "n_labelled": 60,
+     "n_pseudo": 91,
+     "pseudo_label_acc_vs_hidden_gold": 0.5897435897435898,
+     "acc": 0.52,
+     "macro_f1": 0.13774834437086092,
+     "nll": 1.1774818897247314,
+     "ece": 0.055106225907802564,
+     "n": 100,
+     "brier_soft": 0.17324726283550262
+    },
+    {
+     "round": 3,
+     "n_labelled": 60,
+     "n_pseudo": 121,
+     "pseudo_label_acc_vs_hidden_gold": 0.6333333333333333,
+     "acc": 0.52,
+     "macro_f1": 0.1368421052631579,
+     "nll": 1.1790927648544312,
+     "ece": 0.046741614341735835,
+     "n": 100,
+     "brier_soft": 0.17456787824630737
+    },
+    {
+     "round": 4,
+     "n_labelled": 60,
+     "n_pseudo": 143,
+     "pseudo_label_acc_vs_hidden_gold": 0.45454545454545453,
+     "acc": 0.52,
+     "macro_f1": 0.1368421052631579,
+     "nll": 1.1757347583770752,
+     "ece": 0.03612229257822033,
+     "n": 100,
+     "brier_soft": 0.17490655183792114
+    },
+    {
+     "round": 5,
+     "n_labelled": 60,
+     "n_pseudo": 159,
+     "pseudo_label_acc_vs_hidden_gold": 0.375,
+     "acc": 0.52,
+     "macro_f1": 0.1368421052631579,
+     "nll": 1.1785928010940552,
+     "ece": 0.037575072050094575,
+     "n": 100,
+     "brier_soft": 0.1752772480249405
+    }
+   ]
+  },
+  "customer_service.urgency": {
+   "labels": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "n_pool": 269,
+   "n_test": 100,
+   "baseline": {
+    "acc": 0.54,
+    "macro_f1": 0.3373469254820219,
+    "nll": 0.9968438744544983,
+    "ece": 0.08572820514440538,
+    "n": 100,
+    "brier_soft": 0.139176607131958
+   },
+   "oracle_full_pool_true_labels": {
+    "acc": 0.55,
+    "macro_f1": 0.2999281609195402,
+    "nll": 0.985710084438324,
+    "ece": 0.1418044486641884,
+    "n": 100,
+    "brier_soft": 0.13013367354869843
+   },
+   "curve": [
+    {
+     "round": 0,
+     "n_labelled": 60,
+     "n_pseudo": 0,
+     "pseudo_label_acc_vs_hidden_gold": null,
+     "acc": 0.54,
+     "macro_f1": 0.3373469254820219,
+     "nll": 0.9968438744544983,
+     "ece": 0.08572820514440538,
+     "n": 100,
+     "brier_soft": 0.139176607131958
+    },
+    {
+     "round": 1,
+     "n_labelled": 60,
+     "n_pseudo": 52,
+     "pseudo_label_acc_vs_hidden_gold": 0.4423076923076923,
+     "acc": 0.54,
+     "macro_f1": 0.29134615384615387,
+     "nll": 1.002608060836792,
+     "ece": 0.0936522340774536,
+     "n": 100,
+     "brier_soft": 0.14277344942092896
+    },
+    {
+     "round": 2,
+     "n_labelled": 60,
+     "n_pseudo": 91,
+     "pseudo_label_acc_vs_hidden_gold": 0.46153846153846156,
+     "acc": 0.52,
+     "macro_f1": 0.28028846153846154,
+     "nll": 1.0050793886184692,
+     "ece": 0.0692840927839279,
+     "n": 100,
+     "brier_soft": 0.14389920234680176
+    },
+    {
+     "round": 3,
+     "n_labelled": 60,
+     "n_pseudo": 121,
+     "pseudo_label_acc_vs_hidden_gold": 0.23333333333333334,
+     "acc": 0.52,
+     "macro_f1": 0.28028846153846154,
+     "nll": 1.0062224864959717,
+     "ece": 0.07443780243396758,
+     "n": 100,
+     "brier_soft": 0.14455486834049225
+    },
+    {
+     "round": 4,
+     "n_labelled": 60,
+     "n_pseudo": 143,
+     "pseudo_label_acc_vs_hidden_gold": 0.45454545454545453,
+     "acc": 0.49,
+     "macro_f1": 0.26467751657625077,
+     "nll": 1.0087202787399292,
+     "ece": 0.05223535776138307,
+     "n": 100,
+     "brier_soft": 0.14677560329437256
+    },
+    {
+     "round": 5,
+     "n_labelled": 60,
+     "n_pseudo": 159,
+     "pseudo_label_acc_vs_hidden_gold": 0.5625,
+     "acc": 0.5,
+     "macro_f1": 0.2692307692307692,
+     "nll": 1.0074541568756104,
+     "ece": 0.08834745138883589,
+     "n": 100,
+     "brier_soft": 0.14536572992801666
+    }
+   ]
+  }
+ },
+ "elapsed_s": 112.6
+}

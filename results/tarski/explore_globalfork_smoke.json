@@ -1,0 +1,129 @@
+{
+ "args": {
+  "smoke": true,
+  "dataset": "typed-decisions",
+  "splits": [
+   11
+  ],
+  "variants": [
+   "next",
+   "global",
+   "local",
+   "next1",
+   "global1"
+  ],
+  "epochs": 1,
+  "min_steps": 12,
+  "out": ""
+ },
+ "splits": {
+  "11": {
+   "next": {
+    "layers": [
+     11,
+     12
+    ],
+    "layer_types": [
+     "l",
+     "G"
+    ],
+    "mean_acc": 0.45652174949645996,
+    "tasks": {
+     "agent_trace_observability.action": {
+      "acc": 0.260869562625885,
+      "epochs": 6
+     },
+     "agent_trace_observability.needs_review": {
+      "acc": 0.6521739363670349,
+      "epochs": 6
+     }
+    },
+    "s": 3.3
+   },
+   "global": {
+    "layers": [
+     12,
+     15
+    ],
+    "layer_types": [
+     "G",
+     "G"
+    ],
+    "mean_acc": 0.32608695328235626,
+    "tasks": {
+     "agent_trace_observability.action": {
+      "acc": 0.260869562625885,
+      "epochs": 6
+     },
+     "agent_trace_observability.needs_review": {
+      "acc": 0.3913043439388275,
+      "epochs": 6
+     }
+    },
+    "s": 3.3
+   },
+   "local": {
+    "layers": [
+     11,
+     13
+    ],
+    "layer_types": [
+     "l",
+     "l"
+    ],
+    "mean_acc": 0.5217391401529312,
+    "tasks": {
+     "agent_trace_observability.action": {
+      "acc": 0.3478260934352875,
+      "epochs": 6
+     },
+     "agent_trace_observability.needs_review": {
+      "acc": 0.695652186870575,
+      "epochs": 6
+     }
+    },
+    "s": 3.3
+   },
+   "next1": {
+    "layers": [
+     11
+    ],
+    "layer_types": [
+     "l"
+    ],
+    "mean_acc": 0.45652174949645996,
+    "tasks": {
+     "agent_trace_observability.action": {
+      "acc": 0.260869562625885,
+      "epochs": 6
+     },
+     "agent_trace_observability.needs_review": {
+      "acc": 0.6521739363670349,
+      "epochs": 6
+     }
+    },
+    "s": 1.6
+   },
+   "global1": {
+    "layers": [
+     12
+    ],
+    "layer_types": [
+     "G"
+    ],
+    "mean_acc": 0.32608695328235626,
+    "tasks": {
+     "agent_trace_observability.action": {
+      "acc": 0.260869562625885,
+      "epochs": 6
+     },
+     "agent_trace_observability.needs_review": {
+      "acc": 0.3913043439388275,
+      "epochs": 6
+     }
+    },
+    "s": 1.6
+   }
+  }
+ }
+}

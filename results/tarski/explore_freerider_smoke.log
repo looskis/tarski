@@ -1,0 +1,18 @@
+-- clinc150 (3 seed(s), blocks depth 2, splits [6, 11, 16, 20]); tasks: ['domain', 'intent', 'oos']
+   deepest requested split  6: cheapest 0.8703 | ride to D 0.8703 (+0.0000) | ride best<=D 0.8703 (+0.0000)  [std over seeds 0.0016]
+   deepest requested split 11: cheapest 0.8703 | ride to D 0.8707 (+0.0004) | ride best<=D 0.8702 (-0.0002)  [std over seeds 0.0027]
+   deepest requested split 16: cheapest 0.8703 | ride to D 0.8811 (+0.0108) | ride best<=D 0.8766 (+0.0063)  [std over seeds 0.0019]
+   deepest requested split 20: cheapest 0.8703 | ride to D 0.8753 (+0.0050) | ride best<=D 0.8766 (+0.0063)  [std over seeds 0.0003]
+   own-best mean acc (ignoring cost) 0.8777; most negative single-task ride gain: domain -0.000
+-- typed_cs (1 seed(s), blocks depth 2, splits [8, 14, 20]); tasks: ['customer_service.action', 'customer_service.category', 'customer_service.churn_risk', 'customer_service.needs_human', 'customer_service.urgency']
+   deepest requested split  8: cheapest 0.7420 | ride to D 0.7420 (+0.0000) | ride best<=D 0.7420 (+0.0000)  [std over seeds 0.0000]
+   deepest requested split 14: cheapest 0.7420 | ride to D 0.7860 (+0.0440) | ride best<=D 0.7820 (+0.0400)  [std over seeds 0.0000]
+   deepest requested split 20: cheapest 0.7420 | ride to D 0.7540 (+0.0120) | ride best<=D 0.7820 (+0.0400)  [std over seeds 0.0000]
+   own-best mean acc (ignoring cost) 0.7820; most negative single-task ride gain: customer_service.urgency -0.060
+-- banking77 (3 seed(s), blocks depth 2, splits [4, 8, 14, 18]); tasks: ['intent']
+   deepest requested split  4: cheapest 0.9067 | ride to D 0.9067 (+0.0000) | ride best<=D 0.9067 (+0.0000)  [std over seeds 0.0030]
+   deepest requested split  8: cheapest 0.9067 | ride to D 0.9204 (+0.0137) | ride best<=D 0.9204 (+0.0137)  [std over seeds 0.0019]
+   deepest requested split 14: cheapest 0.9067 | ride to D 0.9271 (+0.0204) | ride best<=D 0.9250 (+0.0183)  [std over seeds 0.0027]
+   deepest requested split 18: cheapest 0.9067 | ride to D 0.9290 (+0.0223) | ride best<=D 0.9290 (+0.0223)  [std over seeds 0.0009]
+   own-best mean acc (ignoring cost) 0.9278; most negative single-task ride gain: intent +0.000
+== done in 0.0s; wrote results/tarski/explore_freerider_smoke.json

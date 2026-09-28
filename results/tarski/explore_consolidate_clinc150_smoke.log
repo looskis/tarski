@@ -1,0 +1,23 @@
+== consolidation on clinc150: 453/151/151 messages (train/val/test), tasks: intent(151), domain(11), oos(2) | tasks ['intent', 'domain', 'oos'] | blocks@11+2 | device cpu
+  cached depth 11: 0.8s (13 MB)
+  [teacher intent] test acc 0.0265 macro-F1 0.0044 (0.6s)
+  [teacher domain] test acc 0.2185 macro-F1 0.1328 (0.6s)
+  [teacher oos] test acc 0.9934 macro-F1 0.4983 (0.6s)
+    epoch 1/1 loss 7.3872
+  [consolidated intent] test acc 0.0066 macro-F1 0.0026
+  [consolidated domain] test acc 0.1722 macro-F1 0.0972
+  [consolidated oos] test acc 0.9934 macro-F1 0.4983
+    epoch 1/1 loss 7.7947
+  [joint intent] test acc 0.0132 macro-F1 0.0132
+  [joint domain] test acc 0.2252 macro-F1 0.1520
+  [joint oos] test acc 0.9934 macro-F1 0.4983
+    epoch 1/1 loss 7.3356
+  [stage A intent] test acc 0.0132 macro-F1 0.0039
+  [stage A domain] test acc 0.1921 macro-F1 0.1150
+    epoch 1/1 loss 7.3293
+  [stage B intent] test acc 0.0265 macro-F1 0.0077
+  [stage B domain] test acc 0.1788 macro-F1 0.1005
+  [stage B oos] test acc 0.9934 macro-F1 0.4983
+  incremental: forgetting on old tasks {'intent': 0.013245033112582781, 'domain': -0.013245033112582794}
+== done in 6.6s; wrote results/tarski/explore_consolidate_clinc150_smoke.json
+   mean acc: independent 0.4128 | consolidated (replay, no labels) 0.3907 | joint (labels) 0.4106 | weight-merge reference {"independent": 0.8763, "mean@1.0+own_head": 0.801, "mean@1.0+refit_head": 0.8548, "ties@1.0+own_head": 0.797, "ties@1.0+refit_head": 0.8543, "ties@0.5+own_head": 0.6636, "ties@0.5+refit_head": 0.8576, "base_copy+own_head": 0.4584, "base_copy+refit_head": 0.8447, "joint": 0.8497}

@@ -1,0 +1,12 @@
+== banking77 @ depth 22: 77 classes | test acc 0.6494 | none val NLL 1.200 (lam 0.0) | ts val NLL 1.199 (lam 0.0) | bcts val NLL 1.199 (lam 1.0) | vs val NLL 1.184 (lam 1.0)
+-- banking77 Dirichlet(0.3): prior L1 none 0.474 | ts 0.472 | bcts 0.472 | vs 0.481 | bbse 0.804 || acc gain none +0.0220 | ts +0.0233 | bcts +0.0233 | vs +0.0207 | bbse -0.0587 (before, ts: 0.6840)
+-- banking77 Dirichlet(1.0): prior L1 none 0.594 | ts 0.591 | bcts 0.590 | vs 0.577 | bbse 0.838 || acc gain none -0.0500 | ts -0.0500 | bcts -0.0500 | vs -0.0633 | bbse -0.0840 (before, ts: 0.6380)
+-- banking77 stream (ts): static 0.6567 | oracle_segment_prior 0.7433 | global_em 0.4600 | window_em_200 0.4467 | window_em_1000 0.4600 | global_mapem 0.6000 | window_mapem_200 0.6067 | window_mapem_1000 0.6000 | ewma_em_0.01 0.6200 | ewma_em_0.03 0.5467
+-- banking77 stream (bcts): static 0.6200 | oracle_segment_prior 0.6967 | global_em 0.4167 | window_em_200 0.4200 | window_em_1000 0.4167 | global_mapem 0.5633 | window_mapem_200 0.5667 | window_mapem_1000 0.5633 | ewma_em_0.01 0.5700 | ewma_em_0.03 0.5300
+== clinc150 @ depth 22: 151 classes | test acc 0.6327 | none val NLL 1.279 (lam 0.0) | ts val NLL 1.238 (lam 0.0) | bcts val NLL 1.232 (lam 0.1) | vs val NLL 1.265 (lam 1.0)
+-- clinc150 Dirichlet(0.3): prior L1 none 0.535 | ts 0.513 | bcts 0.523 | vs 0.545 | bbse 0.771 || acc gain none -0.0207 | ts -0.0047 | bcts -0.0060 | vs -0.0233 | bbse -0.0293 (before, ts: 0.6940)
+-- clinc150 Dirichlet(1.0): prior L1 none 0.563 | ts 0.503 | bcts 0.502 | vs 0.563 | bbse 0.729 || acc gain none -0.0327 | ts +0.0033 | bcts +0.0053 | vs -0.0373 | bbse -0.0660 (before, ts: 0.7007)
+-- CLINC real shift: none: OOS share 0.091, OOS F1 0.400->0.494, acc 0.6327->0.5927 | ts: OOS share 0.091, OOS F1 0.400->0.484, acc 0.6327->0.6055 | bcts: OOS share 0.049, OOS F1 0.397->0.379, acc 0.6309->0.5909 | vs: OOS share 0.033, OOS F1 0.397->0.336, acc 0.6291->0.5582
+-- clinc150 stream (ts): static 0.7600 | oracle_segment_prior 0.8000 | global_em 0.5167 | window_em_200 0.5133 | window_em_1000 0.5167 | global_mapem 0.7567 | window_mapem_200 0.7533 | window_mapem_1000 0.7567 | ewma_em_0.01 0.7200 | ewma_em_0.03 0.6567
+-- clinc150 stream (bcts): static 0.7233 | oracle_segment_prior 0.8133 | global_em 0.4700 | window_em_200 0.4800 | window_em_1000 0.4700 | global_mapem 0.7067 | window_mapem_200 0.7100 | window_mapem_1000 0.7067 | ewma_em_0.01 0.6933 | ewma_em_0.03 0.6333
+done in 3.3s -> results/tarski/explore_lit_bcts_smoke.json

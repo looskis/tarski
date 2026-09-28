@@ -1,0 +1,8 @@
+== sufficient-statistics branches | trunk cpu, fits cpu | depths [11]
+-- banking77 @ depth 11: LDA 0.4000 | NCM 0.2375 | logreg 0.2375 | merge rel diff 7.4e-14 (agree 1.000) | unlearn abs diff 4.2e-09
+   intent new label: k=1: LDA recall 0.000 overall 0.381, retrained logreg recall 0.000 overall 0.231 | k=2: LDA recall 0.250 overall 0.394, retrained logreg recall 0.000 overall 0.212
+-- clinc150 @ depth 11: LDA 0.6433 | NCM 0.4833 | logreg 0.5933 | merge rel diff 1.7e-13 (agree 1.000) | unlearn abs diff 4.6e-09
+   intent new label: k=1: LDA recall 0.000 overall 0.400, retrained logreg recall 0.500 overall 0.330 | k=2: LDA recall 0.500 overall 0.410, retrained logreg recall 0.500 overall 0.340
+   intent OOD AUROC (min Mahalanobis, no oos data): 0.7619
+-- typed-decisions @ depth 11: LDA 0.4780 | NCM 0.4220 | logreg 0.5432 | merge rel diff 3.8e-12 (agree 1.000) | unlearn abs diff 4.0e-07
+done -> results/tarski/explore_sufficient_smoke.json

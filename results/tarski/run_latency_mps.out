@@ -1,0 +1,20 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 23404.54it/s]
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 4735.05it/s]
+short N= 1 {"separate_models": 13.27, "probe@11": 9.02, "blocks@11+1": 9.36, "blocks@11+2": 10.14, "blocks@16+2": 12.52, "blocks@20+2": 17.98, "mixed@8-18+2": 8.71, "laya (question-in-input)": 24.27}
+short N= 2 {"separate_models": 22.91, "probe@11": 6.47, "blocks@11+1": 6.96, "blocks@11+2": 7.72, "blocks@16+2": 10.14, "blocks@20+2": 14.75, "mixed@8-18+2": 11.55, "fused blocks@11+2": 11.02, "fused blocks@16+2": 15.73, "laya (question-in-input)": 34.62}
+short N= 3 {"separate_models": 35.84, "probe@11": 7.01, "blocks@11+1": 7.79, "blocks@11+2": 7.7, "blocks@16+2": 10.97, "blocks@20+2": 13.31, "mixed@8-18+2": 11.61, "fused blocks@11+2": 10.23, "fused blocks@16+2": 15.31, "laya (question-in-input)": 44.16}
+short N= 5 {"separate_models": 56.47, "probe@11": 6.6, "blocks@11+1": 8.69, "blocks@11+2": 15.78, "blocks@16+2": 14.64, "blocks@20+2": 19.35, "mixed@8-18+2": 17.47, "fused blocks@11+2": 9.1, "fused blocks@16+2": 19.54, "laya (question-in-input)": 52.17}
+short N=10 {"separate_models": 101.43, "probe@11": 5.62, "blocks@11+1": 8.27, "blocks@11+2": 10.89, "blocks@16+2": 13.08, "blocks@20+2": 15.08, "mixed@8-18+2": 13.98, "fused blocks@11+2": 12.42, "fused blocks@16+2": 14.52, "laya (question-in-input)": 70.97}
+short N=20 {"separate_models": 185.18, "probe@11": 6.46, "blocks@11+1": 11.81, "blocks@11+2": 16.88, "blocks@16+2": 18.64, "blocks@20+2": 21.56, "mixed@8-18+2": 19.94, "fused blocks@11+2": 19.12, "fused blocks@16+2": 20.5, "laya (question-in-input)": 116.74}
+long N= 1 {"separate_models": 27.11, "probe@11": 13.3, "blocks@11+1": 14.41, "blocks@11+2": 15.32, "blocks@16+2": 20.89, "blocks@20+2": 25.69, "mixed@8-18+2": 11.63, "laya (question-in-input)": 114.54}
+long N= 2 {"separate_models": 51.43, "probe@11": 13.19, "blocks@11+1": 15.61, "blocks@11+2": 16.83, "blocks@16+2": 22.72, "blocks@20+2": 26.96, "mixed@8-18+2": 16.86, "fused blocks@11+2": 17.96, "fused blocks@16+2": 23.96, "laya (question-in-input)": 219.72}
+long N= 3 {"separate_models": 76.8, "probe@11": 13.31, "blocks@11+1": 16.23, "blocks@11+2": 18.65, "blocks@16+2": 24.48, "blocks@20+2": 28.95, "mixed@8-18+2": 22.3, "fused blocks@11+2": 20.35, "fused blocks@16+2": 26.39, "laya (question-in-input)": 325.76}
+long N= 5 {"separate_models": 128.04, "probe@11": 13.86, "blocks@11+1": 18.13, "blocks@11+2": 22.66, "blocks@16+2": 28.28, "blocks@20+2": 32.64, "mixed@8-18+2": 30.61, "fused blocks@11+2": 25.22, "fused blocks@16+2": 31.12, "laya (question-in-input)": 241.98}
+long N=10 {"separate_models": 254.57, "probe@11": 14.48, "blocks@11+1": 23.37, "blocks@11+2": 31.54, "blocks@16+2": 37.77, "blocks@20+2": 41.94, "mixed@8-18+2": 39.64, "fused blocks@11+2": 37.3, "fused blocks@16+2": 43.48, "laya (question-in-input)": 470.76}
+long N=20 {"separate_models": 500.8, "probe@11": 16.07, "blocks@11+1": 34.31, "blocks@11+2": 49.3, "blocks@16+2": 56.52, "blocks@20+2": 60.05, "mixed@8-18+2": 57.75, "fused blocks@11+2": 61.86, "fused blocks@16+2": 67.97, "laya (question-in-input)": 1148.07}
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 15147.61it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  6.55it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  6.54it/s]
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 11795.85it/s]
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 23479.83it/s]
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 31193.07it/s]
+switch ms {'probe': 8.48, 'blocks+1': 13.36, 'blocks+2': 20.47, 'full_copy': 101.42} bytes {'probe': 34188, 'blocks+1': 10063244, 'blocks+2': 20093892, 'full_copy': 596072034}

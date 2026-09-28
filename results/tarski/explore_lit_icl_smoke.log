@@ -1,0 +1,56 @@
+== typed-decisions: split 4, 300 messages, cached in 2s
+   [agent_trace_observability.action] n=   16: tabicl 0.455/0.514 | logreg_pca 0.455/0.472 | logreg 0.545/0.321 | lda 0.091/0.604 | knn 0.545/0.218 | probe 0.455/0.064   (acc/ECE, random-selection mean)
+   [agent_trace_observability.action] n=   52: tabicl 0.545/0.307 | logreg_pca 0.636/0.271 | logreg 0.455/0.361 | lda 0.273/0.444 | knn 0.636/0.236 | probe 0.455/0.012   (acc/ECE, random-selection mean)
+   [agent_trace_observability.needs_review] n=   16: tabicl 0.727/0.469 | logreg_pca 0.727/0.359 | logreg 0.727/0.145 | lda 0.727/0.277 | knn 0.636/0.127 | probe 0.818/0.305   (acc/ECE, random-selection mean)
+   [agent_trace_observability.needs_review] n=   52: tabicl 0.818/0.234 | logreg_pca 0.727/0.250 | logreg 0.818/0.192 | lda 0.818/0.202 | knn 0.545/0.255 | probe 0.455/0.203   (acc/ECE, random-selection mean)
+   TabICL CPU latency, context 52 x 16: fit 0.18s, predict batch-1 8.8 ms, batch-100 1.86 ms/msg
+== clinc150: split 4, 480 messages, cached in 0s
+   [domain] n=   32: tabicl 0.150/0.375 | logreg_pca 0.212/0.185 | logreg 0.325/0.503 | lda 0.212/0.781 | knn 0.225/0.197 | probe 0.175/0.099   (acc/ECE, random-selection mean)
+   [oos] n=   32: tabicl 0.713/0.132 | logreg_pca 0.550/0.229 | logreg 0.500/0.484 | lda 0.750/0.250 | knn 0.750/0.192 | probe 0.750/0.223   (acc/ECE, random-selection mean)
+   [intent] n=  302: tabicl 0.237/0.079 | logreg_pca 0.113/0.052 | logreg 0.325/0.442 | lda 0.512/0.484 | knn 0.237/0.119 | probe 0.250/0.155   (acc/ECE, random-selection mean)
+   TabICL CPU latency, context 256 x 16: fit 0.39s, predict batch-1 10.0 ms, batch-100 0.78 ms/msg
+== typed-decisions: split 4, 300 messages, cached in 2s
+   [agent_trace_observability.action] n=   16: tabicl 0.455/0.479 | logreg_pca 0.455/0.288 | logreg 0.545/0.321 | lda 0.091/0.604 | knn 0.545/0.218 | probe 0.455/0.030   (acc/ECE, random-selection mean)
+   [agent_trace_observability.action] n=   52: tabicl 0.545/0.290 | logreg_pca 0.545/0.169 | logreg 0.455/0.361 | lda 0.273/0.444 | knn 0.636/0.236 | probe 0.455/0.012   (acc/ECE, random-selection mean)
+   [agent_trace_observability.needs_review] n=   16: tabicl 0.727/0.469 | logreg_pca 0.727/0.359 | logreg 0.727/0.145 | lda 0.727/0.277 | knn 0.636/0.127 | probe 0.818/0.305   (acc/ECE, random-selection mean)
+   [agent_trace_observability.needs_review] n=   52: tabicl 0.818/0.234 | logreg_pca 0.727/0.250 | logreg 0.818/0.192 | lda 0.818/0.202 | knn 0.545/0.255 | probe 0.455/0.203   (acc/ECE, random-selection mean)
+   TabICL CPU latency, context 52 x 16: fit 0.29s, predict batch-1 10.7 ms, batch-100 1.93 ms/msg
+== clinc150: split 4, 480 messages, cached in 0s
+   [domain] n=   32: tabicl 0.150/0.375 | logreg_pca 0.212/0.185 | logreg 0.325/0.503 | lda 0.212/0.781 | knn 0.225/0.197 | probe 0.175/0.099   (acc/ECE, random-selection mean)
+   [oos] n=   32: tabicl 0.713/0.132 | logreg_pca 0.550/0.229 | logreg 0.500/0.484 | lda 0.750/0.250 | knn 0.750/0.192 | probe 0.750/0.223   (acc/ECE, random-selection mean)
+   [intent] n=  302: tabicl 0.237/0.079 | logreg_pca 0.113/0.052 | logreg 0.325/0.442 | lda 0.512/0.484 | knn 0.237/0.119 | probe 0.250/0.155   (acc/ECE, random-selection mean)
+   TabICL CPU latency, context 256 x 16: fit 0.37s, predict batch-1 9.4 ms, batch-100 0.67 ms/msg
+   TabICL CPU latency, context 320 x 16: fit 0.37s, predict batch-1 7.8 ms, batch-100 0.61 ms/msg
+== banking77: split 4, 300 messages, cached in 0s
+   [intent] n=  154: tabicl 0.183/0.105 | logreg_pca 0.133/0.041 | logreg 0.300/0.516 | lda 0.250/0.743 | knn 0.233/0.087 | probe 0.033/0.034   (acc/ECE, random-selection mean)
+done -> results/tarski/explore_lit_icl_smoke.json
+== typed-decisions: split 4, 300 messages, cached in 3s
+   [agent_trace_observability.action] n=   16: tabicl 0.364/0.340 | logreg_pca 0.545/0.271 | logreg 0.545/0.321 | lda 0.091/0.604 | knn 0.545/0.218 | probe 0.455/0.041   (acc/ECE, random-selection mean)
+   [agent_trace_observability.action] n=   52: tabicl 0.636/0.279 | logreg_pca 0.636/0.186 | logreg 0.455/0.361 | lda 0.273/0.444 | knn 0.636/0.236 | probe 0.455/0.012   (acc/ECE, random-selection mean)
+   [agent_trace_observability.needs_review] n=   16: tabicl 0.727/0.469 | logreg_pca 0.727/0.359 | logreg 0.727/0.145 | lda 0.727/0.277 | knn 0.636/0.127 | probe 0.818/0.305   (acc/ECE, random-selection mean)
+   [agent_trace_observability.needs_review] n=   52: tabicl 0.818/0.234 | logreg_pca 0.727/0.250 | logreg 0.818/0.192 | lda 0.818/0.202 | knn 0.545/0.255 | probe 0.455/0.203   (acc/ECE, random-selection mean)
+   TabICL CPU latency, context 52 x 16: fit 0.29s, predict batch-1 10.6 ms, batch-100 2.41 ms/msg
+== clinc150: split 4, 480 messages, cached in 0s
+   [domain] n=   32: tabicl 0.150/0.375 | logreg_pca 0.212/0.185 | logreg 0.325/0.503 | lda 0.212/0.781 | knn 0.225/0.197 | probe 0.175/0.099   (acc/ECE, random-selection mean)
+   [oos] n=   32: tabicl 0.713/0.132 | logreg_pca 0.550/0.229 | logreg 0.500/0.484 | lda 0.750/0.250 | knn 0.750/0.192 | probe 0.750/0.223   (acc/ECE, random-selection mean)
+   [intent] n=  302: tabicl 0.237/0.079 | logreg_pca 0.113/0.052 | logreg 0.325/0.442 | lda 0.512/0.484 | knn 0.237/0.119 | probe 0.250/0.155   (acc/ECE, random-selection mean)
+   TabICL CPU latency, context 256 x 16: fit 0.41s, predict batch-1 9.9 ms, batch-100 1.47 ms/msg
+   TabICL CPU latency, context 320 x 16: fit 0.37s, predict batch-1 10.1 ms, batch-100 0.82 ms/msg
+== banking77: split 4, 300 messages, cached in 0s
+   [intent] n=  154: tabicl 0.183/0.105 | logreg_pca 0.133/0.041 | logreg 0.300/0.516 | lda 0.250/0.743 | knn 0.233/0.087 | probe 0.033/0.034   (acc/ECE, random-selection mean)
+done -> results/tarski/explore_lit_icl_smoke.json
+== typed-decisions: split 4, 300 messages, cached in 1s
+   [agent_trace_observability.action] n=   16: tabicl 0.182/0.496 | logreg_pca 0.545/0.370 | logreg 0.545/0.321 | lda 0.091/0.604 | knn 0.545/0.218 | probe 0.455/0.063   (acc/ECE, random-selection mean)
+   [agent_trace_observability.action] n=   52: tabicl 0.636/0.292 | logreg_pca 0.636/0.277 | logreg 0.455/0.361 | lda 0.273/0.444 | knn 0.636/0.236 | probe 0.455/0.012   (acc/ECE, random-selection mean)
+   [agent_trace_observability.needs_review] n=   16: tabicl 0.727/0.469 | logreg_pca 0.727/0.359 | logreg 0.727/0.145 | lda 0.727/0.277 | knn 0.636/0.127 | probe 0.818/0.305   (acc/ECE, random-selection mean)
+   [agent_trace_observability.needs_review] n=   52: tabicl 0.818/0.234 | logreg_pca 0.727/0.250 | logreg 0.818/0.192 | lda 0.818/0.202 | knn 0.545/0.255 | probe 0.455/0.203   (acc/ECE, random-selection mean)
+   TabICL CPU latency, context 52 x 16: fit 0.14s, predict batch-1 6.1 ms, batch-100 1.16 ms/msg
+== clinc150: split 4, 480 messages, cached in 0s
+   [domain] n=   32: tabicl 0.150/0.375 | logreg_pca 0.212/0.185 | logreg 0.325/0.503 | lda 0.212/0.781 | knn 0.225/0.197 | probe 0.175/0.099   (acc/ECE, random-selection mean)
+   [oos] n=   32: tabicl 0.713/0.132 | logreg_pca 0.550/0.229 | logreg 0.500/0.484 | lda 0.750/0.250 | knn 0.750/0.192 | probe 0.750/0.223   (acc/ECE, random-selection mean)
+   [intent] n=  302: tabicl 0.237/0.079 | logreg_pca 0.113/0.052 | logreg 0.325/0.442 | lda 0.512/0.484 | knn 0.237/0.119 | probe 0.250/0.155   (acc/ECE, random-selection mean)
+   TabICL CPU latency, context 256 x 16: fit 0.24s, predict batch-1 7.3 ms, batch-100 0.60 ms/msg
+   TabICL CPU latency, context 320 x 16: fit 0.36s, predict batch-1 7.7 ms, batch-100 0.61 ms/msg
+== banking77: split 4, 300 messages, cached in 0s
+   [intent] n=  154: tabicl 0.183/0.105 | logreg_pca 0.133/0.041 | logreg 0.300/0.516 | lda 0.250/0.743 | knn 0.233/0.087 | probe 0.033/0.034   (acc/ECE, random-selection mean)
+done -> results/tarski/explore_lit_icl_smoke.json

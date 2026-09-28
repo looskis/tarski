@@ -1,0 +1,318 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 6214.13it/s]
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 22:52:09 2026).
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 22:52:09 2026).
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 22:52:09 2026).
+loading laya teacher (device=auto) ...
+loaded typed-decisions: 1080/120/400 messages (train/val/test), tasks: agent_trace_observability.action(4), agent_trace_observability.needs_review(2), agent_trace_observability.outcome(4), agent_trace_observability.risk(4), agent_trace_observability.urgency(4), customer_service.action(5), customer_service.category(5), customer_service.churn_risk(4), customer_service.needs_human(2), customer_service.urgency(4), invoice_processing.discrepancy_severity(4), invoice_processing.disposition(4), invoice_processing.duplicate(2), invoice_processing.matches_order(2), invoice_processing.urgency(4), security_incidents.credential_compromise(2), security_incidents.disposition(4), security_incidents.severity(5), security_incidents.true_positive(2), security_incidents.urgency(4)
+[customer_service.action] pool=269 val=31 test=100 labels=['answer_directly', 'close_no_action', 'escalate_to_human', 'execute_refund', 'request_information']
+  cached trunk depth 6 for 400 messages in 1.6s
+  teacher test acc 0.580 on 100 held-out messages (1.9s)
+  seed teacher query for 24 messages (0.4s)
+  [active_soft] round 0 n=24 acc=0.550 f1=0.208 brier=0.155
+  [random_soft] round 0 n=24 acc=0.560 f1=0.223 brier=0.154
+  [random_hard] round 0 n=24 acc=0.460 f1=0.142 brier=0.322
+  round 1: queried teacher for 20 random messages (0.3s)
+  round 1: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 1 n=44 acc=0.560 f1=0.234 brier=0.156
+  [random_soft] round 1 n=44 acc=0.580 f1=0.268 brier=0.154
+  [random_hard] round 1 n=44 acc=0.520 f1=0.243 brier=0.196
+  round 2: queried teacher for 20 random messages (0.4s)
+  round 2: queried teacher for 20 high-entropy messages (0.4s)
+  [active_soft] round 2 n=64 acc=0.570 f1=0.251 brier=0.155
+  [random_soft] round 2 n=64 acc=0.590 f1=0.280 brier=0.154
+  [random_hard] round 2 n=64 acc=0.550 f1=0.228 brier=0.170
+  round 3: queried teacher for 20 random messages (0.3s)
+  round 3: queried teacher for 20 high-entropy messages (0.4s)
+  [active_soft] round 3 n=84 acc=0.560 f1=0.214 brier=0.155
+  [random_soft] round 3 n=84 acc=0.570 f1=0.250 brier=0.154
+  [random_hard] round 3 n=84 acc=0.540 f1=0.203 brier=0.197
+  round 4: queried teacher for 20 random messages (0.4s)
+  round 4: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 4 n=104 acc=0.560 f1=0.210 brier=0.155
+  [random_soft] round 4 n=104 acc=0.580 f1=0.251 brier=0.157
+  [random_hard] round 4 n=104 acc=0.560 f1=0.214 brier=0.172
+  round 5: queried teacher for 20 random messages (0.4s)
+  round 5: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 5 n=124 acc=0.560 f1=0.240 brier=0.158
+  [random_soft] round 5 n=124 acc=0.580 f1=0.256 brier=0.155
+  [random_hard] round 5 n=124 acc=0.540 f1=0.180 brier=0.177
+  round 6: queried teacher for 20 random messages (0.4s)
+  round 6: queried teacher for 20 high-entropy messages (0.4s)
+  [active_soft] round 6 n=144 acc=0.570 f1=0.243 brier=0.158
+  [random_soft] round 6 n=144 acc=0.570 f1=0.233 brier=0.157
+  [random_hard] round 6 n=144 acc=0.530 f1=0.160 brier=0.181
+  round 7: queried teacher for 20 random messages (0.4s)
+  round 7: queried teacher for 20 high-entropy messages (0.4s)
+  [active_soft] round 7 n=164 acc=0.550 f1=0.217 brier=0.158
+  [random_soft] round 7 n=164 acc=0.570 f1=0.246 brier=0.158
+  [random_hard] round 7 n=164 acc=0.540 f1=0.177 brier=0.179
+  round 8: queried teacher for 20 random messages (0.4s)
+  round 8: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 8 n=184 acc=0.560 f1=0.236 brier=0.158
+  [random_soft] round 8 n=184 acc=0.570 f1=0.238 brier=0.154
+  [random_hard] round 8 n=184 acc=0.530 f1=0.155 brier=0.197
+  round 9: queried teacher for 20 random messages (0.4s)
+  round 9: queried teacher for 20 high-entropy messages (0.4s)
+  [active_soft] round 9 n=204 acc=0.570 f1=0.232 brier=0.155
+  [random_soft] round 9 n=204 acc=0.580 f1=0.251 brier=0.153
+  [random_hard] round 9 n=204 acc=0.540 f1=0.169 brier=0.190
+  round 10: queried teacher for 20 random messages (0.4s)
+  round 10: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 10 n=224 acc=0.590 f1=0.266 brier=0.156
+  [random_soft] round 10 n=224 acc=0.570 f1=0.241 brier=0.153
+  [random_hard] round 10 n=224 acc=0.540 f1=0.169 brier=0.183
+[customer_service.category] pool=269 val=31 test=100 labels=['account', 'billing', 'delivery', 'refund', 'technical']
+  cached trunk depth 6 for 400 messages in 0.8s
+  teacher test acc 0.940 on 100 held-out messages (1.6s)
+  seed teacher query for 24 messages (0.4s)
+  [active_soft] round 0 n=24 acc=0.340 f1=0.197 brier=0.565
+  [random_soft] round 0 n=24 acc=0.340 f1=0.197 brier=0.565
+  [random_hard] round 0 n=24 acc=0.260 f1=0.167 brier=0.744
+  round 1: queried teacher for 20 random messages (0.3s)
+  round 1: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 1 n=44 acc=0.360 f1=0.192 brier=0.556
+  [random_soft] round 1 n=44 acc=0.360 f1=0.178 brier=0.558
+  [random_hard] round 1 n=44 acc=0.340 f1=0.160 brier=0.662
+  round 2: queried teacher for 20 random messages (0.4s)
+  round 2: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 2 n=64 acc=0.430 f1=0.315 brier=0.517
+  [random_soft] round 2 n=64 acc=0.540 f1=0.371 brier=0.478
+  [random_hard] round 2 n=64 acc=0.430 f1=0.278 brier=0.512
+  round 3: queried teacher for 20 random messages (0.3s)
+  round 3: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 3 n=84 acc=0.470 f1=0.319 brier=0.511
+  [random_soft] round 3 n=84 acc=0.520 f1=0.355 brier=0.489
+  [random_hard] round 3 n=84 acc=0.440 f1=0.300 brier=0.519
+  round 4: queried teacher for 20 random messages (0.4s)
+  round 4: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 4 n=104 acc=0.550 f1=0.404 brier=0.511
+  [random_soft] round 4 n=104 acc=0.520 f1=0.374 brier=0.496
+  [random_hard] round 4 n=104 acc=0.480 f1=0.351 brier=0.509
+  round 5: queried teacher for 20 random messages (0.4s)
+  round 5: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 5 n=124 acc=0.570 f1=0.400 brier=0.492
+  [random_soft] round 5 n=124 acc=0.510 f1=0.369 brier=0.497
+  [random_hard] round 5 n=124 acc=0.470 f1=0.344 brier=0.511
+  round 6: queried teacher for 20 random messages (0.3s)
+  round 6: queried teacher for 20 high-entropy messages (0.2s)
+  [active_soft] round 6 n=144 acc=0.610 f1=0.466 brier=0.498
+  [random_soft] round 6 n=144 acc=0.520 f1=0.372 brier=0.501
+  [random_hard] round 6 n=144 acc=0.450 f1=0.327 brier=0.510
+  round 7: queried teacher for 20 random messages (0.4s)
+  round 7: queried teacher for 20 high-entropy messages (0.4s)
+  [active_soft] round 7 n=164 acc=0.560 f1=0.410 brier=0.501
+  [random_soft] round 7 n=164 acc=0.560 f1=0.415 brier=0.498
+  [random_hard] round 7 n=164 acc=0.540 f1=0.437 brier=0.504
+  round 8: queried teacher for 20 random messages (0.4s)
+  round 8: queried teacher for 20 high-entropy messages (0.4s)
+  [active_soft] round 8 n=184 acc=0.640 f1=0.499 brier=0.497
+  [random_soft] round 8 n=184 acc=0.560 f1=0.424 brier=0.485
+  [random_hard] round 8 n=184 acc=0.480 f1=0.381 brier=0.496
+  round 9: queried teacher for 20 random messages (0.3s)
+  round 9: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 9 n=204 acc=0.620 f1=0.474 brier=0.509
+  [random_soft] round 9 n=204 acc=0.550 f1=0.408 brier=0.496
+  [random_hard] round 9 n=204 acc=0.530 f1=0.433 brier=0.504
+  round 10: queried teacher for 20 random messages (0.4s)
+  round 10: queried teacher for 20 high-entropy messages (0.4s)
+  [active_soft] round 10 n=224 acc=0.640 f1=0.504 brier=0.500
+  [random_soft] round 10 n=224 acc=0.580 f1=0.439 brier=0.493
+  [random_hard] round 10 n=224 acc=0.520 f1=0.433 brier=0.494
+[customer_service.churn_risk] pool=269 val=31 test=100 labels=['0', '1', '2', '3']
+  cached trunk depth 6 for 400 messages in 0.8s
+  teacher test acc 0.800 on 100 held-out messages (1.8s)
+  seed teacher query for 24 messages (0.4s)
+  [active_soft] round 0 n=24 acc=0.500 f1=0.299 brier=0.178
+  [random_soft] round 0 n=24 acc=0.500 f1=0.299 brier=0.178
+  [random_hard] round 0 n=24 acc=0.490 f1=0.241 brier=0.283
+  round 1: queried teacher for 20 random messages (0.3s)
+  round 1: queried teacher for 20 high-entropy messages (0.2s)
+  [active_soft] round 1 n=44 acc=0.440 f1=0.212 brier=0.189
+  [random_soft] round 1 n=44 acc=0.550 f1=0.343 brier=0.177
+  [random_hard] round 1 n=44 acc=0.490 f1=0.247 brier=0.264
+  round 2: queried teacher for 20 random messages (0.4s)
+  round 2: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 2 n=64 acc=0.510 f1=0.292 brier=0.177
+  [random_soft] round 2 n=64 acc=0.610 f1=0.440 brier=0.163
+  [random_hard] round 2 n=64 acc=0.510 f1=0.296 brier=0.197
+  round 3: queried teacher for 20 random messages (0.3s)
+  round 3: queried teacher for 20 high-entropy messages (0.2s)
+  [active_soft] round 3 n=84 acc=0.510 f1=0.279 brier=0.177
+  [random_soft] round 3 n=84 acc=0.570 f1=0.371 brier=0.171
+  [random_hard] round 3 n=84 acc=0.520 f1=0.280 brier=0.196
+  round 4: queried teacher for 20 random messages (0.3s)
+  round 4: queried teacher for 20 high-entropy messages (0.2s)
+  [active_soft] round 4 n=104 acc=0.520 f1=0.277 brier=0.173
+  [random_soft] round 4 n=104 acc=0.550 f1=0.309 brier=0.177
+  [random_hard] round 4 n=104 acc=0.480 f1=0.182 brier=0.206
+  round 5: queried teacher for 20 random messages (0.2s)
+  round 5: queried teacher for 20 high-entropy messages (0.1s)
+  [active_soft] round 5 n=124 acc=0.540 f1=0.299 brier=0.174
+  [random_soft] round 5 n=124 acc=0.600 f1=0.391 brier=0.173
+  [random_hard] round 5 n=124 acc=0.480 f1=0.195 brier=0.212
+  round 6: queried teacher for 20 random messages (0.4s)
+  round 6: queried teacher for 20 high-entropy messages (0.4s)
+  [active_soft] round 6 n=144 acc=0.510 f1=0.264 brier=0.177
+  [random_soft] round 6 n=144 acc=0.550 f1=0.323 brier=0.173
+  [random_hard] round 6 n=144 acc=0.480 f1=0.181 brier=0.219
+  round 7: queried teacher for 20 random messages (0.4s)
+  round 7: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 7 n=164 acc=0.520 f1=0.282 brier=0.180
+  [random_soft] round 7 n=164 acc=0.530 f1=0.291 brier=0.176
+  [random_hard] round 7 n=164 acc=0.480 f1=0.195 brier=0.245
+  round 8: queried teacher for 20 random messages (0.3s)
+  round 8: queried teacher for 20 high-entropy messages (0.2s)
+  [active_soft] round 8 n=184 acc=0.500 f1=0.260 brier=0.178
+  [random_soft] round 8 n=184 acc=0.560 f1=0.341 brier=0.172
+  [random_hard] round 8 n=184 acc=0.490 f1=0.199 brier=0.209
+  round 9: queried teacher for 20 random messages (0.4s)
+  round 9: queried teacher for 20 high-entropy messages (0.4s)
+  [active_soft] round 9 n=204 acc=0.520 f1=0.255 brier=0.179
+  [random_soft] round 9 n=204 acc=0.550 f1=0.316 brier=0.170
+  [random_hard] round 9 n=204 acc=0.490 f1=0.199 brier=0.217
+  round 10: queried teacher for 20 random messages (0.2s)
+  round 10: queried teacher for 20 high-entropy messages (0.2s)
+  [active_soft] round 10 n=224 acc=0.550 f1=0.301 brier=0.172
+  [random_soft] round 10 n=224 acc=0.560 f1=0.337 brier=0.169
+  [random_hard] round 10 n=224 acc=0.480 f1=0.181 brier=0.218
+[customer_service.needs_human] pool=269 val=31 test=100 labels=['false', 'true']
+  cached trunk depth 6 for 400 messages in 0.9s
+  teacher test acc 0.760 on 100 held-out messages (1.7s)
+  seed teacher query for 24 messages (0.4s)
+  [active_soft] round 0 n=24 acc=0.710 f1=0.608 brier=0.099
+  [random_soft] round 0 n=24 acc=0.710 f1=0.608 brier=0.099
+  [random_hard] round 0 n=24 acc=0.680 f1=0.657 brier=0.130
+  round 1: queried teacher for 20 random messages (0.1s)
+  round 1: queried teacher for 20 high-entropy messages (0.1s)
+  [active_soft] round 1 n=44 acc=0.690 f1=0.569 brier=0.090
+  [random_soft] round 1 n=44 acc=0.720 f1=0.673 brier=0.095
+  [random_hard] round 1 n=44 acc=0.600 f1=0.596 brier=0.121
+  round 2: queried teacher for 20 random messages (0.4s)
+  round 2: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 2 n=64 acc=0.730 f1=0.645 brier=0.097
+  [random_soft] round 2 n=64 acc=0.740 f1=0.696 brier=0.092
+  [random_hard] round 2 n=64 acc=0.720 f1=0.688 brier=0.087
+  round 3: queried teacher for 20 random messages (0.3s)
+  round 3: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 3 n=84 acc=0.640 f1=0.593 brier=0.100
+  [random_soft] round 3 n=84 acc=0.770 f1=0.724 brier=0.092
+  [random_hard] round 3 n=84 acc=0.730 f1=0.661 brier=0.091
+  round 4: queried teacher for 20 random messages (0.4s)
+  round 4: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 4 n=104 acc=0.720 f1=0.653 brier=0.099
+  [random_soft] round 4 n=104 acc=0.770 f1=0.712 brier=0.096
+  [random_hard] round 4 n=104 acc=0.730 f1=0.653 brier=0.088
+  round 5: queried teacher for 20 random messages (0.2s)
+  round 5: queried teacher for 20 high-entropy messages (0.2s)
+  [active_soft] round 5 n=124 acc=0.690 f1=0.620 brier=0.099
+  [random_soft] round 5 n=124 acc=0.750 f1=0.679 brier=0.095
+  [random_hard] round 5 n=124 acc=0.730 f1=0.625 brier=0.089
+  round 6: queried teacher for 20 random messages (0.3s)
+  round 6: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 6 n=144 acc=0.750 f1=0.652 brier=0.100
+  [random_soft] round 6 n=144 acc=0.770 f1=0.697 brier=0.096
+  [random_hard] round 6 n=144 acc=0.720 f1=0.592 brier=0.085
+  round 7: queried teacher for 20 random messages (0.4s)
+  round 7: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 7 n=164 acc=0.740 f1=0.662 brier=0.096
+  [random_soft] round 7 n=164 acc=0.760 f1=0.680 brier=0.095
+  [random_hard] round 7 n=164 acc=0.730 f1=0.645 brier=0.083
+  round 8: queried teacher for 20 random messages (0.3s)
+  round 8: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 8 n=184 acc=0.760 f1=0.702 brier=0.097
+  [random_soft] round 8 n=184 acc=0.750 f1=0.679 brier=0.094
+  [random_hard] round 8 n=184 acc=0.730 f1=0.625 brier=0.088
+  round 9: queried teacher for 20 random messages (0.2s)
+  round 9: queried teacher for 20 high-entropy messages (0.2s)
+  [active_soft] round 9 n=204 acc=0.770 f1=0.705 brier=0.097
+  [random_soft] round 9 n=204 acc=0.770 f1=0.697 brier=0.093
+  [random_hard] round 9 n=204 acc=0.710 f1=0.538 brier=0.090
+  round 10: queried teacher for 20 random messages (0.3s)
+  round 10: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 10 n=224 acc=0.770 f1=0.697 brier=0.096
+  [random_soft] round 10 n=224 acc=0.770 f1=0.697 brier=0.093
+  [random_hard] round 10 n=224 acc=0.730 f1=0.600 brier=0.084
+[customer_service.urgency] pool=269 val=31 test=100 labels=['0', '1', '2', '3']
+  cached trunk depth 6 for 400 messages in 0.8s
+  teacher test acc 0.740 on 100 held-out messages (1.7s)
+  seed teacher query for 24 messages (0.4s)
+  [active_soft] round 0 n=24 acc=0.480 f1=0.331 brier=0.147
+  [random_soft] round 0 n=24 acc=0.480 f1=0.331 brier=0.147
+  [random_hard] round 0 n=24 acc=0.420 f1=0.267 brier=0.185
+  round 1: queried teacher for 20 random messages (0.2s)
+  round 1: queried teacher for 20 high-entropy messages (0.2s)
+  [active_soft] round 1 n=44 acc=0.480 f1=0.306 brier=0.138
+  [random_soft] round 1 n=44 acc=0.480 f1=0.332 brier=0.148
+  [random_hard] round 1 n=44 acc=0.470 f1=0.316 brier=0.176
+  round 2: queried teacher for 20 random messages (0.4s)
+  round 2: queried teacher for 20 high-entropy messages (0.2s)
+  [active_soft] round 2 n=64 acc=0.560 f1=0.351 brier=0.133
+  [random_soft] round 2 n=64 acc=0.560 f1=0.406 brier=0.134
+  [random_hard] round 2 n=64 acc=0.450 f1=0.293 brier=0.189
+  round 3: queried teacher for 20 random messages (0.2s)
+  round 3: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 3 n=84 acc=0.570 f1=0.356 brier=0.133
+  [random_soft] round 3 n=84 acc=0.560 f1=0.367 brier=0.136
+  [random_hard] round 3 n=84 acc=0.410 f1=0.263 brier=0.166
+  round 4: queried teacher for 20 random messages (0.3s)
+  round 4: queried teacher for 20 high-entropy messages (0.2s)
+  [active_soft] round 4 n=104 acc=0.520 f1=0.308 brier=0.138
+  [random_soft] round 4 n=104 acc=0.530 f1=0.351 brier=0.140
+  [random_hard] round 4 n=104 acc=0.450 f1=0.292 brier=0.146
+  round 5: queried teacher for 20 random messages (0.3s)
+  round 5: queried teacher for 20 high-entropy messages (0.2s)
+  [active_soft] round 5 n=124 acc=0.480 f1=0.274 brier=0.141
+  [random_soft] round 5 n=124 acc=0.540 f1=0.358 brier=0.136
+  [random_hard] round 5 n=124 acc=0.530 f1=0.366 brier=0.139
+  round 6: queried teacher for 20 random messages (0.3s)
+  round 6: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 6 n=144 acc=0.540 f1=0.319 brier=0.137
+  [random_soft] round 6 n=144 acc=0.530 f1=0.350 brier=0.139
+  [random_hard] round 6 n=144 acc=0.500 f1=0.334 brier=0.141
+  round 7: queried teacher for 20 random messages (0.2s)
+  round 7: queried teacher for 20 high-entropy messages (0.1s)
+  [active_soft] round 7 n=164 acc=0.460 f1=0.272 brier=0.140
+  [random_soft] round 7 n=164 acc=0.490 f1=0.328 brier=0.139
+  [random_hard] round 7 n=164 acc=0.530 f1=0.319 brier=0.144
+  round 8: queried teacher for 20 random messages (0.2s)
+  round 8: queried teacher for 20 high-entropy messages (0.2s)
+  [active_soft] round 8 n=184 acc=0.460 f1=0.275 brier=0.138
+  [random_soft] round 8 n=184 acc=0.490 f1=0.344 brier=0.138
+  [random_hard] round 8 n=184 acc=0.540 f1=0.355 brier=0.138
+  round 9: queried teacher for 20 random messages (0.3s)
+  round 9: queried teacher for 20 high-entropy messages (0.3s)
+  [active_soft] round 9 n=204 acc=0.510 f1=0.279 brier=0.140
+  [random_soft] round 9 n=204 acc=0.480 f1=0.325 brier=0.138
+  [random_hard] round 9 n=204 acc=0.540 f1=0.306 brier=0.140
+  round 10: queried teacher for 20 random messages (0.4s)
+  round 10: queried teacher for 20 high-entropy messages (0.4s)
+  [active_soft] round 10 n=224 acc=0.530 f1=0.312 brier=0.140
+  [random_soft] round 10 n=224 acc=0.510 f1=0.324 brier=0.138
+  [random_hard] round 10 n=224 acc=0.480 f1=0.305 brier=0.141
+
+=== label-efficiency summary ===
+[customer_service.action] teacher test acc=0.580 (n_test=100)
+  active_soft   224 labels -> acc=0.590 f1=0.266 brier=0.156
+  random_soft   224 labels -> acc=0.570 f1=0.241 brier=0.153
+  random_hard   224 labels -> acc=0.540 f1=0.169 brier=0.183
+[customer_service.category] teacher test acc=0.940 (n_test=100)
+  active_soft   224 labels -> acc=0.640 f1=0.504 brier=0.500
+  random_soft   224 labels -> acc=0.580 f1=0.439 brier=0.493
+  random_hard   224 labels -> acc=0.520 f1=0.433 brier=0.494
+[customer_service.churn_risk] teacher test acc=0.800 (n_test=100)
+  active_soft   224 labels -> acc=0.550 f1=0.301 brier=0.172
+  random_soft   224 labels -> acc=0.560 f1=0.337 brier=0.169
+  random_hard   224 labels -> acc=0.480 f1=0.181 brier=0.218
+[customer_service.needs_human] teacher test acc=0.760 (n_test=100)
+  active_soft   224 labels -> acc=0.770 f1=0.697 brier=0.096
+  random_soft   224 labels -> acc=0.770 f1=0.697 brier=0.093
+  random_hard   224 labels -> acc=0.730 f1=0.600 brier=0.084
+[customer_service.urgency] teacher test acc=0.740 (n_test=100)
+  active_soft   224 labels -> acc=0.530 f1=0.312 brier=0.140
+  random_soft   224 labels -> acc=0.510 f1=0.324 brier=0.138
+  random_hard   224 labels -> acc=0.480 f1=0.305 brier=0.141
+wrote results/tarski/explore_active_distillation.json
+total elapsed: 1324.8s

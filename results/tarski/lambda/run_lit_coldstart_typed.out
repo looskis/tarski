@@ -1,0 +1,43 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 8711.86it/s]
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 18:59:51 2026).
+Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 18:59:51 2026).
+== typed-decisions: pool 1080 messages, split 11, cached in 6s
+  workflow agent_trace_observability: pool 274
+   B=  10 random   : logreg 0.3873 | lda 0.3747 | probe 0.3960 | class coverage 0.87
+   B=  10 typiclust: logreg 0.3160 | lda 0.3110 | probe 0.3640 | class coverage 0.88
+   B=  10 kmedoid  : logreg 0.3870 | lda 0.3660 | probe 0.3730 | class coverage 0.90
+   B=  10 probcover: logreg 0.4280 | lda 0.4180 | probe 0.4020 | class coverage 0.85
+   B=  40 random   : logreg 0.5360 | lda 0.5547 | probe 0.4720 | class coverage 0.98
+   B=  40 typiclust: logreg 0.4990 | lda 0.5340 | probe 0.4800 | class coverage 0.95
+   B=  40 kmedoid  : logreg 0.4900 | lda 0.5280 | probe 0.4600 | class coverage 1.00
+   B=  40 probcover: logreg 0.4980 | lda 0.5920 | probe 0.4820 | class coverage 1.00
+  workflow customer_service: pool 269
+   B=  10 random   : logreg 0.3527 | lda 0.4193 | probe 0.4653 | class coverage 0.83
+   B=  10 typiclust: logreg 0.3050 | lda 0.3860 | probe 0.4360 | class coverage 0.72
+   B=  10 kmedoid  : logreg 0.3120 | lda 0.4200 | probe 0.4470 | class coverage 0.84
+   B=  10 probcover: logreg 0.2500 | lda 0.3560 | probe 0.4260 | class coverage 0.82
+   B=  40 random   : logreg 0.4193 | lda 0.5213 | probe 0.5487 | blocks:2 0.5810 | class coverage 0.93
+   B=  40 typiclust: logreg 0.3830 | lda 0.4900 | probe 0.5350 | blocks:2 0.5490 | class coverage 0.89
+   B=  40 kmedoid  : logreg 0.4080 | lda 0.4940 | probe 0.5460 | class coverage 0.93
+   B=  40 probcover: logreg 0.4040 | lda 0.4620 | probe 0.5500 | blocks:2 0.5920 | class coverage 0.86
+  workflow invoice_processing: pool 259
+   B=  10 random   : logreg 0.4307 | lda 0.4927 | probe 0.5767 | class coverage 0.80
+   B=  10 typiclust: logreg 0.4000 | lda 0.5030 | probe 0.5470 | class coverage 0.85
+   B=  10 kmedoid  : logreg 0.4520 | lda 0.4940 | probe 0.5910 | class coverage 0.78
+   B=  10 probcover: logreg 0.4220 | lda 0.4640 | probe 0.6060 | class coverage 0.65
+   B=  40 random   : logreg 0.5073 | lda 0.5833 | probe 0.6240 | class coverage 0.90
+   B=  40 typiclust: logreg 0.4750 | lda 0.5690 | probe 0.5920 | class coverage 0.93
+   B=  40 kmedoid  : logreg 0.4650 | lda 0.5610 | probe 0.6380 | class coverage 0.90
+   B=  40 probcover: logreg 0.4720 | lda 0.5720 | probe 0.6200 | class coverage 0.90
+  workflow security_incidents: pool 278
+   B=  10 random   : logreg 0.3540 | lda 0.4867 | probe 0.5407 | class coverage 0.85
+   B=  10 typiclust: logreg 0.4050 | lda 0.5340 | probe 0.6330 | class coverage 0.87
+   B=  10 kmedoid  : logreg 0.3980 | lda 0.4980 | probe 0.5920 | class coverage 0.82
+   B=  10 probcover: logreg 0.4240 | lda 0.4620 | probe 0.5320 | class coverage 0.72
+   B=  40 random   : logreg 0.3893 | lda 0.4693 | probe 0.5780 | class coverage 0.97
+   B=  40 typiclust: logreg 0.4940 | lda 0.5150 | probe 0.6180 | class coverage 0.93
+   B=  40 kmedoid  : logreg 0.4220 | lda 0.4390 | probe 0.5600 | class coverage 0.97
+   B=  40 probcover: logreg 0.3780 | lda 0.4460 | probe 0.5740 | class coverage 1.00
+done -> results/tarski/explore_lit_coldstart_typed.json

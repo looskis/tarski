@@ -1,0 +1,180 @@
+{
+ "args": {
+  "smoke": false,
+  "dataset": "banking77",
+  "splits": [
+   11,
+   16
+  ],
+  "variants": [
+   "next",
+   "global",
+   "local",
+   "next1",
+   "global1"
+  ],
+  "epochs": 6,
+  "min_steps": 300,
+  "out": "results/tarski/explore_globalfork_banking77.json"
+ },
+ "splits": {
+  "11": {
+   "next": {
+    "layers": [
+     11,
+     12
+    ],
+    "layer_types": [
+     "l",
+     "G"
+    ],
+    "mean_acc": 0.9200260043144226,
+    "tasks": {
+     "intent": {
+      "acc": 0.9200260043144226,
+      "epochs": 6
+     }
+    },
+    "s": 48.6
+   },
+   "global": {
+    "layers": [
+     12,
+     15
+    ],
+    "layer_types": [
+     "G",
+     "G"
+    ],
+    "mean_acc": 0.9174252152442932,
+    "tasks": {
+     "intent": {
+      "acc": 0.9174252152442932,
+      "epochs": 6
+     }
+    },
+    "s": 50.5
+   },
+   "local": {
+    "layers": [
+     11,
+     13
+    ],
+    "layer_types": [
+     "l",
+     "l"
+    ],
+    "mean_acc": 0.9141742587089539,
+    "tasks": {
+     "intent": {
+      "acc": 0.9141742587089539,
+      "epochs": 6
+     }
+    },
+    "s": 45.1
+   },
+   "next1": {
+    "layers": [
+     11
+    ],
+    "layer_types": [
+     "l"
+    ],
+    "mean_acc": 0.9079973697662354,
+    "tasks": {
+     "intent": {
+      "acc": 0.9079973697662354,
+      "epochs": 6
+     }
+    },
+    "s": 40.0
+   },
+   "global1": {
+    "layers": [
+     12
+    ],
+    "layer_types": [
+     "G"
+    ],
+    "mean_acc": 0.9053966403007507,
+    "tasks": {
+     "intent": {
+      "acc": 0.9053966403007507,
+      "epochs": 6
+     }
+    },
+    "s": 34.3
+   }
+  },
+  "16": {
+   "next": {
+    "layers": [
+     16,
+     17
+    ],
+    "layer_types": [
+     "l",
+     "l"
+    ],
+    "mean_acc": 0.9249024987220764,
+    "tasks": {
+     "intent": {
+      "acc": 0.9249024987220764,
+      "epochs": 6
+     }
+    },
+    "s": 48.5
+   },
+   "global": {
+    "layers": [
+     18,
+     21
+    ],
+    "layer_types": [
+     "G",
+     "G"
+    ],
+    "mean_acc": 0.9200260043144226,
+    "tasks": {
+     "intent": {
+      "acc": 0.9200260043144226,
+      "epochs": 6
+     }
+    },
+    "s": 50.7
+   },
+   "next1": {
+    "layers": [
+     16
+    ],
+    "layer_types": [
+     "l"
+    ],
+    "mean_acc": 0.9187256097793579,
+    "tasks": {
+     "intent": {
+      "acc": 0.9187256097793579,
+      "epochs": 6
+     }
+    },
+    "s": 38.2
+   },
+   "global1": {
+    "layers": [
+     18
+    ],
+    "layer_types": [
+     "G"
+    ],
+    "mean_acc": 0.9239271879196167,
+    "tasks": {
+     "intent": {
+      "acc": 0.9239271879196167,
+      "epochs": 6
+     }
+    },
+    "s": 38.7
+   }
+  }
+ }
+}

@@ -1,0 +1,576 @@
+{
+ "args": {
+  "datasets": [
+   "typed-decisions"
+  ],
+  "depths": null,
+  "blocks": false,
+  "blocks_datasets": [
+   "banking77",
+   "clinc150"
+  ],
+  "deltas": [
+   0.005,
+   0.01,
+   0.02
+  ],
+  "eps": 0.05,
+  "lam": 0.001,
+  "steps": 300,
+  "probe_epochs": 8,
+  "min_steps": 300,
+  "latency": true,
+  "latency_msgs": 30,
+  "latency_only": false,
+  "device": null,
+  "smoke": false,
+  "out": "results/tarski/explore_lit_shadow_typed.json"
+ },
+ "datasets": {
+  "typed-decisions": {
+   "depths": {
+    "11": {
+     "tasks": {
+      "agent_trace_observability.action": {
+       "probe_real": 0.55,
+       "probe_on_shadow": 0.4,
+       "logreg_real": 0.63,
+       "same_logreg_on_poolfit": 0.65,
+       "logreg_on_tokmean_pooled": 0.08,
+       "logreg_retrained_on_poolfit": 0.61,
+       "tfidf": 0.32
+      },
+      "agent_trace_observability.needs_review": {
+       "probe_real": 0.81,
+       "probe_on_shadow": 0.76,
+       "logreg_real": 0.81,
+       "same_logreg_on_poolfit": 0.82,
+       "logreg_on_tokmean_pooled": 0.49,
+       "logreg_retrained_on_poolfit": 0.8,
+       "tfidf": 0.66
+      },
+      "agent_trace_observability.outcome": {
+       "probe_real": 0.39,
+       "probe_on_shadow": 0.27,
+       "logreg_real": 0.59,
+       "same_logreg_on_poolfit": 0.62,
+       "logreg_on_tokmean_pooled": 0.19,
+       "logreg_retrained_on_poolfit": 0.58,
+       "tfidf": 0.34
+      },
+      "agent_trace_observability.risk": {
+       "probe_real": 0.44,
+       "probe_on_shadow": 0.38,
+       "logreg_real": 0.72,
+       "same_logreg_on_poolfit": 0.47,
+       "logreg_on_tokmean_pooled": 0.34,
+       "logreg_retrained_on_poolfit": 0.56,
+       "tfidf": 0.37
+      },
+      "agent_trace_observability.urgency": {
+       "probe_real": 0.39,
+       "probe_on_shadow": 0.36,
+       "logreg_real": 0.55,
+       "same_logreg_on_poolfit": 0.55,
+       "logreg_on_tokmean_pooled": 0.37,
+       "logreg_retrained_on_poolfit": 0.54,
+       "tfidf": 0.4
+      },
+      "customer_service.action": {
+       "probe_real": 0.61,
+       "probe_on_shadow": 0.52,
+       "logreg_real": 0.47,
+       "same_logreg_on_poolfit": 0.61,
+       "logreg_on_tokmean_pooled": 0.41,
+       "logreg_retrained_on_poolfit": 0.62,
+       "tfidf": 0.54
+      },
+      "customer_service.category": {
+       "probe_real": 0.69,
+       "probe_on_shadow": 0.36,
+       "logreg_real": 0.79,
+       "same_logreg_on_poolfit": 0.82,
+       "logreg_on_tokmean_pooled": 0.49,
+       "logreg_retrained_on_poolfit": 0.82,
+       "tfidf": 0.92
+      },
+      "customer_service.churn_risk": {
+       "probe_real": 0.66,
+       "probe_on_shadow": 0.48,
+       "logreg_real": 0.61,
+       "same_logreg_on_poolfit": 0.61,
+       "logreg_on_tokmean_pooled": 0.49,
+       "logreg_retrained_on_poolfit": 0.64,
+       "tfidf": 0.58
+      },
+      "customer_service.needs_human": {
+       "probe_real": 0.74,
+       "probe_on_shadow": 0.67,
+       "logreg_real": 0.6,
+       "same_logreg_on_poolfit": 0.79,
+       "logreg_on_tokmean_pooled": 0.61,
+       "logreg_retrained_on_poolfit": 0.77,
+       "tfidf": 0.68
+      },
+      "customer_service.urgency": {
+       "probe_real": 0.65,
+       "probe_on_shadow": 0.43,
+       "logreg_real": 0.55,
+       "same_logreg_on_poolfit": 0.59,
+       "logreg_on_tokmean_pooled": 0.46,
+       "logreg_retrained_on_poolfit": 0.6,
+       "tfidf": 0.61
+      },
+      "invoice_processing.discrepancy_severity": {
+       "probe_real": 0.52,
+       "probe_on_shadow": 0.48,
+       "logreg_real": 0.66,
+       "same_logreg_on_poolfit": 0.37,
+       "logreg_on_tokmean_pooled": 0.36,
+       "logreg_retrained_on_poolfit": 0.29,
+       "tfidf": 0.52
+      },
+      "invoice_processing.disposition": {
+       "probe_real": 0.56,
+       "probe_on_shadow": 0.48,
+       "logreg_real": 0.59,
+       "same_logreg_on_poolfit": 0.37,
+       "logreg_on_tokmean_pooled": 0.36,
+       "logreg_retrained_on_poolfit": 0.36,
+       "tfidf": 0.42
+      },
+      "invoice_processing.duplicate": {
+       "probe_real": 0.89,
+       "probe_on_shadow": 0.89,
+       "logreg_real": 0.91,
+       "same_logreg_on_poolfit": 0.82,
+       "logreg_on_tokmean_pooled": 0.2,
+       "logreg_retrained_on_poolfit": 0.81,
+       "tfidf": 0.89
+      },
+      "invoice_processing.matches_order": {
+       "probe_real": 0.78,
+       "probe_on_shadow": 0.45,
+       "logreg_real": 0.81,
+       "same_logreg_on_poolfit": 0.48,
+       "logreg_on_tokmean_pooled": 0.46,
+       "logreg_retrained_on_poolfit": 0.45,
+       "tfidf": 0.59
+      },
+      "invoice_processing.urgency": {
+       "probe_real": 0.57,
+       "probe_on_shadow": 0.51,
+       "logreg_real": 0.7,
+       "same_logreg_on_poolfit": 0.61,
+       "logreg_on_tokmean_pooled": 0.34,
+       "logreg_retrained_on_poolfit": 0.53,
+       "tfidf": 0.54
+      },
+      "security_incidents.credential_compromise": {
+       "probe_real": 0.65,
+       "probe_on_shadow": 0.58,
+       "logreg_real": 0.74,
+       "same_logreg_on_poolfit": 0.68,
+       "logreg_on_tokmean_pooled": 0.61,
+       "logreg_retrained_on_poolfit": 0.68,
+       "tfidf": 0.76
+      },
+      "security_incidents.disposition": {
+       "probe_real": 0.77,
+       "probe_on_shadow": 0.74,
+       "logreg_real": 0.59,
+       "same_logreg_on_poolfit": 0.62,
+       "logreg_on_tokmean_pooled": 0.61,
+       "logreg_retrained_on_poolfit": 0.63,
+       "tfidf": 0.74
+      },
+      "security_incidents.severity": {
+       "probe_real": 0.53,
+       "probe_on_shadow": 0.51,
+       "logreg_real": 0.61,
+       "same_logreg_on_poolfit": 0.62,
+       "logreg_on_tokmean_pooled": 0.44,
+       "logreg_retrained_on_poolfit": 0.61,
+       "tfidf": 0.56
+      },
+      "security_incidents.true_positive": {
+       "probe_real": 0.78,
+       "probe_on_shadow": 0.73,
+       "logreg_real": 0.77,
+       "same_logreg_on_poolfit": 0.77,
+       "logreg_on_tokmean_pooled": 0.73,
+       "logreg_retrained_on_poolfit": 0.74,
+       "tfidf": 0.81
+      },
+      "security_incidents.urgency": {
+       "probe_real": 0.56,
+       "probe_on_shadow": 0.5,
+       "logreg_real": 0.6,
+       "same_logreg_on_poolfit": 0.57,
+       "logreg_on_tokmean_pooled": 0.5,
+       "logreg_retrained_on_poolfit": 0.55,
+       "tfidf": 0.55
+      }
+     },
+     "shadow": {
+      "vocab_seen": 4639,
+      "test_oov_token_rate": 0.005692152480388495,
+      "cos_pooled_test_poolfit": 0.9993724226951599,
+      "cos_pooled_test_tokmean": 0.9979615807533264,
+      "cos_centred_test_poolfit": 0.9336212277412415,
+      "cos_centred_test_tokmean": 0.8095496892929077
+     },
+     "cascade": {
+      "probe<-same_probe_tokmean": {
+       "n_bundles_test": 400,
+       "n_bundles_val": 120,
+       "acc_served": 0.627,
+       "acc_tier0_only": 0.525,
+       "bundle_agreement_test": 0.22250000000000003,
+       "fixed": [
+        {
+         "tau": 0.5,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.627
+        },
+        {
+         "tau": 0.7,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.627
+        },
+        {
+         "tau": 0.9,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.627
+        },
+        {
+         "tau": 0.95,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.627
+        }
+       ],
+       "ltt": {
+        "0.005": {
+         "tau": null,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.627,
+         "note": "not certifiable on validation"
+        },
+        "0.01": {
+         "tau": null,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.627,
+         "note": "not certifiable on validation"
+        },
+        "0.02": {
+         "tau": null,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.627,
+         "note": "not certifiable on validation"
+        }
+       }
+      },
+      "probe<-logreg_poolfit_rt": {
+       "n_bundles_test": 400,
+       "n_bundles_val": 120,
+       "acc_served": 0.627,
+       "acc_tier0_only": 0.6095,
+       "bundle_agreement_test": 0.14,
+       "fixed": [
+        {
+         "tau": 0.5,
+         "exit_rate": 0.2625,
+         "flip_rate": 0.1975,
+         "acc": 0.6195
+        },
+        {
+         "tau": 0.7,
+         "exit_rate": 0.0275,
+         "flip_rate": 0.0175,
+         "acc": 0.6255
+        },
+        {
+         "tau": 0.9,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.627
+        },
+        {
+         "tau": 0.95,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.627
+        }
+       ],
+       "ltt": {
+        "0.005": {
+         "tau": null,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.627,
+         "note": "not certifiable on validation"
+        },
+        "0.01": {
+         "tau": null,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.627,
+         "note": "not certifiable on validation"
+        },
+        "0.02": {
+         "tau": null,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.627,
+         "note": "not certifiable on validation"
+        }
+       }
+      },
+      "probe<-tfidf": {
+       "n_bundles_test": 400,
+       "n_bundles_val": 120,
+       "acc_served": 0.627,
+       "acc_tier0_only": 0.59,
+       "bundle_agreement_test": 0.2875,
+       "fixed": [
+        {
+         "tau": 0.5,
+         "exit_rate": 0.1625,
+         "flip_rate": 0.085,
+         "acc": 0.619
+        },
+        {
+         "tau": 0.7,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.627
+        },
+        {
+         "tau": 0.9,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.627
+        },
+        {
+         "tau": 0.95,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.627
+        }
+       ],
+       "ltt": {
+        "0.005": {
+         "tau": null,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.627,
+         "note": "not certifiable on validation"
+        },
+        "0.01": {
+         "tau": null,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.627,
+         "note": "not certifiable on validation"
+        },
+        "0.02": {
+         "tau": null,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.627,
+         "note": "not certifiable on validation"
+        }
+       }
+      },
+      "logreg<-same_logreg_poolfit": {
+       "n_bundles_test": 400,
+       "n_bundles_val": 120,
+       "acc_served": 0.665,
+       "acc_tier0_only": 0.622,
+       "bundle_agreement_test": 0.16500000000000004,
+       "fixed": [
+        {
+         "tau": 0.5,
+         "exit_rate": 0.255,
+         "flip_rate": 0.1925,
+         "acc": 0.664
+        },
+        {
+         "tau": 0.7,
+         "exit_rate": 0.0175,
+         "flip_rate": 0.0125,
+         "acc": 0.665
+        },
+        {
+         "tau": 0.9,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.665
+        },
+        {
+         "tau": 0.95,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.665
+        }
+       ],
+       "ltt": {
+        "0.005": {
+         "tau": null,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.665,
+         "note": "not certifiable on validation"
+        },
+        "0.01": {
+         "tau": null,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.665,
+         "note": "not certifiable on validation"
+        },
+        "0.02": {
+         "tau": null,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.665,
+         "note": "not certifiable on validation"
+        }
+       }
+      },
+      "logreg<-logreg_poolfit_rt": {
+       "n_bundles_test": 400,
+       "n_bundles_val": 120,
+       "acc_served": 0.665,
+       "acc_tier0_only": 0.6095,
+       "bundle_agreement_test": 0.16000000000000003,
+       "fixed": [
+        {
+         "tau": 0.5,
+         "exit_rate": 0.2625,
+         "flip_rate": 0.2025,
+         "acc": 0.65
+        },
+        {
+         "tau": 0.7,
+         "exit_rate": 0.0275,
+         "flip_rate": 0.0175,
+         "acc": 0.663
+        },
+        {
+         "tau": 0.9,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.665
+        },
+        {
+         "tau": 0.95,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.665
+        }
+       ],
+       "ltt": {
+        "0.005": {
+         "tau": null,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.665,
+         "note": "not certifiable on validation"
+        },
+        "0.01": {
+         "tau": null,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.665,
+         "note": "not certifiable on validation"
+        },
+        "0.02": {
+         "tau": null,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.665,
+         "note": "not certifiable on validation"
+        }
+       }
+      },
+      "logreg<-tfidf": {
+       "n_bundles_test": 400,
+       "n_bundles_val": 120,
+       "acc_served": 0.665,
+       "acc_tier0_only": 0.59,
+       "bundle_agreement_test": 0.125,
+       "fixed": [
+        {
+         "tau": 0.5,
+         "exit_rate": 0.1625,
+         "flip_rate": 0.13,
+         "acc": 0.6525
+        },
+        {
+         "tau": 0.7,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.665
+        },
+        {
+         "tau": 0.9,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.665
+        },
+        {
+         "tau": 0.95,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.665
+        }
+       ],
+       "ltt": {
+        "0.005": {
+         "tau": null,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.665,
+         "note": "not certifiable on validation"
+        },
+        "0.01": {
+         "tau": null,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.665,
+         "note": "not certifiable on validation"
+        },
+        "0.02": {
+         "tau": null,
+         "exit_rate": 0.0,
+         "flip_rate": 0.0,
+         "acc": 0.665,
+         "note": "not certifiable on validation"
+        }
+       }
+      }
+     },
+     "latency_cpu": {
+      "depth": 11,
+      "threads": 8,
+      "n_msgs": 30,
+      "trunk_to_depth_ms_median": 25.569159999577096,
+      "tier0_ms_median": 0.02933750147349201,
+      "speedup": 871.5520652868203,
+      "mean_tokens": 107.53333333333333
+     }
+    }
+   },
+   "n_tasks": 20,
+   "wall_s": 96.1
+  }
+ }
+}

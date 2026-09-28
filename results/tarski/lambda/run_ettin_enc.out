@@ -1,0 +1,22 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 20870.28it/s]
+[    7.4s] == enc trunk jhu-clsp/ettin-encoder-150m on cuda: 22 layers, hidden 768
+[   20.5s] == [enc] banking77: 8994/999/3076 messages (train/val/test), tasks: intent(77) | cached [6, 11, 14, 16, 22] in 11.3s
+[   59.2s]    [enc] banking77 probe@6|mean: mean acc 0.8849
+[   72.3s]    [enc] banking77 probe@11|mean: mean acc 0.8849
+[  102.0s]    [enc] banking77 probe@16|mean: mean acc 0.8768
+[  135.9s]    [enc] banking77 probe@22|mean: mean acc 0.8856
+[  170.3s]    [enc] banking77 blocks@14+2|mean|bidir: mean acc 0.9057
+[  183.9s] == [enc] clinc150: 15250/3100/5500 messages (train/val/test), tasks: intent(151) | cached [6, 11, 16, 22] in 11.8s
+[  254.1s]    [enc] clinc150 probe@6|mean: mean acc 0.8689
+[  354.2s]    [enc] clinc150 probe@11|mean: mean acc 0.8580
+[  438.9s]    [enc] clinc150 probe@16|mean: mean acc 0.8645
+[  468.7s]    [enc] clinc150 probe@22|mean: mean acc 0.8542
+[  512.9s]    [enc] clinc150 blocks@11+2|mean|bidir: mean acc 0.8771
+[  517.7s] == [enc] typed-cs: 269/31/100 messages (train/val/test), tasks: customer_service.action(5), customer_service.category(5), customer_service.churn_risk(4), customer_service.needs_human(2), customer_service.urgency(4) | cached [6, 11, 14, 16, 22] in 2.9s
+[  532.6s]    [enc] typed-cs probe@6|mean: mean acc 0.5660
+[  546.2s]    [enc] typed-cs probe@11|mean: mean acc 0.6520
+[  559.7s]    [enc] typed-cs probe@16|mean: mean acc 0.6800
+[  573.1s]    [enc] typed-cs probe@22|mean: mean acc 0.6960
+[  715.4s]    [enc] typed-cs blocks@14+2|mean|bidir: mean acc 0.7300
+[  715.6s] done
