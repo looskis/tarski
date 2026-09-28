@@ -586,3 +586,22 @@ policy − stock default: +0.028 [+0.006, +0.050] (paired, 250 states). With har
 at 93% overall and 91% on the 27-way intent, zero-shot; the given order is again the worse of the two
 under the stock format (0.898 vs 0.926) and state-first closes the gap (0.928 vs 0.922); temperature
 takes ECE from 0.05 to 0.016. The mean slot is neutral here (labels are unambiguous letters).
+
+## 2026-09-28: paper v0.3, proof pass and LaTeX build
+
+Two proof passes over the full draft (accuracy against this log; necessity). Fixed: intro contribution
+3 now quotes the bf16 spread (5.0→1.4) instead of the 4-bit one; related-work "localized to a causal
+encoder" → "originates in ... and persists, smaller, in a model without one"; Bucher/Pecher no longer
+cited for the OOD collapse (that is the JevBench observation, A.5); LLaDA mean-slot gap corrected to
+1–11 points (state-first mean 0.423 vs mask 0.533); seed effect "a third" → "less than half" of the
+order effect; GPU time corrected to 2.08 h / $6.86 (not "four hours / under $20"); Bitext prompt split
+measured (542 of 612 tokens are the question block, 8 the message); datasets/limitations mention the
+Bitext check; seven cited works added to References (Damani 2025, Foroutan 2022, Fu 2023, Ilharco
+2023, Li 2025, Tang 2024, Wang–Deng–Yang 2026). Removed as duplicates: "Capacity, revisited", "What we
+would do next" (small-encoder sentence folded into Implications for research), §6 "Slot masks".
+Abstract 380 → ~310 words; American spelling throughout (53 replacements).
+LaTeX: ~/Downloads/"Reading a Diffusion LM (arxiv)"/ (paper.md export → md2tex.py → main/abstract/body.tex;
+figures/fig1_lens.pdf, fig2_divergence.pdf from the H100 result files; Tectonic 0.17; 29 pages, no
+overfull boxes; arxiv-source.tar.gz; author Kevin Loo, kl3323@columbia.edu). Remaining before
+submission: verify the dagger-marked references; natbib keys (citations are author-year text);
+affiliation line.
