@@ -605,3 +605,22 @@ figures/fig1_lens.pdf, fig2_divergence.pdf from the H100 result files; Tectonic 
 overfull boxes; arxiv-source.tar.gz; author Kevin Loo, kl3323@columbia.edu). Remaining before
 submission: verify the dagger-marked references; natbib keys (citations are author-year text);
 affiliation line.
+
+## 2026-09-28: references verified, natbib build
+
+Every reference checked against arXiv/GitHub (WebFetch/WebSearch). Corrections: arXiv:2607.13013 is
+NOT a uniform-state DiffusionGemma paper (it is an audio ASR paper) → dropped; DiffusionGemma cited as
+"DiffusionGemma Team (2026), arXiv:2608.00146"; Kumar 2026 = "Discrete diffusion language models are
+training-free multi-label classifiers" (Pawan Kumar, 2608.14649); the two "overconfidence" arXivs are
+Yadav, Patro & Agneeswaran 2026a (2607.27386, robustness) and 2026b (2608.08791, representation–
+confidence gap); "Bandarkar & Peng 2026" → Martin, Bandarkar & Peng 2026 (2605.28042) plus Bandarkar
+et al. 2026 ICLR (2510.04694); Jha 2026 = Anik Jha, "Half the experts, all the code" (2607.16721);
+Conzelmann, Catalan-Tatjer & Liu 2026 (2605.06366); Chen et al. 2026 (2601.14050); Zheng et al. 2026
+(2604.03592); Lasby et al. REAP = ICLR 2026 (2510.13999); ConfTuner = Li, Xiong, Wu & Hooi, NeurIPS
+2025 (2508.18847); Pecher, Srba & Bielikova = EMNLP 2025 (2402.12819); Damani et al. 2025
+(2507.16806); Gong et al. = ICLR 2025 (2410.17891); "Wang et al. 2024" batch prompting could not be
+identified → replaced by Lin, Diesendruck, Du & Abraham, BatchPrompt (2309.00384) and the "−3 to +12
+points" claim softened; Wang, Deng & Yang 2026 = "Assessing and mitigating miscalibration in LLM-based
+social science measurement" (2605.11954); typed-decisions = HF LocalLLaMA/typed-decisions + GitHub
+kotoba-lang/typed-decisions. 48 entries, no daggers. LaTeX now uses natbib (plainnat) with
+references.bib generated from the doc's list; 69 in-text citations converted to \citep/\citet; 29 pages.
