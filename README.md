@@ -101,6 +101,12 @@ AUROC 0.957 without a single out-of-scope example. Scoring reads the states the 
 receives, so it costs nothing extra. `predict` and `/v1/decide` report `out_of_scope` and
 `oos_score`; `serve --escalate-oos` sends flagged questions to the fallback. `--no-oos` skips it.
 
+The detector is as good as the data it is fitted on. With a few hundred messages per decision it
+separates near-miss topics; with a few dozen (the quickstart file) it reliably catches gibberish,
+greetings and clearly foreign text but misses some short natural sentences. When the file has fewer
+than 30 validation rows the threshold is set from leave-one-out scores of the training rows, which
+keeps the flag rate on unseen in-scope messages near the 5% target.
+
 ## Evaluate
 
 ```bash
