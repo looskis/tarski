@@ -1,4 +1,0 @@
--- clinc150: no sweep with >= 2 blocks splits at depth 2; skipped
--- typed_cs: no sweep with >= 2 blocks splits at depth 2; skipped
--- banking77: no sweep with >= 2 blocks splits at depth 2; skipped
-== done in 0.0s; wrote results/tarski/explore_freerider.json

@@ -1,23 +1,0 @@
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 9130.49it/s]
-Using the latest cached version of the dataset since clinc/clinc_oos couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'plus' at /home/ubuntu/.cache/huggingface/datasets/clinc___clinc_oos/plus/0.0.0/155b9c710419136e17307b80d0a13e68cd46b4ec (last modified on Sun Sep 27 21:22:49 2026).
-Using the latest cached version of the dataset since mteb/banking77 couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'default' at /home/ubuntu/.cache/huggingface/datasets/mteb___banking77/default/0.0.0/18072d2685ea682290f7b8924d94c62acc19c0b2 (last modified on Sun Sep 27 21:22:46 2026).
-loaded clinc150: 15250/3100/5500 messages (train/val/test), tasks: intent(151), domain(11), oos(2)
-loaded banking77: 8994/999/3076 messages (train/val/test), tasks: intent(77) (used only as auxiliary out-of-task text)
-cached trunk depth 11 for 8300 CLINC messages in 5.8s
-cached trunk depth 11 for 1500 Banking77 auxiliary messages in 1.2s
-trivial 'always in-scope' baseline: 0.811
-  lambda=0.0: acc=0.823 macro_f1=0.516 ece=0.152 epochs=8/8
-  lambda=0.5: acc=0.811 macro_f1=0.448 ece=0.153 epochs=4/8
-  lambda=1.0: acc=0.811 macro_f1=0.448 ece=0.137 epochs=4/8
-  lambda=2.0: acc=0.811 macro_f1=0.448 ece=0.134 epochs=4/8
-
-=== outlier-exposure summary (CLINC150 oos) ===
-always-in-scope baseline acc: 0.811
-  lambda=0.0   acc=0.823 macro_f1=0.516 ece=0.152
-  lambda=0.5   acc=0.811 macro_f1=0.448 ece=0.153
-  lambda=1.0   acc=0.811 macro_f1=0.448 ece=0.137
-  lambda=2.0   acc=0.811 macro_f1=0.448 ece=0.134
-wrote results/tarski/explore_outlier_exposure.json
-total elapsed: 104.7s

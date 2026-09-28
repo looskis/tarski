@@ -1,10 +1,0 @@
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 5807.18it/s]
-Using the latest cached version of the dataset since mteb/banking77 couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'default' at /home/ubuntu/.cache/huggingface/datasets/mteb___banking77/default/0.0.0/18072d2685ea682290f7b8924d94c62acc19c0b2 (last modified on Sun Sep 27 22:52:06 2026).
-branch curves for 1 task(s) in 104s
-tol 0.005: intent->18
-  probe@18 intent: acc 0.8784 (87s)
-  blocks@18 intent: acc 0.9278 (53s)
-tol 0.01: intent->18
-tol 0.02: intent->18
-done

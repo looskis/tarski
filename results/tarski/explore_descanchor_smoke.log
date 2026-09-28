@@ -1,5 +1,0 @@
-== description-anchored routes | trunk cpu, fits cpu | typed-decisions: 160/60/80 messages (train/val/test), tasks: agent_trace_observability.act | 71 option descriptions
--- depth 11 baselines: {"uniform": 0.3175, "majority_oracle_prior": 0.5157, "untrained_cosine": 0.3078, "per_task_logreg": 0.5031}
-   in-distribution shared scorer r=8: {"choice": 0.5182, "noul": 0.6633, "score": 0.4276, "all": 0.5255}
-   zero-shot (leave one workflow out) r=8: {"choice": 0.2802, "noul": 0.4519, "score": 0.2284, "all": 0.311}
-done -> results/tarski/explore_descanchor_smoke.json

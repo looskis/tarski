@@ -1,31 +1,0 @@
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 9146.84it/s]
-Using the latest cached version of the dataset since mteb/banking77 couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'default' at /home/ubuntu/.cache/huggingface/datasets/mteb___banking77/default/0.0.0/18072d2685ea682290f7b8924d94c62acc19c0b2 (last modified on Sun Sep 27 21:22:46 2026).
-== banking77: 13069 messages, tasks 1, depths [4, 8], cached in 4s
-  depth 4: shadow fitted (2998 tokens seen, test OOV 0.008); centred cos poolfit 0.877 tokmean 0.707
-   [intent] probe_real 0.8924 | probe_on_shadow 0.8349 | logreg_real 0.8986 | same_logreg_on_poolfit 0.8839 | logreg_on_tokmean_pooled 0.8560 | logreg_retrained_on_poolfit 0.8888 | tfidf 0.8891 | blocks_real 0.9109 | blocks_on_shadow_tokens 0.8797
-   cascade served=probe  tier0=same_probe_tokmean  : served 0.8924 tier0-only 0.8349 | LTT delta=0.01: exit 0.533 flips 0.0081 acc 0.8908 | tau=0.9: exit 0.375 flips 0.0023
-   cascade served=probe  tier0=logreg_poolfit_rt   : served 0.8924 tier0-only 0.8888 | LTT delta=0.01: exit 0.512 flips 0.0020 acc 0.8924 | tau=0.9: exit 0.677 flips 0.0049
-   cascade served=probe  tier0=tfidf               : served 0.8924 tier0-only 0.8891 | LTT delta=0.01: exit 0.655 flips 0.0104 acc 0.8973 | tau=0.9: exit 0.342 flips 0.0007
-   cascade served=logreg tier0=same_logreg_poolfit : served 0.8986 tier0-only 0.8839 | LTT delta=0.01: exit 0.612 flips 0.0007 acc 0.8986 | tau=0.9: exit 0.625 flips 0.0013
-   cascade served=logreg tier0=logreg_poolfit_rt   : served 0.8986 tier0-only 0.8888 | LTT delta=0.01: exit 0.547 flips 0.0023 acc 0.8982 | tau=0.9: exit 0.677 flips 0.0039
-   cascade served=logreg tier0=tfidf               : served 0.8986 tier0-only 0.8891 | LTT delta=0.01: exit 0.655 flips 0.0085 acc 0.9021 | tau=0.9: exit 0.342 flips 0.0007
-   cascade served=blocks tier0=same_probe_tokmean  : served 0.9109 tier0-only 0.8349 | LTT delta=0.01: exit 0.533 flips 0.0133 acc 0.9093 | tau=0.9: exit 0.375 flips 0.0042
-   cascade served=blocks tier0=logreg_poolfit_rt   : served 0.9109 tier0-only 0.8888 | LTT delta=0.01: exit 0.512 flips 0.0049 acc 0.9132 | tau=0.9: exit 0.677 flips 0.0137
-   cascade served=blocks tier0=tfidf               : served 0.9109 tier0-only 0.8891 | LTT delta=0.01: exit 0.671 flips 0.0107 acc 0.9148 | tau=0.9: exit 0.342 flips 0.0020
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 7991.31it/s]
-   CPU latency (batch 1, 8 threads, 14 tokens): trunk to depth 4 4.18 ms vs tier 0 0.0194 ms
-  depth 8: shadow fitted (2998 tokens seen, test OOV 0.008); centred cos poolfit 0.901 tokmean 0.786
-   [intent] probe_real 0.8885 | probe_on_shadow 0.8410 | logreg_real 0.8960 | same_logreg_on_poolfit 0.8839 | logreg_on_tokmean_pooled 0.8573 | logreg_retrained_on_poolfit 0.8826 | tfidf 0.8891 | blocks_real 0.9223 | blocks_on_shadow_tokens 0.8836
-   cascade served=probe  tier0=same_probe_tokmean  : served 0.8885 tier0-only 0.8410 | LTT delta=0.01: exit 0.483 flips 0.0052 acc 0.8891 | tau=0.9: exit 0.371 flips 0.0023
-   cascade served=probe  tier0=logreg_poolfit_rt   : served 0.8885 tier0-only 0.8826 | LTT delta=0.01: exit 0.613 flips 0.0036 acc 0.8901 | tau=0.9: exit 0.402 flips 0.0013
-   cascade served=probe  tier0=tfidf               : served 0.8885 tier0-only 0.8891 | LTT delta=0.01: exit 0.671 flips 0.0166 acc 0.8973 | tau=0.9: exit 0.342 flips 0.0016
-   cascade served=logreg tier0=same_logreg_poolfit : served 0.8960 tier0-only 0.8839 | LTT delta=0.01: exit 0.569 flips 0.0033 acc 0.8976 | tau=0.9: exit 0.624 flips 0.0036
-   cascade served=logreg tier0=logreg_poolfit_rt   : served 0.8960 tier0-only 0.8826 | LTT delta=0.01: exit 0.684 flips 0.0094 acc 0.8986 | tau=0.9: exit 0.402 flips 0.0013
-   cascade served=logreg tier0=tfidf               : served 0.8960 tier0-only 0.8891 | LTT delta=0.01: exit 0.671 flips 0.0156 acc 0.9041 | tau=0.9: exit 0.342 flips 0.0020
-   cascade served=blocks tier0=same_probe_tokmean  : served 0.9223 tier0-only 0.8410 | LTT delta=0.01: exit 0.441 flips 0.0072 acc 0.9230 | tau=0.9: exit 0.371 flips 0.0042
-   cascade served=blocks tier0=logreg_poolfit_rt   : served 0.9223 tier0-only 0.8826 | LTT delta=0.01: exit 0.479 flips 0.0033 acc 0.9236 | tau=0.9: exit 0.402 flips 0.0020
-   cascade served=blocks tier0=tfidf               : served 0.9223 tier0-only 0.8891 | LTT delta=0.01: exit 0.671 flips 0.0091 acc 0.9236 | tau=0.9: exit 0.342 flips 0.0016
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 8022.11it/s]
-   CPU latency (batch 1, 8 threads, 14 tokens): trunk to depth 8 8.17 ms vs tier 0 0.0197 ms
-done -> results/tarski/explore_lit_shadow_banking77.json

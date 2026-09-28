@@ -1,15 +1,0 @@
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 5730.80it/s]
-checks: SVF(z=1) vs base linear rel err 2.1e-04; SharedSVF vs loop abs err 1.7e-06
-Using the latest cached version of the dataset since clinc/clinc_oos couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'plus' at /home/ubuntu/.cache/huggingface/datasets/clinc___clinc_oos/plus/0.0.0/155b9c710419136e17307b80d0a13e68cd46b4ec (last modified on Sun Sep 27 22:52:08 2026).
-== clinc150 split 11: 3 tasks, cached in 7s
-   full     : mean acc 0.8709 | trainable 10072.9k (20.15 MB fp16) | 139s
-   svf_norm : mean acc 0.8546 | trainable 52.0k (0.10 MB fp16) | 129s
-Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 22:52:09 2026).
-Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 22:52:09 2026).
-== typed-decisions split 14: 5 tasks, cached in 1s
-   full     : mean acc 0.7900 | trainable 10033.9k (20.07 MB fp16) | 128s
-   svf_norm : mean acc 0.7780 | trainable 13.1k (0.03 MB fp16) | 112s
-done -> results/tarski/explore_lit_svf_clinc_typed.json

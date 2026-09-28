@@ -1,23 +1,0 @@
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 5435.98it/s]
-Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 22:52:09 2026).
-Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 22:52:09 2026).
-loaded typed-decisions: 1080/120/400 messages (train/val/test), tasks: agent_trace_observability.action(4), agent_trace_observability.needs_review(2), agent_trace_observability.outcome(4), agent_trace_observability.risk(4), agent_trace_observability.urgency(4), customer_service.action(5), customer_service.category(5), customer_service.churn_risk(4), customer_service.needs_human(2), customer_service.urgency(4), invoice_processing.discrepancy_severity(4), invoice_processing.disposition(4), invoice_processing.duplicate(2), invoice_processing.matches_order(2), invoice_processing.urgency(4), security_incidents.credential_compromise(2), security_incidents.disposition(4), security_incidents.severity(5), security_incidents.true_positive(2), security_incidents.urgency(4)
-[customer_service.action] pool=269 val=31 test=100 labels=['answer_directly', 'close_no_action', 'escalate_to_human', 'execute_refund', 'request_information']
-  cached trunk depths [0, 14] for 400 messages in 2.7s
-  n=  20  light_hard acc=0.550   light_soft acc=0.510
-  n=  50  light_hard acc=0.600   light_soft acc=0.520
-  n= 100  light_hard acc=0.500   light_soft acc=0.530
-  n= 160  light_hard acc=0.580   light_soft acc=0.590
-  n=  50  full_finetune_soft acc=0.550 (391s)
-
-=== label-efficiency summary ===
-[customer_service.action] n_pool=269
-  soft n= 100 (acc=0.510) needs hard n=100 to match  -> leverage 1.00x
-  soft n= 100 (acc=0.520) needs hard n=100 to match  -> leverage 1.00x
-  soft n= 100 (acc=0.530) needs hard n=100 to match  -> leverage 1.00x
-  soft n= 100 (acc=0.590) needs hard n=100 to match  -> leverage 1.00x
-  full_finetune n= 100 acc=0.550  (light branch would need n=100 for the same acc)
-wrote results/tarski/explore_label_efficiency.json
-total elapsed: 765.6s

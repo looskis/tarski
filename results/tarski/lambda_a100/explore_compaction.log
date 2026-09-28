@@ -1,9 +1,0 @@
-== typed-decisions: 547/53/200 messages (train/val/test), tasks: customer_service.action(5), customer_service.category(5), customer_service.churn_risk(4), customer_service.needs_human(2), customer_service.urgency(4), security_incidents.credential_compromise(2), security_incidents.disposition(4), security_incidents.severity(5), security_incidents.true_positive(2), security_incidents.urgency(4) | split 11 | blocks:2 | mean tokens 252 | cached in 2.8s
-  sanity: uncompacted CompactCache vs FeatureCache logits max abs diff 0.00e+00
--- full     : acc 0.7460 F1 0.5928 | tokens 252 | branch GFLOP/decision 5.49 | 373s
--- tome128  : acc 0.7200 F1 0.5672 | tokens 127 | branch GFLOP/decision 2.65 | 208s
--- tome64   : acc 0.6550 F1 0.4922 | tokens 64 | branch GFLOP/decision 1.31 | 129s
--- tome32   : acc 0.6360 F1 0.4697 | tokens 32 | branch GFLOP/decision 0.65 | 70s
--- values   : acc 0.7500 F1 0.6022 | tokens 160 | branch GFLOP/decision 3.40 | 196s
--- stride64 : acc 0.6510 F1 0.4757 | tokens 64 | branch GFLOP/decision 1.31 | 89s
-done

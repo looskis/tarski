@@ -1,223 +1,156 @@
 # tarski
 
-Local decision models. Train small **branches** for your own decisions (which team, how urgent,
-which category, escalate or not) on top of a frozen encoder, with your own labelled messages, on
-your own machine. One pass through the encoder answers every decision about a message.
+Turn diffusion-model research into read policies for your own decisions. Compare prompt layout,
+question order and answer-slot initialization on a labelled sample, fit confidence temperatures,
+then use the resulting JSON config for inference. Model weights stay fixed.
 
-```
-message ──► trunk (frozen ModernBERT-base, runs once, stops at the deepest split any branch needs)
-              │ layer 8 ──► branch "urgent"    (linear probe, 0.03 MB)
-              │ layer 14 ─► branch "team"      (2 transformer layers + head, 20 MB)
-              └ layer 14 ─► branch "category"  (2 transformer layers + head, 20 MB)
-```
-
-- **Accurate enough.** With about 100 labelled messages per route, a 2-layer branch lands within
-  about 1 point of fine-tuning the whole encoder (Banking77 92.9 vs 93.8; JSON ticket states 78.5 vs
-  79.6).
-- **Cheap per decision.** Twenty decisions about one message cost about 10x less than twenty
-  separately fine-tuned models, and about 20x less than a question-in-input decision model.
-- **Adding a decision never touches the encoder.** A branch trains on cached encoder states in
-  seconds to minutes on a laptop, and cannot change any branch already deployed.
-- **Knows what it does not know.** Every branch carries an out-of-scope detector, fitted without
-  out-of-scope examples, and a calibrated confidence.
-- **Speaks Jev's API** (`POST /v1/systemone`), so `typesafe-sdk`, OpenJev routes and stuntd work
-  unchanged, with optional fallback to any Jev-compatible server for untrained questions.
-
-The measurements behind these claims are in [docs/research/THESIS.md](docs/research/THESIS.md).
+The CLI is noninteractive. Successful commands return JSON on stdout; predictions are JSONL.
+Errors and progress go to stderr. Validation, tuning and evaluation use only the Python standard
+library and never load a model. `tarski schema` describes the command and data contract for agents.
 
 ## Install
 
-```bash
-uv sync                      # Python 3.12; PyTorch on CUDA, Apple silicon (MPS) or CPU
-uv run tarski info           # device, cached encoders, branch store
-```
-
-Or into any environment: `pip install .` (add `.[benchmarks]` for the public datasets). The default
-encoder, `answerdotai/ModernBERT-base` (~600 MB), downloads from Hugging Face on first use.
-
-## Quickstart
-
-`examples/tickets.csv` has 80 support messages with two decisions each: `team` (billing, outage,
-feature, account) and `urgent` (yes, no).
+Python 3.12 or newer:
 
 ```bash
-tarski train examples/tickets.csv            # one branch per label column, ~1 min on a laptop
-tarski list                                  # kind, split depth, size, test accuracy, out-of-scope
-tarski predict "Prod is down and customers cannot log in"
-tarski eval examples/tickets.csv --all-rows  # accuracy, F1, calibration on the file
-tarski serve --port 8080
-tarski label new_messages.csv --out labels.jsonl   # label more, least-confident first, then retrain
+pip install .
+tarski --help
+tarski schema
 ```
 
-`predict` prints one JSON line per message:
+For development: `uv sync --group dev`, then `uv run tarski ...`.
 
-```json
-{"text": "Prod is down and customers cannot log in",
- "decisions": {"team": {"label": "outage", "confidence": 0.91, "out_of_scope": false},
-               "urgent": {"label": "yes", "confidence": 0.84, "out_of_scope": false}}}
+## Try the complete offline workflow
+
+These tiny, synthetic fixtures demonstrate the file contract, not model quality:
+
+```bash
+tarski init --backend mlx --out /tmp/tarski.base.json
+tarski validate --data examples/calibration.reads.jsonl --kind reads
+tarski tune --config /tmp/tarski.base.json --reads examples/calibration.reads.jsonl \
+  --out /tmp/tarski.fitted.json
+tarski eval --config /tmp/tarski.fitted.json --reads examples/evaluation.reads.jsonl
 ```
+
+`tune` chooses a single global combination of prompt format, order and slot using labelled
+calibration questions. Accuracy is the default objective, with Brier score breaking ties;
+`--objective brier` selects by uncalibrated Brier score. It then fits one temperature per question
+type by negative log likelihood. Temperature changes confidence, not the top label.
+
+The tuning report is **in-sample**. Use a separate labelled file for `eval`; it rejects repeated
+record IDs and, when available, repeated state hashes. Keep IDs stable between runs. Existing
+experiment files without state hashes cannot detect the same state under a new ID. An unseen
+question type uses the config's default temperature and is reported in the evaluation warnings.
 
 ## Your data
 
-One row per message: a `text` column and one column per decision. A CSV or JSONL file.
+One JSON object per line, with a stable `id`, a `state`, and a dictionary of `questions`:
 
-```csv
-text,team,urgent
-"Everything is down and we have a demo at noon",outage,yes
-"I was charged twice this month",billing,no
-"Could you add dark mode?",feature,
+```json
+{"id":"ticket-1","state":"I was charged twice.","questions":{"team":{"type":"choice","instructions":"Which team should handle this?","criteria":{"billing":"Payments and invoices","support":"Technical issues"}},"urgent":{"type":"noul","instructions":"Is the service unavailable?"}},"gold":{"team":"billing","urgent":"no"}}
 ```
 
-- An empty cell means the row is not labelled for that decision; it still trains the others.
-- A `split` column with `train` / `val` / `test` is honoured; otherwise rows are split 80/10/10 with
-  a fixed seed, so `eval` scores rows that training never saw.
-- Labels are the distinct values in a column, sorted. A decision needs at least two.
-- `--text-col` and `--tasks` pick the columns; `--max-len` (default 256 tokens) truncates long messages.
+- `state` can be text, an object or an array.
+- `choice` uses 2–255 named criteria; `noul` uses `yes`/`no`; `score` uses an array of 2–10
+  descriptions and string labels `"0"`, `"1"`, etc.
+- `gold` is optional for inference. Each value can be a label string or an object containing
+  `label`. Missing/null labels are unlabelled; tuning and evaluation need at least one label.
+- Each record must fit in one answer canvas. Oversized schemas fail explicitly; splitting them
+  changes the question context and is not done automatically.
+- `--data -` and `--reads -` read JSONL from stdin. Output paths are never overwritten without
+  `--force`, and an output cannot replace an input even with that flag.
 
-How many labels? Around **100 messages per label** puts a branch within about a point of a full
-fine-tune. With **10 per label** expect a gap of 4–12 points; the encoder choice below matters more
-than the branch there.
+## Run on your data
 
-How long can a message be? The encoder accepts 8,192 tokens; the harness truncates at `--max-len`
-(default 256, about a paragraph or a small JSON ticket state) because cost grows with length: every
-third encoder layer is global attention, cached training states take 1.5 KB per token, and branch
-layers attend over the whole message. Use 512 for ticket bodies; longer works but is slow on CPU.
-The limit is stored per branch, and a request uses the largest limit among the branches it asks for.
-
-## Label your own data
+The reader adapters reuse the pinned OpenJev prompt and canvas implementation. Install it plus
+one of the optional backends. Model weights may download on the first `collect` or `predict`.
 
 ```bash
-tarski label unlabelled.csv --out labels.jsonl --tasks team=billing,outage,feature urgent=yes,no
-tarski label unlabelled.csv --out labels.jsonl          # with trained branches: their labels and suggestions
+# Shared prompt/canvas implementation, pinned to the research revision:
+pip install 'openjev @ git+https://github.com/razorback16/openjev@a0ddd7d928298eccef2c17153b00b5636b6d996a'
+# DiffusionGemma on Apple silicon (about 14 GB of weights):
+pip install '.[dlm]'
+# Or DiffusionGemma / LLaDA on CUDA:
+# pip install '.[torch]'
+
+tarski init --backend mlx --out base.json
+tarski doctor --config base.json
+tarski validate --data calibration.jsonl
+tarski collect --config base.json --data calibration.jsonl --out calibration.reads.jsonl \
+  --formats stock state_first --orders given reversed rotate:1 --slots native mean
+tarski tune --config base.json --reads calibration.reads.jsonl --out fitted.json
+
+tarski collect --config fitted.json --data heldout.jsonl --out heldout.reads.jsonl
+tarski eval --config fitted.json --reads heldout.reads.jsonl
+tarski predict --config fitted.json --data incoming.jsonl --out predictions.jsonl
 ```
 
-Opens a local page (http://127.0.0.1:8090) that shows one message at a time with one button per
-label per decision. If branches are trained, their suggestion is pre-selected with its confidence, so
-confirming a correct answer is one click, and the queue is ordered so that messages a branch flags as
-out of scope come first, then the least confident: an hour of labelling goes where the model is
-weakest. New labels can be typed in. Labels append to `labels.jsonl` in exactly the shape `tarski
-train` reads; messages already in it are skipped, so stop and resume freely. A decision left blank
-is not recorded, and a row only trains the decisions it has.
+`doctor` checks dependencies, not hardware capacity or cached weights. `collect` and `predict`
+load the model once per command. The first implementation holds records/results in memory and
+writes the output atomically when complete; it has no streaming or resume support yet. Start
+with a small calibration file: the example sweep runs 12 reads per state. A checkout of OpenJev
+under `third_party/openjev` is also recognized by the research readers.
 
-Where do unlabelled messages come from? A CSV or JSONL export with a `text` column, or a plain text
-file with one message per line: the last week of a Slack channel, the tickets that came in since the
-last retrain, or the messages the serving branches answered with low confidence.
+## Config and agent interface
 
-## Choosing the encoder, branch and depth
-
-| Option | Default | When to change it |
-|---|---|---|
-| `--base` | `modernbert` (answerdotai/ModernBERT-base) | `gte` (Alibaba-NLP/gte-modernbert-base, same shape, contrastively trained) lifts a plain probe to full-fine-tune level and makes few-label routes stronger. One seed of evidence so far; try it. |
-| `--kind` | `blocks` (1–2 transformer layers + head, ~20 MB) | `probe` (linear head, 0.03 MB, 0.2 ms per extra decision) when you have many decisions or use the `gte` encoder. |
-| `--split` | `14` (the depth the branch reads from) | `auto` runs a short 1-layer branch at depths 2, 4, …, 20 and picks the shallowest within 1 point of the best. It needs at least 100 validation rows per decision; with fewer it falls back to 14. Shallower splits make the whole request cheaper. |
-| `--depth` | `2` | `1` halves the branch; both are within a point on our benchmarks. |
-| `--epochs` | `8` | A floor of 300 optimiser steps applies regardless, so small files run more epochs. Do not lower this for small data. |
-
-All branches in a store share one encoder. Each branch is bound to a fingerprint of the exact
-encoder weights it was trained on and refuses to load against another; change the encoder and
-retrain (minutes, from cached states).
-
-## Out of scope
-
-A branch answers only the labels it was trained on. To notice messages that fit none of them, each
-branch stores the class means and shared covariance of its training messages' encoder states and
-scores new messages by relative Mahalanobis distance. The threshold flags about 5% of ordinary
-in-scope traffic (`--oos-quantile 0.95`); on CLINC150 this separates out-of-scope messages with
-AUROC 0.957 without a single out-of-scope example. Scoring reads the states the branch already
-receives, so it costs nothing extra. `predict` and `/v1/decide` report `out_of_scope` and
-`oos_score`; `serve --escalate-oos` sends flagged questions to the fallback. `--no-oos` skips it.
-
-The detector is as good as the data it is fitted on. With a few hundred messages per decision it
-separates near-miss topics; with a few dozen (the quickstart file) it reliably catches gibberish,
-greetings and clearly foreign text but misses some short natural sentences. When the file has fewer
-than 30 validation rows the threshold is set from leave-one-out scores of the training rows, which
-keeps the flag rate on unseen in-scope messages near the 5% target.
-
-## Evaluate
-
-```bash
-tarski eval tickets.csv                 # the file's test split (or the seeded 10% carve-out)
-tarski eval new_week.csv --all-rows     # every row of a file the branches never saw
-tarski eval banking77                   # a public benchmark (needs the benchmarks extra)
+```json
+{
+  "schema_version": 1,
+  "backend": "mlx",
+  "model": "mlx-community/diffusiongemma-26B-A4B-it-4bit",
+  "read": {
+    "prompt_format": "state_first",
+    "question_order": "given",
+    "slot": "mean",
+    "seed": 0
+  },
+  "calibration": {"default_temperature": 1.0, "temperatures": {}}
+}
 ```
 
-Per decision: accuracy, macro-F1, negative log-likelihood, expected calibration error, and the share
-of rows the detector flagged (should sit near 5% on in-scope data).
+`init --backend torch` selects DiffusionGemma bf16 on CUDA; `--backend llada` selects LLaDA-8B
+with stock prompting and its native mask slot. `--model` accepts an alternative checkpoint or local
+path of the same architecture. Prompt formats are `stock`, `state_first`, and the experimental
+`user_first` control. Order is `given`, `reversed`, or `rotate:N`; a rotation wraps modulo the
+number of questions. `native` means a seeded random vocabulary token for DiffusionGemma and the
+trained mask token for LLaDA. `mean` replaces the slot with the vocabulary-mean embedding.
 
-## Serve
+A fitted config also records data fingerprints and selection provenance. `collect` records the
+backend, checkpoint and seed; tuning and evaluation reject mismatched reader metadata. Collected
+probabilities are raw; `predict` and `eval` apply the saved temperatures. Edit unfitted configs
+and run `tarski validate --config ...` before use. Retune after changing a fitted read policy.
 
-```bash
-tarski serve --port 8080
-tarski serve --port 8080 --fallback http://127.0.0.1:8081 --escalate-below 0.4 --escalate-oos
-```
-
-```bash
-curl -s localhost:8080/v1/decide -H 'content-type: application/json' \
-  -d '{"text": "Prod is down, customers cannot log in", "tasks": ["team", "urgent"]}'
-```
-
-Jev-compatible, with question ids matching trained task names:
-
-```python
-from typesafe_sdk import TypeSafeClient
-client = TypeSafeClient(api_key="local", base_url="http://127.0.0.1:8080")
-client.system_one("I was charged twice", {
-    "team":   {"type": "choice", "criteria": {"billing": "...", "outage": "...", "feature": "..."}},
-    "urgent": {"type": "noul"},
-})
-```
-
-A choice question may list a subset of a branch's labels; probabilities are renormalised over it.
-Questions with no trained branch, answers below `--escalate-below`, and (with `--escalate-oos`)
-messages a branch flags as out of scope go to the fallback server; the `X-Tarski-Sources` and
-`X-Tarski-Out-Of-Scope` response headers say which.
-
-| Endpoint | |
+| Command | Purpose |
 |---|---|
-| `POST /v1/decide` | `{text or texts, tasks}` → label, probabilities, confidence, out-of-scope flag per task, timing |
-| `POST /v1/systemone` | Jev's request and answer shapes |
-| `GET /v1/tasks` | trained tasks: kind, depth, size, metrics, resident or not |
-| `POST /v1/tasks/{task}/load`, `/unload` | manage residency explicitly (default: LRU over `--max-loaded`) |
-| `GET /health` | encoder and device |
+| `schema` | Machine-readable command contract and examples |
+| `init` | Write a starter config |
+| `validate` | Check config/data without loading weights |
+| `doctor` | Check reader dependencies |
+| `collect` | Run candidate policies on local data |
+| `tune` | Select a policy and fit per-type temperatures |
+| `eval` | Report accuracy, Brier, NLL and 10-bin ECE on held-out reads |
+| `predict` | Emit calibrated label distributions as JSONL |
 
-`TARSKI_API_KEY` requires a bearer token on `/v1/*`; `TARSKI_FALLBACK_KEY` is sent to the fallback.
-`TARSKI_STORE` sets the default branch directory.
+Exit codes: `0` success, `1` runtime/dependency failure, `2` invalid input, `130` interrupted.
+An error is `{"error":{"code":"invalid_input","message":"..."}}` on stderr. There are no prompts.
+`--help` is human-readable; `schema` is JSON. Offline commands do not import PyTorch or MLX.
 
-## Python
-
-```python
-from tarski.engine import Engine
-
-eng = Engine("branches")                                   # loads the encoder once
-r = eng.decide(["The site is down for everyone"], ["team", "urgent"])
-r["results"][0]["team"]                                    # probabilities over the branch's labels
-r["oos"][0]["team"]                                        # {"score": ..., "flag": ...}
-```
-
-```python
-from tarski import data, train
-from tarski.trunk import Trunk
-
-ds = data.load_table("tickets.csv")
-trunk = Trunk()                                            # frozen ModernBERT-base on the best device
-train.fit(trunk, ds, ["team", "urgent"], split=14, depth=2, store="branches")
-```
-
-## How it works
-
-The encoder runs once per message and stops at the deepest layer any requested branch reads. A
-branch reads the hidden states at its depth: a **probe** is LayerNorm, mean pooling and a linear
-layer; a **blocks** branch is one or two transformer layers copied from the encoder, then the same
-readout. Training caches the encoder's states for the training messages once (fp16) and fits only
-the branch, so no gradient ever reaches the encoder: adding, retraining or deleting a branch cannot
-change another branch's answers, and a unit test checks this bit for bit. Each branch is calibrated
-with one temperature fitted on validation data, and carries its out-of-scope detector. At serving
-time the encoder stays resident and branches are loaded from megabyte-sized files on demand.
+The tuner also reads the stored `dlm/order.py`, `dlm/state_first.py` and `dlm/bitext.py` results.
+It recognizes `rotN`, `rev`, their `_mean` variants, and `format|order|slot` names. Hybrid prompt/
+canvas-order experiments are reported as skipped because they do not correspond to a deployable
+policy. Every question must have the same candidate set, preventing partial runs from changing
+which examples get scored. Older result files lack reader metadata: the tool warns and uses the
+backend/checkpoint you explicitly supply in the base config.
 
 ## Research
 
-The paper draft, the registry of 91 tested ideas and the literature notes are under
-[docs/research/](docs/research/). `experiments/` holds the hypothesis runs (accuracy sweeps,
-latency, cold switching, initialisation, depth selection) and `explore/` one script per exploration
-idea; both need `pip install .[research]`. Results are in `results/tarski/`. `readonce/` is a
-retired line of work kept only for the scripts that import it.
+[Experiment log](docs/research/notes/decision_models/LOG.md) ·
+[Research brief](docs/research/notes/decision_models/BRIEF.md) ·
+[Reproduction scripts](dlm/README.md) · [Stored results](results/dlm/)
+
+The experiments identify three useful controls: prompt layout, question order, and per-type
+confidence calibration. The vocabulary-mean slot helped DiffusionGemma but hurt LLaDA relative
+to its mask token. State-first prompting reduced DiffusionGemma's order sensitivity, with a
+smaller effect on LLaDA. These findings motivate candidates and defaults; your calibration and
+held-out results determine whether a setting helps your workload. Tuning does not establish
+out-of-distribution reliability or change model weights.

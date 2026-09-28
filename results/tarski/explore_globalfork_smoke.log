@@ -1,7 +1,0 @@
-== global-only forks | cpu | typed-decisions: 160/60/80 messages (train/val/test), tasks: agent_trace_observability.action(4), ag | layer types GllGllGllGllGllGllGllG
-   split 11    next layers [11, 12] (lG): mean acc 0.4565 (3s)
-   split 11  global layers [12, 15] (GG): mean acc 0.3261 (3s)
-   split 11   local layers [11, 13] (ll): mean acc 0.5217 (3s)
-   split 11   next1 layers [11] (l): mean acc 0.4565 (2s)
-   split 11 global1 layers [12] (G): mean acc 0.3261 (2s)
-done -> results/tarski/explore_globalfork_smoke.json

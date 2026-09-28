@@ -1,29 +1,0 @@
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 5747.68it/s]
-Using the latest cached version of the dataset since clinc/clinc_oos couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'plus' at /home/ubuntu/.cache/huggingface/datasets/clinc___clinc_oos/plus/0.0.0/155b9c710419136e17307b80d0a13e68cd46b4ec (last modified on Sun Sep 27 22:52:08 2026).
-== clinc150: 23850 messages, 3 tasks, splits [11], cached in 6s
-  split 11: max |h| 138, p99.9 67.2, top [254, 251, 67, 689], split-off channels [254, 251, 67]
-   rel. error on normal channels: fp16 0.000 | int8_plain 0.039 | int8_split 0.010 | int8_split_rot 0.007 | int4_plain 0.551 | int4_split 0.178 | int4_split_rot 0.136 | int3_split_rot 0.315
-   [probe intent] fp16 0.8604 | serve on: int8_plain 0.8618 int8_split 0.8609 int8_split_rot 0.8605 int4_plain 0.2398 int4_split 0.8595 int4_split_rot 0.8600 int3_split_rot 0.8542 | retrained: int8_plain 0.8647 int4_split_rot 0.8616
-   [probe domain] fp16 0.8202 | serve on: int8_plain 0.8189 int8_split 0.8205 int8_split_rot 0.8202 int4_plain 0.3436 int4_split 0.8155 int4_split_rot 0.8156 int3_split_rot 0.8098 | retrained: int8_plain 0.8144 int4_split_rot 0.8144
-   [probe oos] fp16 0.8422 | serve on: int8_plain 0.8411 int8_split 0.8418 int8_split_rot 0.8424 int4_plain 0.8196 int4_split 0.8427 int4_split_rot 0.8429 int3_split_rot 0.8418 | retrained: int8_plain 0.8385 int4_split_rot 0.8431
-   [blocks:2 intent] fp16 0.8660 | serve on: int8_plain 0.8653 int8_split 0.8665 int8_split_rot 0.8658 int4_plain 0.2284 int4_split 0.8651 int4_split_rot 0.8662 int3_split_rot 0.8665 | retrained: int8_plain 0.8656 int4_split_rot 0.8665
-   [blocks:2 domain] fp16 0.8747 | serve on: int8_plain 0.8738 int8_split 0.8749 int8_split_rot 0.8753 int4_plain 0.3824 int4_split 0.8716 int4_split_rot 0.8747 int3_split_rot 0.8700 | retrained: int8_plain 0.8751 int4_split_rot 0.8767
-   [blocks:2 oos] fp16 0.8687 | serve on: int8_plain 0.8685 int8_split 0.8685 int8_split_rot 0.8689 int4_plain 0.8182 int4_split 0.8680 int4_split_rot 0.8680 int3_split_rot 0.8675 | retrained: int8_plain 0.8662 int4_split_rot 0.8760
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 5992.12it/s]
-   trunk w8        : rel err 0.038 | probe acc 0.8417 (fp16 0.8409, agree 0.9902) | blocks:2 acc 0.8718 (fp16 0.8698, agree 0.9938)
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 5031.44it/s]
-   trunk w4g64     : rel err 0.388 | probe acc 0.7818 (fp16 0.8409, agree 0.8666) | blocks:2 acc 0.8537 (fp16 0.8698, agree 0.9342)
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 5421.82it/s]
-   trunk w8a8      : rel err 0.129 | probe acc 0.8452 (fp16 0.8409, agree 0.9704) | blocks:2 acc 0.8711 (fp16 0.8698, agree 0.9824)
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 5101.17it/s]
-   trunk w8a8_split: rel err 0.063 | probe acc 0.8413 (fp16 0.8409, agree 0.9804) | blocks:2 acc 0.8718 (fp16 0.8698, agree 0.9862)
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 5300.58it/s]
-   trunk kv4_kivi  : rel err 0.119 | probe acc 0.8297 (fp16 0.8409, agree 0.9542) | blocks:2 acc 0.8647 (fp16 0.8698, agree 0.9682)
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 5214.52it/s]
-   trunk kv2_kivi  : rel err 0.727 | probe acc 0.4387 (fp16 0.8409, agree 0.4662) | blocks:2 acc 0.4687 (fp16 0.8698, agree 0.4961)
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 5281.61it/s]
-   trunk kv4_rot   : rel err 0.148 | probe acc 0.8330 (fp16 0.8409, agree 0.9576) | blocks:2 acc 0.8653 (fp16 0.8698, agree 0.9708)
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 5233.07it/s]
-   trunk kv3_rot   : rel err 0.350 | probe acc 0.8052 (fp16 0.8409, agree 0.8962) | blocks:2 acc 0.8512 (fp16 0.8698, agree 0.9307)
-done -> results/tarski/explore_lit_quant_clinc150.json

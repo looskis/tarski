@@ -1,20 +1,0 @@
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 8780.45it/s]
-Using the latest cached version of the dataset since clinc/clinc_oos couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'plus' at /home/ubuntu/.cache/huggingface/datasets/clinc___clinc_oos/plus/0.0.0/155b9c710419136e17307b80d0a13e68cd46b4ec (last modified on Sun Sep 27 21:22:49 2026).
-loaded clinc150: 15250/3100/5500 messages (train/val/test), tasks: intent(151), domain(11), oos(2)
-held-out (new) domain: 'auto_and_commute'; 10 old domains
-cached trunk depth 11 for 5000 messages in 2.8s
-before imprinting: old_domain_acc=0.626 new_domain_acc=0.000
-after imprinting (0 fine-tune steps, k=10): old_domain_acc=0.000 new_domain_acc=1.000
-after surgical fine-tune (new row only, n_replay=60): old_domain_acc=0.603 new_domain_acc=0.158
-after naive fine-tune (whole head, n_replay=60): old_domain_acc=0.557 new_domain_acc=0.180
-ceiling (from-scratch, all 11 domains, n=3000): old_domain_acc=0.612 new_domain_acc=0.860
-
-=== route-imprinting summary ===
-  before_imprinting                   old=0.626  new=0.000
-  after_imprinting_zero_shot_finetune old=0.000  new=1.000
-  after_surgical_finetune             old=0.603  new=0.158
-  after_naive_finetune                old=0.557  new=0.180
-  ceiling_full_retrain                old=0.612  new=0.860
-wrote results/tarski/explore_route_imprinting.json
-total elapsed: 56.4s

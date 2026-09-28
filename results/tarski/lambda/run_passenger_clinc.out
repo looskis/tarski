@@ -1,31 +1,0 @@
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 9185.86it/s]
-== passengers | base answerdotai/ModernBERT-base on cuda | smoke=False
-  parity: {"message_vs_taps": 0.0084, "passenger_vs_oneway_full": 0.0208, "twoway_full_vs_stock": 0.0}
-Using the latest cached version of the dataset since clinc/clinc_oos couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'plus' at /home/ubuntu/.cache/huggingface/datasets/clinc___clinc_oos/plus/0.0.0/155b9c710419136e17307b80d0a13e68cd46b4ec (last modified on Sun Sep 27 21:22:49 2026).
--- clinc150: 15250/3100/5500 messages (train/val/test), tasks: intent(151), domain(11), oos(2) | configs ['P4r0', 'P4r8', 'P4r8@11', 'P1r0'] | epochs 4 bs 64
-  baseline cache depth 22: 6.6s
-  baseline probe@22 mean: {"acc": 0.8524, "macro_f1": 0.8048, "ece": 0.0512, "nll": 0.545, "auroc": 0.8543}
-  baseline logreg@11 mean: {"acc": 0.8458, "macro_f1": 0.7872, "ece": 0.059, "nll": 0.5981, "auroc": 0.8373}
-  baseline logreg@22 mean: {"acc": 0.8495, "macro_f1": 0.7835, "ece": 0.0561, "nll": 0.5625, "auroc": 0.8548}
-    epoch 1/4 loss 1.4459 val acc P4r0=0.803 P4r8=0.938 P4r8@11=0.886 P1r0=0.794 (106.5s)
-    epoch 2/4 loss 0.2846 val acc P4r0=0.902 P4r8=0.947 P4r8@11=0.925 P1r0=0.887 (107.1s)
-    epoch 3/4 loss 0.1404 val acc P4r0=0.916 P4r8=0.954 P4r8@11=0.936 P1r0=0.905 (107.4s)
-    epoch 4/4 loss 0.1012 val acc P4r0=0.920 P4r8=0.955 P4r8@11=0.938 P1r0=0.908 (107.9s)
-  P4r0: mean {"acc": 0.8185, "macro_f1": 0.7236, "ece": 0.0722, "nll": 0.6752, "auroc": 0.7571} | 46646 params/task | 88 token-layers/decision
-  P4r8: mean {"acc": 0.8668, "macro_f1": 0.8119, "ece": 0.0581, "nll": 0.4813, "auroc": 0.8556} | 857654 params/task | 88 token-layers/decision
-  P4r8@11: mean {"acc": 0.8438, "macro_f1": 0.7844, "ece": 0.0607, "nll": 0.5692, "auroc": 0.8206} | 452150 params/task | 44 token-layers/decision
-  P1r0: mean {"acc": 0.7955, "macro_f1": 0.6876, "ece": 0.0829, "nll": 0.7873, "auroc": 0.6848} | 44342 params/task | 22 token-layers/decision
-Using the latest cached version of the dataset since clinc/clinc_oos couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'plus' at /home/ubuntu/.cache/huggingface/datasets/clinc___clinc_oos/plus/0.0.0/155b9c710419136e17307b80d0a13e68cd46b4ec (last modified on Sun Sep 27 21:22:49 2026).
-Loading weights:   0%|          | 0/137 [00:00<?, ?it/s]Loading weights: 100%|██████████| 137/137 [00:00<00:00, 8465.85it/s]
-  cloze clinc150/domain ' This message is about [MASK].': {"two_way": {"acc": 0.5186666666666667, "acc_prior_corrected": 0.6424444444444445}, "one_way_stock": {"acc": 0.46244444444444444, "acc_prior_corrected": 0.5857777777777777, "agree_with_two_way": 0.7477777777777778}, "one_way_global": {"acc": 0.46244444444444444, "acc_prior_corrected": 0.5857777777777777, "agree_with_two_way": 0.7477777777777778}, "s": 8.7}
-  cloze clinc150/domain ' Topic: [MASK].': {"two_way": {"acc": 0.61, "acc_prior_corrected": 0.64}, "one_way_stock": {"acc": 0.5311111111111111, "acc_prior_corrected": 0.5911111111111111, "agree_with_two_way": 0.7068888888888889}, "one_way_global": {"acc": 0.5311111111111111, "acc_prior_corrected": 0.5911111111111111, "agree_with_two_way": 0.7068888888888889}, "s": 8.1}
-  cloze clinc150/domain ' In one word, the request concerns [MASK].': {"two_way": {"acc": 0.5106666666666667, "acc_prior_corrected": 0.6244444444444445}, "one_way_stock": {"acc": 0.3688888888888889, "acc_prior_corrected": 0.5722222222222222, "agree_with_two_way": 0.6282222222222222}, "one_way_global": {"acc": 0.3688888888888889, "acc_prior_corrected": 0.5722222222222222, "agree_with_two_way": 0.6282222222222222}, "s": 10.1}
-Using the latest cached version of the dataset since mteb/banking77 couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'default' at /home/ubuntu/.cache/huggingface/datasets/mteb___banking77/default/0.0.0/18072d2685ea682290f7b8924d94c62acc19c0b2 (last modified on Sun Sep 27 21:22:46 2026).
-Loading weights:   0%|          | 0/137 [00:00<?, ?it/s]Loading weights: 100%|██████████| 137/137 [00:00<00:00, 8820.90it/s]
-  cloze banking77/intent ' This message is about [MASK].': {"two_way": {"acc": 0.13556566970091027, "acc_prior_corrected": 0.40767230169050717}, "one_way_stock": {"acc": 0.09200260078023408, "acc_prior_corrected": 0.3985695708712614, "agree_with_two_way": 0.5744473342002601}, "one_way_global": {"acc": 0.09200260078023408, "acc_prior_corrected": 0.3985695708712614, "agree_with_two_way": 0.5744473342002601}, "s": 8.8}
-  cloze banking77/intent ' Topic: [MASK].': {"two_way": {"acc": 0.27113133940182055, "acc_prior_corrected": 0.4171001300390117}, "one_way_stock": {"acc": 0.26820546163849157, "acc_prior_corrected": 0.41807542262678804, "agree_with_two_way": 0.58777633289987}, "one_way_global": {"acc": 0.26820546163849157, "acc_prior_corrected": 0.41807542262678804, "agree_with_two_way": 0.58777633289987}, "s": 8.7}
-  cloze banking77/intent ' In one word, the request concerns [MASK].': {"two_way": {"acc": 0.17620286085825748, "acc_prior_corrected": 0.3839401820546164}, "one_way_stock": {"acc": 0.13751625487646293, "acc_prior_corrected": 0.34525357607282187, "agree_with_two_way": 0.5767230169050716}, "one_way_global": {"acc": 0.13751625487646293, "acc_prior_corrected": 0.34492847854356307, "agree_with_two_way": 0.5763979193758128}, "s": 10.0}
-done -> results/tarski/explore_passenger_clinc.json

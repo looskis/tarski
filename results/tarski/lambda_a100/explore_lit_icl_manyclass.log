@@ -1,7 +1,0 @@
-== banking77: split 8, 13069 messages, cached in 3s
-   [intent] n=  385: tabicl 0.524/0.032 | logreg_pca 0.479/0.153 | logreg 0.514/0.051 | lda 0.544/0.430 | knn 0.314/0.060 | probe 0.466/0.066   (acc/ECE, random-selection mean)
-   [intent] n=  770: tabicl 0.668/0.031 | logreg_pca 0.594/0.222 | logreg 0.670/0.030 | lda 0.692/0.280 | knn 0.404/0.044 | probe 0.630/0.070   (acc/ECE, random-selection mean)
-== clinc150: split 11, 23850 messages, cached in 5s
-   [intent] n=  755: tabicl 0.482/0.042 | logreg_pca 0.477/0.249 | logreg 0.532/0.046 | lda 0.614/0.364 | knn 0.265/0.095 | probe 0.536/0.062   (acc/ECE, random-selection mean)
-   [intent] n= 1510: tabicl 0.596/0.036 | logreg_pca 0.599/0.339 | logreg 0.674/0.064 | lda 0.756/0.225 | knn 0.376/0.079 | probe 0.683/0.027   (acc/ECE, random-selection mean)
-done -> results/tarski/explore_lit_icl_manyclass.json

@@ -1,6 +1,0 @@
-   synthetic near-OOS (stub): 200 lines -> 200 kept; dropped 0 exact CLINC, 0 near-duplicates of test OOS; 0 kept share a 5-gram with test OOS
-   examples: help me understand upcoming and state today || what do you think of room and there today || i want to know about from and have today || what do you think of when and tell today || tell me about salary and what today
-  trunk pass: 200 messages at depths [22] in 0.7s
-  trunk pass: 616 messages at depths [22] in 3.0s
--- depth 22: inscope_msp AUROC 0.800 | maha_pp AUROC 0.805 | real_250 AUROC 0.868 F1(EM) 0.509 | synth_250 AUROC 0.729 F1(EM) 0.000 | synth_all AUROC 0.741 F1(EM) 0.000 | bank_250 AUROC 0.708 F1(EM) 0.000 | bank_all AUROC 0.639 F1(EM) 0.000 | synth_bank AUROC 0.689 F1(EM) 0.000
-done in 11.3s -> results/tarski/explore_lit_synth_neg_smoke.json

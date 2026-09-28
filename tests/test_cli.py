@@ -1,73 +1,89 @@
-"""The user path end to end on the example file: train from a CSV, list, eval, predict, and the
-out-of-scope detector, all on CPU with a small probe so the suite stays quick."""
-
 import json
-import os
+from pathlib import Path
+import subprocess
+import sys
+
+import pytest
 
 from tarski.cli import main
+from tarski.data import load_rows, write_output
 
-EXAMPLE = os.path.join(os.path.dirname(__file__), "..", "examples", "tickets.csv")
-
-
-def test_list_and_info(store, capsys):
-    main(["--store", store, "list"])
-    out = capsys.readouterr().out
-    assert "team" in out and "urgent" in out and " yes" in out          # the oos column
-    main(["--store", store, "--device", "cpu", "info"])
-    out = capsys.readouterr().out
-    assert "store:" in out and "team: probe@14" in out
+ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_eval_scores_the_file(store, capsys):
-    main(["--store", store, "--device", "cpu", "eval", EXAMPLE, "--max-len", "32", "--all-rows", "--json"])
-    out = capsys.readouterr().out
-    res = json.loads(out[out.index("{"):])
-    assert res["team"]["n"] == 80 and res["team"]["acc"] > 0.8
-    assert 0.0 <= res["team"]["oos_flag_rate"] <= 0.3
+def test_offline_cli_workflow(tmp_path, capsys):
+    base, fitted = tmp_path / "base.json", tmp_path / "fitted.json"
+    assert main(["init", "--out", str(base)]) == 0
+    assert main(["tune", "--config", str(base), "--reads", str(ROOT / "examples/calibration.reads.jsonl"),
+                 "--out", str(fitted)]) == 0
+    assert main(["eval", "--config", str(fitted), "--reads", str(ROOT / "examples/evaluation.reads.jsonl")]) == 0
+    output = capsys.readouterr()
+    assert not output.err
+    assert len([json.loads(x) for x in output.out.splitlines()]) == 3
+    assert main(["eval", "--config", str(fitted), "--reads", str(ROOT / "examples/calibration.reads.jsonl")]) == 2
+    output = capsys.readouterr()
+    assert not output.out
+    assert json.loads(output.err)["error"]["code"] == "invalid_input"
 
 
-def test_predict_reports_label_confidence_and_scope(store, capsys):
-    main(["--store", store, "--device", "cpu", "predict", "Production is down, nobody can log in",
-          "--tasks", "team", "urgent"])
-    row = json.loads(capsys.readouterr().out.strip().splitlines()[0])
-    assert row["decisions"]["team"]["label"] == "outage"
-    assert 0.0 <= row["decisions"]["team"]["confidence"] <= 1.0
-    assert row["decisions"]["team"]["out_of_scope"] is False
+def test_machine_discovery_needs_no_model_modules():
+    code = "from tarski.cli import main; import sys; main(['schema']); assert not any(m in sys.modules for m in ['torch', 'mlx', 'transformers', 'numpy'])"
+    process = subprocess.run([sys.executable, "-S", "-c", code], cwd=ROOT, capture_output=True, text=True)
+    assert process.returncode == 0, process.stderr
+    assert "predict" in json.loads(process.stdout)["commands"]
 
 
-def test_oos_scores_off_topic_messages_higher(store):
-    from tarski.engine import Engine
-
-    eng = Engine(store, device="cpu")
-    in_scope = ["I was charged twice this month", "The app is down for everyone",
-                "Please add dark mode", "Reset my password please"]
-    off_topic = ["The recipe calls for two cups of flour and a pinch of salt",
-                 "Photosynthesis converts light into chemical energy in leaves",
-                 "The train to Lisbon leaves from platform nine at dawn"]
-    r = eng.decide(in_scope + off_topic, ["team"])
-    s = [o["team"]["score"] for o in r["oos"]]
-    assert sum(s[len(in_scope):]) / len(off_topic) > sum(s[:len(in_scope)]) / len(in_scope)
+def test_stdin_records():
+    process = subprocess.run([sys.executable, "-m", "tarski", "validate", "--data", "-"],
+                             input=(ROOT / "examples/decisions.jsonl").read_text(), capture_output=True, text=True)
+    assert process.returncode == 0
+    assert json.loads(process.stdout)["states"] == 2
 
 
-def test_oos_scores_on_the_default_device(store):
-    """Branches trained on CPU score on whatever device the engine picks (MPS on Apple silicon, which
-    has no float64); the detector must not depend on the tap's device."""
-    from tarski.engine import Engine
+@pytest.mark.parametrize("argv", [["unknown"], ["tune"], ["init", "--backend", "missing"],
+                                 ["validate", "--data", "/nonexistent/tarski.jsonl"]])
+def test_usage_errors_are_json(argv, capsys):
+    assert main(argv) == 2
+    output = capsys.readouterr()
+    assert output.out == ""
+    assert json.loads(output.err)["error"]["code"] == "invalid_input"
 
-    r = Engine(store).decide(["Please add dark mode", "The recipe calls for two cups of flour"], ["team"])
-    s = [o["team"]["score"] for o in r["oos"]]
-    assert len(s) == 2 and all(isinstance(v, float) for v in s)
+
+def test_no_clobber_even_with_input_force(tmp_path, capsys):
+    path = tmp_path / "config.json"
+    assert main(["init", "--out", str(path)]) == 0
+    original = path.read_bytes()
+    assert main(["init", "--out", str(path)]) == 2
+    assert path.read_bytes() == original
+    assert main(["tune", "--config", str(path), "--reads", "unused", "--out", str(path), "--force"]) == 2
+    assert path.read_bytes() == original
+    assert main(["init", "--out", str(path), "--force"]) == 0
 
 
-def test_server_exposes_scope(store):
-    from fastapi.testclient import TestClient
+@pytest.mark.parametrize("text,match", [
+    ("", "no records"), ('{"id":"a","id":"b"}', "duplicate JSON key"),
+    ('{"id":"a","state":"x","questions":{}}', "nonempty object"),
+    ('{"id":"a","state":{"count":1e400},"questions":{}}', "non-finite"),
+    ('{"id":"a","state":"x","questions":{"q":{"type":"score","criteria":{}}}}', "array"),
+    ('{"id":"a","state":"x","questions":{"q":{"type":"noul"}},"gold":{"q":"true"}}', "label must be"),
+])
+def test_record_errors_include_location(tmp_path, text, match):
+    path = tmp_path / "bad.jsonl"
+    path.write_text(text)
+    with pytest.raises(ValueError, match=match):
+        load_rows(path, "records")
 
-    from tarski.engine import Engine
-    from tarski.server import create_app
 
-    client = TestClient(create_app(Engine(store, device="cpu")))
-    t = client.get("/v1/tasks").json()["tasks"]
-    assert t["team"]["oos"] is True
-    r = client.post("/v1/decide", json={"text": "Production is down for everyone", "tasks": ["team"]}).json()
-    d = r["results"][0]["team"]
-    assert d["label"] == "outage" and "out_of_scope" in d and "oos_score" in d
+def test_bad_probabilities_duplicate_ids_and_nan(tmp_path):
+    path = tmp_path / "bad.jsonl"
+    rows = load_rows(ROOT / "examples/calibration.reads.jsonl", "reads")[:1]
+    write_output(path, rows * 2, lines=True)
+    with pytest.raises(ValueError, match="duplicate id"):
+        load_rows(path, "reads")
+    rows[0]["questions"][0]["reads"]["stock|rot0|random"] = [.9, .9]
+    write_output(path, rows, lines=True, force=True)
+    with pytest.raises(ValueError, match="sum to 1"):
+        load_rows(path, "reads")
+    path.write_text(path.read_text().replace('0.9', 'NaN'))
+    with pytest.raises(ValueError, match="non-finite"):
+        load_rows(path, "reads")

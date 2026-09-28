@@ -1,5 +1,0 @@
-== global-only forks | cuda | typed-decisions: 1080/120/400 messages (train/val/test), tasks: agent_trace_observability.action(4), | layer types GllGllGllGllGllGllGllG
-   split 11    next layers [11, 12] (lG): mean acc 0.7520 (1153s)
-   split 11  global layers [12, 15] (GG): mean acc 0.7455 (795s)
-   split 11   local layers [11, 13] (ll): mean acc 0.7540 (769s)
-done -> results/tarski/explore_globalfork_typed.json

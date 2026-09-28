@@ -1,9 +1,0 @@
-passenger_typed_v2 | A10 | 15 | .venv/bin/python explore/geometry_passenger.py --datasets typed-decisions --cloze --out results/tarski/explore_passenger_typed_v2.json
-oneway_train | A100 | 25 | .venv/bin/python explore/geometry_oneway_train.py --out results/tarski/explore_oneway_train.json
-tapmix | A100 | 12 | .venv/bin/python explore/geometry_tapmix.py --out results/tarski/explore_tapmix.json
-subspaces | A100 | 20 | .venv/bin/python explore/geometry_subspaces.py --out results/tarski/explore_subspaces.json
-sufficient | A10 | 6 | .venv/bin/python explore/geometry_sufficient.py --out results/tarski/explore_sufficient.json
-descanchor | A10 | 6 | .venv/bin/python explore/geometry_descanchor.py --out results/tarski/explore_descanchor.json
-atlas | A10 | 3 | .venv/bin/python explore/geometry_atlas.py --out results/tarski/explore_atlas.json
-globalfork_typed | A100 | 15 | .venv/bin/python explore/geometry_globalfork.py --dataset typed-decisions --splits 11 --variants next global local --out results/tarski/explore_globalfork_typed.json
-globalfork_banking77 | A10 | 10 | .venv/bin/python explore/geometry_globalfork.py --dataset banking77 --splits 11 16 --out results/tarski/explore_globalfork_banking77.json

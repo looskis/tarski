@@ -1,6 +1,6 @@
 # Decision models beyond classification: research brief
 
-*2026-09-28. Four literature reviews (capacity and carving; diffusion-LM mechanics; specialisation, distillation and calibration; novelty scouting), ~120 primary sources read, plus first-hand reading of OpenJev, DiffusionGemma and JevBench. Compute constraint: an Apple M6 (32 GB) and rented GPUs only where a laptop cannot do the job; the previous round spent ~$100 on classic classification and that is not to be repeated.*
+*2026-09-28. Four literature reviews (capacity and carving; diffusion-LM mechanics; specialisation, distillation and calibration; novelty scouting), ~120 primary sources read, plus first-hand reading of OpenJev, DiffusionGemma and JevBench. Compute constraint: an Apple M6 (32 GB) and rented GPUs only where a laptop cannot do the job.*
 
 ## 0. The hypothesis, as posed and as it survives review
 

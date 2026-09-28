@@ -1,10 +1,0 @@
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 9022.04it/s]
-Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 18:59:51 2026).
-Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 18:59:51 2026).
-== global-only forks | cuda | typed-decisions: 1080/120/400 messages (train/val/test), tasks: agent_trace_observability.action(4), | layer types GllGllGllGllGllGllGllG
-   split 11    next layers [11, 12] (lG): mean acc 0.7520 (1153s)
-   split 11  global layers [12, 15] (GG): mean acc 0.7455 (795s)
-   split 11   local layers [11, 13] (ll): mean acc 0.7540 (769s)
-done -> results/tarski/explore_globalfork_typed.json

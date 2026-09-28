@@ -1,5 +1,9 @@
 # dlm: reading a diffusion language model as a decision model
 
+For local data, versioned configs, policy selection and calibrated inference, start with the
+[`tarski` CLI](../README.md). This directory contains the underlying readers and research runs;
+the CLI calls the same readers and accepts their order/state-first/Bitext result files for tuning.
+
 Experiments on DiffusionGemma 26B-A4B as OpenJev uses it, on Apple silicon (4-bit, MLX), with the
 canvases built by OpenJev's own engine so nothing about the prompt differs from the served system.
 

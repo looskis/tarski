@@ -1,11 +1,0 @@
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 9412.14it/s]
-Using the latest cached version of the dataset since clinc/clinc_oos couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'plus' at /home/ubuntu/.cache/huggingface/datasets/clinc___clinc_oos/plus/0.0.0/155b9c710419136e17307b80d0a13e68cd46b4ec (last modified on Sun Sep 27 21:22:49 2026).
-== OOS-inbox route discovery | 135 known routes, 15 held out: tire_pressure, pin_change, expiration_date, order_status, cook_time, cancel, do_you_have_pets, book_flight, date, schedule_meeting, oil_change_when, transactions, improve_credit_score, shopping_list_update, restaurant_suggestion
-   flag: held-out recall 0.131, OOS recall 0.561, inbox 848 = {'held_out': 236, 'oos': 477, 'known': 135}
--- depth 4, min size 10: 6 clusters, 6 proposals, recovered 3/15, junk 3, ARI 0.147 | promoted recall 0.8 vs 10-label 0.8777777777777778 vs all-label 0.8888888888888888; known acc 0.9148
--- depth 4, min size 20: 5 clusters, 5 proposals, recovered 2/15, junk 3, ARI 0.118 | promoted recall 1.0 vs 10-label 0.9166666666666666 vs all-label 1.0; known acc 0.9148
--- depth 22, min size 10: 3 clusters, 3 proposals, recovered 2/15, junk 1, ARI 0.044 | promoted recall 0.6833333333333333 vs 10-label 0.7 vs all-label 0.8333333333333334; known acc 0.9153
--- depth 22, min size 20: 2 clusters, 2 proposals, recovered 0/15, junk 2, ARI 0.017 | promoted recall None vs 10-label None vs all-label None; known acc 0.9151
-   upper bound (all 15 held-out intents in the inbox, true labels): {'n_routes': 15, 'recall_promoted': 0.44, 'acc_known': 0.9130864197530865, 'acc_known_plus_promoted': 0.8657777777777778}
-done in 2.3s -> results/tarski/explore_lit_discovery.json

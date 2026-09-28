@@ -1,23 +1,0 @@
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 9069.50it/s]
-Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 18:59:51 2026).
-Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 18:59:51 2026).
-Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 18:59:51 2026).
-== description-anchored routes | trunk cuda, fits cuda | typed-decisions: 1080/120/400 messages (train/val/test), tasks: agent_trace_observability. | 71 option descriptions
--- depth 11 baselines: {"uniform": 0.3175, "majority_oracle_prior": 0.4875, "untrained_cosine": 0.3205, "per_task_logreg": 0.674}
-   in-distribution shared scorer r=8: {"choice": 0.6033, "noul": 0.7983, "score": 0.5938, "all": 0.658}
-   in-distribution shared scorer r=32: {"choice": 0.5867, "noul": 0.7817, "score": 0.6125, "all": 0.6555}
-   in-distribution shared scorer r=128: {"choice": 0.6017, "noul": 0.7517, "score": 0.59, "all": 0.642}
-   zero-shot (leave one workflow out) r=8: {"choice": 0.2033, "noul": 0.505, "score": 0.2562, "all": 0.315}
-   zero-shot (leave one workflow out) r=32: {"choice": 0.215, "noul": 0.4983, "score": 0.2612, "all": 0.3185}
-   zero-shot (leave one workflow out) r=128: {"choice": 0.2133, "noul": 0.5067, "score": 0.2575, "all": 0.319}
--- depth 22 baselines: {"uniform": 0.3175, "majority_oracle_prior": 0.4875, "untrained_cosine": 0.2785, "per_task_logreg": 0.689}
-   in-distribution shared scorer r=8: {"choice": 0.625, "noul": 0.785, "score": 0.6087, "all": 0.6665}
-   in-distribution shared scorer r=32: {"choice": 0.61, "noul": 0.77, "score": 0.5475, "all": 0.633}
-   in-distribution shared scorer r=128: {"choice": 0.6217, "noul": 0.7717, "score": 0.5637, "all": 0.6435}
-   zero-shot (leave one workflow out) r=8: {"choice": 0.2733, "noul": 0.5083, "score": 0.2612, "all": 0.339}
-   zero-shot (leave one workflow out) r=32: {"choice": 0.2183, "noul": 0.5333, "score": 0.2875, "all": 0.3405}
-   zero-shot (leave one workflow out) r=128: {"choice": 0.2283, "noul": 0.4633, "score": 0.2775, "all": 0.3185}
-done -> results/tarski/explore_descanchor.json

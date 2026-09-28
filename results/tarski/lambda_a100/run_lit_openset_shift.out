@@ -1,26 +1,0 @@
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 6418.44it/s]
-Using the latest cached version of the dataset since clinc/clinc_oos couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'plus' at /home/ubuntu/.cache/huggingface/datasets/clinc___clinc_oos/plus/0.0.0/155b9c710419136e17307b80d0a13e68cd46b4ec (last modified on Sun Sep 27 22:52:08 2026).
-Using the latest cached version of the dataset since mteb/banking77 couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'default' at /home/ubuntu/.cache/huggingface/datasets/mteb___banking77/default/0.0.0/18072d2685ea682290f7b8924d94c62acc19c0b2 (last modified on Sun Sep 27 22:52:06 2026).
-  trunk pass: 3000 messages at depths [4, 22] in 3.3s
-== open-set label shift on CLINC150 | cls depth 22, ood depth 4 | 3000 Banking77 reference messages | fits cuda
-   OOD AUROC on the full test set: maha_cl2 0.910 | knn10 0.797 | msp 0.913
-   h[banking77]: rho 0.500, mean h on held-out in-scope 0.189, on held-out reference 0.807, on real val OOS 0.844
-   h[noise]: rho 0.508, mean h on held-out in-scope 0.013, on held-out reference 0.988, on real val OOS 0.348
--- pool real: true OOS share 0.182
-   estimate (abs err): cc 0.139 (0.043) | em_k1_banking77 0.196 (0.014) | acc_ref_banking77 0.189 (0.007) | acc_realoos_banking77 0.178 (0.004) | em_k1_noise 0.000 (0.182) | acc_ref_noise 0.047 (0.135) | acc_realoos_noise 0.136 (0.046) | bbe 0.297 (0.115) | sup_em 0.120 (0.062)
-   OOS F1 thresholding Mahalanobis++ at the estimate: cc 0.616 | em_k1_banking77 0.657 | acc_ref_banking77 0.658 | acc_realoos_banking77 0.655 | em_k1_noise 0.000 | acc_ref_noise 0.348 | acc_realoos_noise 0.610 | bbe 0.647 | sup_em 0.590 | oracle 0.656 | sup_em_argmax 0.728
--- pool rate_0.05: true OOS share 0.050
-   estimate (abs err): cc 0.074 (0.023) | em_k1_banking77 0.067 (0.017) | acc_ref_banking77 0.051 (0.001) | acc_realoos_banking77 0.048 (0.002) | em_k1_noise 0.000 (0.050) | acc_ref_noise 0.013 (0.037) | acc_realoos_noise 0.037 (0.013) | bbe 0.175 (0.125) | sup_em 0.035 (0.015)
-   OOS F1 thresholding Mahalanobis++ at the estimate: cc 0.435 | em_k1_banking77 0.438 | acc_ref_banking77 0.426 | acc_realoos_banking77 0.420 | em_k1_noise 0.000 | acc_ref_noise 0.234 | acc_realoos_noise 0.387 | bbe 0.356 | sup_em 0.389 | oracle 0.424 | sup_em_argmax 0.619
--- pool rate_0.1: true OOS share 0.100
-   estimate (abs err): cc 0.098 (0.002) | em_k1_banking77 0.116 (0.016) | acc_ref_banking77 0.103 (0.003) | acc_realoos_banking77 0.097 (0.003) | em_k1_noise 0.000 (0.100) | acc_ref_noise 0.026 (0.074) | acc_realoos_noise 0.074 (0.026) | bbe 0.206 (0.106) | sup_em 0.066 (0.034)
-   OOS F1 thresholding Mahalanobis++ at the estimate: cc 0.542 | em_k1_banking77 0.559 | acc_ref_banking77 0.547 | acc_realoos_banking77 0.540 | em_k1_noise 0.000 | acc_ref_noise 0.302 | acc_realoos_noise 0.507 | bbe 0.527 | sup_em 0.492 | oracle 0.543 | sup_em_argmax 0.682
--- pool rate_0.3: true OOS share 0.300
-   estimate (abs err): cc 0.197 (0.103) | em_k1_banking77 0.311 (0.011) | acc_ref_banking77 0.311 (0.011) | acc_realoos_banking77 0.293 (0.008) | em_k1_noise 0.000 (0.300) | acc_ref_noise 0.077 (0.223) | acc_realoos_noise 0.225 (0.075) | bbe 0.318 (0.025) | sup_em 0.200 (0.100)
-   OOS F1 thresholding Mahalanobis++ at the estimate: cc 0.657 | em_k1_banking77 0.755 | acc_ref_banking77 0.754 | acc_realoos_banking77 0.741 | em_k1_noise 0.003 | acc_ref_noise 0.372 | acc_realoos_noise 0.693 | bbe 0.750 | sup_em 0.659 | oracle 0.747 | sup_em_argmax 0.768
--- pool rate_0.5: true OOS share 0.500
-   estimate (abs err): cc 0.296 (0.204) | em_k1_banking77 0.508 (0.012) | acc_ref_banking77 0.522 (0.022) | acc_realoos_banking77 0.492 (0.010) | em_k1_noise 0.006 (0.494) | acc_ref_noise 0.129 (0.371) | acc_realoos_noise 0.374 (0.126) | bbe 0.437 (0.063) | sup_em 0.344 (0.156)
-   OOS F1 thresholding Mahalanobis++ at the estimate: cc 0.684 | em_k1_banking77 0.839 | acc_ref_banking77 0.842 | acc_realoos_banking77 0.833 | em_k1_noise 0.023 | acc_ref_noise 0.395 | acc_realoos_noise 0.765 | bbe 0.805 | sup_em 0.736 | oracle 0.835 | sup_em_argmax 0.812
-done in 18.7s -> results/tarski/explore_lit_openset_shift.json

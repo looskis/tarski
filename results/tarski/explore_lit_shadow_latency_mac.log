@@ -1,5 +1,0 @@
-  banking77 depth 4: CPU batch 1 (8 threads, 14 tokens): trunk 4.10 ms vs tier 0 0.0087 ms (472x)
-  banking77 depth 8: CPU batch 1 (8 threads, 14 tokens): trunk 12.88 ms vs tier 0 0.0124 ms (1036x)
-  clinc150 depth 6: CPU batch 1 (8 threads, 12 tokens): trunk 8.38 ms vs tier 0 0.0127 ms (659x)
-  clinc150 depth 11: CPU batch 1 (8 threads, 12 tokens): trunk 14.96 ms vs tier 0 0.0120 ms (1245x)
-  typed-decisions depth 11: CPU batch 1 (8 threads, 108 tokens): trunk 37.84 ms vs tier 0 0.0192 ms (1970x)

@@ -1,20 +1,0 @@
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 5662.44it/s]
-Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 22:52:09 2026).
-Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 22:52:09 2026).
-branch curves for 5 task(s) in 572s
-tol 0.005: customer_service.action->12, customer_service.category->18, customer_service.churn_risk->6, customer_service.needs_human->8, customer_service.urgency->2
-  probe@2 customer_service.urgency: acc 0.6500 (7s)
-  blocks@2 customer_service.urgency: acc 0.6600 (47s)
-  probe@6 customer_service.churn_risk: acc 0.6300 (7s)
-  blocks@6 customer_service.churn_risk: acc 0.7500 (47s)
-  probe@8 customer_service.needs_human: acc 0.7500 (7s)
-  blocks@8 customer_service.needs_human: acc 0.7500 (47s)
-  probe@12 customer_service.action: acc 0.5800 (7s)
-  blocks@12 customer_service.action: acc 0.6200 (47s)
-  probe@18 customer_service.category: acc 0.6600 (7s)
-  blocks@18 customer_service.category: acc 0.9100 (47s)
-tol 0.01: customer_service.action->12, customer_service.category->18, customer_service.churn_risk->6, customer_service.needs_human->8, customer_service.urgency->2
-tol 0.02: customer_service.action->12, customer_service.category->18, customer_service.churn_risk->6, customer_service.needs_human->8, customer_service.urgency->2
-done

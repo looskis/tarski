@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# DLM experiments on the Lambda GPU recorded in .lambda_instance_dlm.json (launched by readonce.lambda_cloud).
+# DLM experiments on the Lambda GPU recorded in .lambda_instance_dlm.json.
 #   dlm/lambda_dlm.sh setup            # copy code, make a venv with cu126 torch + transformers, download the model
 #   dlm/lambda_dlm.sh sync             # copy code and small results only
 #   dlm/lambda_dlm.sh ssh CMD...       # run a command on the box (in ~/tarski, venv on PATH)

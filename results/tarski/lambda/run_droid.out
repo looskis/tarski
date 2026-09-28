@@ -1,38 +1,0 @@
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 8828.45it/s]
-Generating train split:   0%|          | 0/130319 [00:00<?, ? examples/s]Generating train split:  78%|███████▊  | 102000/130319 [00:00<00:00, 1008134.49 examples/s]Generating train split: 100%|██████████| 130319/130319 [00:00<00:00, 1072445.33 examples/s]
-Generating validation split:   0%|          | 0/11873 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 11873/11873 [00:00<00:00, 963788.88 examples/s]
-[    5.3s] == DROID-style oos on ['clinc150', 'banking77-open'] | base answerdotai/ModernBERT-base on cuda | 2000 SQuAD negatives
-[   16.4s] == clinc150: 150 known classes, 15000 train, 3000 in-scope val, test 4500 in-scope + 1000 out-of-scope (250 labelled oos train messages, used only by 'supervised')
-[   34.6s]    probe@4|base                 in-scope acc 0.9304 | best oos auroc 0.925 fpr95 0.388 oos F1 0.674 (4690 steps, 17.9s)
-[   65.1s]    probe@4|mixup                in-scope acc 0.9224 | best oos auroc 0.941 fpr95 0.307 oos F1 0.723 (4690 steps, 29.8s)
-[  105.3s]    probe@4|squad                in-scope acc 0.9327 | best oos auroc 0.926 fpr95 0.363 oos F1 0.689 (4690 steps, 39.7s)
-[  161.0s]    probe@4|droid                in-scope acc 0.9216 | best oos auroc 0.947 fpr95 0.269 oos F1 0.748 (4690 steps, 54.7s)
-[  216.9s]    probe@4|supervised           in-scope acc 0.9313 | best oos auroc 0.960 fpr95 0.176 oos F1 0.805 (4770 steps, 54.9s)
-[  271.7s]    probe@22|base                in-scope acc 0.9262 | best oos auroc 0.908 fpr95 0.487 oos F1 0.609 (4690 steps, 53.9s)
-[  311.2s]    probe@22|mixup               in-scope acc 0.9189 | best oos auroc 0.946 fpr95 0.256 oos F1 0.752 (4690 steps, 39.0s)
-[  352.2s]    probe@22|squad               in-scope acc 0.9278 | best oos auroc 0.916 fpr95 0.425 oos F1 0.642 (4690 steps, 40.6s)
-[  425.2s]    probe@22|droid               in-scope acc 0.9231 | best oos auroc 0.952 fpr95 0.209 oos F1 0.784 (4690 steps, 72.3s)
-[  452.4s]    probe@22|supervised          in-scope acc 0.9269 | best oos auroc 0.963 fpr95 0.165 oos F1 0.807 (4770 steps, 26.8s)
-[  519.0s]    blocks@11+2|base             in-scope acc 0.9460 | best oos auroc 0.939 fpr95 0.376 oos F1 0.680 (2814 steps, 64.6s)
-[  602.8s]    blocks@11+2|mixup            in-scope acc 0.9362 | best oos auroc 0.954 fpr95 0.232 oos F1 0.774 (2814 steps, 82.0s)
-[  672.9s]    blocks@11+2|squad            in-scope acc 0.9409 | best oos auroc 0.940 fpr95 0.379 oos F1 0.674 (2814 steps, 69.2s)
-[  721.6s]    blocks@11+2|droid            in-scope acc 0.9360 | best oos auroc 0.950 fpr95 0.278 oos F1 0.746 (2814 steps, 47.3s)
-[  763.1s]    blocks@11+2|supervised       in-scope acc 0.9420 | best oos auroc 0.967 fpr95 0.139 oos F1 0.828 (2862 steps, 40.4s)
-[  770.5s] == banking77-open: 58 known classes, 6861 train, 751 in-scope val, test 2318 in-scope + 758 out-of-scope (2133 labelled oos train messages, used only by 'supervised')
-[  778.1s]    probe@4|base                 in-scope acc 0.9103 | best oos auroc 0.812 fpr95 0.683 oos F1 0.451 (2150 steps, 7.4s)
-[  788.4s]    probe@4|mixup                in-scope acc 0.9103 | best oos auroc 0.828 fpr95 0.669 oos F1 0.499 (2150 steps, 9.9s)
-[  801.1s]    probe@4|squad                in-scope acc 0.9107 | best oos auroc 0.811 fpr95 0.665 oos F1 0.480 (2150 steps, 12.3s)
-[  816.1s]    probe@4|droid                in-scope acc 0.9116 | best oos auroc 0.823 fpr95 0.683 oos F1 0.499 (2150 steps, 14.7s)
-[  844.0s]    probe@4|supervised           in-scope acc 0.9176 | best oos auroc 0.962 fpr95 0.194 oos F1 0.829 (2820 steps, 27.4s)
-[  868.3s]    probe@22|base                in-scope acc 0.9094 | best oos auroc 0.821 fpr95 0.695 oos F1 0.447 (2150 steps, 23.7s)
-[  904.0s]    probe@22|mixup               in-scope acc 0.9025 | best oos auroc 0.828 fpr95 0.678 oos F1 0.495 (2150 steps, 35.2s)
-[  946.2s]    probe@22|squad               in-scope acc 0.9111 | best oos auroc 0.820 fpr95 0.685 oos F1 0.445 (2150 steps, 41.7s)
-[  969.5s]    probe@22|droid               in-scope acc 0.8995 | best oos auroc 0.826 fpr95 0.668 oos F1 0.472 (2150 steps, 23.0s)
-[  978.1s]    probe@22|supervised          in-scope acc 0.9060 | best oos auroc 0.966 fpr95 0.212 oos F1 0.831 (2820 steps, 8.3s)
-[  990.5s]    blocks@11+2|base             in-scope acc 0.9310 | best oos auroc 0.852 fpr95 0.641 oos F1 0.563 (1290 steps, 11.8s)
-[ 1004.1s]    blocks@11+2|mixup            in-scope acc 0.9236 | best oos auroc 0.848 fpr95 0.612 oos F1 0.551 (1290 steps, 12.9s)
-[ 1022.9s]    blocks@11+2|squad            in-scope acc 0.9314 | best oos auroc 0.855 fpr95 0.652 oos F1 0.492 (1290 steps, 18.1s)
-[ 1042.7s]    blocks@11+2|droid            in-scope acc 0.9232 | best oos auroc 0.850 fpr95 0.621 oos F1 0.531 (1290 steps, 19.1s)
-[ 1058.8s]    blocks@11+2|supervised       in-scope acc 0.9336 | best oos auroc 0.987 fpr95 0.058 oos F1 0.877 (1692 steps, 15.4s)
-[ 1059.2s] done

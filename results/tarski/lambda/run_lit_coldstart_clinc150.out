@@ -1,17 +1,0 @@
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 9636.29it/s]
-Using the latest cached version of the dataset since clinc/clinc_oos couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'plus' at /home/ubuntu/.cache/huggingface/datasets/clinc___clinc_oos/plus/0.0.0/155b9c710419136e17307b80d0a13e68cd46b4ec (last modified on Sun Sep 27 21:22:49 2026).
-== clinc150: pool 15250 messages, split 11, cached in 10s
-   B= 150 random   : logreg 0.4245 | lda 0.5192 | probe 0.5038 | blocks:2 0.4886 | class coverage 0.88
-   B= 150 typiclust: logreg 0.4607 | lda 0.5578 | probe 0.5392 | blocks:2 0.5313 | class coverage 0.69
-   B= 150 kmedoid  : logreg 0.4570 | lda 0.5505 | probe 0.5339 | class coverage 0.82
-   B= 150 probcover: logreg 0.4201 | lda 0.5156 | probe 0.5019 | blocks:2 0.4842 | class coverage 0.89
-   B= 300 random   : logreg 0.5048 | lda 0.6012 | probe 0.5658 | class coverage 0.96
-   B= 300 typiclust: logreg 0.5366 | lda 0.6248 | probe 0.5944 | class coverage 0.78
-   B= 300 kmedoid  : logreg 0.5426 | lda 0.6295 | probe 0.5967 | class coverage 0.88
-   B= 300 probcover: logreg 0.5064 | lda 0.5946 | probe 0.5639 | class coverage 0.96
-   B= 750 random   : logreg 0.6552 | lda 0.7160 | probe 0.6707 | blocks:2 0.6900 | class coverage 1.00
-   B= 750 typiclust: logreg 0.6595 | lda 0.7097 | probe 0.6782 | blocks:2 0.6984 | class coverage 1.00
-   B= 750 kmedoid  : logreg 0.6653 | lda 0.7105 | probe 0.6833 | class coverage 1.00
-   B= 750 probcover: logreg 0.6615 | lda 0.7183 | probe 0.6765 | blocks:2 0.6868 | class coverage 1.00
-done -> results/tarski/explore_lit_coldstart_clinc150.json

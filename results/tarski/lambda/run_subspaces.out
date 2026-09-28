@@ -1,23 +1,0 @@
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 9274.99it/s]
-== shared decision subspaces | trunk cuda, fits cuda | split 11 | ranks [2, 4, 8, 16, 32]
-Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 18:59:51 2026).
-Using the latest cached version of the dataset since LocalLLaMA/typed-decisions couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'all' at /home/ubuntu/.cache/huggingface/datasets/LocalLLaMA___typed-decisions/all/0.0.0/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8 (last modified on Sun Sep 27 18:59:51 2026).
--- typed-decisions: 1080/120/400 messages (train/val/test), tasks: agent_trace_observability.action(4), agent_trace_observability.needs_review(2), agent_trace_obse
-   affinity: within-group 0.3169520921209771 (shuffled-label null 0.01761464241655778) across 0.004213398321957203 random 0.00412436500462766
-   bottleneck         workflow: r=2:0.6270 r=4:0.6510 r=8:0.6755 r=16:0.6775 r=32:0.6750
-   bottleneck  affinity_greedy: r=2:0.6355 r=4:0.6795 r=8:0.6690 r=16:0.6760 r=32:0.6615
-   bottleneck        singleton: r=2:0.6740 r=4:0.6720 r=8:0.6655 r=16:0.6720 r=32:0.6705
-   bottleneck          random0: r=2:0.6305 r=4:0.6715 r=8:0.6630 r=16:0.6680 r=32:0.6685
-   bottleneck          random1: r=2:0.6550 r=4:0.6610 r=8:0.6615 r=16:0.6845 r=32:0.6670
-   bottleneck          random2: r=2:0.6350 r=4:0.6660 r=8:0.6750 r=16:0.6780 r=32:0.6885
-   fused blocks@11+2: separate 0.7555 vs fused 0.7370 (1348s)
-Using the latest cached version of the dataset since clinc/clinc_oos couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'plus' at /home/ubuntu/.cache/huggingface/datasets/clinc___clinc_oos/plus/0.0.0/155b9c710419136e17307b80d0a13e68cd46b4ec (last modified on Sun Sep 27 21:22:49 2026).
--- clinc150: 15250/3100/5500 messages (train/val/test), tasks: intent(151), domain(11), oos(2)
-   affinity: within-group 0.6071719012054027 (shuffled-label null 0.10483308481696034) across None random 0.13425188346744424
-   bottleneck              all: r=2:0.4858 r=4:0.5972 r=8:0.7334 r=16:0.8030 r=32:0.8234
-   bottleneck        singleton: r=2:0.5094 r=4:0.6348 r=8:0.7702 r=16:0.8044 r=32:0.8208
-   fused blocks@11+2: separate 0.8752 vs fused 0.8701 (349s)
-done -> results/tarski/explore_subspaces.json

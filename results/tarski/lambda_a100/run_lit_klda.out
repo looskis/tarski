@@ -1,26 +1,0 @@
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 5976.83it/s]
-Using the latest cached version of the dataset since mteb/banking77 couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'default' at /home/ubuntu/.cache/huggingface/datasets/mteb___banking77/default/0.0.0/18072d2685ea682290f7b8924d94c62acc19c0b2 (last modified on Sun Sep 27 22:52:06 2026).
-  trunk pass: 13069 messages at depths [4, 8, 11, 16, 22] in 12.6s
-== KLDA on banking77: 77 classes, 8994/999/3076 in-scope train/val/test | depths [4, 8, 11, 16, 22] | fits cuda
--- banking77 @ 4 (25s): ncm 0.6739 | lda_z 0.8722 | lda_zl2 0.8706 | klda_2k 0.8963 | klda_5k 0.8986 (zl2, c=0.05, shrink=0.001) | ranpac 0.8836 | probe 0.8986
--- banking77 @ 8 (25s): ncm 0.6541 | lda_z 0.8752 | lda_zl2 0.8755 | klda_2k 0.8940 | klda_5k 0.9044 (z, c=0.05, shrink=0.01) | ranpac 0.8830 | probe 0.8963
--- banking77 @ 11 (25s): ncm 0.5371 | lda_z 0.8794 | lda_zl2 0.8739 | klda_2k 0.8992 | klda_5k 0.9025 (z, c=0.05, shrink=0.01) | ranpac 0.8807 | probe 0.8904
--- banking77 @ 16 (24s): ncm 0.2276 | lda_z 0.8807 | lda_zl2 0.8570 | klda_2k 0.8908 | klda_5k 0.8956 (z, c=0.05, shrink=0.001) | ranpac 0.8544 | probe 0.8661
--- banking77 @ 22 (25s): ncm 0.6957 | lda_z 0.8852 | lda_zl2 0.8862 | klda_2k 0.8986 | klda_5k 0.9031 (zl2, c=0.05, shrink=0.01) | ranpac 0.8885 | probe 0.8940
-== banking77: val-best depth 4: klda_e5 0.9067 (klda_5k 0.8986, lda_z 0.8722, probe 0.8986)
-   incremental (avg over sessions / final): lda 0.9157/0.8722 | klda 0.9195/0.8986 | probe_joint 0.9290/0.8986 | probe_newrows 0.6853/0.5224
-   new route from k shots (new-class recall, overall): k=1: lda 0.07/0.863, klda 0.02/0.887 | k=5: lda 0.31/0.866, klda 0.11/0.888 | k=10: lda 0.46/0.868, klda 0.25/0.890 | k=20: lda 0.68/0.871, klda 0.53/0.894
-Using the latest cached version of the dataset since clinc/clinc_oos couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'plus' at /home/ubuntu/.cache/huggingface/datasets/clinc___clinc_oos/plus/0.0.0/155b9c710419136e17307b80d0a13e68cd46b4ec (last modified on Sun Sep 27 22:52:08 2026).
-  trunk pass: 23850 messages at depths [4, 8, 11, 16, 22] in 22.9s
-== KLDA on clinc150: 150 classes, 15000/3000/4500 in-scope train/val/test | depths [4, 8, 11, 16, 22] | fits cuda
--- clinc150 @ 4 (38s): ncm 0.7749 | lda_z 0.9098 | lda_zl2 0.9067 | klda_2k 0.9178 | klda_5k 0.9244 (zl2, c=0.1, shrink=0.01) | ranpac 0.9300 | probe 0.9320 | OOS AUROC {'maha_lda_z': 0.8452064444444445, 'maha_lda_zl2': 0.9101828888888889, 'maha_klda_5k': 0.9059817777777778}
--- clinc150 @ 8 (38s): ncm 0.7302 | lda_z 0.9178 | lda_zl2 0.9151 | klda_2k 0.9198 | klda_5k 0.9280 (z, c=0.05, shrink=0.001) | ranpac 0.9293 | probe 0.9309 | OOS AUROC {'maha_lda_z': 0.8378666666666666, 'maha_lda_zl2': 0.8858044444444445, 'maha_klda_5k': 0.7626168888888889}
--- clinc150 @ 11 (38s): ncm 0.5947 | lda_z 0.9149 | lda_zl2 0.9100 | klda_2k 0.9224 | klda_5k 0.9284 (z, c=0.05, shrink=0.01) | ranpac 0.9318 | probe 0.9318 | OOS AUROC {'maha_lda_z': 0.8414266666666667, 'maha_lda_zl2': 0.8583219999999999, 'maha_klda_5k': 0.7613806666666666}
--- clinc150 @ 16 (37s): ncm 0.1840 | lda_z 0.9124 | lda_zl2 0.8942 | klda_2k 0.9131 | klda_5k 0.9184 (z, c=0.05, shrink=0.001) | ranpac 0.9013 | probe 0.9133 | OOS AUROC {'maha_lda_z': 0.8087044444444443, 'maha_lda_zl2': 0.7133031111111112, 'maha_klda_5k': 0.7058804444444444}
--- clinc150 @ 22 (39s): ncm 0.7607 | lda_z 0.9087 | lda_zl2 0.9062 | klda_2k 0.9151 | klda_5k 0.9247 (z, c=0.05, shrink=0.001) | ranpac 0.9253 | probe 0.9313 | OOS AUROC {'maha_lda_z': 0.8366193333333334, 'maha_lda_zl2': 0.9095006666666666, 'maha_klda_5k': 0.7567282222222222}
-== clinc150: val-best depth 4: klda_e5 0.9269 (klda_5k 0.9244, lda_z 0.9098, probe 0.9320)
-   incremental (avg over sessions / final): lda 0.9487/0.9098 | klda 0.9565/0.9244 | probe_joint 0.9578/0.9320 | probe_newrows 0.6918/0.5222
-   new route from k shots (new-class recall, overall): k=1: lda 0.09/0.904, klda 0.00/0.918 | k=5: lda 0.44/0.907, klda 0.28/0.920 | k=10: lda 0.70/0.908, klda 0.53/0.922 | k=20: lda 0.83/0.909, klda 0.73/0.923
-done -> results/tarski/explore_lit_klda.json

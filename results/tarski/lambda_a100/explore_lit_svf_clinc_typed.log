@@ -1,9 +1,0 @@
-checks: SVF(z=1) vs base linear rel err 2.1e-04; SharedSVF vs loop abs err 1.0e-06
-checks: SVF(z=1) vs base linear rel err 2.1e-04; SharedSVF vs loop abs err 1.7e-06
-== clinc150 split 11: 3 tasks, cached in 7s
-   full     : mean acc 0.8709 | trainable 10072.9k (20.15 MB fp16) | 139s
-   svf_norm : mean acc 0.8546 | trainable 52.0k (0.10 MB fp16) | 129s
-== typed-decisions split 14: 5 tasks, cached in 1s
-   full     : mean acc 0.7900 | trainable 10033.9k (20.07 MB fp16) | 128s
-   svf_norm : mean acc 0.7780 | trainable 13.1k (0.03 MB fp16) | 112s
-done -> results/tarski/explore_lit_svf_clinc_typed.json

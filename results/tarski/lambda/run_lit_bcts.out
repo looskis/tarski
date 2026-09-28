@@ -1,21 +1,0 @@
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 9061.16it/s]
-Using the latest cached version of the dataset since mteb/banking77 couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'default' at /home/ubuntu/.cache/huggingface/datasets/mteb___banking77/default/0.0.0/18072d2685ea682290f7b8924d94c62acc19c0b2 (last modified on Sun Sep 27 21:22:46 2026).
-== banking77 @ depth 22: 77 classes | test acc 0.8875 | none val NLL 0.401 (lam 0.0) | ts val NLL 0.376 (lam 0.0) | bcts val NLL 0.376 (lam 1.0) | vs val NLL 0.392 (lam 1.0)
--- banking77 Dirichlet(0.1): prior L1 none 0.069 | ts 0.058 | bcts 0.063 | vs 0.070 | bbse 0.189 || acc gain none +0.0564 | ts +0.0616 | bcts +0.0607 | vs +0.0584 | bbse +0.0548 (before, ts: 0.8867)
--- banking77 Dirichlet(0.3): prior L1 none 0.077 | ts 0.072 | bcts 0.077 | vs 0.078 | bbse 0.179 || acc gain none +0.0415 | ts +0.0440 | bcts +0.0401 | vs +0.0418 | bbse +0.0360 (before, ts: 0.8843)
--- banking77 Dirichlet(1.0): prior L1 none 0.081 | ts 0.080 | bcts 0.090 | vs 0.085 | bbse 0.170 || acc gain none +0.0194 | ts +0.0195 | bcts +0.0181 | vs +0.0195 | bbse +0.0099 (before, ts: 0.8871)
--- banking77 Dirichlet(10.0): prior L1 none 0.085 | ts 0.085 | bcts 0.098 | vs 0.090 | bbse 0.161 || acc gain none +0.0016 | ts +0.0020 | bcts -0.0022 | vs +0.0005 | bbse +0.0008 (before, ts: 0.8872)
--- banking77 stream (ts): static 0.8880 | oracle_segment_prior 0.9322 | global_em 0.8757 | window_em_200 0.8259 | window_em_1000 0.8666 | global_mapem 0.8911 | window_mapem_200 0.9101 | window_mapem_1000 0.8970 | ewma_em_0.01 0.8822 | ewma_em_0.03 0.7980
--- banking77 stream (bcts): static 0.8802 | oracle_segment_prior 0.9279 | global_em 0.8642 | window_em_200 0.8195 | window_em_1000 0.8567 | global_mapem 0.8811 | window_mapem_200 0.9030 | window_mapem_1000 0.8878 | ewma_em_0.01 0.8747 | ewma_em_0.03 0.7888
-Using the latest cached version of the dataset since clinc/clinc_oos couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'plus' at /home/ubuntu/.cache/huggingface/datasets/clinc___clinc_oos/plus/0.0.0/155b9c710419136e17307b80d0a13e68cd46b4ec (last modified on Sun Sep 27 21:22:49 2026).
-== clinc150 @ depth 22: 151 classes | test acc 0.8445 | none val NLL 0.346 (lam 0.0) | ts val NLL 0.324 (lam 0.0) | bcts val NLL 0.302 (lam 0.001) | vs val NLL 0.273 (lam 0.001)
--- clinc150 Dirichlet(0.1): prior L1 none 0.061 | ts 0.060 | bcts 0.057 | vs 0.061 | bbse 0.152 || acc gain none +0.0421 | ts +0.0396 | bcts +0.0435 | vs +0.0425 | bbse +0.0348 (before, ts: 0.9220)
--- clinc150 Dirichlet(0.3): prior L1 none 0.082 | ts 0.074 | bcts 0.070 | vs 0.079 | bbse 0.139 || acc gain none +0.0197 | ts +0.0212 | bcts +0.0251 | vs +0.0221 | bbse +0.0168 (before, ts: 0.9266)
--- clinc150 Dirichlet(1.0): prior L1 none 0.100 | ts 0.088 | bcts 0.083 | vs 0.095 | bbse 0.138 || acc gain none +0.0039 | ts +0.0070 | bcts +0.0116 | vs +0.0081 | bbse +0.0043 (before, ts: 0.9258)
--- clinc150 Dirichlet(10.0): prior L1 none 0.107 | ts 0.096 | bcts 0.093 | vs 0.114 | bbse 0.129 || acc gain none -0.0054 | ts -0.0036 | bcts +0.0005 | vs -0.0045 | bbse -0.0016 (before, ts: 0.9242)
--- CLINC real shift: none: OOS share 0.125, OOS F1 0.626->0.742, acc 0.8445->0.8631 | ts: OOS share 0.119, OOS F1 0.626->0.725, acc 0.8445->0.8604 | bcts: OOS share 0.122, OOS F1 0.668->0.728, acc 0.8516->0.8622 | vs: OOS share 0.118, OOS F1 0.663->0.729, acc 0.8498->0.8596
--- clinc150 stream (ts): static 0.9220 | oracle_segment_prior 0.9533 | global_em 0.8898 | window_em_200 0.7760 | window_em_1000 0.8660 | global_mapem 0.9210 | window_mapem_200 0.9352 | window_mapem_1000 0.9249 | ewma_em_0.01 0.8737 | ewma_em_0.03 0.7290
--- clinc150 stream (bcts): static 0.9233 | oracle_segment_prior 0.9557 | global_em 0.8959 | window_em_200 0.7840 | window_em_1000 0.8660 | global_mapem 0.9260 | window_mapem_200 0.9374 | window_mapem_1000 0.9285 | ewma_em_0.01 0.8776 | ewma_em_0.03 0.7352
-done in 384.9s -> results/tarski/explore_lit_bcts.json

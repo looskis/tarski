@@ -1,3 +1,0 @@
-   TabICL CPU latency, context 240 x 64, 5 classes: fit 1.23s, predict batch-1 20.0 ms, batch-100 2.53 ms/msg
-   TabICL CPU latency, context 1024 x 64, 2 classes: fit 4.22s, predict batch-1 24.2 ms, batch-100 2.73 ms/msg
-   TabICL CPU latency, context 1024 x 64, 10 classes: fit 4.29s, predict batch-1 22.5 ms, batch-100 2.74 ms/msg

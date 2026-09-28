@@ -1,12 +1,0 @@
-Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 39891.88it/s]
-probe curves for 3 task(s) in 42s
-tol 0.005: intent->1, domain->1, oos->1
-  probe@1 intent: acc 0.8582 (12s)
-  probe@1 domain: acc 0.8264 (11s)
-  probe@1 oos: acc 0.8476 (15s)
-  blocks@1 intent: acc 0.8651 (85s)
-  blocks@1 domain: acc 0.8544 (84s)
-  blocks@1 oos: acc 0.8580 (84s)
-tol 0.01: intent->1, domain->1, oos->1
-tol 0.02: intent->1, domain->1, oos->1
-done

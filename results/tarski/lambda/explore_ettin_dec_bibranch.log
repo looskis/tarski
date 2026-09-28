@@ -1,9 +1,0 @@
-[   10.2s] == dec trunk jhu-clsp/ettin-decoder-150m on cuda: 22 layers, hidden 768
-[   11.0s]    causal trunk vs stock forward: max abs diff 0.00e+00
-[   27.1s] == [dec_bibranch] banking77: 8994/999/3076 messages (train/val/test), tasks: intent(77) | cached [6, 11, 14, 16, 22] in 14.3s
-[   74.2s]    [dec_bibranch] banking77 blocks@14+2|mean|bidir: mean acc 0.7572
-[   88.5s] == [dec_bibranch] clinc150: 15250/3100/5500 messages (train/val/test), tasks: intent(151) | cached [6, 11, 16, 22] in 12.5s
-[  143.0s]    [dec_bibranch] clinc150 blocks@11+2|mean|bidir: mean acc 0.7413
-[  151.5s] == [dec_bibranch] typed-cs: 269/31/100 messages (train/val/test), tasks: customer_service.action(5), customer_service.category(5), customer_service.churn_risk(4), customer_service.needs_human(2), customer_service.urgency(4) | cached [6, 11, 14, 16, 22] in 6.6s
-[  347.0s]    [dec_bibranch] typed-cs blocks@14+2|mean|bidir: mean acc 0.6360
-[  347.1s] done

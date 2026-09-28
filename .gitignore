@@ -8,16 +8,13 @@ __pycache__/
 *.pyc
 .pytest_cache/
 
-# trained branches and model weights (users' own)
-branches/
+# model weights and generated build artifacts
 *.safetensors
+dist/
+*.egg-info/
 
-# session worktrees, OS noise
-.claude/worktrees/
+# OS noise
 .DS_Store
-
-# per-machine dev-server configs
-.claude/launch.json
 
 # vendored sources for the dlm experiments (see dlm/README.md for pinned commits)
 third_party/
