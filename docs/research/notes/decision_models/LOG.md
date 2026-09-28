@@ -624,3 +624,18 @@ points" claim softened; Wang, Deng & Yang 2026 = "Assessing and mitigating misca
 social science measurement" (2605.11954); typed-decisions = HF LocalLLaMA/typed-decisions + GitHub
 kotoba-lang/typed-decisions. 48 entries, no daggers. LaTeX now uses natbib (plainnat) with
 references.bib generated from the doc's list; 69 in-text citations converted to \citep/\citet; 29 pages.
+
+## 2026-09-28: speed and accuracy against laya, same laptop (M-series, MPS/MLX), same 400 typed-test states
+
+| reader | ms/state (5 q) | ms/decision | acc | Brier | ECE |
+|---|---|---|---|---|---|
+| laya base, 421M cross-encoder, zero-shot on this data | 163 | 33 | 0.363 | 0.750 | 0.173 |
+| laya fine-tuned on typed-decisions (trained on the train split) | 158 | 32 | 0.767 | 0.400 | 0.214 |
+| DiffusionGemma 26B-A4B 4-bit, stock OpenJev (re-reads, 3.65 passes avg; timed at 4) | 995 | 199 | 0.659 | 0.586 | 0.267 |
+| DiffusionGemma, read policy (state-first, mean slot, temperature), one pass | ~560 | 112 | 0.712 | 0.402 | 0.025 |
+
+DLM timing detail (20 states, ~495-token prompts): prefill 411 ms, one pass 141 ms, four passes 581 ms.
+laya's 5-question call is 106 ms on the first 20 states, 158–163 ms averaged over all 400. Reading:
+laya is 3.5x faster per state than the one-pass DLM read (6x vs stock OpenJev) and batches on GPU;
+fine-tuned in-domain it is 5.5 points more accurate but uncalibrated (ECE 0.21 vs 0.025), and
+without that fine-tune it collapses to 0.36. The frozen reader is the zero-shot, calibrated option.
