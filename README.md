@@ -1,5 +1,21 @@
 # tarski
 
+**≈2× faster. >3× fewer decoder passes. +5.3 percentage points accuracy compared with OpenJev.**
+
+Same DiffusionGemma model, unchanged weights, a better read policy:
+
+| Measure | OpenJev reference | Tarski read policy |
+|---|---|---|
+| End-to-end latency per state | 995 ms (four passes) | ≈560 ms (one pass) — **1.8× faster** |
+| Decoder passes per state | 3.65 on average with automatic re-reads | **1** |
+| Decision accuracy | 65.9% (given order, random slot) | **71.2% (+5.3 percentage points)** |
+
+Accuracy: 400 typed-decisions states / 2,000 decisions, comparing single reads with the default
+question order and random slot against a selected order and vocabulary-mean slot. Timing: 20
+states on the same Apple-silicon laptop with DiffusionGemma 26B-A4B in 4-bit precision; the latency
+comparison includes prefill and uses four passes for OpenJev's re-read path. These are separate
+accuracy and timing comparisons. [Measurements and methodology](docs/research/notes/decision_models/LOG.md).
+
 Turn diffusion-model research into read policies for your own decisions. Compare prompt layout,
 question order and answer-slot initialization on a labelled sample, fit confidence temperatures,
 then use the resulting JSON config for inference. Model weights stay fixed.
