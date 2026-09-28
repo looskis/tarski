@@ -567,3 +567,22 @@ security 0.591; by type: choice 0.635, noul 0.771, score 0.593. The best read (r
 So the read already exceeds the annotators' expected agreement with their own argmax; the remaining
 errors sit on questions the annotators themselves hedge on. Hard-label accuracy saturates near 0.72 for
 this reason; Brier against the soft gold is the metric with headroom.
+
+## 2026-09-28: hard labels, multi-question: Bitext customer support (250 messages, 500 slots, 4-bit laptop)
+
+`dlm/bitext.py`, `results/dlm/bitext.jsonl`. Two-question canvas (category 11-way, intent 27-way),
+zero-shot, 2.7 s/message. acc / Brier / ECE:
+
+| condition | category | intent | both |
+|---|---|---|---|
+| stock: given order, random slot (OpenJev default) | 0.932 / 0.116 / 0.050 | 0.864 / 0.225 / 0.078 | 0.898 / 0.171 / 0.062 |
+| stock: reversed order, random | 0.952 / 0.088 / 0.043 | 0.900 / 0.176 / 0.066 | 0.926 / 0.132 / 0.052 |
+| state-first: given order, random | 0.944 / 0.104 / 0.045 | 0.912 / 0.142 / 0.051 | 0.928 / 0.123 / 0.048 |
+| state-first: given order, mean | 0.940 / 0.104 / 0.052 | 0.912 / 0.141 / 0.052 | 0.926 / 0.123 / 0.050 |
+| state-first: reversed, mean | 0.948 / 0.088 / 0.041 | 0.892 / 0.183 / 0.079 | 0.920 / 0.136 / 0.060 |
+| **read policy** (state-first, mean slot, temperature 2-fold) | | | **0.926 / 0.119 / 0.016** |
+
+policy − stock default: +0.028 [+0.006, +0.050] (paired, 250 states). With hard labels the reader sits
+at 93% overall and 91% on the 27-way intent, zero-shot; the given order is again the worse of the two
+under the stock format (0.898 vs 0.926) and state-first closes the gap (0.928 vs 0.922); temperature
+takes ECE from 0.05 to 0.016. The mean slot is neutral here (labels are unambiguous letters).
