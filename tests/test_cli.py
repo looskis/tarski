@@ -60,6 +60,16 @@ def test_oos_scores_off_topic_messages_higher(store):
     assert sum(s[len(in_scope):]) / len(off_topic) > sum(s[:len(in_scope)]) / len(in_scope)
 
 
+def test_oos_scores_on_the_default_device(store):
+    """Branches trained on CPU score on whatever device the engine picks (MPS on Apple silicon, which
+    has no float64); the detector must not depend on the tap's device."""
+    from tarski.engine import Engine
+
+    r = Engine(store).decide(["Please add dark mode", "The recipe calls for two cups of flour"], ["team"])
+    s = [o["team"]["score"] for o in r["oos"]]
+    assert len(s) == 2 and all(isinstance(v, float) for v in s)
+
+
 def test_server_exposes_scope(store):
     from fastapi.testclient import TestClient
 

@@ -51,9 +51,9 @@ class OOSStats:
             val_feats: Optional[torch.Tensor] = None, min_val: int = 30) -> "OOSStats":
         """`feats`: pooled trunk states of the training messages [n, D]; `y`: their labels. The threshold
         comes from `val_feats` when there are at least `min_val` of them, else from the training rows."""
-        z = F.normalize(feats.double(), dim=-1)
+        z = F.normalize(feats.detach().float().cpu().double(), dim=-1)
         n, d = z.shape
-        y = y.long()
+        y = y.long().cpu()
         means = torch.stack([z[y == c].mean(0) if bool((y == c).any()) else z.mean(0) for c in range(n_labels)])
         centred = z - means[y]
         cov = centred.T @ centred / max(n - 1, 1)
@@ -88,8 +88,9 @@ class OOSStats:
 
     @torch.no_grad()
     def score(self, feats: torch.Tensor) -> torch.Tensor:
-        """Relative Mahalanobis distance per row; higher means further from every label."""
-        z = F.normalize(feats.double().to(self.means.device), dim=-1)
+        """Relative Mahalanobis distance per row; higher means further from every label. Computed on the
+        CPU in float64 (MPS has no float64; one pooled vector per message makes the copy negligible)."""
+        z = F.normalize(feats.detach().float().cpu().double(), dim=-1)
         diff = z[:, None, :] - self.means[None]                         # [n, C, D]
         d_c = torch.einsum("ncd,de,nce->nc", diff, self.prec, diff).min(1).values
         bg = z - self.bg_mean
