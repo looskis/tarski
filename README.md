@@ -46,6 +46,7 @@ tarski list                                  # kind, split depth, size, test acc
 tarski predict "Prod is down and customers cannot log in"
 tarski eval examples/tickets.csv --all-rows  # accuracy, F1, calibration on the file
 tarski serve --port 8080
+tarski label new_messages.csv --out labels.jsonl   # label more, least-confident first, then retrain
 ```
 
 `predict` prints one JSON line per message:
@@ -76,6 +77,31 @@ text,team,urgent
 How many labels? Around **100 messages per label** puts a branch within about a point of a full
 fine-tune. With **10 per label** expect a gap of 4–12 points; the encoder choice below matters more
 than the branch there.
+
+How long can a message be? The encoder accepts 8,192 tokens; the harness truncates at `--max-len`
+(default 256, about a paragraph or a small JSON ticket state) because cost grows with length: every
+third encoder layer is global attention, cached training states take 1.5 KB per token, and branch
+layers attend over the whole message. Use 512 for ticket bodies; longer works but is slow on CPU.
+The limit is stored per branch, and a request uses the largest limit among the branches it asks for.
+
+## Label your own data
+
+```bash
+tarski label unlabelled.csv --out labels.jsonl --tasks team=billing,outage,feature urgent=yes,no
+tarski label unlabelled.csv --out labels.jsonl          # with trained branches: their labels and suggestions
+```
+
+Opens a local page (http://127.0.0.1:8090) that shows one message at a time with one button per
+label per decision. If branches are trained, their suggestion is pre-selected with its confidence, so
+confirming a correct answer is one click, and the queue is ordered so that messages a branch flags as
+out of scope come first, then the least confident: an hour of labelling goes where the model is
+weakest. New labels can be typed in. Labels append to `labels.jsonl` in exactly the shape `tarski
+train` reads; messages already in it are skipped, so stop and resume freely. A decision left blank
+is not recorded, and a row only trains the decisions it has.
+
+Where do unlabelled messages come from? A CSV or JSONL export with a `text` column, or a plain text
+file with one message per line: the last week of a Slack channel, the tickets that came in since the
+last retrain, or the messages the serving branches answered with low confidence.
 
 ## Choosing the encoder, branch and depth
 

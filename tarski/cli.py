@@ -5,6 +5,7 @@
   tarski eval tickets.csv                            # accuracy of the trained branches on the file's test rows
   tarski predict "Everything is down before our demo" --tasks team urgency
   tarski serve --port 8080 [--fallback http://127.0.0.1:8081]
+  tarski label unlabelled.csv --out labels.jsonl        # a local page to label messages, least-confident first
   tarski info
 
 Everything runs locally. The base model is downloaded from Hugging Face once, then read from its cache.
@@ -197,6 +198,20 @@ def cmd_info(a):
               + f", {len(m['labels'])} labels, {m['bytes'] / 1e6:.1f} MB, base {m['base']}")
 
 
+def cmd_label(a):
+    import uvicorn
+
+    from tarski.label import build_queue, create_label_app
+
+    q = build_queue(a.data, a.out, a.tasks, a.store, resolve_base(a.base), a.device, a.text_col, not a.no_suggest)
+    s = q.stats()
+    print(f"{s['remaining']} message(s) to label" + (f", {s['already_labelled']} already in {a.out}" if s["already_labelled"] else "")
+          + (f"; suggestions from branches {s['suggested_tasks']}" if s["suggested_tasks"] else "; no trained branches, no suggestions")
+          + f"\nopen http://{a.host}:{a.port}  (labels append to {os.path.abspath(a.out)}; Ctrl-C when done, "
+          f"then `tarski train {a.out}`)", file=sys.stderr)
+    uvicorn.run(create_label_app(q), host=a.host, port=a.port, log_level="warning")
+
+
 def cmd_serve(a):
     import uvicorn
 
@@ -263,6 +278,17 @@ def main(argv=None):
     p.set_defaults(fn=cmd_predict)
 
     sub.add_parser("info", help="device, cached base models and the branch store").set_defaults(fn=cmd_info)
+
+    l = sub.add_parser("label", help="a local page to label your own messages, least-confident first")
+    l.add_argument("data", help="messages to label: CSV/JSONL with a text column, or a text file with one message per line")
+    l.add_argument("--out", default="labels.jsonl", help="where labels go, in the shape `tarski train` reads (appended, resumable)")
+    l.add_argument("--tasks", nargs="*", default=[],
+                   help="decisions and their labels, e.g. team=billing,outage urgent=yes,no (trained branches add theirs)")
+    l.add_argument("--text-col", default="text")
+    l.add_argument("--no-suggest", action="store_true", help="do not score messages with the trained branches")
+    l.add_argument("--host", default="127.0.0.1")
+    l.add_argument("--port", type=int, default=8090)
+    l.set_defaults(fn=cmd_label)
 
     s = sub.add_parser("serve", help="serve /v1/decide and Jev-compatible /v1/systemone")
     s.add_argument("--host", default="127.0.0.1")

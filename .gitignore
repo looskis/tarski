@@ -15,3 +15,6 @@ branches/
 # session worktrees, OS noise
 .claude/worktrees/
 .DS_Store
+
+# per-machine dev-server configs
+.claude/launch.json

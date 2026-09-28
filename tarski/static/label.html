@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tarski label</title>
+<style>
+  :root { --bg:#fafaf8; --fg:#1d1d1b; --muted:#6b6b66; --card:#fff; --line:#e4e2dc; --accent:#2d6a4f; --accent-bg:#e6f2ec; --warn:#b4531b; --warn-bg:#fbeee4; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#161614; --fg:#ecebe6; --muted:#9b9a93; --card:#1f1f1c; --line:#33322e; --accent:#7fc8a3; --accent-bg:#1e3a2d; --warn:#f0a06e; --warn-bg:#3d2415; } }
+  * { box-sizing:border-box }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.45 system-ui, -apple-system, sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:24px 16px 48px; }
+  header { display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
+  h1 { font-size:18px; margin:0; font-weight:600 }
+  .stats { color:var(--muted); font-size:14px }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:20px; }
+  .text { white-space:pre-wrap; word-break:break-word; font-size:17px; margin:0 0 18px; }
+  .task { margin:14px 0 }
+  .task h2 { font-size:13px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:0 0 8px; font-weight:600 }
+  .labels { display:flex; flex-wrap:wrap; gap:8px }
+  button { font:inherit; cursor:pointer; border-radius:8px; border:1px solid var(--line); background:var(--card); color:var(--fg); padding:8px 14px; }
+  button.label.on { border-color:var(--accent); background:var(--accent-bg); color:var(--accent); font-weight:600 }
+  button.label .conf { color:var(--muted); font-size:12px; margin-left:6px }
+  .new { display:flex; gap:6px; align-items:center }
+  .new input { font:inherit; padding:7px 10px; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--fg); width:140px }
+  .badge { display:inline-block; font-size:12px; padding:2px 8px; border-radius:999px; background:var(--warn-bg); color:var(--warn); margin-left:8px; vertical-align:middle }
+  .actions { display:flex; gap:10px; margin-top:20px; align-items:center }
+  button.primary { background:var(--accent); color:#fff; border-color:var(--accent); font-weight:600 }
+  button:disabled { opacity:.5; cursor:default }
+  .hint { color:var(--muted); font-size:13px; margin-left:auto }
+  .done { text-align:center; padding:40px 0; color:var(--muted) }
+  code { background:var(--accent-bg); padding:1px 5px; border-radius:4px; font-size:14px }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>tarski label</h1>
+    <div class="stats" id="stats"></div>
+  </header>
+  <div id="app" class="card"></div>
+</main>
+<script>
+const app = document.getElementById('app'), statsEl = document.getElementById('stats');
+let tasks = {}, item = null, choice = {};
+
+async function api(path, body) {
+  const r = await fetch(path, body ? {method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify(body)} : undefined);
+  if (!r.ok) throw new Error((await r.json()).detail || r.statusText);
+  return r.json();
+}
+function showStats(s) {
+  statsEl.textContent = `${s.done} labelled · ${s.remaining} to go` + (s.skipped ? ` · ${s.skipped} skipped` : '')
+    + (s.already_labelled ? ` · ${s.already_labelled} from earlier sessions` : '');
+}
+async function load() {
+  const t = await api('/api/tasks'); tasks = t.tasks;
+  const n = await api('/api/next?n=1'); showStats(n.stats);
+  item = n.items[0] || null; choice = {};
+  if (!item) { app.innerHTML = `<div class="done">Nothing left to label.<br><br>Train on the result: <code>tarski train ${escapeHtml(n.stats.out)}</code></div>`; return; }
+  for (const [task, s] of Object.entries(item.suggest)) choice[task] = s.label;
+  render();
+}
+function escapeHtml(s) { return s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function render() {
+  const flagged = Object.values(item.suggest).some(s => s.out_of_scope);
+  let html = `<p class="text">${escapeHtml(item.text)}</p>`;
+  for (const [task, labels] of Object.entries(tasks)) {
+    const s = item.suggest[task];
+    html += `<div class="task"><h2>${escapeHtml(task)}${s && s.out_of_scope ? '<span class="badge">looks out of scope</span>' : ''}</h2><div class="labels">`;
+    for (const l of labels) {
+      const on = choice[task] === l ? ' on' : '';
+      const conf = s && s.label === l ? `<span class="conf">${Math.round(s.confidence*100)}%</span>` : '';
+      html += `<button class="label${on}" data-task="${escapeHtml(task)}" data-label="${escapeHtml(l)}">${escapeHtml(l)}${conf}</button>`;
+    }
+    html += `<span class="new"><input placeholder="new label" data-task="${escapeHtml(task)}"><button class="add" data-task="${escapeHtml(task)}">add</button></span></div></div>`;
+  }
+  html += `<div class="actions"><button class="primary" id="save">Save &amp; next</button><button id="skip">Skip</button>
+           <span class="hint">Enter saves · S skips · a decision left blank is not recorded</span></div>`;
+  app.innerHTML = html;
+  app.querySelectorAll('button.label').forEach(b => b.onclick = () => {
+    const t = b.dataset.task; choice[t] = choice[t] === b.dataset.label ? undefined : b.dataset.label; render();
+  });
+  app.querySelectorAll('button.add').forEach(b => b.onclick = () => addLabel(b.dataset.task));
+  app.querySelectorAll('.new input').forEach(i => i.onkeydown = e => { if (e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); addLabel(i.dataset.task); } });
+  document.getElementById('save').onclick = save;
+  document.getElementById('skip').onclick = skip;
+}
+function addLabel(task) {
+  const input = app.querySelector(`.new input[data-task="${CSS.escape(task)}"]`);
+  const l = input.value.trim(); if (!l) return;
+  if (!tasks[task].includes(l)) tasks[task].push(l);
+  choice[task] = l; render();
+}
+async function save() {
+  const decisions = {}; for (const [t, l] of Object.entries(choice)) if (l) decisions[t] = l;
+  if (!Object.keys(decisions).length) { alert('Pick at least one decision, or skip.'); return; }
+  try { const r = await api('/api/save', {id: item.id, decisions}); tasks = r.tasks; showStats(r.stats); await load(); }
+  catch (e) { alert(e.message); }
+}
+async function skip() { await api('/api/skip', {id: item.id}); await load(); }
+document.addEventListener('keydown', e => {
+  if (!item || e.target.tagName === 'INPUT') return;
+  if (e.key === 'Enter') { e.preventDefault(); save(); }
+  if (e.key === 's' || e.key === 'S') { e.preventDefault(); skip(); }
+});
+load();
+</script>
+</body>
+</html>
